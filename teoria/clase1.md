@@ -45,7 +45,7 @@ Por definición todo es nivel básico, pero en partes del contenido se incluyen 
 
 ### Sobre los profesores
 
-![dear_alejandro](../assets/clase1/33422780.jpeg)
+![dear_alejandro](../assets/clase1/bb468d18-d3e3-49bd-97aa-a432eb845d44.jpg)
 
 **Bio:**
 "Software developer, ingeniero de teleco, emprendedor, freelance, formador, en ratos libres toco guitarra y percusión, voluntario en coding program en madridforefugees(https://madridforrefugees.org/es/la-organizacion/mfr-coding-es/). Profe en [@fictiziaescuela](http://www.fictizia.com/profesores/). Co-founder de @freeyourculture(http://freeyourculture.com/)
