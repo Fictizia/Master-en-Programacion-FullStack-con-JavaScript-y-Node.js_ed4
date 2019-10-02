@@ -45,6 +45,15 @@ Por definición todo es nivel básico, pero en partes del contenido se incluyen 
 
 ### Sobre los profesores
 
+![dear_alejandro](../assets/clase1/391305.jpeg)
+
+**Bio:**
+"Software developer, ingeniero de teleco, emprendedor, freelance, formador, en ratos libres toco guitarra y percusión, voluntario en coding program en madridforefugees(https://madridforrefugees.org/es/la-organizacion/mfr-coding-es/). Profe en [@fictiziaescuela](http://www.fictizia.com/profesores/). Co-founder de @freeyourculture(http://freeyourculture.com/)
+
+**Redes Sociales:**
+- [Github](https://github.com/alejandroereyesb)
+- [Linkedin](https://www.linkedin.com/in/alejandroreyesb/)
+
 ![panda_developer](../assets/clase1/dbfd8dba-3d30-4dd6-b4b6-2ffdc7c1cdbb.jpeg)
 
 **Bio:**
@@ -54,18 +63,6 @@ Por definición todo es nivel básico, pero en partes del contenido se incluyen 
 - [Twitter](https://twitter.com/kom_256)
 - [Github](https://github.com/UlisesGascon)
 - [Linkedin](https://www.linkedin.com/in/ulisesgascon/)
-
-
-
-![awesome_carlos](../assets/clase1/bcc15ba4-253b-4615-a36f-d81ed2fa810b.jpeg)
-
-**Bio:**
-"A veces sueño que tengo que tomar decisiones con if else, o masticar con while. Entreprenú. Lio a gente en @os_weekends. Cuando me dejan, prestidigito un poco. Cuando no, hago música. Papá de @gamify_es."
-
-**Redes Sociales:**
-- [Twitter](https://twitter.com/codingcarlos)
-- [Github](https://github.com/CodingCarlos)
-- [Linkedin](https://www.linkedin.com/in/CodingCarlos/)
 
 
 ### Hablemos de la web
