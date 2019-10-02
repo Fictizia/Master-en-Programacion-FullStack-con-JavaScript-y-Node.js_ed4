@@ -25,7 +25,7 @@ Sobre el Curso
     * 01/11/19 Puente de Todos los Santos
     * 06/12/19 Puente de la Constitución
     * 09/12/19 Traslado de la Inmaculada Concepción
-    * 24/12/18 - 07/01/19 Navidad
+    * 24/12/19 - 07/01/19 Navidad
     * 4-12/04/20 Semana Santa
     * 01-03/05/20 Puente Dia del trabajador + Dia de la Comunidad de Madrid
     * 15/05/2020 San Isidro
