@@ -13,7 +13,7 @@
 ### Importante
 
 ![img](../assets/clase2/bb8d9a32-db37-4e4b-a7aa-645c408aa725.png)
-Participa en Hacktoberfest 2019![Consola (Cheat-sheet)](https://hacktoberfest.digitalocean.com/)
+Participa en [Hacktoberfest 2019!](https://hacktoberfest.digitalocean.com/)
 
 
 ### Control de Versiones
