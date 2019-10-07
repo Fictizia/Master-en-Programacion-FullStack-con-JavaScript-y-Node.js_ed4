@@ -19,7 +19,7 @@ Durante este Máster en Programación FullStack con JavaScript y Node.js, irás 
 Sobre el Curso
 =================
 * Horario: Lunes, Miercoles y Viernes de 16h a 19h
-* Fechas: 2/10/19 - 29/05/20
+* Fechas: 2/10/19 - 29/06/20
 * Observaciones:
     * 12/10/19 Puente de la Hispanidad
     * 01/11/19 Puente de Todos los Santos
@@ -34,7 +34,9 @@ Teoría y Recursos
 =================
 Fecha | Teoría | Recursos | Contenido
 ------------ | ------------ | ------------- | -------------
-02/10/20 | [Clase 1](teoria/clase1.md) | [Clase 1](recursos/clase1.md) | Intro al Curso    
+02/10/20 | [Clase 1](teoria/clase1.md) | [Clase 1](recursos/clase1.md) | Intro al Curso
+04/10/20 | [Clase 2](teoria/clase2.md) | [Clase 2](recursos/clase2.md) | Git/Github/Gitlab/Bitbucket
+07/10/20 | [Clase 3](teoria/clase3.md) | [Clase 3](recursos/clase3.md) | Pseudocodigo y bases de algoritmia + Definición de Proyecto I   
 
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
