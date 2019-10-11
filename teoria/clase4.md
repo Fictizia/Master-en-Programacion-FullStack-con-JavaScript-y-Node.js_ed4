@@ -487,12 +487,12 @@ Formato | Descripción
     ```
 
 - **confirm()**
-> https://developer.mozilla.org/es/docs/Web/API/Window/confirm
-    ```javascript
+    >https://developer.mozilla.org/es/docs/Web/API/Window/confirm
+   ```javascript
     confirm("¿Esta seguro que desea abandonar esta web?");
-    ```
-    - Ejemplo Avanzado:
-    ```javascript
+   ```
+   > - Ejemplo Avanzado:
+   ```javascript
         var respuesta = confirm("presiona un botón!");
         if (respuesta === true) {
             console.log("Has aceptado!");
@@ -502,7 +502,7 @@ Formato | Descripción
     ```
 - **prompt()**
 > https://developer.mozilla.org/es/docs/Web/API/Window/prompt
-    ```javascript
+   ```javascript
     prompt("¿Como te llamas?");
     ```
     - Registremos los datos en una variable:
