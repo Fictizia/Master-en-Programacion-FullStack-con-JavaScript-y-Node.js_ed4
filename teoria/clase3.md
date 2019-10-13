@@ -262,28 +262,97 @@
 
 **1 -** Diseña un programa que imprima los numeros del 1 al 100.
 ```
-// SOLUCIÓN
+Proceso contadorPositivo
+	
+	Escribir "Empieza la cuenta!"
+
+	controlador = 1
+
+	Mientras controlador <= 100 Hacer
+		Escribir controlador
+		controlador = controlador +1
+	Fin Mientras
+	
+	Escribir "Terminó la cuenta mágica..."
+	
+FinProceso
 ```
 
 **2 -** Diseña un programa que muestre los numeros del 100 al 0.
 ```
-// SOLUCIÓN
+Proceso contadorNegativo
+	
+	controlador = 100
+	
+	Escribir "Empieza la cuenta!"
+	
+	Mientras controlador >= 0 Hacer
+		Escribir controlador
+		controlador = controlador -1
+	Fin Mientras
+	
+	Escribir "Terminó la cuenta mágica..."
+	
+FinProceso
 ```
 
 **3 -** Diseña un programa que muestre los numeros pares entre 0 y 100.
 ```
-// SOLUCIÓN
+Proceso contadorPares
+	
+	controlador = 0
+	
+	Escribir "Empieza la cuenta!"
+	
+	Mientras controlador <= 100 Hacer
+		Escribir controlador
+		controlador = controlador +2
+	Fin Mientras
+	
+	Escribir "Terminó la cuenta mágica..."
+	
+FinProceso 
 ```
 
 
 **4 -** Diseña un programa que simula el lanzamiento de una moneda al aire e imprimir si ha salido cara o cruz.
 ```
-// SOLUCIÓN
+Proceso azarMoneda
+	valor <- azar(2)
+	
+	Si valor = 1 Entonces
+		Escribir "Salio Cara!"
+	Sino
+		Escribir "Salio Cruz!"
+	Fin Si
+	
+FinProceso
 ```
 
 **5 -** Diseña un programa que simula cien tiradas de dos dados y contar las veces que entre los dos suman 10.
 ```
-// SOLUCIÓN
+Proceso azarMoneda
+
+	coincidencias <- 0
+	controlador <- 0
+	
+	Mientras controlador <= 100 Hacer
+		
+		dado1 <- azar(7)
+		dado2 <- azar(7)
+		tirada <- dado1 + dado2
+
+		Si tirada = 10 Entonces
+			coincidencias = coincidencias +1
+		Fin Si
+		
+		controlador = controlador + 1
+		
+	Fin Mientras
+	
+	Escribir "El azar ... sumó 10 un total de " coincidencias " veces"
+
+FinProceso
 ```
 
 
@@ -291,7 +360,28 @@
 - Trucos:
 	- Calcular porcentajes (segmento*100)/total
 ```
-// SOLUCIÓN
+Proceso porcentajeAlumnos
+	Escribir "El número de mujeres:"
+	Leer cantidadMujeres
+	
+	Escribir "El número de hombres:"
+	Leer cantidadHombres
+	
+	// Suma
+	totalAlumnos <- cantidadHombres + cantidadMujeres
+	Escribir "El total de alumnos es: ", totalAlumnos
+	
+	// Porcentaje mujeres
+	porcentajeMujeres <- (cantidadMujeres*100)/totalAlumnos
+	Escribir "El total de mujeres es: ", cantidadMujeres
+	Escribir "El % de mujeres es: ", porcentajeMujeres
+	
+	// Porcentaje hombres
+	porcentajeHombres <- (cantidadHombres*100)/totalAlumnos
+	Escribir "El total de hombres es: ", cantidadHombres
+	Escribir "El % de hombres es: ", porcentajeHombres
+
+FinProceso
 ```
 
 
@@ -300,7 +390,31 @@
 	- Estamos en los meses de invierno
 	- Y no es viernes o fin de semana.
 ```
-// SOLUCIÓN
+Proceso calcularDescuento
+    Escribir "¿En que mes estamos?"
+    Leer mes
+	
+    Escribir "¿En que día estamos?"
+    Leer diaSemana
+	
+    Escribir "¿Cuanto vale el producto?"
+    Leer precio	
+	
+	descuento <- 25*precio/100
+	precioConDescuento <- precio - descuento
+	
+	
+	Si mes = "Diciembre" | mes = "Enero" | mes = "Febrero"  Entonces
+		Si diaSemana = "Viernes" | diaSemana = "Sabado" | diaSemana  = "Domingo"  Entonces
+			Escribir "No se aplica descuento aunque sea invierno.. ven durante la semana mejor!. Debes pagar ", precio
+		Sino
+			Escribir "BINGO! Has acertado de mes y días. Debes pagar solamente ", precioConDescuento
+		Fin Si
+	Sino 
+		Escribir "No se aplica descuento.. ven en invierno mejor!. Debes pagar ", precio		
+	FinSi
+
+FinProceso
 ```
 
 **8 -**  Diseña un algoritmo para identificar a los clientes autorizados a entrar a nuestro sistema.
@@ -309,7 +423,31 @@
 	- Solo existen tres intentos
 	- Si se pasan los tres intentos. Se despliega un mensaje informativo.
 ```
-// SOLUCIÓN
+Proceso eureka
+	clave <- "Fictizia mola mucho"
+	acierto <- FALSO
+	contador <- 0
+	
+	Mientras contador < 3 & acierto = FALSO Hacer
+		Escribir "Dime el secreto:"
+		Leer secreto
+		
+		Si secreto = clave Entonces
+			acierto <- VERDADERO
+			Escribir secreto, " es la clave que esperaba!"
+		Sino
+			Escribir secreto, " no es correcto."
+		Fin Si
+		
+		contador<- contador+1
+		
+	Fin Mientras
+	
+	Si contador >= 3 Entonces
+		Escribir "Lo siento... pero has agotado los 3 intentos."
+	Fin Si
+
+FinProceso
 ```
 
 **9 -** Diseña un algoritmo introducido un numero y pasarlo a número romanos.
@@ -318,7 +456,76 @@
 ![numeros_romanos](../assets/clase3/588d205f-9c48-4036-bb72-178d649961d5.jpeg)
 
 ```
-// SOLUCIÓN
+Proceso conversionRomana
+	Escribir "Dame un número:"
+	Leer numero
+	
+	numeroOriginal <- numero
+	numeroRomano <- ""
+	
+	Si numero <= 50 & numero > 0 Entonces
+		
+			Mientras numero > 0 Hacer
+				// Escribir "Numero: ", numero
+				
+				Si numero = 50 Entonces
+					numeroRomano = "L"
+					numero = 0
+				Fin Si
+				
+				Si numero >= 40 & numero < 50 Entonces
+					numeroRomano = numeroRomano + "XL"
+					numero = numero - 40
+				Fin Si
+				
+				Si numero >= 10 & numero < 40 Entonces
+					numeroRomano = numeroRomano + "X"
+					numero = numero - 10
+				Fin Si	
+				
+				Si numero = 9 Entonces
+					numeroRomano = numeroRomano + "IX"
+					numero = numero - 9
+				Fin Si		
+				
+				Si numero = 8 Entonces
+					numeroRomano = numeroRomano + "VIII"
+					numero = numero - 8
+				Fin Si	
+				
+				Si numero = 7 Entonces
+					numeroRomano = numeroRomano + "VII"
+					numero = numero - 7
+				Fin Si	
+				
+				Si numero = 6 Entonces
+					numeroRomano = numeroRomano + "VI"
+					numero = numero - 6
+				Fin Si	
+				
+				Si numero = 5 Entonces
+					numeroRomano = numeroRomano + "V"
+					numero = numero - 5
+				Fin Si	
+				
+				Si numero = 4 Entonces
+					numeroRomano = numeroRomano + "IV"
+					numero = numero -4
+				Fin Si
+				
+				Si numero <= 3 & numero > 0 Entonces
+					numeroRomano = numeroRomano + "I"
+					numero = numero - 1
+				Fin Si		
+				
+			Fin Mientras
+			
+			Escribir numeroOriginal " en números romanos es " numeroRomano
+	Sino
+		Escribir numeroOriginal " NO es un número valido (0-50)"
+	Fin Si
+	
+FinProceso
 ```
 
 ### ¡Nuestro primer proyecto!
