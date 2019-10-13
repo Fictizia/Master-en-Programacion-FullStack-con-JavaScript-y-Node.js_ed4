@@ -551,15 +551,13 @@ Formato | Descripción
     ```
 - **prompt()**
 > https://developer.mozilla.org/es/docs/Web/API/Window/prompt
-   ```javascript
+```javascript
     prompt("¿Como te llamas?");
-    ```
-    - Registremos los datos en una variable:
-     ```javascript
-        var nombre = prompt("¿Como te llamas?");
-     ```
-
-
+```
+- Registremos los datos en una variable:
+```javascript
+    var nombre = prompt("¿Como te llamas?");
+```
 ### Ejercicios: Katas de JS
 
 **1 -** Prueba a realizar algunas [katas en Code Wars](https://www.codewars.com):
@@ -571,4 +569,3 @@ Formato | Descripción
   - [Get the Middle Character](https://www.codewars.com/kata/get-the-middle-character/javascript)
   - [Highest and Lowest](https://www.codewars.com/kata/highest-and-lowest)
   - [Shortest word](https://www.codewars.com/kata/shortest-word)
-
