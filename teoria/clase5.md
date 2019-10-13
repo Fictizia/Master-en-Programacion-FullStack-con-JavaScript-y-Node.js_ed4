@@ -366,14 +366,42 @@ Otras palabras reservadas en modo estricto:
 - Valor de su producto
 
 ```javascript
-    // Solución aquí
+    // Declarar funciones
+function suma(a,b){
+    return a+b;
+}
+function resta(a,b){
+    return a-b;
+}
+function multiplicacion(a,b){
+    return a*b;
+}
+function division(a,b){
+    return a/b;
+}
+
+// Ejecutar funciones
+var n1 = Number(prompt("introduce n1"));
+var n2 = Number(prompt("introduce n2"));
+
+console.log("Suma: "+suma(n1,n2));
+console.log("Resta: "+resta(n1,n2));
+console.log("Multiplicacion: "+multiplicacion(n1,n2));
+console.log("Division: "+division(n1,n2));
 ```
 
 **2 -** Diseña un algoritmo para calcular el porcentaje de hombres y mujeres en nuestro curso.
 - Trucos:
 	- Calcular porcentajes (segmento*100)/total
 ```javascript
-	// Solución aquí
+	function porcentajes(chicas,chicos){
+    var total = chicas + chicos;
+    var pchicas = (chicas*100)/total;
+    var pchicos = (chicos*100)/total;
+    console.log("Personas: "+total+", chicas: "+pchicas.toFixed(2)+"%, chicos: "+pchicos.toFixed(2)+"%");
+}
+
+porcentajes(2,7);
 ```
 
 ### Comparadores básicos
