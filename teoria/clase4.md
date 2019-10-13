@@ -453,29 +453,78 @@ Formato | Descripción
 
 **1 -** Utiliza .assert para controlar cuando se muestra tu nombre por consola.
 ```javascript
- // Tu solución
+ function ejercicio1() {
+  var nombre = "pepe";
+  var validacion = nombre == "ana";
+  // Incorrecto
+  console.assert(validacion, "El nombre NO es correcto");
+                 
+  // Correcto
+  nombre = "ana";
+  console.assert(nombre == "ana", "El nombre NO es correcto") ;                
+}
 ```
 
 **2 -** Crea un script que nos permita calcular el tiempo que se necesita para realizar la siguientes acciones.
 - Especificaciones:
 	- Imprimir tu nombre usando **console.log, console.info, console.warn**
 ```javascript
- // Tu solución
+ function ejercicio2() {
+  console.time("Medición tiempos");
+  console.log("Me llamo Alejandro");
+  console.info("Me llamo Alejandro");
+  console.warn("Me llamo Alejandro");
+  console.timeEnd("Medición tiempos");
+}
 ```
 
 **3 -** Partiendo del ejercicio anterior mejora los estilos de cada mensaje usando estilos.
 ```javascript
- // Tu solución
+ function ejercicio3() {
+  console.time("Medición tiempos");
+  console.log("%c Me llamo Pepe",'background: #1E3038; color: #FFF; font-size:20px;');
+  console.info("%c Me llamo Pepe",'background: #FFC125; color: #2e292a; font-size:15px; border-style: dotted;');
+  console.warn("%cMe llamo Pepe",'background: #FA3C0E; color: #F2F5F5; font-size:15px; border-style: solid;');
+  console.timeEnd("Medición tiempos");
+}
 ```
 
 **4 -** Agrupa cada tipo de mensaje y añade un contador de tiempo por cada grupo.
 ```javascript
- // Tu solución
+ function ejercicio4() {
+  console.time("Medición tiempos");
+    console.time("Tiempo console log");
+        console.group("Console log");
+          console.log("%c Me llamo Pepe",'background: #1E3038; color: #FFF; font-size:20px;');
+        console.groupEnd();
+    console.timeEnd("Tiempo console log");
+    console.time("Tiempo console info");
+        console.group("Console info");
+            console.info("%c Me llamo Pepe",'background: #FFC125; color: #2e292a; font-size:15px; border-style: dotted;');
+        console.groupEnd();
+    console.timeEnd("Tiempo console info");    
+    console.time("Tiempo console warn");
+        console.group("Console warn");
+            console.warn("%cMe llamo Pepe",'background: #FA3C0E; color: #F2F5F5; font-size:15px; border-style: solid;');
+        console.groupEnd();
+    console.timeEnd("Tiempo console warn");
+  console.timeEnd("Medición tiempos");    
+}
 ```
 
 **5 -** Crea una tabla usando la consola para mostrar el nombre de tus compañeros y el puesto que ocupa en la clase.
 ```javascript
- // Tu solución
+ function ejercicio5(){
+  var clase = [
+     { nombre: "Ana", puesto: 1 },
+     { nombre: "Luis", puesto: 2 },
+     { nombre: "María", puesto: 3 },
+     { nombre: "Andrea", puesto: 4 },
+     { nombre: "Mario", puesto: 5},
+     { nombre: "Pepe", puesto: 6 }
+ ];
+   console.table(clase);
+}
 ```
 
 
