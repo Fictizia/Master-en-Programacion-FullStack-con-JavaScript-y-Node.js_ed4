@@ -93,13 +93,13 @@
 
 - Ejemplo for/in:
     ```javascript
-		var persona = {nombre:"Pepe", apellidos:"Perez", edad:25};
+	var persona = {nombre:"Pepe", apellidos:"Perez", edad:25};
 
-		var texto = "";
-		for (var x in persona) {
-		  texto += persona[x];
-		}
-		console.log(texto);
+	var texto = "";
+	for (var x in persona) {
+	  texto += persona[x];
+	}
+	console.log(texto);
     ```
 
 - Ejemplo for/of:
