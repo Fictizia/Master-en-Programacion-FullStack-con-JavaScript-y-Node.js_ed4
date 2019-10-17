@@ -63,7 +63,7 @@
 - Estructura for/in:
     ```javascript
     /*  --for/in--
-	for (-variable local- in -secuencia iterable-) {
+	for (-variable local- in -objeto iterable-) {
 		-Instrucciones-
 	}
     */
@@ -72,7 +72,7 @@
 - Estructura for/of:
     ```javascript
     /*  --for/of--
-	for (-variable local- of -objeto iterable-) {
+	for (-variable local- of -secuencia iterable-) {
 		-Instrucciones-
 	}
     */
@@ -317,3 +317,17 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 ```javascript
 	// Solución aquí
 ```
+
+**8 -** Hacer uso de for...in para sacar mensajes como este:
+
+> Ejemplo de salida:
+> Nombre: Jason Nissen, Apellidos: jasonnissen, puesto:1
+```javascript
+//Ejemplo array de 3 objetos JSON:
+var clase =
+[	{"name":"Jason Nissen","username":"jasonnissen","puesto":1},
+	{"name":"Chris Rouw","username":"chrisrouw","puesto":3},
+	{"name":"Chad Feldmann","username":"cfeldmann","puesto":2}];
+```
+
+
