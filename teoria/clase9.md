@@ -336,7 +336,7 @@ console.log('  Fictizia '.trim()); // 'Fictizia'
 	console.log(acumulacion); // 10
     ```
 
-- .reduceRight() `Nivel Avanzado` :diamonds: *Aplica una función a un acumulador y a cada valor (de izq. a dcha.) de un vector para reducirlo a un único valor*:
+- .reduceRight() `Nivel Avanzado` :diamonds: *Aplica una función a un acumulador y a cada valor (de dcha. a izq.) de un vector para reducirlo a un único valor*:
     ```javascript
   	var reduceRight = [0,-3,1,2,4,6].reduce(function(valorAnterior, valorActual, indice, vector){
 	  return valorAnterior + valorActual;
