@@ -43,9 +43,9 @@
        function verificarValorMinimo(num){
        
        	if (num >= Number.MIN_VALUE) {
-       	  console.log("El número no es infinito");
+       	  console.log("El número no es cero");
        	} else {
-       	  console.log("El número es infinito");
+       	  console.log("El número es cero");
        	}
        	
        }
