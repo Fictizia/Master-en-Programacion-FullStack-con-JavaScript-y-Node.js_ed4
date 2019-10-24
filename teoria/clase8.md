@@ -221,13 +221,40 @@
 **1 -** Diseña un algoritmo que simula el lanzamiento de una moneda al aire e imprimir si ha salido cara o cruz.
 
 ```javascript
-    //Solución aquí
+        function azarMoneda() {
+
+        var valor = Math.floor((Math.random() * 2) + 1);
+
+        if (valor === 1){
+            console.info("Ha salido Cara!!");
+        } else {
+            console.info("Ha salido Cruz!");
+        }
+
+    }
 ```
 
 **2 -** Diseña un algoritmo que  simula cien tiradas de dos dados y contar las veces que entre los dos suman 10.
 
 ```javascript
-    //Solución aquí
+    function azarDados() {
+
+        var coincidencias = 0;
+
+        for (var i = 0; i < 100; i++) {
+
+            var dado1 = Math.floor((Math.random() * 6) + 1);
+            var dado2 = Math.floor((Math.random() * 6) + 1);
+            var tirada = dado1 + dado2;
+
+            if (tirada === 10) {
+                coincidencias++;
+            }
+        };
+
+        console.info("El azar ... sumó 10 un total de " +coincidencias+ " veces")
+
+    }
 ```
 
 ### Dates
@@ -376,7 +403,89 @@
 
 
 ```javascript
-	//Solución aquí
+	
+- Solución 1:
+```javascript
+
+    // Opcion 1
+    function verificadorDeFechas (day, month, year) {
+        // Opcion 1
+        var fecha = new Date(year, month-1, day);
+
+        if (fecha.getFullYear() === year){
+            var opciones = { 
+                weekday: 'long',
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric'
+            };
+            var fechaFormato = fecha.getDate() + "/" + (fecha.getMonth()+1) +"/"+ fecha.getFullYear(); 
+            
+            console.info("La fecha es correcta", fechaFormato);
+            console.info("La fecha en otro formato: ", fecha.toLocaleString("es-ES", opciones));
+ 
+        } else {
+            console.warn("Error! los datos no son correctos!");         
+        }
+    }
+```
+
+- Solución 2:
+```javascript
+
+    function verificadorDeFechas (day, month, year) {
+        var fechaDetalle,
+        fecha = day + "/" + month + "/" + year;
+
+        if(day <= 31 && day > 0 && month <=12 && month > 0 && year >= 0){
+            console.info("La fecha es correcta", fecha);
+
+            switch (month) {
+                case 1:
+                    fechaDetalle = day + " de Enero de " + year;
+                    break;
+                case 2:
+                    fechaDetalle = day + " de Febrero de " + year;
+                    break;
+                case 3:
+                    fechaDetalle = day + " de Marzo de " + year;
+                    break;
+                case 4:
+                    fechaDetalle = day + " de Abril de " + year;
+                    break;
+                case 5:
+                    fechaDetalle = day + " de Mayo de " + year;
+                    break;
+                case 6:
+                    fechaDetalle = day + " de Junio de " + year;
+                    break;
+                case 7:
+                    fechaDetalle = day + " de Julio de " + year;
+                    break;
+                case 8:
+                    fechaDetalle = day + " de Agosto de " + year;
+                    break;
+                case 9:
+                    fechaDetalle = day + " de Septiembre de " + year;
+                    break;
+                case 10:
+                    fechaDetalle = day + " de Octubre de " + year;
+                    break;
+                case 11:
+                    fechaDetalle = day + " de Noviembre de " + year;
+                    break;
+                case 12:
+                    fechaDetalle = day + " de Diciembre de " + year;
+                    break;
+            }
+
+            console.info("La fecha en otro formato: ", fechaDetalle);
+
+        } else {
+            console.warn("Error! los datos no son correctos!");
+        }
+
+    }
 ```
 
 ```javascript
@@ -437,25 +546,77 @@ Nota: Partiendo del ejemplo de [MDN](https://developer.mozilla.org/en-US/docs/We
 
 **4 -** ¿Que fecha será dentro de 30 días?
 ```javascript
-    //Solución aquí
+    var ahora = new Date();
+    console.log("Hoy es " + ahora.toLocaleString());
+    ahora.setDate(ahora.getDate() + 30);
+    console.log("En 30 días será " + ahora.toLocaleString());
 ```
 
 **5 -** ¿Cuantas horas han pasado desde que emepezó este master? y... ¿en días?
 ```javascript
-    //Solución aquí
+    var inicio = new Date(2018, 10, 3, 19, 0, 0);
+    console.log("Fecha de inicio: " + inicio.toLocaleString());
+    var ahora = new Date();
+    console.log("Fecha actual: " + ahora.toLocaleString());
+    var diferencia = ahora - inicio;
+        
+    var segundos = Math.floor( diferencia / 1000);
+    var horas = Math.floor( diferencia / ( 60 * 60 * 1000 ) );
+    var minutos = Math.floor( diferencia / ( 60 * 1000 ) );
+    var dias = Math.floor( diferencia / ( 24 * 60 * 60 * 1000 ) );
+    
+    console.log("Han pasado " + diferencia +"ms");
+    console.log("Han pasado "+ segundos +" segundos.");
+    console.log("Han pasado "+ minutos +" minutos.");
+    console.info("Han pasado "+ horas +" horas.");
+    console.info("Han pasado "+ dias +" días.");
 ```
 
 **6 -** ¿Cuantos milisengundos quedan para terminar el master? y... ¿en horas o días?
 ```javascript
-    //Solución aquí
+    var fin = new Date(2019, 7, 1, 22, 0, 0);
+    console.log("Fecha de finalización: " + fin.toLocaleString());
+    var ahora = new Date();
+    console.log("Fecha actual: " + ahora.toLocaleString());
+    var diferencia = fin - ahora;
+        
+    var segundos = Math.floor( diferencia / 1000);
+    var horas = Math.floor( diferencia / ( 60 * 60 * 1000 ) );
+    var minutos = Math.floor( diferencia / ( 60 * 1000 ) );
+    var dias = Math.floor( diferencia / ( 24 * 60 * 60 * 1000 ) );
+    
+    console.log("Quedan " + diferencia +"ms");
+    console.log("Quedan "+ segundos +" segundos.");
+    console.log("Quedan "+ minutos +" minutos.");
+    console.info("Quedan "+ horas +" horas.");
+    console.info("Quedan "+ dias +" días.");
 ```
 
 **7 -** ¿Que fecha será dentro de un año y 10 horas más?
 ```javascript
-    //Solución aquí
+        var ahora = new Date();
+    console.log("Hoy es " + ahora.toLocaleString());
+    ahora.setHours(ahora.getHours() + 10);
+    ahora.setFullYear(ahora.getFullYear() + 1);
+    console.log("En un año y 10 horas será " + ahora.toLocaleString());
 ```
 
 **8 -** Imprimir por consola la fecha completa (formato texto) en koreano y japones.
 ```javascript
-    //Solución aquí
+    var ahora = new Date();
+    
+    var opciones = { 
+        weekday: 'long',
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric'
+    };
+    
+    console.log(ahora.toLocaleString("ko-KO", opciones));
+    console.log(ahora.toLocaleString("ja-JA", { 
+        weekday: 'long',
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric'
+    }));
 ```
