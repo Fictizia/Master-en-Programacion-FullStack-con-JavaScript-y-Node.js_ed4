@@ -44,6 +44,7 @@ Fecha | Teoría | Recursos | Contenido
 18/10/19 | [Clase 8](teoria/clase8.md) | [Clase 8](recursos/clase8.md) | Números, Math y Fechas
 21/10/19 | [Clase 9](teoria/clase9.md) | [Clase 9](recursos/clase9.md) | Cadenas y Arrays
 23/10/19 | [Clase 10](teoria/clase10.md) | [Clase 10](recursos/clase10.md) | Objetos y funciones
+25/10/19 | [Clase 11](teoria/clase11.md) | [Clase 11](recursos/clase11.md) | Práctica: Maquina Expendedora por consola
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
