@@ -272,7 +272,7 @@ console.log('  Fictizia '.trim()); // 'Fictizia'
 
 - .every() *verifica si todos los elementos en el arreglo pasan la prueba implementada por la función dada:*
     ```javascript
-	function tamañoValido(elemento, indice, arrreglo) {
+	function tamañoValido(elemento, indice, arreglo) {
 	  return elemento >= 10;
 	}
 	[12, 5, 8, 130, 44].every(tamañoValido);   // false
@@ -336,7 +336,7 @@ console.log('  Fictizia '.trim()); // 'Fictizia'
 	console.log(acumulacion); // 10
     ```
 
-- .reduceRight() `Nivel Avanzado` :diamonds: *Aplica una función a un acumulador y a cada valor (de izq. a dcha.) de un vector para reducirlo a un único valor*:
+- .reduceRight() `Nivel Avanzado` :diamonds: *Aplica una función a un acumulador y a cada valor (de dcha. a izq.) de un vector para reducirlo a un único valor*:
     ```javascript
   	var reduceRight = [0,-3,1,2,4,6].reduce(function(valorAnterior, valorActual, indice, vector){
 	  return valorAnterior + valorActual;

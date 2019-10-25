@@ -43,9 +43,9 @@
        function verificarValorMinimo(num){
        
        	if (num >= Number.MIN_VALUE) {
-       	  console.log("El número no es infinito");
+       	  console.log("El número no es cero");
        	} else {
-       	  console.log("El número es infinito");
+       	  console.log("El número es cero");
        	}
        	
        }
@@ -360,8 +360,8 @@
     ```
     -.toUTCString(), .toISOString() *Devuelve una cadena con la fecha en formatos específicos*
     ```javascript
-        ahora.toISOString(); // UTC
-        ahora.toUTCString(); // ISO
+        ahora.toUTCString(); // UTC
+        ahora.toISOString(); // ISO
     ```
     -..toLocaleString() *Devuelve una cadena con la fecha en version local.*
     ```javascript
