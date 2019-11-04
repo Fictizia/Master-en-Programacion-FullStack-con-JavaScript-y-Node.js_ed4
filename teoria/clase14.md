@@ -309,8 +309,8 @@ unmonitorEvents(document.body, "click");	// Dejar de seguir los eventos de un ti
 - Estructura bien tu código
 - Usa linters para todo (HTML, CSS y JS)
 - Encola y empaqueta los cambios del DOM
-- minifica, ofusca y comprime siempre que peudas los ficheros
-- Vlaida las accioens del susuario usando js cuando lo necesites
+- Minifica, ofusca y comprime siempre que puedas los ficheros
+- Valida las accioens del usuario usando js cuando lo necesites
 - Considera el FrontEnd como una zona de riesgo y piensa en la seguridad primero
 - Utiliza naming para tu CSS
 - Utiliza plugins y herramientas para calidar tu proyecto en todo momento
