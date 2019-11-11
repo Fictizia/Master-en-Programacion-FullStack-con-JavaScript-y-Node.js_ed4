@@ -20,7 +20,7 @@
 - Y se establece un dialogo por pasos (peticion y respuesta)
 
 **Recursos**
-- [How Does the Internet Actually Work?](https://www.youtube.com/watch?v=ZonvMhT5c_Q)
+- [How Does the Internet Actually Work?](https://www.youtube.com/watch?v=bjrDGZvpkDI)
 - [Inside a Google data center](https://www.youtube.com/watch?v=XZmGGAbHqa0)
 - [La HISTORIA de INTERNET #DiaDeInternet - Drawing Things](https://www.youtube.com/watch?v=mGG5o6vbKyQ)
 - [How It Works: Internet of Things](https://www.youtube.com/watch?v=QSIPNhOiMoE)
@@ -278,8 +278,6 @@ app.listen(8080);
 
 ![img](../assets/clase16/f11e14a6-b1a6-4c55-a0f0-365a667834e2.png)
 
-![img](../assets/clase16/9794a5ed-35a3-4b5c-b223-38c71831d0cb.html)
-
 - json (formato)
 ```javascript
 { foo: 'bar' }
@@ -397,32 +395,8 @@ Soporte en cliente (librerías):
 **1 -** Sacar en el html los [datos de polen](http://airemad.com/api/v1/pollen).
 
 ```javascript
-var xmlHttp = new XMLHttpRequest();
-xmlHttp.onreadystatechange = function() {
-
-  if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-      var datos = (JSON.parse(xmlHttp.responseText));
-
-      var contenido = "";
-      datos.forEach(function(estacion) {
-          contenido += "<h1>" + estacion.name + " (" + estacion.id + ")</h1>"
-          contenido += "<ul>"
-
-          for (var medicion in estacion.mediciones) {
-              contenido += "<li>" + medicion + ": <i>" + estacion.mediciones[medicion]["resumen"] + "</i></li>"
-          }
-
-          contenido += "</ul>"
-      })
-      document.body.innerHTML = contenido;
-  } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
-      console.error("ERROR! 404");
-      console.info(JSON.parse(xmlHttp.responseText));
-  }
-};
-
-xmlHttp.open("GET", "http://airemad.com/api/v1/pollen", true);
-xmlHttp.send();
+    // Solución aquí
+    // Petición a http://airemad.com/api/v1/pollen
 ```
 
 **2 -** Sacar en el html el tiempo meteorológico de Madrid, Barcelona y Valencia. 
@@ -430,57 +404,18 @@ Nota: http://openweathermap.org te será de gran ayuda, busca la solución al er
 
 
 ```javascript
-	var contenido = "";
-  	function temperaturaCiudad (ciudad) {
-        var xmlHttp = new XMLHttpRequest(),
-        APIKey = '', // Puedes usar una cuenta gratuita -> http://openweathermap.org/price
-        cURL = 'http://api.openweathermap.org/data/2.5/weather?q='+ciudad+'&APPID='+APIKey;
-    
-        xmlHttp.onreadystatechange = function () {
-            if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-                var datos = (JSON.parse(xmlHttp.responseText));
-	              contenido += "<h1>"+datos.name+"</h1>"
-	              contenido += "<p>"+datos.weather[0].description+"</p>"
-	              document.body.innerHTML = contenido;
-            } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
-                datos = JSON.parse(xmlHttp.responseText);
-                console.error("ERROR! 404");
-                console.info(datos);
-            }
-        };
-    
-        xmlHttp.open( "GET", cURL, true );
-        xmlHttp.send();
-    }
-    
-    temperaturaCiudad("Madrid");
-    temperaturaCiudad("Barcelona");
-    temperaturaCiudad("Valencia");
+  // Solución aquí
+  // Hace falta generarse una API key 
+  // APIKey = '', // Puedes usar una cuenta gratuita -> http://openweathermap.org/price
+          cURL = 'http://api.openweathermap.org/data/2.5/weather?q='+ciudad+'&APPID='+APIKey;
 ```
 
 **3 -** Jugando con [datos abiertos](http://datos.gob.es/), saquemos los detalles de todos los cuadros eléctricos de Gijón por consola.
 
 
 ```javascript
-    function peticionAjax (url) {
-	  var xmlHttp = new XMLHttpRequest();
-	
-	            xmlHttp.onreadystatechange = function () {
-	
-	                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-	                    var datos = (JSON.parse(xmlHttp.responseText));
-                        console.log(datos)
-	                } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
-	                    console.error("ERROR! 404");
-	                    console.info(JSON.parse(xmlHttp.responseText));
-	                }
-	            };
-	
-	            xmlHttp.open( "GET", url, true );
-	            xmlHttp.send();
-	}
-    
-	peticionAjax("http://opendata.gijon.es/descargar.php?id=163&tipo=JSON");
+  // Solucion aquí
+  // URL petición AJAX http://opendata.gijon.es/descargar.php?id=163&tipo=JSON
 ```
 
 ```
