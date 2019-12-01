@@ -54,7 +54,7 @@ Fecha | Teoría | Recursos | Contenido
 13/11/19 | [Clase 18](teoria/clase18.md) | [Clase 18](recursos/clase18.md) | Ajax III: HTTP/2 & Fetch
 29/11/19 | [Clase 19](teoria/clase19.md)  | [Clase 19](teoria/clase19.md) | Tiempo para proyecto personal
 2/12/19 | [Clase 20](teoria/clase20.md) | [Clase 20](recursos/clase20.md) | Rendimiento, JSDocs, Guías de estilo y SEMVER
-4/12/19 | [Clase 21](teoria/clase21.md) | [Clase 21](recursos/clase21.md) | Live Coding: Github
+4/12/19 | [Clase 21](teoria/clase21.md) | [Clase 21]| Live Coding: Github
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
