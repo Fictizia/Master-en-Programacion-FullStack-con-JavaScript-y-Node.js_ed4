@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <title>Star Wars Api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="img-intro">
+
+        </div>
+        <div class="twinkling">
+            <h1>Bienvenido al universo de</h1>
+            <img src="img/logo-star-wars.png" alt="Logo Marvel">
+        </div>
+
+    </header>
+    <div id="initialLoad">
+        <div id="laser1">
+            <img src="img/laser-red.png">
+            <div id="carga"></div>
+        </div>
+        <div id="laser2">
+            <img src="img/laser-blue.png">
+            <div id="carga"></div>
+        </div>
+    </div>
+    <main>
+        <div class="division">
+            <a href="index-films.html">
+                <div id="mov" onmouseover="divDivisorOne()" onmouseout="divDivisorOneNormal()">
+                    <div id="buttom-efectOne">
+                        <h3 id="sectionOne">Movies</h3>
+                        <hr class="red-line">
+                    </div>
+                </div>
+            </a>
+            <a href="index-species.html">
+                <div id="seri" onmouseover="divDivisorTwo()" onmouseout="divDivisorTwoNormal()">
+                    <div id="buttom-efectTwo">
+                        <h3 id="sectionTwo">Species</h3>
+                        <hr class="red-line">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+
+
+
+</body>
+
+<script type="text/javascript" src="js/script-stylos.js"></script>
+
+</html>
