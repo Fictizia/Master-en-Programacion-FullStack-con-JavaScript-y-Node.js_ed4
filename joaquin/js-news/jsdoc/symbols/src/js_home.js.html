@@ -1,0 +1,21 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">/** @function */</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">home</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="WHIT">  </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">renderBody</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">element</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="WHIT">    </span><span class="NAME">let</span><span class="WHIT"> </span><span class="NAME">divDOM</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">document.createElement</span><span class="PUNC">(</span><span class="STRN">"div"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="WHIT">    </span><span class="NAME">divDOM.classList.add</span><span class="PUNC">(</span><span class="STRN">"home-body"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="WHIT">    </span><span class="NAME">element.appendChild</span><span class="PUNC">(</span><span class="NAME">divDOM</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  7</span> </span><span class="WHIT">  </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="WHIT">  </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">renderSetionHeader</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">section</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="WHIT">    </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">markup</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="TOKN">`</span><span class="WHIT">
+<span class='line'> 10</span> </span><span class="WHIT">      </span><span class="PUNC">&lt;</span><span class="NAME">img</span><span class="WHIT"> </span><span class="NAME">class</span><span class="PUNC">=</span><span class="STRN">"main-image link-image"</span><span class="WHIT"> </span><span class="NAME">src</span><span class="PUNC">=</span><span class="STRN">"../assets/${section.image}"</span><span class="PUNC">></span><span class="WHIT">
+<span class='line'> 11</span> </span><span class="WHIT">      </span><span class="PUNC">&lt;</span><span class="NAME">h1</span><span class="PUNC">></span><span class="NAME">$</span><span class="PUNC">{</span><span class="NAME">section.title</span><span class="PUNC">}</span><span class="PUNC">&lt;</span><span class="REGX">/h1>
+<span class='line'> 12</span>       ${section.loadingData ? '&lt;img class="loading-image" src="../</span><span class="NAME">assets</span><span class="PUNC">/</span><span class="NAME">loading</span><span class="PUNC">-</span><span class="STRN">'+section.image+'</span><span class="STRN">">' : ''}
+<span class='line'> 13</span>     `;
+<span class='line'> 14</span>     let sectionDOM = document.createElement("</span><span class="NAME">section</span><span class="TOKN"></span></pre></body></html>
