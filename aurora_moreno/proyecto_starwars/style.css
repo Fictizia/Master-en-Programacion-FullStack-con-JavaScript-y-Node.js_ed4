@@ -1,0 +1,523 @@
+body {
+    margin: 0;
+    font-family: Roboto;
+}
+
+div#img-intro {
+    background-image: url(style/intro-imgf.jpg);
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: 800px 350px;
+    height: 384px;
+
+
+}
+
+
+.twinkling {
+
+    height: 230px;
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 60px 0 75px;
+
+    background: url(style/twinkling.png) top center;
+    -moz-animation: stars 200s linear infinite;
+    -ms-animation: stars 200s linear infinite;
+    -o-animation: stars 200s linear infinite;
+    -webkit-animation: stars 200s linear infinite;
+    animation: stars 200s linear infinite;
+
+ 
+}
+
+svg {
+    width: 100%;
+    margin-top: -55px;
+    position: relative;
+    height: 71px;
+}
+
+.st0 {
+    fill: #FFFFFF;
+}
+
+@keyframes stars {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+
+div.twinkling img {
+    width: 300px;
+}
+
+.division {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    height: 470px;
+}
+
+div#mov, div#seri {
+    padding: 280px 0;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 30px;
+    color: black;
+    background-color: white;
+}
+
+#buttom-efectOne h3, #buttom-efectTwo h3 {
+    margin: 0;
+    transition: 0.5s ease;
+}
+
+hr.red-line {
+    border: none;
+    height: 5px;
+    background-color: #ffc500;
+    width: 160px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+}
+
+
+#buttom-efectOne, #buttom-efectTwo {
+    color: black;
+    background-color: white;
+    width: 250px;
+    margin: auto;
+    padding: 10px 0 0px;
+    transition: 0.5s ease;
+}
+
+div#mov:hover {
+    background-image: url(style/fondo-movies.jpg);
+    transition: all 2s ease;
+}
+div#mov {
+    background-image: url(style/fondo-white.jpg);
+}
+
+div#seri:hover {
+    background-image: url(style/fondo-species.jpg);
+    transition: all 2s ease;
+}
+div#seri {
+    background-image: url(style/fondo-white.jpg);
+}
+
+.division a {
+    text-decoration: none;
+}
+
+#bigSpecies {
+    display: flex;
+    text-align: center;
+    padding: 0px 0px 70px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+
+
+
+
+nav#close {
+    position: absolute;
+    top: 360px;
+    right: 3%;
+    text-align: right;
+    background-color: #040404;
+    padding: 20px 30px;
+    font-size: 38px;
+    color: #ffc500;
+    font-weight: 900;
+    transform: scale(0.9);
+    cursor: pointer;
+
+   
+}
+
+nav#close:hover {
+
+    transform: scale(1);
+   
+}
+
+
+.principal{
+    cursor: pointer;
+}
+
+div.speciesBox {
+
+    margin: 70px 30px 0px;
+   
+}
+
+div#speContent {
+    text-align: left;
+}
+
+
+.circulos {
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #ffc500;
+}
+
+
+ul#listado li {
+    font-size: 18px;
+}
+
+
+div#speContent {
+    text-align: left;
+    margin-top: 50px;
+    padding-left: 61px;
+    width: 50%;
+}
+
+
+div#speContent p {
+    margin: 0 10px;
+}
+
+ul#listado { 
+    list-style-image: url("img/puntos.png"); 
+}
+
+
+.content {
+    margin-left: 43px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.content p {
+    display: list-item;
+    list-style-image: url(img/plus.png);
+    font-size: 23px;
+}
+
+
+li {
+    margin: 10px;
+    font-weight: 500;
+}
+
+
+.secondContent {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 80px;
+}
+
+@keyframes opacidad{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+
+
+.secondContent h4 {
+    display: inline;
+    margin: 20px;
+    display: inline;
+    margin: 20px auto 0px;
+    text-transform: uppercase;
+    font-weight: 100;
+    border-bottom: 1px solid black;
+  
+    padding-bottom: 5px;
+}
+
+.secondContent div {
+    display: grid;
+    padding: 20px 0px;
+    grid-template-columns: auto;
+    border: 5px solid white;
+    background-color: #fff9e3;
+    
+}
+
+.secondContent img {
+    width: 150px;
+    margin: auto;
+}
+
+.principal img {
+    margin-bottom: -4px;
+}
+
+.principal h1.nombrestitle {
+    padding: 40px 0;
+    width: 400px;
+    margin: auto;
+    background-color: #080808b3;
+    color: white;
+    transition: all 1s ease;
+    transform: translate(25px, -59px);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+div#principal2 {
+    width: 600px;
+    margin: 0 10px 0 80px;
+}
+
+.secondstyle {
+    background-color: #b5060d!important;
+    width: 387px;
+    height: 497px;
+    transform: rotate(90deg)!important;
+    position: absolute;
+    top: 500px;
+    margin-left: 150px;
+    padding-top: 25px;
+    text-transform: uppercase;
+    mix-blend-mode: soft-light;
+
+}
+
+
+@keyframes move-hover{
+
+    0%{
+        margin-left: 165px;
+    }
+
+    50%{
+        margin-left: 185px;
+    }
+
+    80%{
+        margin-left: 160px;
+    }
+}
+
+main#filmcont {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 50px;
+    justify-content: center;
+}
+
+div.prinFilms h1 {
+    width: 450px;
+    height: 45px;
+    background-color: #ffc500;
+    margin: auto;
+    padding: 35px 0;
+    color: white;
+    box-shadow: 2px 3px 5px 0px black;
+    text-shadow: 3px 1px 3px rgba(255, 255, 255, 0.28), 0px -1px 2px rgba(0, 0, 0, 0.39);
+}
+
+div.prinFilms p {
+    width: 370px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+
+div.prinFilms {
+    margin: 20px;
+}
+
+.fa-angle-left:before {
+    content: "\f104";
+}
+
+
+.return path {
+    transform: scale(0.08);
+
+    fill: #ffffff;
+
+}
+
+svg.return {
+    width: 37px;
+    padding: 15px 18px;
+    position: fixed;
+    height: 44px;
+    background-color: #9c9c9c6e;
+    transition: 1s cubic-bezier(0, -0.5, 1, 1.71) all;
+}
+
+svg.return:hover {
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    transform: translateX(-14px);
+    background-color: #efb900;
+}
+
+div#procesLoad {
+    transform:  translateY(152px);
+    width: 400px;
+    margin: auto;
+}
+
+
+.laser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.laser img {
+    height: 20px;
+    width: auto!important;
+}
+
+div#carga {
+    width: 264px;
+    height: 8px;
+    background-color: white;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    transform-origin: left;
+    box-shadow: 0px 0px 16px 8px #f91414;
+    transition: 2s ease all;
+}
+
+
+@keyframes loadanimation{
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+}
+
+.errorBox {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+div#speak {
+    width: 300px;
+    margin: 40px 0px 0px 60px;
+    background-color: #9e8ecac4;
+    padding: 19px 30px;
+    height: 110px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 4px 4px 8px 0px black;
+    color: white;
+}
+
+div#initialLoad {
+    width: 100%;
+    height: 990px;
+    background-color: #080808;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    transition: 2s ease all;
+}
+
+#carga {
+    animation: loadanimation 1s 1;
+}
+
+div#laser1 {
+    transform: rotate(-47deg) translate(52px, 120px);
+    display: flex;
+    align-items: center;
+}
+
+div#laser2 {
+    transform: rotate(227deg) translate(57px, -126px);
+    display: flex;
+    align-items: center;
+    
+}
+
+div#laser2 div {
+    box-shadow: 0px 0px 16px 8px #4ebddb;
+}
+
+div#initialLoad img {
+    height: 22px;
+}
+
+.secondBox {
+    background-color: #2f2f2f;
+    width: 420px;
+    margin: 0px 15px;
+    color: white;
+    height: 315px;
+    padding-top: 1px;
+}
+
+@media only screen and (max-width: 600px){
+
+    .secondstyle {
+        width: 100%;
+        height: 71px;
+        transform: none!important;
+        position: relative;
+        top: -34px;
+        margin-left: 0;
+        margin: auto;
+        padding-top: 49px;
+    }
+    div#principal2 {
+        width: 80%;
+        margin: auto;
+    }
+
+    div#principal2 img {
+        width: 100%;
+    }
+
+    div#speContent {
+        text-align: left;
+        margin-top: 0px;
+        padding-left: 0;
+        width: 95%;
+        margin: auto;
+    }
+
+    .secondContent {
+        width: 100%;
+    }
+
+    
+}
