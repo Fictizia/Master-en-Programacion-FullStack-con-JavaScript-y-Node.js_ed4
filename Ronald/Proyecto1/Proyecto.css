@@ -1,0 +1,27 @@
+body {
+    background-color: #9C9CA7;
+    background-image: url(mosaico.png);
+    background-repeat: repeat-y;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
+}
+
+#tiempo{text-align: center;};
+
+h2 {
+    color:  #004d99;
+}
+
+.contenedor {
+    padding: 0.5em;
+    margin: 25vh auto 0;
+    display: flex;
+    flex-direction: row;;
+
+}
+.item2{
+    background: #BCBCC8;
+    margin: 0.2em;
+    border-radius: 1em;
+    width: 33%;
+
+}
