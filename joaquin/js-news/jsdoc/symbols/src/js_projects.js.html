@@ -1,0 +1,134 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">projects</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="WHIT">  </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">getProjects</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">json</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">topRanking</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="WHIT">    </span><span class="NAME">let</span><span class="WHIT"> </span><span class="NAME">projects</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">json.items</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="WHIT">      </span><span class="PUNC">.</span><span class="NAME">filter</span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">project</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">index</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="NAME">topRanking</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">index</span><span class="PUNC">&lt;</span><span class="NAME">topRanking</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="WHIT">      </span><span class="PUNC">.</span><span class="NAME">map</span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">project</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">index</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">project.ranking</span><span class="PUNC">=</span><span class="NAME">index</span><span class="PUNC">+</span><span class="NUMB">1</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">project</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="WHIT">      </span><span class="PUNC">.</span><span class="NAME">map</span><span class="PUNC">(</span><span class="NAME">project</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="NAME">setProjectLogo</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">project</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  7</span> </span><span class="WHIT">    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">projects</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="WHIT">  </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="WHIT">  </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">projectLogos</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 10</span> </span><span class="WHIT">    </span><span class="STRN">'react'</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'react-logo-512.png'</span><span class="WHIT">
+<span class='line'> 11</span> </span><span class="WHIT">  </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 12</span> </span><span class="WHIT">  </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">setProjectLogo</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">project</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 13</span> </span><span class="WHIT">    </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">logoUrl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">projectLogos</span><span class="PUNC">[</span><span class="NAME">project.name</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="STRN">'../assets/logos/'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">projectLogos</span><span class="PUNC">[</span><span class="NAME">project.name</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">project.owner.avatar_url</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 14</span> </span><span class="WHIT">    </span><span class="NAME">project.logo_url</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">logoUrl</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 15</span> </span><span class="WHIT">    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">project</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 16</span> </span><span class="WHIT">  </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 17</span> </span><span class="WHIT">  </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">starSvg</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="TOKN">`</span><span class="WHIT">    
+<span class='line'> 18</span>     </span><span class="PUNC">&lt;</span><span class="NAME">svg</span><span class="PUNC">></span><span class="WHIT">
+<span class='line'> 19</span> </span><span class="WHIT">      </span><span class="PUNC">&lt;</span><span class="NAME">path</span><span class="WHIT"> </span><span class="NAME">d</span><span class="PUNC">=</span><span class="STRN">"M7.438 2.324c.034-.099.09-.099.123 0l1.2 3.53a.29.29 0 0 0 .26.19h3.884c.11 0 .127.049.038.111L9.8 8.327a.271.271 0 0 0-.099.291l1.2 3.53c.034.1-.011.131-.098.069l-3.142-2.18a.303.303 0 0 0-.32 0l-3.145 2.182c-.087.06-.132.03-.099-.068l1.2-3.53a.271.271 0 0 0-.098-.292L2.056 6.146c-.087-.06-.071-.112.038-.112h3.884a.29.29 0 0 0 .26-.19l1.2-3.52z"</span><span class="PUNC">></span><span class="WHIT">
+<span class='line'> 20</span> </span><span class="WHIT">    </span><span class="PUNC">&lt;</span><span class="REGX">/svg>
+<span class='line'> 21</span>   `;
+<span class='line'> 22</span>   const getStars = (stars) => {
+<span class='line'> 23</span>     return stars > 1000 ? (stars/</span><span class="NUMB">1000</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">toFixed</span><span class="PUNC">(</span><span class="NUMB">1</span><span class="PUNC">)</span><span class="PUNC">+</span><span class="STRN">"k"</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">stars.toString</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 24</span> </span><span class="WHIT">  </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 25</span> </span><span class="WHIT">  </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">renderProjectArticle</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">project</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 26</span> </span><span class="WHIT">    </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">markup</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="TOKN">`</span><span class="WHIT">
+<span class='line'> 27</span> </span><span class="WHIT">      </span><span class="PUNC">&lt;</span><span class="NAME">div</span><span class="WHIT"> </span><span class="NAME">class</span><span class="PUNC">=</span><span class="STRN">"article-ranking"</span><span class="PUNC">></span><span class="NAME">$</span><span class="PUNC">{</span><span class="NAME">project.ranking.toString</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">padStart</span><span class="PUNC">(</span><span class="NUMB">2</span><span class="PUNC">,</span><span class="STRN">'0'</span><span class="PUNC">)</span><span class="PUNC">}</span><span class="PUNC">&lt;</span><span class="REGX">/div>
+<span class='line'> 28</span>       &lt;div class="article-description">
+<span class='line'> 29</span>         &lt;h2 class="link">${project.name}&lt;/</span><span class="NAME">h2</span><span class="PUNC">></span><span class="WHIT">
+<span class='line'> 30</span> </span><span class="WHIT">        </span><span class="PUNC">&lt;</span><span class="NAME">div</span><span class="WHIT"> </span><span class="NAME">class</span><span class="PUNC">=</span><span class="STRN">"link"</span><span class="PUNC">></span><span class="NAME">$</span><span class="PUNC">{</span><span class="NAME">project.description</span><span class="PUNC">}</span><span class="PUNC">&lt;</span><span class="REGX">/div>
+<span class='line'> 31</span>         &lt;div class="link">&lt;span class="star">${starSvg}&lt;/</span><span class="NAME">span</span><span class="PUNC">></span><span class="PUNC">&lt;</span><span class="NAME">span</span><span class="PUNC">></span><span class="NAME">$</span><span class="PUNC">{</span><span class="NAME">getStars</span><span class="PUNC">(</span><span class="NAME">project.stargazers_count</span><span class="PUNC">)</span><span class="PUNC">}</span><span class="PUNC">&lt;</span><span class="REGX">/span>&lt;/</span><span class="NAME">div</span><span class="PUNC">></span><span class="WHIT">
+<span class='line'> 32</span> </span><span class="WHIT">      </span><span class="PUNC">&lt;</span><span class="REGX">/div>
+<span class='line'> 33</span>       &lt;div class="article-image">
+<span class='line'> 34</span>         &lt;img class="logo-image link" src="${project.logo_url}">
+<span class='line'> 35</span>       &lt;/</span><span class="NAME">div</span><span class="PUNC">></span><span class="WHIT">
+<span class='line'> 36</span> </span><span class="WHIT">    </span><span class="TOKN">`</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 37</span> </span><span class="WHIT">    </span><span class="NAME">let</span><span class="WHIT"> </span><span class="NAME">articleDOM</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">document.createElement</span><span class="PUNC">(</span><span class="STRN">"article"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 38</span> </span><span class="WHIT">    </span><span class="NAME">articleDOM.setAttribute</span><span class="PUNC">(</span><span class="STRN">"data-project-id"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">project.id</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 39</span> </span><span class="WHIT">    </span><span class="NAME">articleDOM.innerHTML</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">markup</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 40</span> </span><span class="WHIT">    </span><span class="NAME">document.querySelector</span><span class="PUNC">(</span><span class="STRN">'.home-projects'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">appendChild</span><span class="PUNC">(</span><span class="NAME">articleDOM</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 41</span> </span><span class="WHIT">  </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 42</span> </span><span class="WHIT">  </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 43</span> </span><span class="WHIT">    </span><span class="NAME">render</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">element</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 44</span> </span><span class="WHIT">      </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">projectTemplate</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">project</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 45</span> </span><span class="WHIT">        </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="TOKN">`</span><span class="WHIT">
+<span class='line'> 46</span> </span><span class="WHIT">          </span><span class="NAME">project</span><span class="WHIT">
+<span class='line'> 47</span> </span><span class="WHIT">        </span><span class="TOKN">`</span><span class="WHIT">
+<span class='line'> 48</span> </span><span class="WHIT">      </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 49</span> </span><span class="WHIT">      </span><span class="NAME">element.innerHTML</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">projectsTemplates</span><span class="WHIT">
+<span class='line'> 50</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 51</span> </span><span class="WHIT">    </span><span class="NAME">renderProjectList</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">topRanking</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 52</span> </span><span class="WHIT">      </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">origin</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"https://api.github.com"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 53</span> </span><span class="WHIT">      </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">url</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">origin</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">"/search/repositories?q=stars:>10000+topic:javascript"</span><span class="WHIT">  
+<span class='line'> 54</span>       </span><span class="KEYW">const</span><span class="WHIT"> </span><span class="NAME">renderProjects</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">json</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 55</span> </span><span class="WHIT">        </span><span class="NAME">document.querySelector</span><span class="PUNC">(</span><span class="STRN">'.home-projects .loading-image'</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">remove</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 56</span> </span><span class="WHIT">        </span><span class="NAME">let</span><span class="WHIT"> </span><span class="NAME">projects</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">getProjects</span><span class="PUNC">(</span><span class="NAME">json</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">topRanking</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'> 57</span> </span><span class="WHIT">          </span><span class="PUNC">.</span><span class="NAME">map</span><span class="PUNC">(</span><span class="NAME">project</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="PUNC">></span><span class="WHIT"> </span><span class="NAME">renderProjectArticle</span><span class="PUNC">(</span><span class="NAME">project</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 58</span> </span><span class="WHIT">      </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 59</span> </span><span class="WHIT">      </span><span class="NAME">dataHandler.get</span><span class="PUNC">(</span><span class="NAME">url</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">renderProjects</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 60</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 61</span> </span><span class="WHIT">  </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 62</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 63</span> 
+<span class='line'> 64</span> </span><span class="COMM">/*
+<span class='line'> 65</span> // Si puede consultar consulta
+<span class='line'> 66</span> // Si no puede consultar y no tiene datos espera
+<span class='line'> 67</span> // Si no puede consultar y tiene datos muestra esos datos
+<span class='line'> 68</span> 
+<span class='line'> 69</span> // Consulta de proyectos
+<span class='line'> 70</span> // https://api.github.com/search/repositories?q=stars:%3E10000+topic:javascript
+<span class='line'> 71</span> // https://api.github.com/search/repositories?q=stars:>10000+topic:javascript
+<span class='line'> 72</span> {
+<span class='line'> 73</span>   "message": "API rate limit exceeded for 95.122.229.239. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
+<span class='line'> 74</span>   "documentation_url": "https://developer.github.com/v3/#rate-limiting"
+<span class='line'> 75</span> }
+<span class='line'> 76</span> // repositories.json consultado el 27/11/2019 00:50
+<span class='line'> 77</span> 
+<span class='line'> 78</span> 
+<span class='line'> 79</span> //https://developer.github.com/v3/#rate-limiting
+<span class='line'> 80</span> //Increasing the unauthenticated rate limit for OAuth applications
+<span class='line'> 81</span> 
+<span class='line'> 82</span> 
+<span class='line'> 83</span> 
+<span class='line'> 84</span> // Sin restricciones podemos consultar nuestro rate_limit
+<span class='line'> 85</span> https://api.github.com/rate_limit
+<span class='line'> 86</span> 
+<span class='line'> 87</span> resources.search.remaining > me quedan 9 consultas
+<span class='line'> 88</span> resources.search.reset > 1574813258
+<span class='line'> 89</span> new Date(1574813258 * 1000)
+<span class='line'> 90</span> Wed Nov 27 2019 01:07:38 GMT+0100 (hora estándar de Europa central)
+<span class='line'> 91</span> 
+<span class='line'> 92</span> {
+<span class='line'> 93</span>   "resources": {
+<span class='line'> 94</span>     "core": {
+<span class='line'> 95</span>       "limit": 60,
+<span class='line'> 96</span>       "remaining": 60,
+<span class='line'> 97</span>       "reset": 1574816361
+<span class='line'> 98</span>     },
+<span class='line'> 99</span>     "search": {
+<span class='line'>100</span>       "limit": 10,
+<span class='line'>101</span>       "remaining": 9,
+<span class='line'>102</span>       "reset": 1574813099
+<span class='line'>103</span>     },
+<span class='line'>104</span>     "graphql": {
+<span class='line'>105</span>       "limit": 0,
+<span class='line'>106</span>       "remaining": 0,
+<span class='line'>107</span>       "reset": 1574816361
+<span class='line'>108</span>     },
+<span class='line'>109</span>     "integration_manifest": {
+<span class='line'>110</span>       "limit": 5000,
+<span class='line'>111</span>       "remaining": 5000,
+<span class='line'>112</span>       "reset": 1574816361
+<span class='line'>113</span>     }
+<span class='line'>114</span>   },
+<span class='line'>115</span>   "rate": {
+<span class='line'>116</span>     "limit": 60,
+<span class='line'>117</span>     "remaining": 60,
+<span class='line'>118</span>     "reset": 1574816361
+<span class='line'>119</span>   }
+<span class='line'>120</span> }
+<span class='line'>121</span> 
+<span class='line'>122</span> Consulto rate_limit,
+<span class='line'>123</span> si no puedo > espiner y timer con el tiempo q me queda
+<span class='line'>124</span> si puedo > adelante
+<span class='line'>125</span> 
+<span class='line'>126</span> 
+<span class='line'>127</span> */</span></pre></body></html>
