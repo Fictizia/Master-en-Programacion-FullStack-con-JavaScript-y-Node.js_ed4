@@ -16,7 +16,8 @@
 Hagamos una aplicación web que nos pregunte por un usuario de github...
 
 ** Consultar la API de Github **
-[API github users](https://developer.github.com/v3/users/)
+    [API github users](https://developer.github.com/v3/users/)
+    [API github event users](https://api.github.com/users/[nombre_usuario]/events)
 
 **Características**
 - Devolveremos su información de perfil incluyendo el email.
