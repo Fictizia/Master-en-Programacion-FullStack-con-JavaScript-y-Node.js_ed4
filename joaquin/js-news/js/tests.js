@@ -1,8 +1,8 @@
 const tests = (() => {
   return {
-    render: element => {
-      element.innerHTML = `
-        <div>${JSON.stringify(router.getCurrentRoute())}</div>
+    render: () => {
+      document.getElementById('spa-body').innerHTML = `
+        <div><br><br>${JSON.stringify(router.getCurrentRoute())}<br><br></div>
         <p>You can watch application tests on browser console</p>
       `;
       console.group('Start tests')

@@ -15,6 +15,7 @@ const eventListenerHandler = (() => {
           navigate(to);
         });
       });
-    }
+    },
+    listenLoadedImage: (image, callback) => image.addEventListener('load', callback)
   }
 })();

@@ -1,10 +1,8 @@
 /** @function */
 const router = (() => {
-  const appName = 'js-news';
   let routes = {};
   let defaultRoute = {};
   let currentRoute = {};
-  let renderElement = {};
   return {
     getCurrentRoute: () => currentRoute,
     getRoutes: () => routes,
@@ -19,12 +17,8 @@ const router = (() => {
           }
         });
       }
-      const getRenderElement = () => {
-        renderElement = document.getElementById('app');
-      }
       addRoutes(routesList);
       eventListenerHandler.listenHashchange(router.navigate);
-      getRenderElement();
     },
     navigate: to => {
       console.log('navivate:', to)
@@ -51,13 +45,15 @@ const router = (() => {
       const manageWindowHistory = () => {
         const params = currentRoute.params;
         const title = currentRoute.name;
-        const url = window.location.origin + '/' + appName + '/' + currentRoute.hash;
+        const url = window.location.origin + '/' + currentRoute.hash;
         window.history.pushState(params, title, url);
       }
       const renderRoute = () => {        
+        const spaBodyDOM = document.getElementById('spa-body');
+        spaBodyDOM.removeAttribute('class');        
         currentRoute.hasOwnProperty('render')
-          ? currentRoute.render(renderElement)
-          : renderElement.innerHTML = `<div>${JSON.stringify(currentRoute)}</div>`;
+          ? (spaBodyDOM.innerHTML=null, currentRoute.render())
+          : spaBodyDOM.innerHTML = `<div><br><br>${JSON.stringify(currentRoute)}</div>`;
       }
       currentRoute = calculateCurrentRoute();
       if (currentRoute.externalLink) {
@@ -67,8 +63,7 @@ const router = (() => {
       } else {
         manageWindowHistory();
         renderRoute();
-        //router.listenRouterLinks('.router-link');
-        eventListenerHandler.listenRouterLinks('.router-link', router.navigate);
+        eventListenerHandler.listenRouterLinks('#spa-body .router-link', router.navigate);
       }      
     }
   }
