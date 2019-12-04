@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Griffy|Henny+Penny|Skranji&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Henny+Penny|Skranji&display=swap');
+
+
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}
+ul{list-style-type:none}
+blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+body {
+    background-image:url("http://www.hdfondos.eu/pictures/2015/0130/1/orig_78566.jpg");
+    background-image: no-repeat;
+    background-image: fixed;
+    background-image: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.boton {
+  background-color: #4CAF50; 
+  color: white;
+  border: black;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  padding: 15px 32px;
+  font-family: Griffy, cursive;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all .70s;
+
+}
+.boton:hover {
+    
+    background: gold;
+    color: black;  
+    border-radius: 50%;
+}
+.galeria    {
+    width: 1320px ;
+    height: 870px ;
+    position: absolute ;
+    top: 70% ;
+    left: 50% ;
+    margin: -435px 0 0 -660px ;
+    font-size: 0 ;
+    -webkit-font-smoothing: antialiased ;
+    }
+
+.galeria article {
+    width:  350px ;
+    height: 250px ;
+    position: relative ;
+    overflow: hidden ;
+    display: inline-block ;
+    vertical-align: top ;
+    margin: 20px ;
+    border-radius: 6px ;
+    animation-duration: 2s;
+    animation-name: aparecer;
+    }
+
+    @keyframes  aparecer {
+        from {
+            opacity: 0;
+            -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+          }
+        
+          50% {
+            opacity: 1;
+          }
+        }
+
+
+.galeria h1 {
+    width: 350px ;
+    height: 75% ;
+    padding-top: 70px ;
+    box-sizing: border-box ;
+    text-align: center ;
+    position: absolute ;
+    top: -80% ;
+    left: 0 ;
+    font-family: Griffy, cursive;
+    font-size: 54px ;
+    font-style: italic ;
+    color: #000 ;
+    opacity: 0 ;
+    transition: all 1s ;
+    }
+.galeria article:hover h1 {
+    opacity: 1 ;
+    top: 0 ;
+    transition: all .4s ;
+    }
+
+.galeria h2 {
+    width: 350px ;
+    height: 25% ;
+    padding-top: 14px ;
+    box-sizing: border-box ;
+    text-align: center ;
+    font-family: 'Henny Penny', sans-serif;
+    background-color: rgba(0,0,0,.75) ;
+    position: absolute ;
+    bottom: -20% ;
+    left: 0 ;
+    letter-spacing: 5px ;
+    font-size: 20px ;
+    text-transform: uppercase ;
+    color: white ;  
+    opacity: 0 ;
+    transition: all 1s ;
+    }
+
+.galeria article:hover h2 {
+    opacity: 1 ;
+    bottom: 0 ;
+    transition: all .4s ;
+    }
+
+    /* colores de cada casa hogwarts*/
+
+.galeria article:first-child h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+   
+}
+.galeria article:nth-child(2) h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+}
+.galeria article:nth-child(3) h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+}
+.galeria article:nth-child(4) h1 {
+    background-color: rgba(0,155,95,.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(5) h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+}
+.galeria article:nth-child(6) h1 {
+    background-color: rgba(255,255,30,.7) ;
+    color: RGB(180, 40, 40)
+}
+.galeria article:nth-child(7) h1 {
+    background-color: rgba(25, 86, 255, 0.699) ;
+    color: RGB(248, 217, 48)
+}
+.galeria article:nth-child(8) h1 {
+    background-color: rgba(0,155,95,.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(9) h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+}
+.galeria article:nth-child(10) h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+}
+.galeria article:nth-child(11) h1 {
+    background-color: rgba(25, 86, 255, 0.699) ;
+    color: RGB(248, 217, 48)
+}
+.galeria article:nth-child(12) h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+}
+.galeria article:nth-child(13) h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+}
+.galeria article:nth-child(14) h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+}
+.galeria article:nth-child(15) h1 {
+    background-color: rgba(255, 34, 0, 0.514) ;
+    color: RGB(26, 27, 32);
+}
+.galeria article:nth-child(16) h1 {
+    background-color: rgba(0,155,95,.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(17) h1 {
+    background-color: rgba(0,155,95,.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(18) h1 {
+    background-color: rgba(0,155,95,.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(19) h1 {
+    background-color: rgba(93, 0, 155, 0.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(20) h1 {
+    background-color: rgba(0,155,95,.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(21) h1 {
+    background-color: rgba(0,155,95,.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(22) h1 {
+    background-color: rgba(0,155,95,.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(23) h1 {
+    background-color: rgba(0,155,95,.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(24) h1 {
+    background-color: rgba(93, 0, 155, 0.7) ;
+    color: rgb(255,200,0)
+}
+.galeria article:nth-child(25) h1 {
+    background-color: rgba(93, 0, 155, 0.7) ;
+    color: rgb(255,200,0)
+    
+}
+
