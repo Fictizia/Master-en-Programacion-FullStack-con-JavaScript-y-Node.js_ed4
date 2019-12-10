@@ -2,7 +2,7 @@
  * @file Get the data from the API 'Rick and Morty' and display it. It generates a navigation menu filtering through the 3 types of data (characters, locations and episodes). It has a pagination in each of them. It has a searcher input to filter by name.
  * @author Beatriz Sopeña Merino <beatrizsmerino@gmail.com>
  * @copyright Beatriz Sopeña Merino 2019. It is free software and you can find the source code on Github.
- * @see https://beatrizsmerino.github.io/rick-and-morty/
+ * @see {@link https://beatrizsmerino.github.io/rick-and-morty/}
  */
 
 
@@ -13,20 +13,25 @@
  * @const urlAPI
  * @description API route 'Rick and morty'
  * @type {string}
+ * @see Used in: {@link ajaxHandler}
  */
 const urlAPI = "https://rickandmortyapi.com/api/";
+
 
 /**
  * @var appButton
  * @description App button
  * @type {HTMLElement}
+ * @see Used in: {@link click}
  */
 let appButton = document.getElementById("appButton");
+
 
 /**
  * @var appContent
  * @description App content
  * @type {HTMLElement}
+ * @see Used in: {@link setAction}, {@link appContentAdd}, {@link filterRemoveContent}, {@link searchCreate}, {@link searchRemove}, {@link paginationCreate}, {@link paginationRemove}, {@link click}
  */
 let appContent = document.getElementById("appContent");
 
@@ -36,12 +41,12 @@ let appContent = document.getElementById("appContent");
 
 // TOOLS
 //////////////////////////////////
+
 /**
  * @function svgMe
  * @description Converts an `<img>` tag, with a `.svg` extention and a class `svgMe`, into a `<svg>` tag.
  * @return {object} Return the file svg
- * @example
- * <img id="rickAndMorty" class="svgMe" src="assets/images/rick-and-morty.svg" alt="Rick and Morty" title="Rick and Morty">
+ * @see Used in: {@link functionAnonimAutoExecuted}
  */
 function svgMe() {
 	let images = document.querySelectorAll("img.svgMe");
@@ -108,10 +113,7 @@ function svgMe() {
  * @description Converts the first letter of a string to uppercase
  * @param {string} string - string with the this letter in lowercase
  * @return {string} returns the same modified string
- * @example
- * var string = "dimension";
- * var newString = firstUpperCase(string);
- * console.log(newString); // Dimension
+ * @see Used in: {@link cardCreate}
  */
 function firstUpperCase(string) {
 	let stingLowerCase = string.toLowerCase();
@@ -125,15 +127,14 @@ function firstUpperCase(string) {
  * @description Executes a function after a given time
  * @param {function} fn - function to execute
  * @param {number} ms - delay time in miliseconds
- * @example
- * delay(nameFunction(), 500);
+ * @see Used in: {@link searchAdd}
  */
 function delay(fn, ms) {
 	let timer = 0;
 	return function (...args) {
 		clearTimeout(timer);
 		timer = setTimeout(fn.bind(this, ...args), ms || 0);
-	}
+	};
 }
 
 
@@ -142,29 +143,28 @@ function delay(fn, ms) {
 
 // AJAX HANDLER - FETCH
 //////////////////////////////////
+
 /**
  * @function ajaxHandler
  * @description API request
- * @param {string} url
- * @param {string} action
+ * @param {string} url - root of the API
+ * @param {string} action - name of the action to excute
  * @return {object}
- * @example
- * const urlAPI = "https://rickandmortyapi.com/api/";
- * ajaxHandler(urlAPI, "filterAddContent");
- * @see setAction
+ * @see Used inside: {@link loaderAdd}, {@link loaderRemove}, {@link setAction}
+ * @see Used in: {@link searchAdd}, {@link paginationAdd}, {@link click}
  */
 function ajaxHandler(url, action) {
-	loaderAdd(appContent);
+	loaderAdd();
 
 	fetch(url)
 		.then(handleResponse)
 		.then(function (data) {
 			//console.log("%c--- Promise 2 ---", "padding: 0.5rem 1rem; color: #C0C0C0; background-color: #454545;");
 			// console.info(data);
-			console.log('data is', data);
+			console.info('data is', data);
 			let timer = setInterval(function () {
 				clearInterval(timer);
-				loaderRemove(appContent);
+				loaderRemove();
 				setAction(action, appContent, data);
 			}, 3000);
 		})
@@ -224,8 +224,7 @@ function ajaxHandler(url, action) {
  * @function loaderCreate
  * @description Creation of a loading animation
  * @return {HTMLElement}
- * @example
- * loaderCreate();
+ * @see Used in: {@link loaderAdd}
  */
 function loaderCreate() {
 	let template = `
@@ -247,8 +246,7 @@ function loaderCreate() {
 /**
  * @function loaderAdd
  * @description Add loading animation
- * @example
- * loaderAdd();
+ * @see Used in: {@link ajaxHandler}
  */
 function loaderAdd() {
 	let loader = loaderCreate();
@@ -269,8 +267,7 @@ function loaderAdd() {
 /**
  * @function loaderRemove
  * @description Remove loading animation
- * @example
- * loaderRemove();
+ * @see Used in: {@link ajaxHandler}
  */
 function loaderRemove() {
 	let loaderDom = document.getElementById("loader");
@@ -287,10 +284,12 @@ function loaderRemove() {
 
 // FILTER
 //////////////////////////////////
+
 /**
  * @function appContentAdd
  * @description Add link of the API to the app content
- * @param {string} url
+ * @param {string} url - root of the API
+ * @see Used in: {@link click}
  */
 function appContentAdd(url) {
 	let linkId = document.getElementById("linkApi");
@@ -311,10 +310,11 @@ function appContentAdd(url) {
 /**
  * @function setAction
  * @description List of functions to choose from
- * @param {string} action
- * @param {HTMLElement} elementDom
- * @param {object} dataResponse
- * @see ajaxHandler
+ * @param {string} action - name of the action to excute
+ * @param {HTMLElement} elementDom - DOM element where the response data is inserted
+ * @param {object} dataResponse - response data of the ajax handler (json)
+ * @see Used inside: {@link filterAdd}, {@link filterAddContent}
+ * @see Used in: {@link ajaxHandler}
  */
 function setAction(action, elementDom, dataResponse) {
 	if (action === "filterAdd") {
@@ -328,8 +328,9 @@ function setAction(action, elementDom, dataResponse) {
 /**
  * @function filterAdd
  * @description Add navigation menu filtering through the 3 types of data (characters, locations and episodes) to the app content.
- * @param {HTMLElement} elementDom
- * @param {object} responseData
+ * @param {HTMLElement} elementDom - DOM element where the filter is inserted
+ * @param {object} responseData - response data of the ajax handler (json)
+ * @see Used in: {@link setAction}
  */
 function filterAdd(elementDom, responseData) {
 	let navId = document.getElementById("filter");
@@ -360,8 +361,9 @@ function filterAdd(elementDom, responseData) {
 /**
  * @function filterActive
  * @description Add class 'is-active' to the item of the navigation clicked.
- * @param {HTMLCollectionOf} item
- * @param {Element} thisActive
+ * @param {HTMLCollectionOf} item - filter list
+ * @param {Element} thisActive - filter selected
+ * @see Used in: {@link functionAnonimAutoExecuted}
  */
 function filterActive(item, thisActive) {
 	for (let index = 0; index < item.length; index++) {
@@ -378,8 +380,9 @@ function filterActive(item, thisActive) {
 /**
  * @function filterAddContentInfo
  * @description Insert information to the content with the number of results of the request
- * @param {object} responseData
+ * @param {object} responseData - response data of the ajax handler (json)
  * @return {Element}
+ * @see Used in: {@link filterAddContent}
  */
 function filterAddContentInfo(responseData) {
 	console.table(responseData.info);
@@ -390,11 +393,14 @@ function filterAddContentInfo(responseData) {
 	return listInfo;
 }
 
+
 /**
  * @function filterAddContentResults
  * @description Insert results to the content of the request
- * @param {object} responseData
+ * @param {object} responseData - response data of the ajax handler (json)
  * @return {Element}
+ * @see Used inside: {@link cardCreate}, {@link cardMoveImage}, {@link cardWhenClicked}
+ * @see Used in: {@link filterAddContent}
  */
 function filterAddContentResults(responseData) {
 	console.table(responseData.results);
@@ -415,11 +421,14 @@ function filterAddContentResults(responseData) {
 	return listCards;
 }
 
+
 /**
  * @function filterAddContent
  * @description Add the filter content application
- * @param {HTMLElement} elementDom
- * @param {object} responseData
+ * @param {HTMLElement} elementDom - DOM element where the filter content is inserted
+ * @param {object} responseData - response data of the ajax handler (json)
+ * @see Used inside: {@link filterAddContentInfo}, {@link filterAddContentResults}...
+ * @see Used in: {@link setAction}
  */
 function filterAddContent(elementDom, responseData) {
 	let list = document.createElement("section");
@@ -429,24 +438,34 @@ function filterAddContent(elementDom, responseData) {
 	const infoContent = filterAddContentInfo(responseData);
 	const resultsContent = filterAddContentResults(responseData);
 
-	function contentAdd(){
+	/**
+	* @function filterAddAllContent
+	* @description Insert the content
+	* @see {@link filterFoundContent}
+	*/
+	function filterAddAllContent(){
 		list.appendChild(infoContent);
 		list.appendChild(resultsContent);
 		elementDom.appendChild(list);
 	}
 
-	function elementFound() {
+	/**
+	 * @function filterFoundContent
+	 * @description Check if the contents of one filter are shown and before loading another one, delete it
+	 * @see Used inside: {@link filterAddAllContent}, {@link filterRemoveContent}, {@link paginationRemove}, {@link paginationAdd}
+	 */
+	function filterFoundContent() {
 		let element = document.querySelectorAll(".list");
 		if (element != undefined) {
-			console.dir(element);
-			console.log(element.length);
+			// console.dir(element);
+			// console.log(element.length);
 			if(element.length == 0){
-				contentAdd();
-				paginationAdd(responseData);
+				filterAddAllContent();
+				filterRemoveContent(responseData);
 			}else{
 				filterRemoveContent();
 				paginationRemove();
-				contentAdd();
+				filterAddAllContent();
 				paginationAdd(responseData);
 				return true;
 			}
@@ -454,15 +473,17 @@ function filterAddContent(elementDom, responseData) {
 	}
 
 	let timer = setInterval(function () {
-		if(elementFound()){
+		if(filterFoundContent()){
 			clearInterval(timer);
 		}
 	}, 100);
 }
 
+
 /**
  * @function filterRemoveContent
  * @description Remove the selected filter content of the application content
+ * @see Used in: {@link searchAdd}, {@link filterAddContent}, {@link paginationAdd}, {@link functionAnonimAutoExecuted}
  */
 function filterRemoveContent() {
 	let list = document.querySelectorAll(".list");
@@ -484,8 +505,10 @@ function filterRemoveContent() {
 /**
  * @function cardCreate
  * @description Create card with the data response
- * @param {Element} listCardsInner
- * @param {object} responseData
+ * @param {Element} listCardsInner - DOM element that wraps up the card list
+ * @param {object} responseData - response data of the ajax handler (json)
+ * @see Used inside: {@link firstUpperCase}
+ * @see Used in: {@link filterAddContentResults}
  */
 function cardCreate(listCardsInner, responseData) {
 	// console.group("Results");
@@ -580,6 +603,7 @@ function cardCreate(listCardsInner, responseData) {
 /**
  * @function cardMoveImage
  * @description Move the card image up.
+ * @see Used in: {@link filterAddContentResults}
  */
 function cardMoveImage() {
 	let timer = setInterval(function () {
@@ -603,8 +627,9 @@ function cardMoveImage() {
 /**
  * @function cardToggleView
  * @description See more card info
- * @param {HTMLCollectionOf} item
- * @param {Element} thisView
+ * @param {HTMLCollectionOf} item - list of cards
+ * @param {Element} thisView - card selected
+ * @see Used in: {@link cardWhenClicked}
  */
 function cardToggleView(item, thisView) {
 	for (let index = 0; index < item.length; index++) {
@@ -620,6 +645,8 @@ function cardToggleView(item, thisView) {
 /**
  * @function cardWhenClicked
  * @description Event click in the card
+ * @see Used inside: {@link cardToggleView}
+ * @see Used in: {@link click}
  */
 function cardWhenClicked() {
 	let timerCard = setInterval(function () {
@@ -634,6 +661,7 @@ function cardWhenClicked() {
 				* @description View more card info when click it.
 				* @event click
 				* @type {object}
+				* @see Used inside: {@link cardToggleView}
 				*/
 				element.addEventListener("click", function (e) {
 					cardToggleView(cardItem, this);
@@ -653,7 +681,7 @@ function cardWhenClicked() {
 /**
  * @function searchCreate
  * @description Create searcher
- * @see searchAdd
+ * @see Used in: {@link searchAdd}
  */
 function searchCreate() {
 	let searchDom = document.createElement("div");
@@ -679,8 +707,8 @@ function searchCreate() {
 /**
  * @function searchGet
  * @description Get the active filter to find it.
- * @param {Element} filterActive
- * @see searchAdd
+ * @param {Element} filterActive - filter selected
+ * @see Used in: {@link searchAdd}
  */
 function searchGet(filterActive) {
 	let searchInput = document.getElementById("searchInput");
@@ -712,8 +740,9 @@ function searchGet(filterActive) {
 /**
  * @function searchAdd
  * @description Add searcher
- * @param {Element} filterActive
- * @see filterActive
+ * @param {Element} filterActive - filter selected
+ * @see Used inside: {@link searchCreate}, {@link searchGet}...
+ * @see Used in: {@link functionAnonimAutoExecuted}
  */
 function searchAdd(filterActive) {
 	searchCreate();
@@ -724,8 +753,8 @@ function searchAdd(filterActive) {
 	* @description Search by selected filter name when typing in the search engine input.
 	* @event keyup
 	* @type {object}
+	* @see Used inside: {@link delay}, {@link filterRemoveContent}, {@link paginationRemove}, {@link ajaxHandler}
 	*/
-
 	document.getElementById("searchInput").addEventListener("keyup", delay(function (e) {
 		let valueInput = this.value;
 
@@ -745,6 +774,7 @@ function searchAdd(filterActive) {
 /**
  * @function searchRemove
  * @description Remove searcher
+ * @see Used in: {@link functionAnonimAutoExecuted}
  */
 function searchRemove() {
 	let search = document.getElementById("search");
@@ -762,7 +792,8 @@ function searchRemove() {
 /**
  * @function paginationCreate
  * @description Create pagination
- * @param {object} responseData
+ * @param {object} responseData - response data of the ajax handler (json)
+ * @see Used in: {@link paginationAdd}
  */
 function paginationCreate(responseData) {
 	let pagination = document.createElement("div");
@@ -788,7 +819,8 @@ function paginationCreate(responseData) {
 /**
  * @function paginationSetCounter
  * @description Create counter pagination
- * @param {object} responseData
+ * @param {object} responseData - response data of the ajax handler (json)
+ * @see Used in: {@link paginationAdd}
  */
 function paginationSetCounter(responseData) {
 	let buttonPrev = document.getElementById("buttonPrev");
@@ -831,7 +863,9 @@ function paginationSetCounter(responseData) {
 /**
  * @function paginationAdd
  * @description Add pagination
- * @param {object} responseData
+ * @param {object} responseData - response data of the ajax handler (json)
+ * @see Used inside: {@link paginationCreate}, {@link paginationSetCounter}...
+ * @see Used in: {@link filterFoundContent}
  */
 function paginationAdd(responseData) {
 	paginationCreate(responseData);
@@ -845,6 +879,7 @@ function paginationAdd(responseData) {
 		* @description Remove/Add content and pagination by selecting the filter from the navigation menu.
 		* @event click
 		* @type {object}
+		* @see Used inside: {@link filterRemoveContent}, {@link paginationRemove}, {@link ajaxHandler}
 		*/
 		element.addEventListener("click", function () {
 			let url = this.getAttribute("data-url");
@@ -862,6 +897,7 @@ function paginationAdd(responseData) {
 /**
  * @function paginationRemove
  * @description Remove pagination
+ * @see Used in: {@link functionAnonimAutoExecuted}, {@link filterAddContent}, {@link searchAdd}, {@link paginationAdd}
  */
 function paginationRemove() {
 	let pagination = document.getElementById("pagination");
@@ -875,6 +911,7 @@ function paginationRemove() {
  * @description Get API data
  * @event click
  * @type {object}
+ * @see Used inside: {@link appContentAdd}, {@link ajaxHandler}
  */
 appButton.addEventListener("click", function () {
 	// alert("Get API data");
@@ -885,29 +922,32 @@ appButton.addEventListener("click", function () {
 
 
 /**
+ * @function functionAnonimAutoExecuted
  * @description Anonymous auto executed function
+ * @see Used inside: {@link svgMe}...
  */
 (function () {
 	svgMe();
 
 	let timerFilterItem = setInterval(function () {
-		let filterItem = document.getElementsByClassName("filter__item");
-		if (filterItem.length > 0) {
+		let filterArray = document.getElementsByClassName("filter__item");
+		if (filterArray.length > 0) {
 			clearInterval(timerFilterItem);
-			for (let index = 0; index < filterItem.length; index++) {
-				const element = filterItem[index];
+			for (let index = 0; index < filterArray.length; index++) {
+				const filterItem = filterArray[index];
 
 				/**
 				* @description Remove / Add content and pagination when selecting the filter of the navigation menu.
 				* @event click
 				* @type {object}
+				* @see Used inside: {@link filterRemoveContent}, {@link paginationRemove}, {@link searchRemove}, {@link filterActive}, {@link searchAdd}, {@link ajaxHandler}
 				*/
-				element.addEventListener("click", function () {
+				filterItem.addEventListener("click", function () {
 					filterRemoveContent();
 					paginationRemove();
 					searchRemove();
 
-					filterActive(filterItem, this);
+					filterActive(filterArray, this);
 					searchAdd(this);
 					ajaxHandler(this.getAttribute("data-url"), "filterAddContent");
 				});

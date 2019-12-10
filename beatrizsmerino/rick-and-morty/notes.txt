@@ -1,2 +1,0 @@
-https://rickandmortyapi.com/api/
-https://caslabs.github.io/rick-and-morty/
