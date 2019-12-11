@@ -55,6 +55,7 @@ Fecha | Teoría | Recursos | Contenido
 29/11/19 | [Clase 19](teoria/clase19.md)  | [Clase 19](teoria/clase19.md) | Tiempo para proyecto personal
 2/12/19 | [Clase 20](teoria/clase20.md) | [Clase 20](recursos/clase20.md) | Rendimiento, JSDocs, Guías de estilo y SEMVER
 4/12/19 | [Clase 21](teoria/clase21.md) | Clase 21| Live Coding: Github
+11/12/19 | [Clase 22](teoria/clase22.md) | Clase 22| Live Coding: Buenos días, Madrid!
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
