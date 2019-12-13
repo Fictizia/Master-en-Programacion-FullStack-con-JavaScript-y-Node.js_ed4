@@ -1,0 +1,17 @@
+p{
+    font-family:courier;
+    font-size: 16px;
+    border:1px solid rgb(71, 71, 206);
+}
+p.clase1{
+    color:red;
+}
+
+p.clase2{
+    color:rgb(81, 65, 221);
+    border:1px solid rgb(179, 18, 40);
+}
+
+.mystyle {
+    visibility: hidden;
+  }
