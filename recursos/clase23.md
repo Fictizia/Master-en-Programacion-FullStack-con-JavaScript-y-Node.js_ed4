@@ -20,7 +20,7 @@
 ### API Gelococalizacion
 - [Video Ejemplo API Geolocalización](https://www.youtube.com/watch?v=c35r-vnrMr4)
 
-### Api graficos
+### API gráficos
 - [Chart.js](https://www.youtube.com/watch?v=uSEd1_FhMWE)
 
 ### Animacion Canva
@@ -36,7 +36,7 @@
 ### Librerías para gráficos más famosas
 - [Librerías de gráficos](https://www.sitepoint.com/best-javascript-charting-libraries/)
 
-### D3.JS -> HTML + CSS + JS. Data Driven Documents
+### D3.JS -> HTML + CSS + JS. Data Driven Documents
 - [Diagrama de gantt](https://codepen.io/jey/pen/jmClJ) 
 - [Mapa de una casa](https://codepen.io/nanarth/pen/raarXe) 
 - [La tierra](https://codepen.io/gartempe/pen/onckm) 
@@ -45,10 +45,6 @@
 - [Sistema solar 3D](https://codepen.io/juliangarnier/pen/idhuG)
 
 
-
-
-
-### Three.js: Para 3D
 - [chill the lion](https://codepen.io/Yakudoo/pen/YXxmYR) 
 - [Sneeze the dragon](https://codepen.io/Yakudoo/pen/yNjRRL)
 - [gato vs bola de lana](https://codepen.io/Yakudoo/pen/oXJYxy)
@@ -56,27 +52,26 @@
 - [pajaros](https://codepen.io/Yakudoo/pen/LVyJXw)
 - [esfera](https://codepen.io/tr13ze/pen/vKzmgj)
 
-### Videojuegos
-
+### Videojuegos
 - [juego snake](https://github.com/JJCLane/Snake)
 
 ### p5js
 - [laberinto](https://codepen.io/fpeyret/pen/MrdxxO)
 
-### Ejemplo Routing
+### Ejemplo routing
 - [Ejemplo Routing](http://html5doctor.com/demos/history/bob)
-### Firebase
 
-- [https://www.youtube.com/watch?v=XfNjISo0qVc](BBD en tiempo real)
+### Firebase
+- [BBD en tiempo real](https://www.youtube.com/watch?v=XfNjISo0qVc)
 
 ### Web workers
 - [Video Web workers](https://www.youtube.com/watch?v=63bT9uKtWqE)
 
-### Patrones
+### Patrones
 - [tipos de algoritmos](https://www.lifeder.com/tipos-algoritmos/)
 - [algoritmo probablistico](https://es.wikipedia.org/wiki/Algoritmo_probabilista)
 
-### NodeJS
+### NodeJS
 - [Intro nodeJS 1](https://www.youtube.com/watch?v=xJzzu7MVZXw)
 - [intro nodeJS 2](https://www.youtube.com/watch?v=jymvT_7zFG4)
 
@@ -84,5 +79,5 @@
 - [gulp vs grunt 1](https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/gulp-vs-grunt-que-diferencia-a-estos-task-runners/)
 - [gulp vs grunt 2](http://blog.koalite.com/2015/06/grunt-o-gulp-que-uso/)
 
-### Webpack
+### Webpack
 - [Intro Webpack](https://www.google.com/amp/s/carlosazaustre.es/primeros-pasos-con-webpack/amp/) 
