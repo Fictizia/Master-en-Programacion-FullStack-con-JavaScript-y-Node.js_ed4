@@ -57,6 +57,7 @@ Fecha | Teoría | Recursos | Contenido
 4/12/19 | [Clase 21](teoria/clase21.md) | Clase 21| Live Coding: Github
 11/12/19 | [Clase 22](teoria/clase22.md) | Clase 22| Live Coding: Buenos días, Madrid!
 13/12/19 | [Clase 23](teoria/clase23.md) | [Clase 23](recursos/clase23.md)| Intro a JS Avanzado y definición de proyecto
+16/12/19 | [Clase 24](teoria/clase24.md) | [Clase 24](recursos/clase24.md)| 	Navegadores y conceptos avanzados de JS...
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
