@@ -25,7 +25,7 @@ Sobre el Curso
     * 01/11/19 Puente de Todos los Santos
     * 06/12/19 Puente de la Constitución
     * 09/12/19 Traslado de la Inmaculada Concepción
-    * 24/12/19 - 07/01/19 Navidad
+    * 23/12/19 - 07/01/19 Navidad
     * 4-12/04/20 Semana Santa
     * 01-03/05/20 Puente Dia del trabajador + Dia de la Comunidad de Madrid
     * 15/05/2020 San Isidro
@@ -57,7 +57,8 @@ Fecha | Teoría | Recursos | Contenido
 4/12/19 | [Clase 21](teoria/clase21.md) | Clase 21| Live Coding: Github
 11/12/19 | [Clase 22](teoria/clase22.md) | Clase 22| Live Coding: Buenos días, Madrid!
 13/12/19 | [Clase 23](teoria/clase23.md) | [Clase 23](recursos/clase23.md)| Intro a JS Avanzado y definición de proyecto
-16/12/19 | [Clase 24](teoria/clase24.md) | [Clase 24](recursos/clase24.md)| 	Navegadores y conceptos avanzados de JS...
+16/12/19 | [Clase 24](teoria/clase24.md) | [Clase 24](recursos/clase24.md)| Navegadores y conceptos avanzados de JS...
+18/12/19 | [Clase 25](teoria/clase25.md) | [Clase 25](recursos/clase25.md)| Entrevistas técnicas para JavaScript Developers
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
