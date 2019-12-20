@@ -814,8 +814,8 @@ console.log(resultado); // 8
 /* -- Tres formas de lograr lo mismo -- */
 
 var resultado_call = objeto.sumatorio.call(objeto_de_cambio, 5, 5);
-var resultado_apply = objeto.sumatorio.apply(cambio, [5,5]);
-var cambiandoFuncion = objeto.sumatorio.bind(cambio);
+var resultado_apply = objeto.sumatorio.apply(objeto_de_cambio, [5,5]);
+var cambiandoFuncion = objeto.sumatorio.bind(objeto_de_cambio);
 
 console.log(resultado_call); // 50
 console.log(resultado_apply); // 50
