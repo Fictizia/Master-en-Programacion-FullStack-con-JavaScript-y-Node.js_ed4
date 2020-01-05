@@ -193,11 +193,16 @@ function ajaxHandler(url, action) {
 			let timer = setInterval(function () {
 				clearInterval(timer);
 				loaderRemove();
+				removeTemplateMessage();
 				setAction(action, appContent, data);
 			}, 3000);
 		})
 		.catch(function (error) {
-			console.warn('error is', error);
+			// console.warn('error is', error);
+			if (error.status === 404) {
+				loaderRemove();
+				addMessageError404();
+			}
 		});
 
 	function handleResponse(response) {
@@ -520,6 +525,68 @@ function filterRemoveContent() {
 		if (element &amp;&amp; element.innerHTML !== "") {
 			appContent.removeChild(element);
 		}
+	}
+}
+
+
+
+
+
+// MESSAGE
+//////////////////////////////////
+/**
+ * @function addTemplateMessage
+ * @description Create a template message
+ * @param messageClass {string} - Class css with modifier BEM of the message
+ * @param messageText {string} - Text of the message
+ * @see Used in: {@link addMessageError404}
+ */
+function addTemplateMessage(messageClass, messageText) {
+	let messsageElem = document.createElement("div");
+	messsageElem.classList.add("message__wrapper");
+
+	let templateMessage = `
+		&lt;div class="message ${messageClass}">
+			&lt;div class="message__inner">
+				&lt;p>
+					${messageText}
+				&lt;/p>
+			&lt;/div>
+		&lt;/div>
+	`;
+	messsageElem.innerHTML = templateMessage;
+
+	return messsageElem;
+}
+
+
+/**
+ * @function removeTemplateMessage
+ * @description Remove a template message
+ * @see Used in: {@link ajaxHandler}
+ */
+function removeTemplateMessage() {
+	let messsageElem = document.querySelector(".message__wrapper");
+	if (messsageElem) {
+		appContent.removeChild(messsageElem);
+	}
+}
+
+
+/**
+ * @function addMessageError404
+ * @description Add message error 404 (search not found)
+ * @see Used inside: {@link addTemplateMessage}
+ * @see Used in: {@link ajaxHandler}
+ */
+function addMessageError404() {
+	filterRemoveContent();
+	paginationRemove();
+
+	let messsageElem = document.querySelector(".message__wrapper");
+	if (!messsageElem) {
+		let templateMessage = addTemplateMessage("message--error404", "Error 404.&lt;/br> Search not found");
+		appContent.appendChild(templateMessage);
 	}
 }
 
@@ -993,13 +1060,13 @@ appButton.addEventListener("click", function () {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Events</h3><ul><li><a href="global.html#event:click">click</a></li><li><a href="global.html#event:keyup">keyup</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajaxHandler">ajaxHandler</a></li><li><a href="global.html#appButton">appButton</a></li><li><a href="global.html#appContent">appContent</a></li><li><a href="global.html#appContentAdd">appContentAdd</a></li><li><a href="global.html#cardCreate">cardCreate</a></li><li><a href="global.html#cardMoveImage">cardMoveImage</a></li><li><a href="global.html#cardToggleView">cardToggleView</a></li><li><a href="global.html#cardWhenClicked">cardWhenClicked</a></li><li><a href="global.html#delay">delay</a></li><li><a href="global.html#filterActive">filterActive</a></li><li><a href="global.html#filterAdd">filterAdd</a></li><li><a href="global.html#filterAddAllContent">filterAddAllContent</a></li><li><a href="global.html#filterAddContent">filterAddContent</a></li><li><a href="global.html#filterAddContentInfo">filterAddContentInfo</a></li><li><a href="global.html#filterAddContentResults">filterAddContentResults</a></li><li><a href="global.html#filterFoundContent">filterFoundContent</a></li><li><a href="global.html#filterRemoveContent">filterRemoveContent</a></li><li><a href="global.html#firstUpperCase">firstUpperCase</a></li><li><a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li><li><a href="global.html#loaderAdd">loaderAdd</a></li><li><a href="global.html#loaderCreate">loaderCreate</a></li><li><a href="global.html#loaderRemove">loaderRemove</a></li><li><a href="global.html#paginationAdd">paginationAdd</a></li><li><a href="global.html#paginationCreate">paginationCreate</a></li><li><a href="global.html#paginationRemove">paginationRemove</a></li><li><a href="global.html#paginationSetCounter">paginationSetCounter</a></li><li><a href="global.html#searchAdd">searchAdd</a></li><li><a href="global.html#searchCreate">searchCreate</a></li><li><a href="global.html#searchGet">searchGet</a></li><li><a href="global.html#searchRemove">searchRemove</a></li><li><a href="global.html#setAction">setAction</a></li><li><a href="global.html#svgMe">svgMe</a></li><li><a href="global.html#urlAPI">urlAPI</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Events</h3><ul><li><a href="global.html#event:click">click</a></li><li><a href="global.html#event:keyup">keyup</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addMessageError404">addMessageError404</a></li><li><a href="global.html#addTemplateMessage">addTemplateMessage</a></li><li><a href="global.html#ajaxHandler">ajaxHandler</a></li><li><a href="global.html#appButton">appButton</a></li><li><a href="global.html#appContent">appContent</a></li><li><a href="global.html#appContentAdd">appContentAdd</a></li><li><a href="global.html#cardCreate">cardCreate</a></li><li><a href="global.html#cardMoveImage">cardMoveImage</a></li><li><a href="global.html#cardToggleView">cardToggleView</a></li><li><a href="global.html#cardWhenClicked">cardWhenClicked</a></li><li><a href="global.html#delay">delay</a></li><li><a href="global.html#filterActive">filterActive</a></li><li><a href="global.html#filterAdd">filterAdd</a></li><li><a href="global.html#filterAddAllContent">filterAddAllContent</a></li><li><a href="global.html#filterAddContent">filterAddContent</a></li><li><a href="global.html#filterAddContentInfo">filterAddContentInfo</a></li><li><a href="global.html#filterAddContentResults">filterAddContentResults</a></li><li><a href="global.html#filterFoundContent">filterFoundContent</a></li><li><a href="global.html#filterRemoveContent">filterRemoveContent</a></li><li><a href="global.html#firstUpperCase">firstUpperCase</a></li><li><a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li><li><a href="global.html#loaderAdd">loaderAdd</a></li><li><a href="global.html#loaderCreate">loaderCreate</a></li><li><a href="global.html#loaderRemove">loaderRemove</a></li><li><a href="global.html#paginationAdd">paginationAdd</a></li><li><a href="global.html#paginationCreate">paginationCreate</a></li><li><a href="global.html#paginationRemove">paginationRemove</a></li><li><a href="global.html#paginationSetCounter">paginationSetCounter</a></li><li><a href="global.html#removeTemplateMessage">removeTemplateMessage</a></li><li><a href="global.html#searchAdd">searchAdd</a></li><li><a href="global.html#searchCreate">searchCreate</a></li><li><a href="global.html#searchGet">searchGet</a></li><li><a href="global.html#searchRemove">searchRemove</a></li><li><a href="global.html#setAction">setAction</a></li><li><a href="global.html#svgMe">svgMe</a></li><li><a href="global.html#urlAPI">urlAPI</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Sun Jan 05 2020 03:45:01 GMT+0100 (GMT+01:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Sun Jan 05 2020 08:41:45 GMT+0100 (GMT+01:00)
 </footer>
 
 <script> prettyPrint(); </script>

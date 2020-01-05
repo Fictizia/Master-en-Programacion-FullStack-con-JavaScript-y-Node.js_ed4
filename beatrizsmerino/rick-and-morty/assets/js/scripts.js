@@ -165,11 +165,16 @@ function ajaxHandler(url, action) {
 			let timer = setInterval(function () {
 				clearInterval(timer);
 				loaderRemove();
+				removeTemplateMessage();
 				setAction(action, appContent, data);
 			}, 3000);
 		})
 		.catch(function (error) {
-			console.warn('error is', error);
+			// console.warn('error is', error);
+			if (error.status === 404) {
+				loaderRemove();
+				addMessageError404();
+			}
 		});
 
 	function handleResponse(response) {
@@ -492,6 +497,68 @@ function filterRemoveContent() {
 		if (element && element.innerHTML !== "") {
 			appContent.removeChild(element);
 		}
+	}
+}
+
+
+
+
+
+// MESSAGE
+//////////////////////////////////
+/**
+ * @function addTemplateMessage
+ * @description Create a template message
+ * @param messageClass {string} - Class css with modifier BEM of the message
+ * @param messageText {string} - Text of the message
+ * @see Used in: {@link addMessageError404}
+ */
+function addTemplateMessage(messageClass, messageText) {
+	let messsageElem = document.createElement("div");
+	messsageElem.classList.add("message__wrapper");
+
+	let templateMessage = `
+		<div class="message ${messageClass}">
+			<div class="message__inner">
+				<p>
+					${messageText}
+				</p>
+			</div>
+		</div>
+	`;
+	messsageElem.innerHTML = templateMessage;
+
+	return messsageElem;
+}
+
+
+/**
+ * @function removeTemplateMessage
+ * @description Remove a template message
+ * @see Used in: {@link ajaxHandler}
+ */
+function removeTemplateMessage() {
+	let messsageElem = document.querySelector(".message__wrapper");
+	if (messsageElem) {
+		appContent.removeChild(messsageElem);
+	}
+}
+
+
+/**
+ * @function addMessageError404
+ * @description Add message error 404 (search not found)
+ * @see Used inside: {@link addTemplateMessage}
+ * @see Used in: {@link ajaxHandler}
+ */
+function addMessageError404() {
+	filterRemoveContent();
+	paginationRemove();
+
+	let messsageElem = document.querySelector(".message__wrapper");
+	if (!messsageElem) {
+		let templateMessage = addTemplateMessage("message--error404", "Error 404.</br> Search not found");
+		appContent.appendChild(templateMessage);
 	}
 }
 
