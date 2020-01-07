@@ -59,6 +59,7 @@ Fecha | Teoría | Recursos | Contenido
 13/12/19 | [Clase 23](teoria/clase23.md) | [Clase 23](recursos/clase23.md)| Intro a JS Avanzado y definición de proyecto
 16/12/19 | [Clase 24](teoria/clase24.md) | [Clase 24](recursos/clase24.md)| Navegadores y conceptos avanzados de JS...
 18/12/19 | [Clase 25](teoria/clase25.md) | [Clase 25](recursos/clase25.md)| Entrevistas técnicas para JavaScript Developers
+20/12/19 | [Clase 26](teoria/clase26.md) | [Clase 26](recursos/clase26.md)| ECMA6, es7, es8, es9 I: Teoria I
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
