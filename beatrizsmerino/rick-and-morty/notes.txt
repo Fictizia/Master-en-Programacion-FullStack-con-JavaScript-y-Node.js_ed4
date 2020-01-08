@@ -1,0 +1,6 @@
+https://rickandmortyapi.com/api/
+https://caslabs.github.io/rick-and-morty/
+
+
+- Generate documentation javascript with jsdocs
+npm run docs

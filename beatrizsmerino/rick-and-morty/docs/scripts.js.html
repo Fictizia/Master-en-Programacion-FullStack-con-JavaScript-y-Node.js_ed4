@@ -187,17 +187,22 @@ function ajaxHandler(url, action) {
 	fetch(url)
 		.then(handleResponse)
 		.then(function (data) {
-			//console.log("%c--- Promise 2 ---", "padding: 0.5rem 1rem; color: #C0C0C0; background-color: #454545;");
+			// console.log("%c--- Promise 2 ---", "padding: 0.5rem 1rem; color: #C0C0C0; background-color: #454545;");
 			// console.info(data);
-			console.info('data is', data);
+			// console.info('data is', data);
 			let timer = setInterval(function () {
 				clearInterval(timer);
 				loaderRemove();
+				removeTemplateMessage();
 				setAction(action, appContent, data);
 			}, 3000);
 		})
 		.catch(function (error) {
-			console.warn('error is', error);
+			// console.warn('error is', error);
+			if (error.status === 404) {
+				loaderRemove();
+				addMessageError404();
+			}
 		});
 
 	function handleResponse(response) {
@@ -279,9 +284,9 @@ function loaderCreate() {
 function loaderAdd() {
 	let loader = loaderCreate();
 	if (loader) {
-		let timer = setInterval(function(){
+		let timer = setInterval(function () {
 			let loaderDom = document.getElementById("loader");
-			if(!loaderDom){
+			if (!loaderDom) {
 				clearInterval(timer);
 				// document.querySelectorAll(".page__item").style.filter = "blur(1rem)";
 				document.body.classList.add("is-searching");
@@ -397,7 +402,7 @@ function filterActive(item, thisActive) {
 	for (let index = 0; index &lt; item.length; index++) {
 		const element = item[index];
 		if (element.classList.contains("is-active")) {
-			//console.log("has class");
+			// console.log("has class");
 			element.classList.remove("is-active");
 		}
 		thisActive.classList.add("is-active");
@@ -413,7 +418,7 @@ function filterActive(item, thisActive) {
  * @see Used in: {@link filterAddContent}
  */
 function filterAddContentInfo(responseData) {
-	console.table(responseData.info);
+	// console.table(responseData.info);
 	let listInfo = document.createElement("div");
 	listInfo.setAttribute("class", "list-info");
 	listInfo.innerHTML = "&lt;p>&lt;strong>Results: &lt;/strong>" + responseData.info.count + "&lt;/p>";
@@ -431,7 +436,7 @@ function filterAddContentInfo(responseData) {
  * @see Used in: {@link filterAddContent}
  */
 function filterAddContentResults(responseData) {
-	console.table(responseData.results);
+	// console.table(responseData.results);
 	let listCards = document.createElement("div");
 	let listCardsInner = document.createElement("div");
 
@@ -471,7 +476,7 @@ function filterAddContent(elementDom, responseData) {
 	* @description Insert the content
 	* @see {@link filterFoundContent}
 	*/
-	function filterAddAllContent(){
+	function filterAddAllContent() {
 		list.appendChild(infoContent);
 		list.appendChild(resultsContent);
 		elementDom.appendChild(list);
@@ -487,10 +492,10 @@ function filterAddContent(elementDom, responseData) {
 		if (element != undefined) {
 			// console.dir(element);
 			// console.log(element.length);
-			if(element.length == 0){
+			if (element.length == 0) {
 				filterAddAllContent();
-				filterRemoveContent(responseData);
-			}else{
+				paginationAdd(responseData);
+			} else {
 				filterRemoveContent();
 				paginationRemove();
 				filterAddAllContent();
@@ -501,7 +506,7 @@ function filterAddContent(elementDom, responseData) {
 	}
 
 	let timer = setInterval(function () {
-		if(filterFoundContent()){
+		if (filterFoundContent()) {
 			clearInterval(timer);
 		}
 	}, 100);
@@ -520,6 +525,68 @@ function filterRemoveContent() {
 		if (element &amp;&amp; element.innerHTML !== "") {
 			appContent.removeChild(element);
 		}
+	}
+}
+
+
+
+
+
+// MESSAGE
+//////////////////////////////////
+/**
+ * @function addTemplateMessage
+ * @description Create a template message
+ * @param messageClass {string} - Class css with modifier BEM of the message
+ * @param messageText {string} - Text of the message
+ * @see Used in: {@link addMessageError404}
+ */
+function addTemplateMessage(messageClass, messageText) {
+	let messsageElem = document.createElement("div");
+	messsageElem.classList.add("message__wrapper");
+
+	let templateMessage = `
+		&lt;div class="message ${messageClass}">
+			&lt;div class="message__inner">
+				&lt;p>
+					${messageText}
+				&lt;/p>
+			&lt;/div>
+		&lt;/div>
+	`;
+	messsageElem.innerHTML = templateMessage;
+
+	return messsageElem;
+}
+
+
+/**
+ * @function removeTemplateMessage
+ * @description Remove a template message
+ * @see Used in: {@link ajaxHandler}
+ */
+function removeTemplateMessage() {
+	let messsageElem = document.querySelector(".message__wrapper");
+	if (messsageElem) {
+		appContent.removeChild(messsageElem);
+	}
+}
+
+
+/**
+ * @function addMessageError404
+ * @description Add message error 404 (search not found)
+ * @see Used inside: {@link addTemplateMessage}
+ * @see Used in: {@link ajaxHandler}
+ */
+function addMessageError404() {
+	filterRemoveContent();
+	paginationRemove();
+
+	let messsageElem = document.querySelector(".message__wrapper");
+	if (!messsageElem) {
+		let templateMessage = addTemplateMessage("message--error404", "Error 404.&lt;/br> Search not found");
+		appContent.appendChild(templateMessage);
 	}
 }
 
@@ -573,7 +640,7 @@ function cardCreate(listCardsInner, responseData) {
 				cardItemDom.appendChild(cardImageDom);
 			}
 
-			//console.assert(typeof cardItemData === "string" || typeof cardItemData === "number", cardItemData + " es un " + typeof cardItemData);
+			// console.assert(typeof cardItemData === "string" || typeof cardItemData === "number", cardItemData + " es un " + typeof cardItemData);
 
 			if (typeof cardItemData === "object") {
 				if (Array.isArray(cardItemData)) {
@@ -857,7 +924,7 @@ function paginationSetCounter(responseData) {
 	let paginationNext = responseData.info.next;
 	let paginationNow;
 
-	//console.log(paginationNext);
+	// console.log(paginationNext);
 	if (paginationNext == "") {
 		paginationNow = paginationTotal;
 	} else {
@@ -882,7 +949,7 @@ function paginationSetCounter(responseData) {
 
 	paginationCounter.setAttribute("class", "pagination__counter");
 	paginationCounter.appendChild(paginationCounterText);
-	//console.log(paginationCounter);
+	// console.log(paginationCounter);
 
 	buttonPrev.parentNode.insertBefore(paginationCounter, buttonPrev.nextSibling);
 }
@@ -993,13 +1060,13 @@ appButton.addEventListener("click", function () {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Events</h3><ul><li><a href="global.html#event:click">click</a></li><li><a href="global.html#event:keyup">keyup</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajaxHandler">ajaxHandler</a></li><li><a href="global.html#appButton">appButton</a></li><li><a href="global.html#appContent">appContent</a></li><li><a href="global.html#appContentAdd">appContentAdd</a></li><li><a href="global.html#cardCreate">cardCreate</a></li><li><a href="global.html#cardMoveImage">cardMoveImage</a></li><li><a href="global.html#cardToggleView">cardToggleView</a></li><li><a href="global.html#cardWhenClicked">cardWhenClicked</a></li><li><a href="global.html#delay">delay</a></li><li><a href="global.html#filterActive">filterActive</a></li><li><a href="global.html#filterAdd">filterAdd</a></li><li><a href="global.html#filterAddAllContent">filterAddAllContent</a></li><li><a href="global.html#filterAddContent">filterAddContent</a></li><li><a href="global.html#filterAddContentInfo">filterAddContentInfo</a></li><li><a href="global.html#filterAddContentResults">filterAddContentResults</a></li><li><a href="global.html#filterFoundContent">filterFoundContent</a></li><li><a href="global.html#filterRemoveContent">filterRemoveContent</a></li><li><a href="global.html#firstUpperCase">firstUpperCase</a></li><li><a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li><li><a href="global.html#loaderAdd">loaderAdd</a></li><li><a href="global.html#loaderCreate">loaderCreate</a></li><li><a href="global.html#loaderRemove">loaderRemove</a></li><li><a href="global.html#paginationAdd">paginationAdd</a></li><li><a href="global.html#paginationCreate">paginationCreate</a></li><li><a href="global.html#paginationRemove">paginationRemove</a></li><li><a href="global.html#paginationSetCounter">paginationSetCounter</a></li><li><a href="global.html#searchAdd">searchAdd</a></li><li><a href="global.html#searchCreate">searchCreate</a></li><li><a href="global.html#searchGet">searchGet</a></li><li><a href="global.html#searchRemove">searchRemove</a></li><li><a href="global.html#setAction">setAction</a></li><li><a href="global.html#svgMe">svgMe</a></li><li><a href="global.html#urlAPI">urlAPI</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Events</h3><ul><li><a href="global.html#event:click">click</a></li><li><a href="global.html#event:keyup">keyup</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addMessageError404">addMessageError404</a></li><li><a href="global.html#addTemplateMessage">addTemplateMessage</a></li><li><a href="global.html#ajaxHandler">ajaxHandler</a></li><li><a href="global.html#appButton">appButton</a></li><li><a href="global.html#appContent">appContent</a></li><li><a href="global.html#appContentAdd">appContentAdd</a></li><li><a href="global.html#cardCreate">cardCreate</a></li><li><a href="global.html#cardMoveImage">cardMoveImage</a></li><li><a href="global.html#cardToggleView">cardToggleView</a></li><li><a href="global.html#cardWhenClicked">cardWhenClicked</a></li><li><a href="global.html#delay">delay</a></li><li><a href="global.html#filterActive">filterActive</a></li><li><a href="global.html#filterAdd">filterAdd</a></li><li><a href="global.html#filterAddAllContent">filterAddAllContent</a></li><li><a href="global.html#filterAddContent">filterAddContent</a></li><li><a href="global.html#filterAddContentInfo">filterAddContentInfo</a></li><li><a href="global.html#filterAddContentResults">filterAddContentResults</a></li><li><a href="global.html#filterFoundContent">filterFoundContent</a></li><li><a href="global.html#filterRemoveContent">filterRemoveContent</a></li><li><a href="global.html#firstUpperCase">firstUpperCase</a></li><li><a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li><li><a href="global.html#loaderAdd">loaderAdd</a></li><li><a href="global.html#loaderCreate">loaderCreate</a></li><li><a href="global.html#loaderRemove">loaderRemove</a></li><li><a href="global.html#paginationAdd">paginationAdd</a></li><li><a href="global.html#paginationCreate">paginationCreate</a></li><li><a href="global.html#paginationRemove">paginationRemove</a></li><li><a href="global.html#paginationSetCounter">paginationSetCounter</a></li><li><a href="global.html#removeTemplateMessage">removeTemplateMessage</a></li><li><a href="global.html#searchAdd">searchAdd</a></li><li><a href="global.html#searchCreate">searchCreate</a></li><li><a href="global.html#searchGet">searchGet</a></li><li><a href="global.html#searchRemove">searchRemove</a></li><li><a href="global.html#setAction">setAction</a></li><li><a href="global.html#svgMe">svgMe</a></li><li><a href="global.html#urlAPI">urlAPI</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue Dec 10 2019 20:11:15 GMT+0100 (GMT+01:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Sun Jan 05 2020 08:41:45 GMT+0100 (GMT+01:00)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -16,10 +16,6 @@
 
 > The Rick and Morty API is an open API, no authentication is required for use. Nonetheless, to prevent malicious usage of the API there is a limit on the number of requests a given IP address can make. This limit is 10000 requests per day. If you happen to hit the limit you'll receive a 429 status (Too Many Requests) on all your requests during a period of 12 hours.
 
-
-
-
-
 [![App Rick and Morty - Image 1](https://beatrizsmerino.github.io/rick-and-morty/documentation/images/Screenshot_1.jpg "App Rick and Morty")](https://beatrizsmerino.github.io/rick-and-morty/)
 [![App Rick and Morty - Image 2](https://beatrizsmerino.github.io/rick-and-morty/documentation/images/Screenshot_2.jpg "App Rick and Morty")](https://beatrizsmerino.github.io/rick-and-morty/)
 [![App Rick and Morty - Image 3](https://beatrizsmerino.github.io/rick-and-morty/documentation/images/Screenshot_3.jpg "App Rick and Morty")](https://beatrizsmerino.github.io/rick-and-morty/)
