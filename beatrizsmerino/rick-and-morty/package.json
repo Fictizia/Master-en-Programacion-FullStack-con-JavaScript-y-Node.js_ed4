@@ -1,14 +1,15 @@
 {
-  "name": "rick-and-morty",
-  "version": "1.0.0",
-  "description": "Proyect develop with the api Rick and Morty",
-  "main": "index.js",
-  "scripts": {
-    "docs": "jsdoc -c jsdoc.json"
-  },
-  "author": "beatrizsmerino@gmail.com",
-  "license": "ISC",
-  "devDependencies": {
-    "jsdoc": "^3.6.3"
-  }
+	"name": "rick-and-morty",
+	"version": "1.0.0",
+	"description": "Proyect develop with the api Rick and Morty",
+	"main": "index.js",
+	"scripts": {
+		"docs": "jsdoc -c jsdoc.json"
+	},
+	"author": "beatrizsmerino@gmail.com",
+	"license": "ISC",
+	"devDependencies": {
+		"jsdoc": "^3.6.3"
+	},
+	"dependencies": {}
 }
