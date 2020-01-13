@@ -1,0 +1,32 @@
+body{
+    background-color: black;
+}
+#cajonPrincipal{
+    background-color: white;
+    margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 2px;
+    border-color: #A22A07;
+    border-style: double;
+    width: 70%;
+    height: 40%;
+    padding-left: 5%;
+    
+}
+
+h1{
+    text-align: center;
+}
+.datos{
+    margin: auto;
+    text-align: center;
+    padding: 2%;
+}
+
+#usuario{
+    border: 2px;
+    border-style: groove;
+    border-color: #A22A07;
+}

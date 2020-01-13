@@ -1,0 +1,22 @@
+.titulo{
+    text-align: center;
+  
+}
+
+.cabecera{
+    background-color: black;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#libros {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

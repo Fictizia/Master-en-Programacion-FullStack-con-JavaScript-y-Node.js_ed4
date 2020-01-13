@@ -1,6 +1,12 @@
 
 //Esta función nos daría el tiempo actua en Madrid al cargarse la página. Los datos están actualizados 
 //mediante una llamada ajax con los radares metereológicos de Madrid.
+
+/**
+ * Da el tiempo metereológico actual en Madrid
+ * @param {string} url - La url a la que se hace la llamada ajax
+ */
+
 function tiempo(url){
     fetch(url)
      .then(function(response){
@@ -9,9 +15,7 @@ function tiempo(url){
 
      })
      .then(function(data){
-         console.log(data);
-         console.log(data.weather[0].icon);
-
+         
          var cajadiv = document.createElement("div");
          var titulo = document.createElement("h3");
          var condicion = document.createElement("p");
@@ -23,15 +27,18 @@ function tiempo(url){
          cajadiv.appendChild(condicion);
          cajadiv.appendChild(recomendacion);
          document.getElementById("tiempo").appendChild(cajadiv);
+
+         /**
+          * fecha en la que se conecta el usuario
+          * @type {object} objeto Date
+          */
          var fecha = new Date(); // Cre la hora en la que se conecta el usuario o actualiza la página
          var dia = fecha.getDate();
-         //me creo un aray de meses porque con el getMonth solo me saca el numero de mes y ademas empieza en el 0.
-         var meses = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-         var mes = meses[fecha.getMonth()];
+         //Saco el mes en string ya que con getMonth me saca sólo el número de mes.
+         var mes = fecha.toLocaleString("es-Es", {month:"long" } ).charAt(0).toUpperCase() + fecha.toLocaleString("es-Es", {month:"long" } ).slice(1);       //añado el chartAt(0).toUpercase() para que me convierta la primera letra del mes en Mayuscula y añado el slice(1) para que me imprima el resto e letras desde la posion 1.
          var ano = fecha.getFullYear();
          var hora = fecha.getHours();
          var minutos = ("0"+fecha.getMinutes()).slice(-2); //agrego el 0 y el slice(-2) porque cuando los minutos son menosres de 10 me da solo un digito
-         console.log(fecha);
          document.getElementsByTagName("H3")[0].innerHTML = data.name+" ("+data.sys.country+") "+"<br>"+dia+" "+mes+" "+ano+"  |  "+hora+":"+minutos+" hrs";
          var a = data.main.temp; 
          var b = a-273.15; // Como los datos de la tempetatura me vienen en Kelvin , los paso a centigrados y luego lo redondeo  con Math.round
@@ -52,6 +59,12 @@ tiempo("http://api.openweathermap.org/data/2.5/weather?q=Madrid,es&APPID=5f19e66
 
 
 //Esta función mostrará las noticias mas populares actualmente en rtve, cuando el cliente de click en un botón.
+
+/**
+ * Muestra las noticias mas populares actualmente en rtve
+ * @param {string} url - La url a la que se hace la llamada ajax
+ */
+
 function noticias(url){
     fetch(url)
      .then(function(response){
@@ -61,7 +74,6 @@ function noticias(url){
        
         var lista = data.page.items
         for (var i=0;i<lista.length;i++){
-            //console.log(lista[i].longTitle);
             var cajadiv = document.createElement("DIV");
             var titulo = document.createElement("H3");
             var foto = document.createElement("IMG");
@@ -73,7 +85,12 @@ function noticias(url){
             document.getElementsByTagName("IMG")[2+i].setAttribute("width","100%");
             document.getElementsByTagName("IMG")[2+i].setAttribute("height","30%");
             document.getElementsByTagName("H3")[1+i].innerHTML += "<br>"+lista[i].longTitle+"<br>"; //le añado 1 al i porque ya hay un h3 previo
-            document.getElementsByTagName("IMG")[2+i].setAttribute("src",lista[i].imageSEO);            
+            if (lista[i].imageSEO == null){
+                document.getElementsByTagName("IMG")[2+i].setAttribute("src","rtve2.jpg")
+            } 
+            else{
+                document.getElementsByTagName("IMG")[2+i].setAttribute("src",lista[i].imageSEO);
+            };         
             document.getElementsByTagName("P")[2+i].innerHTML += "Para la noticia en detalle:<br>" +lista[i].htmlUrl;
             
 
@@ -91,6 +108,11 @@ document.getElementById("videos").addEventListener("click",function(){
 
 //Esta función mostrará las carreras populares que tiene planificada la Comunidad de Madrid en los próximos meses, mediante una llamada de ajax. 
 // Ojo, es necesario tener activado el plugin de CORS para que funcione la llamada.
+
+/**
+ * Muestra las carreras populares que tiene planificado Madrid en los próximos meses.
+ * @param {string} url - La url a la que se hace la llamada ajax
+ */
 function carreras(url){
     fetch(url)
      .then(function(response){
@@ -99,7 +121,6 @@ function carreras(url){
      .then(function(data){
         var lista = data["@graph"]
         for (var i=0;i<lista.length;i++){
-            //console.log(lista[i].name);
             var cajadiv = document.createElement("div")
             var titulo = document.createElement("h4");
             var enlace = document.createElement("a");
@@ -123,7 +144,7 @@ document.getElementById("carreras").addEventListener("click",function(){
     carreras("https://datos.madrid.es/egob/catalogo/300261-0-agenda-proximas-carreras.json")
 });
 
-//Los datos de los de las cámaras de trafico en la ruta que cojo habitialmente , los he colocado directamente desde el Html.
+//Los datos de los de las cámaras de tráfico en la ruta que cojo habitualmente , los he colocado directamente desde el Html.
 
 
 
