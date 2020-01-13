@@ -5,6 +5,7 @@
 	--color-brand-3: #2b2c6c;
 	--color-brand-4: #11b0c8;
 	--color-brand-5: #6dcad6;
+	--color-error: tomato;
 }
 
 /****** RESET ******/
@@ -56,7 +57,7 @@ hr {
 	height: 100%;
 	padding: 4rem 2rem;
 	filter: none;
-	transition: all 4s ease-out;
+	transition: filter 4s ease-out;
 }
 .page__body.is-searching .page__item {
 	filter: blur(1rem);
@@ -207,13 +208,14 @@ hr {
 
 /****** FILTER ******/
 .filter {
-	margin: 2rem 0;
+	margin: 4rem 0 2rem;
 	display: flex;
 	justify-content: center;
 	font-size: 3rem;
 	list-style: none;
 }
 .filter__item {
+	width: fit-content;
 	text-transform: lowercase;
 	text-decoration: none;
 	font-weight: 700;
@@ -232,7 +234,17 @@ hr {
 
 @media (max-width: 600px) {
 	.filter {
+		font-size: 5.5vw;
+	}
+	.filter__item:not(:last-of-type) {
+		margin-right: 2rem;
+	}
+}
+
+@media (max-width: 300px) {
+	.filter {
 		text-align: center;
+		align-items: center;
 		flex-direction: column;
 	}
 	.filter__item:not(:last-of-type) {
@@ -406,17 +418,72 @@ hr {
 	background-color: white;
 }
 
-/****** PAGINATION ******/
+/****** MESSAGE ******/
 .message {
+	position: relative;
+}
+.message__button-close {
+	width: 4rem;
+	height: 4rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translate(50%, -50%);
+	border: 0.3rem solid #fff;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0 0 5rem rgba(0, 0, 0, 0.2);
+	outline: none;
+	cursor: pointer;
+}
+.message__button-close:before,
+.message__button-close:after {
+	content: "";
+	display: inline-block;
+	width: 70%;
+	height: 0.3rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: var(--color-error);
+	transition: transform 0.5s ease-out 0s;
+}
+.message__button-close:before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+.message__button-close:after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+.message__button-close:hover {
+	background-color: var(--color-error);
+}
+.message__button-close:hover:before,
+.message__button-close:hover:after {
+	background-color: #fff;
+}
+.message__button-close:hover:after {
+	transform: translate(-50%, -50%) rotate(0);
+}
+.message__button-close:hover:before {
+	transform: translate(-50%, -50%) rotate(0);
+}
+
+/*** MESSAGE - ERROR404 ***/
+.message-error404 {
 	margin: 10vh auto;
 	text-align: center;
 	font-size: 3rem;
 	font-weight: 900;
+	color: var(--color-brand-3);
 }
-.message__wrapper {
+@media (max-width: 500px) {
+	.message-error404 {
+		margin: 4vh auto 0;
+	}
 }
-.message__inner:after,
-.message__inner:before {
+
+.message-error404 .message__inner:after,
+.message-error404 .message__inner:before {
 	content: "";
 	display: inline-block;
 	width: 30rem;
@@ -425,22 +492,61 @@ hr {
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-.message__inner:after {
-	position: absolute;
+.message-error404 .message__inner:before {
+	position: fixed;
 	bottom: 10vh;
-	left: 0;
+	left: 5%;
 	background-image: url("../images/mr-meeseeks-1.png");
 }
-.message__inner:before {
+@media (max-width: 850px) {
+	.message-error404 .message__inner:before {
+		display: none;
+	}
+}
+.message-error404 .message__inner:after {
 	position: fixed;
 	bottom: 0;
-	right: 0;
+	right: 5%;
 	z-index: 999999;
 	background-image: url("../images/mr-meeseeks-2.png");
 }
+@media (max-width: 600px) {
+	.message-error404 .message__inner:after {
+		display: none;
+	}
+}
 
-.message--error404 {
-	color: var(--color-brand-3);
+/*** MESSAGE - ALERT ***/
+.message-alert {
+	padding: 2rem;
+	position: fixed;
+	bottom: 8rem;
+	right: 5rem;
+	z-index: 999;
+	font-size: 1.5rem;
+	color: #fff;
+	border: 0.3rem solid #fff;
+	border-radius: 1rem;
+	background-color: var(--color-error);
+	box-shadow: 0 0 5rem rgba(0, 0, 0, 0.2);
+}
+.message-alert .message__inner p {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.message-alert__icon {
+	margin-right: 1rem;
+	font-size: 3rem;
+}
+@media (max-width: 500px) {
+	.message-alert {
+		width: 80%;
+		left: 50%;
+		right: initial;
+		transform: translate(-50%, 0);
+		text-align: center;
+	}
 }
 
 /****** IDS ******/

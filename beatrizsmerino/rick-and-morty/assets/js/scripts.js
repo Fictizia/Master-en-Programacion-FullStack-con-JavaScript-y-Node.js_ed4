@@ -12,7 +12,7 @@
 /**
  * @const urlAPI
  * @description API route 'Rick and morty'
- * @type {string}
+ * @type {String}
  * @see Used in: {@link ajaxHandler}
  */
 const urlAPI = "https://rickandmortyapi.com/api/";
@@ -45,7 +45,7 @@ let appContent = document.getElementById("appContent");
 /**
  * @function svgMe
  * @description Converts an `<img>` tag, with a `.svg` extention and a class `svgMe`, into a `<svg>` tag.
- * @return {object} Return the file svg
+ * @return {Object} Return the file svg
  * @see Used in: {@link functionAnonimAutoExecuted}
  */
 function svgMe() {
@@ -111,8 +111,8 @@ function svgMe() {
 /**
  * @function firstUpperCase
  * @description Converts the first letter of a string to uppercase
- * @param {string} string - string with the this letter in lowercase
- * @return {string} returns the same modified string
+ * @param {String} string - string with the this letter in lowercase
+ * @return {String} returns the same modified string
  * @see Used in: {@link cardCreate}
  */
 function firstUpperCase(string) {
@@ -125,8 +125,8 @@ function firstUpperCase(string) {
 /**
  * @function delay
  * @description Executes a function after a given time
- * @param {function} fn - function to execute
- * @param {number} ms - delay time in miliseconds
+ * @param {Function} fn - function to execute
+ * @param {Number} ms - delay time in miliseconds
  * @see Used in: {@link searchAdd}
  */
 function delay(fn, ms) {
@@ -147,8 +147,8 @@ function delay(fn, ms) {
 /**
  * @function ajaxHandler
  * @description API request
- * @param {string} url - root of the API
- * @param {string} action - name of the action to excute
+ * @param {String} url - root of the API
+ * @param {String} action - name of the action to excute
  * @return {object}
  * @see Used inside: {@link loaderAdd}, {@link loaderRemove}, {@link setAction}
  * @see Used in: {@link searchAdd}, {@link paginationAdd}, {@link click}
@@ -165,7 +165,7 @@ function ajaxHandler(url, action) {
 			let timer = setInterval(function () {
 				clearInterval(timer);
 				loaderRemove();
-				removeTemplateMessage();
+				messageRemove("messageError404");
 				setAction(action, appContent, data);
 			}, 3000);
 		})
@@ -173,7 +173,7 @@ function ajaxHandler(url, action) {
 			// console.warn('error is', error);
 			if (error.status === 404) {
 				loaderRemove();
-				addMessageError404();
+				messageError404Add();
 			}
 		});
 
@@ -293,7 +293,7 @@ function loaderRemove() {
 /**
  * @function appContentAdd
  * @description Add link of the API to the app content
- * @param {string} url - root of the API
+ * @param {String} url - root of the API
  * @see Used in: {@link click}
  */
 function appContentAdd(url) {
@@ -315,9 +315,9 @@ function appContentAdd(url) {
 /**
  * @function setAction
  * @description List of functions to choose from
- * @param {string} action - name of the action to excute
+ * @param {String} action - name of the action to excute
  * @param {HTMLElement} elementDom - DOM element where the response data is inserted
- * @param {object} dataResponse - response data of the ajax handler (json)
+ * @param {Object} dataResponse - response data of the ajax handler (json)
  * @see Used inside: {@link filterAdd}, {@link filterAddContent}
  * @see Used in: {@link ajaxHandler}
  */
@@ -334,7 +334,7 @@ function setAction(action, elementDom, dataResponse) {
  * @function filterAdd
  * @description Add navigation menu filtering through the 3 types of data (characters, locations and episodes) to the app content.
  * @param {HTMLElement} elementDom - DOM element where the filter is inserted
- * @param {object} responseData - response data of the ajax handler (json)
+ * @param {Object} responseData - response data of the ajax handler (json)
  * @see Used in: {@link setAction}
  */
 function filterAdd(elementDom, responseData) {
@@ -385,7 +385,7 @@ function filterActive(item, thisActive) {
 /**
  * @function filterAddContentInfo
  * @description Insert information to the content with the number of results of the request
- * @param {object} responseData - response data of the ajax handler (json)
+ * @param {Object} responseData - response data of the ajax handler (json)
  * @return {Element}
  * @see Used in: {@link filterAddContent}
  */
@@ -402,7 +402,7 @@ function filterAddContentInfo(responseData) {
 /**
  * @function filterAddContentResults
  * @description Insert results to the content of the request
- * @param {object} responseData - response data of the ajax handler (json)
+ * @param {Object} responseData - response data of the ajax handler (json)
  * @return {Element}
  * @see Used inside: {@link cardCreate}, {@link cardMoveImage}, {@link cardWhenClicked}
  * @see Used in: {@link filterAddContent}
@@ -431,7 +431,7 @@ function filterAddContentResults(responseData) {
  * @function filterAddContent
  * @description Add the filter content application
  * @param {HTMLElement} elementDom - DOM element where the filter content is inserted
- * @param {object} responseData - response data of the ajax handler (json)
+ * @param {Object} responseData - response data of the ajax handler (json)
  * @see Used inside: {@link filterAddContentInfo}, {@link filterAddContentResults}...
  * @see Used in: {@link setAction}
  */
@@ -507,59 +507,108 @@ function filterRemoveContent() {
 // MESSAGE
 //////////////////////////////////
 /**
- * @function addTemplateMessage
- * @description Create a template message
- * @param messageClass {string} - Class css with modifier BEM of the message
- * @param messageText {string} - Text of the message
- * @see Used in: {@link addMessageError404}
+ * @function messageAdd
+ * @description Create the message component
+ * @param {String} messageId - Id for events js
+ * @param {String} messageClass - Class css with modifier BEM of the message
+ * @param {String} messageText - Text of the message
+ * @see Used inside: {@link messageCloseAdd}
+ * @see Used in: {@link messageError404Add}, {@link messageAlertAdd}
  */
-function addTemplateMessage(messageClass, messageText) {
-	let messsageElem = document.createElement("div");
-	messsageElem.classList.add("message__wrapper");
+function messageAdd(messageId, messageClass, messageText) {
+	let messageDom = document.getElementById(messageId);
 
-	let templateMessage = `
-		<div class="message ${messageClass}">
+	let messageButton;
+	switch (messageClass) {
+		case "message-alert":
+			messageButton = messageCloseAdd();
+			messageButton = messageButton.outerHTML;
+			break;
+		case "message-error404":
+			messageButton = "";
+		default:
+			break;
+	}
+
+	if (!messageDom) {
+		let messageElem = document.createElement("div");
+		messageElem.setAttribute("id", messageId);
+		messageElem.setAttribute("class", `message ${messageClass}`);
+
+		let templateMessage = `
 			<div class="message__inner">
-				<p>
-					${messageText}
-				</p>
+				${messageButton}
+				<div class="message__content">
+					<p>
+						${messageText}
+					</p>
+				</div>
 			</div>
-		</div>
-	`;
-	messsageElem.innerHTML = templateMessage;
+		`;
+		messageElem.innerHTML = templateMessage;
+		return messageElem;
+	}
+}
 
-	return messsageElem;
+
+
+/**
+ * @function messageCloseAdd
+ * @description Create a button for remove the message
+ * @see Used in: {@link messageAlertAdd}
+ */
+function messageCloseAdd() {
+	let buttonDom = document.createElement("button");
+	buttonDom.classList.add("message__button-close");
+
+	return buttonDom;
 }
 
 
 /**
- * @function removeTemplateMessage
- * @description Remove a template message
+ * @function messageRemove
+ * @description Remove the message component
+ * @param {String} messageId - id of the message to remove
  * @see Used in: {@link ajaxHandler}
  */
-function removeTemplateMessage() {
-	let messsageElem = document.querySelector(".message__wrapper");
-	if (messsageElem) {
-		appContent.removeChild(messsageElem);
+function messageRemove(messageId) {
+	let messsage = document.getElementById(messageId);
+	if (messsage) {
+		messsage.parentElement.removeChild(messsage);
+		// console.log("Message removed");
 	}
 }
 
 
 /**
- * @function addMessageError404
+ * @function messageError404Add
  * @description Add message error 404 (search not found)
- * @see Used inside: {@link addTemplateMessage}
+ * @see Used inside: {@link messageAdd}
  * @see Used in: {@link ajaxHandler}
  */
-function addMessageError404() {
+function messageError404Add() {
 	filterRemoveContent();
 	paginationRemove();
 
-	let messsageElem = document.querySelector(".message__wrapper");
-	if (!messsageElem) {
-		let templateMessage = addTemplateMessage("message--error404", "Error 404.</br> Search not found");
-		appContent.appendChild(templateMessage);
-	}
+	let templateMessage = messageAdd("messageError404", "message-error404", "Error 404.</br> Search not found");
+	appContent.appendChild(templateMessage);
+}
+
+
+/**
+ * @function messageAlertAdd
+ * @description Create a alert personalized
+ * @param {String} messageName - Name of message in camellCase
+ * @param {String} messageText - Text of message
+ * @see Used inside: {@link messageAdd}, {@link messageRemove}
+ */
+function messageAlertAdd(messageName, messageText) {
+	let messageId = "messageAlert" + messageName;
+	let templateMessage = messageAdd(messageId, "message-alert", messageText);
+	document.body.appendChild(templateMessage);
+	document.querySelector("#" + messageId + " .message__button-close").addEventListener("click", function () {
+		messageRemove(messageId);
+	});
 }
 
 
@@ -819,7 +868,7 @@ function searchAdd(filterActive) {
 	/**
 	* @description Search by selected filter name when typing in the search engine input.
 	* @event keyup
-	* @type {object}
+	* @type {Object}
 	* @see Used inside: {@link delay}, {@link filterRemoveContent}, {@link paginationRemove}, {@link ajaxHandler}
 	*/
 	document.getElementById("searchInput").addEventListener("keyup", delay(function (e) {
@@ -833,7 +882,6 @@ function searchAdd(filterActive) {
 		// console.log(this.value);
 		// console.log(urlAPI + searchBy + "/?" + "name" + "=" + valueInput);
 		// console.assert(valueInput, "Input hasn`t value");
-
 	}, 500));
 }
 
@@ -859,7 +907,7 @@ function searchRemove() {
 /**
  * @function paginationCreate
  * @description Create pagination
- * @param {object} responseData - response data of the ajax handler (json)
+ * @param {Object} responseData - response data of the ajax handler (json)
  * @see Used in: {@link paginationAdd}
  */
 function paginationCreate(responseData) {
@@ -886,7 +934,7 @@ function paginationCreate(responseData) {
 /**
  * @function paginationSetCounter
  * @description Create counter pagination
- * @param {object} responseData - response data of the ajax handler (json)
+ * @param {Object} responseData - response data of the ajax handler (json)
  * @see Used in: {@link paginationAdd}
  */
 function paginationSetCounter(responseData) {
@@ -930,7 +978,7 @@ function paginationSetCounter(responseData) {
 /**
  * @function paginationAdd
  * @description Add pagination
- * @param {object} responseData - response data of the ajax handler (json)
+ * @param {Object} responseData - response data of the ajax handler (json)
  * @see Used inside: {@link paginationCreate}, {@link paginationSetCounter}...
  * @see Used in: {@link filterFoundContent}
  */
@@ -974,10 +1022,60 @@ function paginationRemove() {
 }
 
 
+
+
+
+// ADBLOCK
+//////////////////////////////////
+
+/**
+ * @function adblockDetected
+ * @description Callback executed if adblock is installed
+ * @see Used inside {@link messageAlert}
+ * @see Used in: {@link checkAdblock}
+ **/
+function adblockDetected() {
+	let message = "<i class='message-alert__icon icon-warning'></i> AdBlock is enabled";
+	// console.warn(message);
+	// alert(message);
+	messageAlertAdd("AdBlock", message);
+}
+
+
+/**
+ * @function adblockDisabled
+ * @description Callback executed if adblock is disabled
+ * @see Used in: {@link checkAdblock}
+ **/
+function adblockDisabled() {
+	let message = "AdBlock is not enabled";
+	// console.info(message);
+}
+
+
+/**
+ * @function adblockVerify
+ * @description Verify if the user has installed the Adblock browser extension
+ * @see Used inside: {@link adblockDetected} {@link adblockDisabled}
+ * @see Used in: {@link functionAnonimAutoExecuted}
+ **/
+function adblockVerify() {
+	if (typeof blockAdBlock === "undefined") {
+		adblockDetected();
+	} else {
+		blockAdBlock.onDetected(adblockDetected);
+		blockAdBlock.onNotDetected(adblockDisabled);
+	}
+}
+
+
+
+
+
 /**
  * @description Get API data
  * @event click
- * @type {object}
+ * @type {Object}
  * @see Used inside: {@link appContentAdd}, {@link ajaxHandler}
  */
 appButton.addEventListener("click", function () {
@@ -994,6 +1092,7 @@ appButton.addEventListener("click", function () {
  * @see Used inside: {@link svgMe}...
  */
 (function () {
+	adblockVerify();
 	svgMe();
 
 	let timerFilterItem = setInterval(function () {
