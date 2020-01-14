@@ -345,7 +345,7 @@ function templatePopup() {
  * @function setUserData
  * @description Search for name and email by entering your username of login.
  * If the user exit search his name and email, and insert info.
- * @param {Object} responseData
+ * @param {Object} responseData - response data of the ajax handler (json)
  * @see Used inside: {@link user}, {@link templatePopup}, {@link insertUserData}
  * @see Used in: {@link setAction}
  */
@@ -437,7 +437,7 @@ function removeData() {
  * @function getUserEmail
  * @description If the email is not found with the function 'setUserData', search it within user events, his 'commits' that will have the email asociated.
  * If the email has the string 'noreply' it is not valid and find another.
- * @param {Object} responseData
+ * @param {Object} responseData - response data of the ajax handler (json)
  * @see Used inside: {@link user}, {@link insertUserData}
  * @see Used in: {@link setAction}
  */
