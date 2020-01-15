@@ -1,0 +1,27 @@
+body { background-color: #D1D0F0;
+
+}
+h1, h4 {
+    text-align: center;
+}
+h3{
+    max-height: 44px;
+}
+a{
+    text-decoration: none;
+}
+
+
+#libros{
+    display: flex;
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.item{
+    max-width: 30%;
+    max-height: 30%;
+}
+
+

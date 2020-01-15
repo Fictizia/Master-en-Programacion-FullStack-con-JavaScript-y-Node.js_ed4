@@ -1,0 +1,48 @@
+body{
+    background-color: #CAC9BF;
+}
+
+h1{
+    text-align: center;
+
+}
+
+#cajaSuperior{
+    display: flex;
+    flex-direction: row;
+}
+#caja3{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.tiempos{
+    
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.icono{
+    max-height: 157px;
+}
+
+#caja1{
+    margin-left: 5%;
+    width: 50%;
+
+}
+
+#caja2{
+    
+    margin-right: 5%;
+}
+
+.tiempos{
+    margin: 5%;
+}
+
+#datosContaminacion{
+    margin-top: 10%;
+}
