@@ -1,0 +1,10 @@
+
+
+div.img{
+    flex-direction: column;
+    margin: 1em;
+}
+img{
+    margin: 1em;
+    border-radius: 50%;
+}
