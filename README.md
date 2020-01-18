@@ -63,7 +63,8 @@ Fecha | Teoría | Recursos | Contenido
 08/01/20 | [Clase 27](teoria/clase27.md) | [Clase 27](recursos/clase27.md)| ECMA6, es7, es8, es9 II: Teoria II
 13/01/20 | [Clase 28](teoria/clase28.md) | Clase 28| ECMA6, es7, es8, es9 III: Ejercicios I
 17/01/20 | [Clase 29](teoria/clase29.md) | Clase 29| ECMA6, es7, es8, es9 III: Ejercicios II
-18/01/20 | [Clase 30](teoria/clase30.md) | Clase 30| Router Frontend + templates
+18/01/20 | [Clase 30](teoria/clase30.md) | [Clase 30](recursos/clase27.md)| Router Frontend + templates
+20/01/20 | [Clase 31](teoria/clase31.md) | [Clase 31](recursos/clase31.md)| Paradigmas: Programación orientada a Objetos
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
