@@ -20,7 +20,7 @@
 > [Wikipedia](https://es.wikipedia.org/wiki/Paradigma_de_programaci%C3%B3n)
 
 **Paradigmas principales**
-- [Programación imperativa o por procedimientos](https://es.wikipedia.org/wiki/Programaci%C3%B3n_imperativa) 
+- [Programación imperativa o por procedimientos](https://medium.com/@Loopa/paradigmas-de-programaci%C3%B3n-programaci%C3%B3n-imperativa-y-programaci%C3%B3n-declarativa-4c4a4182fd87) 
 	- Extendida en C, BASIC o Pascal.
 	- La programación imperativa es la más usada y la más antigua
 	- Se basa en dar instrucciones al ordenador de como hacer las cosas en forma de algoritmos.
@@ -33,14 +33,14 @@
 	- Basada en la definición los predicados
 	- Es de corte más matemático
 	- Extendida en Python, Haskell, etc...
-- [Programación reactiva](https://es.wikipedia.org/w/index.php?title=Programaci%C3%B3n_reactiva&action=edit&redlink=1)
+- [Programación reactiva](https://blog.bi-geek.com/que-es-la-programacion-reactiva/)
 	- Este paradigma se basa en la declaración de una serie de objetos emisores de eventos asíncronos y otra serie de objetos que se "suscriben" a los primeros (es decir, quedan a la escucha de la emisión de eventos de estos) y *reaccionan* a los valores que reciben. 
 	- Es muy común usar la librería Rx de Microsoft (Reactive Extensions)
 - [Programación multiparadigma](https://es.wikipedia.org/wiki/Programaci%C3%B3n_multiparadigma)
 	- Es el uso de dos o más paradigmas dentro de un programa.
 
 **Otros paradigmas**
-- [Programación declarativa](https://es.wikipedia.org/wiki/Programaci%C3%B3n_declarativa)
+- [Programación declarativa](https://es.quora.com/Qu%C3%A9-es-la-programaci%C3%B3n-declarativa)
 - [Lenguaje específico del dominio (DSL)](https://es.wikipedia.org/wiki/Lenguaje_espec%C3%ADfico_del_dominio): SQL
 - [Programación con restricciones](https://es.wikipedia.org/wiki/Programaci%C3%B3n_con_restricciones)
 - [Programación lógica](https://es.wikipedia.org/wiki/Programaci%C3%B3n_l%C3%B3gica)
@@ -628,3 +628,15 @@ class ClearableWeakMap {
 ### POO: Las partes malas
 
 ![img](../assets/clase31/049b4919-072a-4820-84fc-58d4b0f42c66.png)
+
+### Ejercicio POO
+
+- Crear la clase Persona propiedades nombre, edad y género, y el método obtDetalles(), que muestra por pantalla las propiedades de la persona.
+- Crear la clase Estudiante, que hereda de Persona, e incluye las propiedades curso y grupo y el método registrar(), que muestre por pantalla el resultado.
+- Crear la clase Profesor, que hereda de Persona, e incluye las propiedades asignatura y nivel y el método asignar(), que muestre por pantalla el resultado.
+- Crear los objetos y casos de prueba necesarios para comprobar el correcto funcionamiento de la jerarquía de clases.
+
+```javascript
+//Tu solución
+```
+
