@@ -1,0 +1,31 @@
+{
+    "source": {
+        "includePattern": ".+\\.js(doc|x)?$", // Only process file ending in .js, .jsdoc or .jsx
+        "include": [
+            "."
+        ], // Check all folders.
+        "exclude": [
+            "node_modules"
+        ] // Be gone, node_modules.
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "tags": {
+        "allowUnknownTags": false,
+        "dictionaries": [
+            "jsdoc",
+            "closure"
+        ]
+    },
+    "sourceType": "module",
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "destination": "./docs/", // Where I want my docs to be generated.
+        "recurse": true, // Same as using -r or --recurse
+        "readme": "./README.md" // Add to de documentation the content of the file README
+    }
+}

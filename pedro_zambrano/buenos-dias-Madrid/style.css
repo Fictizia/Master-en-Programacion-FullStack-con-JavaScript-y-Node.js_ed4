@@ -1,0 +1,25 @@
+section {
+    width: 90%;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container div {
+    width: 50%;
+}
+
+.weatherDescription {
+    color: cornflowerblue;
+}
+
+.weatherDescription::first-letter {
+    text-transform: uppercase;
+}
+
+.pollution {
+    color: red;
+}

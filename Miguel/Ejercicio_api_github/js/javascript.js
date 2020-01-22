@@ -1,4 +1,10 @@
-//Ejercicio obtener informacion de usuario de git hub
+/**
+ * @file exercise to get the data of a github user including his email from the events
+ * @author Miguel Martin-Maestro Lopez
+ * @version 1.1.0
+ */
+
+
 /**
  * @description fetch to get user data from the api of github
  * @param {string} url //url created in the listener below
@@ -12,7 +18,7 @@ function searchUser(url){
 
         document.getElementById("resultado").innerHTML = "";
 
-        var nombre = data.name; //Guardo el nombre en una variable para luego encontrar el correo del usuario en sus eventos de github.
+        var nombre = data.name; 
 
         var p = document.createElement("p");
         p.setAttribute("id","informacionDeUsuario");
@@ -59,7 +65,9 @@ function searchUser(url){
 };
 
 /** 
- * @description event assigned to the html button to call the fetch above
+ * @description it takes as part of the parameter of searchUser(url) the value entered by the user in the input
+ * @event searchUser 
+ * @fires btnUser#searchUser 
 */
 document.getElementById("btnUser").addEventListener("click", function(){
     var usuario = document.getElementById("textBox").value;
