@@ -1,0 +1,376 @@
+/************ COLOR **************/
+:root {
+  --color-brand-1: #eba764;
+  --color-brand-2: #837e83;
+  --color-brand-3: #e7dfdd;
+  --color-brand-4: #f1c28f;
+  --color-brand-5: #fd7667;
+  --color-brand-6: #c48344;
+}
+
+/************ RESET **************/
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/************ GENERAL **************/
+html {
+  font-size: 10px;
+}
+
+body {
+  padding: 4rem 2rem 18rem 2rem;
+  font-family: "Solway", serif;
+  position: relative;
+  background-color: var(--color-brand-2);
+}
+
+svg {
+  width: 50px;
+  height: auto;
+}
+
+/************ PAGE **************/
+.page {
+  height: 100%;
+}
+.page__body {
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page__title {
+  margin-bottom: 5rem;
+  text-align: center;
+  font-size: 4rem;
+  color: white;
+}
+.page__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.page__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/************ FORM **************/
+.form {
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.label {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: var(--color-brand-3);
+}
+.input {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: inline-block;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 100;
+  color: var(--color-brand-3);
+  border: 0.2rem solid var(--color-brand-3);
+  background-color: transparent;
+  outline: none;
+}
+
+.input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+}
+.input::-moz-placeholder {
+  /* Firefox 19+ */
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+}
+.input:-ms-input-placeholder {
+  /* IE 10+ */
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+}
+.input:-moz-placeholder {
+  /* Firefox 18- */
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input:focus {
+  color: var(--color-brand-2);
+  background-color: var(--color-brand-3);
+}
+.input:focus::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+}
+.input:focus::-moz-placeholder {
+  /* Firefox 19+ */
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+}
+.input:focus:-ms-input-placeholder {
+  /* IE 10+ */
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+}
+.input:focus:-moz-placeholder {
+  /* Firefox 18- */
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/************ LOADER **************/
+.loader {
+  width: 20rem;
+  height: 20rem;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/************ BUTTON **************/
+.button {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 3rem;
+  display: inline-block;
+  position: relative;
+  font-size: 3rem;
+  color: var(--color-brand-1);
+  border: 0.2rem solid var(--color-brand-1);
+  background-color: transparent;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+}
+.button:after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: var(--color-brand-1);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s ease-in 0s;
+}
+.button.is-searching,
+.button:hover {
+  color: var(--color-brand-2);
+}
+.button.is-searching:after,
+.button:hover:after {
+  transform: translate(-50%, -50%) scale(1000);
+}
+
+/************ POPUP **************/
+.popup {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup__inner {
+  width: 90%;
+  max-width: 70rem;
+  height: 80%;
+  max-height: 40rem;
+  padding: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-brand-6);
+  font-size: 1.8rem;
+  background-color: var(--color-brand-3);
+}
+
+.popup__close {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  z-index: 999;
+  border: 0.3rem solid var(--color-brand-6);
+  border-radius: 50%;
+  background-color: var(--color-brand-3);
+  cursor: pointer;
+}
+
+.popup__close:after,
+.popup__close:before {
+  content: "";
+  display: inline-block;
+  width: 70%;
+  height: 0.3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 1.2rem;
+  background-color: var(--color-brand-6);
+  transition: background-color 0.5s linear 0s, color 0.5s linear 0s, transform 0.5s linear 0.5s;
+}
+
+.popup__close:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.popup__close:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.popup__close:hover {
+  border-color: var(--color-brand-3);
+  background-color: var(--color-brand-6);
+}
+
+.popup__close:hover:after {
+  background-color: var(--color-brand-3);
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.popup__close:hover:before {
+  background-color: var(--color-brand-3);
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.popup__content {
+  height: 100%;
+  position: relative;
+}
+
+#popup.is-error404 .popup__inner:before {
+  content: "";
+  display: inline-block;
+  width: 30rem;
+  height: 30rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../images/github-octocat-software.png");
+}
+#popup.is-error404 .popup__content {
+  display: none;
+}
+
+/************ USER DATA **************/
+.user-data {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.user-data__login {
+  margin-bottom: 1.5rem;
+}
+.user-data__login a {
+  color: var(--color-brand-1);
+}
+.user-data__login a:hover {
+  color: var(--color-brand-6);
+}
+.user-data__name {
+  font-size: 3rem;
+  color: var(--color-brand-2);
+}
+.user-data__email {
+  font-size: 2.4rem;
+  color: var(--color-brand-2);
+}
+.user-data__email a {
+  color: var(--color-brand-2);
+}
+.user-data__email a:hover {
+  color: var(--color-brand-5);
+}
+
+/************ SCROLL **************/
+.scroll {
+  height: 100%;
+}
+.scroll__inner {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scroll__inner::-webkit-scrollbar {
+  width: 1rem;
+  border-radius: 0.5rem;
+}
+
+.scroll__inner::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: var(--color-brand-4);
+}
+
+.scroll__inner::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-brand-6);
+}
+
+.scroll__inner::-webkit-scrollbar-track {
+  border-radius: 0.5rem;
+  background-color: transparent;
+}
+
+.scroll__content {
+  padding-right: 2rem;
+}
+
+/************ GITHUB **************/
+#github {
+  width: 5rem;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  cursor: pointer;
+}
+
+#github path {
+  fill: rgba(0, 0, 0, 0.4);
+}
+
+#github:hover path {
+  fill: var(--color-brand-1);
+}
