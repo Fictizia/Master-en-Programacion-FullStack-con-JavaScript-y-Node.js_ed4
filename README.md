@@ -68,6 +68,7 @@ Fecha | Teoría | Recursos | Contenido
 22/01/20 | [Clase 32](teoria/clase32.md) | [Clase 32](recursos/clase32.md)| Patrones en JS I: Antipatrones
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
+=================
 
 **Bases lógicas de la programación**
 - Aprende a pensar como un/a programador/a
