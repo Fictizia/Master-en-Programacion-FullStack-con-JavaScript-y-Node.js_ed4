@@ -61,7 +61,15 @@ Fecha | Teoría | Recursos | Contenido
 18/12/19 | [Clase 25](teoria/clase25.md) | [Clase 25](recursos/clase25.md)| Entrevistas técnicas para JavaScript Developers
 20/12/19 | [Clase 26](teoria/clase26.md) | [Clase 26](recursos/clase26.md)| ECMA6, es7, es8, es9 I: Teoria I
 08/01/20 | [Clase 27](teoria/clase27.md) | [Clase 27](recursos/clase27.md)| ECMA6, es7, es8, es9 II: Teoria II
+<<<<<<< HEAD
 
+=======
+13/01/20 | [Clase 28](teoria/clase28.md) | Clase 28| ECMA6, es7, es8, es9 III: Ejercicios I
+17/01/20 | [Clase 29](teoria/clase29.md) | Clase 29| ECMA6, es7, es8, es9 III: Ejercicios II
+18/01/20 | [Clase 30](teoria/clase30.md) | [Clase 30](recursos/clase27.md)| Router Frontend + templates
+20/01/20 | [Clase 31](teoria/clase31.md) | [Clase 31](recursos/clase31.md)| Paradigmas: Programación orientada a Objetos
+22/01/20 | [Clase 32](teoria/clase32.md) | [Clase 32](recursos/clase32.md)| Patrones en JS I: Antipatrones
+>>>>>>> 5cefe3197a4247269c1277621fce9fecad6c47a4
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file Proyect of the best-selling books in the Hardcover Fiction category made with The New York Times API.
+ * @author Beatriz Sopeña Merino &lt;beatrizsmerino@gmail.com>
+ * @copyright (2020)
+ */
+
+
+
+
+
+/**
+ * @const keyAPI
+ * @description API token 'New York Times Best Sellers'.
+ * @type {String}
+ * @see Used in: {@link functionAnonimAutoExecuted}
+ */
+let keyAPI = "RiUeh7HSSb30pr2EOZeY2JIJ1oiM67Yo";
+
+
+/**
+ * @const urlAPIListCategories
+ * @description API route to list of categories 'New York Times Best Sellers'.
+ * @type {String}
+ * @see Used in: {@link functionAnonimAutoExecuted}
+ */
+let urlAPIListCategories = "https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=" + keyAPI;
+
+
+/**
+ * @const urlAPIListBooks
+ * @description API route to the books of the category selected 'New York Times Best Sellers'.
+ * @type {String}
+ * @see Used in: {@link functionAnonimAutoExecuted}
+ */
+let urlAPIListBooks = "https://api.nytimes.com/svc/books/v3/lists/current/";
+
+
+
+
+
+// AJAX HANDLER - FETCH
+//////////////////////////////////
+
+/**
+ * @function ajaxHandler
+ * @description API request.
+ * @param {String} url - root of the API
+ * @param {String} action - name of the action to excute
+ * @return {Object}
+ * @see Used inside: {@link addLoader}, {@link removeLoader},{@link emptyContent}, {@link setAction}, {@link error404}
+ * @see Used in: {@link setButtonReadMore}, {@link setButtonBack}, {@link functionAnonimAutoExecuted}
+ */
+function ajaxHandler(url, action) {
+    // console.info(url);
+
+    addLoader();
+
+    fetch(url)
+        .then(function (response) {
+            if (response.status === 200) {
+                response.json().then(function (data) {
+                    let timer = setInterval(function () {
+                        removeLoader();
+                        console.info(data);
+                        emptyContent();
+                        setAction(action, data);
+                        clearInterval(timer);
+                        return data;
+                    }, 3000);
+                });
+            } else if (response.status === 404) {
+                console.warn(response.status);
+                let timer = setInterval(function () {
+                    removeLoader();
+                    error404();
+                    clearInterval(timer);
+                    return response.status;
+                }, 1000);
+            }
+        }).catch(function (error) {
+            console.warn(error);
+        });
+}
+
+/**
+ * @function setAction
+ * @description List of functions to choose from.
+ * @param {String} action - name of the action to excute
+ * @param {Object} responseData - response data of the ajax handler (json)
+ * @see Used inside: {@link setDataListCategories}, {@link setDataListBooks}
+ * @see Used in: {@link ajaxHandler}
+ */
+function setAction(action, responseData) {
+    switch (action) {
+        case "setDataListCategories":
+            setDataListCategories(responseData);
+            break;
+        case "setDataListBooks":
+            setDataListBooks(responseData);
+            break;
+        default:
+            break;
+    }
+}
+
+
+
+// LOADER
+//////////////////////////////////
+
+/**
+ * @function addLoader
+ * @description Add loading animation.
+ * @see Used in: {@link ajaxHandler}
+ */
+function addLoader() {
+    let loader = document.getElementById("loader");
+    if (!loader) {
+        let loader = document.createElement("div");
+        loader.setAttribute("id", "loader");
+        loader.setAttribute("class", "loader");
+        document.body.appendChild(loader);
+    }
+}
+
+
+/**
+ * @function removeLoader
+ * @description Remove loading animation.
+ * @see Used in: {@link ajaxHandler}
+ */
+function removeLoader() {
+    let loader = document.getElementById("loader");
+    if (loader) {
+        document.body.removeChild(loader);
+    }
+}
+
+
+
+// ERROR 404
+//////////////////////////////////
+
+/**
+ * @function error404
+ * @description Add a html template, with a image svg with 404 error.
+ * @see Used inside: {@link setButtonBack}
+ * @see Used in: {@link ajaxHandler}
+ */
+function error404() {
+    let template = `
+		&lt;div class="message-error">
+			&lt;img class="message-error__image" src="img/error-404.svg">
+		&lt;/div>
+		`;
+    document.getElementsByClassName("page__content")[0].innerHTML = template;
+    document.getElementsByClassName("page")[0].classList.add("is-error404");
+    setButtonBack("message-error");
+}
+
+
+
+// SET DATA BOOKS
+//////////////////////////////////
+
+/**
+ * @function emptyContent
+ * @description Empty the ".page__content"
+ * @see Use in: {@link ajaxHandler}
+ */
+function emptyContent() {
+    document.getElementsByClassName("page__content")[0].innerHTML = "";
+}
+
+
+/**
+ * @function setDataListCategories
+ * @description Insert a html template with the list of categories. Each category have a button and set it a request to the category.
+ * @param {Object} response - response data of the ajax handler (json)
+ * @see Use inside: {@link setButtonReadMore}
+ * @see Use in: {@link setAction}
+ */
+function setDataListCategories(response) {
+    let listCategories = response.results;
+    // console.log(listCategories);
+
+    let listCategoriesDom = document.createElement("div");
+    listCategoriesDom.setAttribute("id", "listCategories");
+    listCategoriesDom.setAttribute("class", "list-categories");
+
+    for (let index = 0; index &lt; listCategories.length; index++) {
+        const category = listCategories[index];
+
+        let categoryDom = document.createElement("article");
+        categoryDom.setAttribute("class", "category");
+        categoryDom.setAttribute("data-index", index.toString());
+
+        let template = `&lt;div class='category__inner'>
+							&lt;h3 class='category__title category__item'>
+								#${index + 1} ${category.list_name}
+							&lt;/h3>
+							
+							&lt;div class='category__text category__item'>
+								&lt;p>
+									&lt;strong>
+										Oldest:
+									&lt;/strong>
+									${category.oldest_published_date}
+								&lt;/p>
+								&lt;p>
+									&lt;strong>
+										Newest:
+									&lt;/strong>
+									${category.newest_published_date}
+								&lt;/p>
+								&lt;p>
+									&lt;strong>
+										Updated:
+									&lt;/strong>
+									${category.updated}
+								&lt;/p>
+							&lt;/div>
+
+							&lt;button class='category__button category__item button--read-more button' data-category="${category.list_name_encoded}">
+								READ MORE &lt;i class='button__icon button__icon--right fas fa-arrow-circle-right'>&lt;/i>
+							&lt;/button>
+						&lt;/div>`;
+
+        categoryDom.innerHTML = template;
+        listCategoriesDom.appendChild(categoryDom);
+    }
+
+    // console.log(listBooksDom);
+    document.getElementsByClassName("page__content")[0].appendChild(listCategoriesDom);
+
+    setButtonReadMore();
+}
+
+
+/**
+ * @function setButtonReadMore
+ * @description Add click event to the category button with a request to the category given in the attribute 'data-category'.
+ * @see Use inside: {@link ajaxHandler}
+ * @see Use in: {@link setDataListBooks}
+ */
+function setButtonReadMore() {
+    let categoriesButton = document.querySelectorAll(".category__button");
+    for (let index = 0; index &lt; categoriesButton.length; index++) {
+        const categoryDom = categoriesButton[index];
+
+        let category = categoryDom.getAttribute("data-category");
+        categoryDom.addEventListener("click", function () {
+            ajaxHandler(urlAPIListBooks + category + ".json?api-key=" + keyAPI, "setDataListBooks");
+        });
+    }
+}
+
+
+/**
+ * @function setDataCategoryTitle
+ * @description Create and add a html template with the title of the selected category
+ * @param {Object} response - response data of the ajax handler (json)
+ * @see Use in: {@link setDataListBooks}
+ */
+function setDataCategoryTitle(response) {
+    console.log(response.results.list_name);
+
+    let template = `
+		&lt;h2 class="list-books__category">
+			${response.results.list_name}
+		&lt;/h2>
+	`;
+    document.getElementsByClassName("page__content")[0].innerHTML = template;
+}
+
+
+/**
+ * @function setButtonBack
+ * @description Create and add a html template of a button for back to the category list.
+ * @param {ElementHTML} classElementDom 
+ * @see Use inside: {@link ajaxHandler}
+ * @see Use in: {@link error404}, {@link setDataListBooks}
+ */
+function setButtonBack(classElementDom) {
+    let template = `
+				&lt;button id="buttonBack" class="button--back button">
+					&lt;i class="button__icon button__icon--left fas fa-arrow-circle-left">&lt;/i> Back to categories
+				&lt;/button>
+				`;
+    document.getElementsByClassName(classElementDom)[0].innerHTML += template;
+    document.getElementById("buttonBack").addEventListener("click", function () {
+        ajaxHandler(urlAPIListCategories, "setDataListCategories");
+    });
+}
+
+
+/**
+ * @function setDataBooks
+ * @description Insert a html template with the title of the category, one button for back to the category list and the list of books of the category selected.
+ * @param {Object} response - response data of the ajax handler (json).
+ * @see Used insed: {@link setDataCategoryTitle}, {@link setButtonBack}
+ * @see Used in: {@link setAction}
+ */
+function setDataListBooks(response) {
+    setDataCategoryTitle(response);
+    setButtonBack("page__content");
+
+    let listBooks = response.results.books;
+    // console.log(listBooks);
+
+    let listBooksDom = document.createElement("div");
+    listBooksDom.setAttribute("id", "listBooks");
+    listBooksDom.setAttribute("class", "list-books");
+
+    for (let index = 0; index &lt; listBooks.length; index++) {
+        const book = listBooks[index];
+
+        let bookDom = document.createElement("article");
+        bookDom.setAttribute("class", "book");
+        bookDom.setAttribute("data-index", index.toString());
+
+        let template = `&lt;div class='book__inner'>
+							&lt;h3 class='book__title book__item'>
+								#${index + 1} ${book.title}
+							&lt;/h3>
+							&lt;img class='book__image book__item' src='${book.book_image}' alt='Image Default'>
+							&lt;span class='book__ranking book__item'>
+								Weeks on list: ${book.weeks_on_list}
+							&lt;/span>
+							&lt;div class='book__text book__item'>
+								&lt;p>
+									${book.description}
+								&lt;/p>
+							&lt;/div>
+
+							&lt;a class='book__item button--amazon button' href="${book.amazon_product_url}" target='_blank'>
+								BUY AT AMAZON &lt;i class='button__icon button__icon--right fas fa-arrow-circle-right'>&lt;/i>
+							&lt;/a>
+						&lt;/div>`;
+
+        bookDom.innerHTML = template;
+
+        listBooksDom.appendChild(bookDom);
+    }
+
+    // console.log(listBooksDom);
+    document.getElementsByClassName("page__content")[0].appendChild(listBooksDom);
+}
+
+
+
+
+
+/**
+ * @function functionAnonimAutoExecuted
+ * @description Anonymous auto executed function
+ * @see Used inside: {@link ajaxHandler}
+ */
+(function () {
+    ajaxHandler(urlAPIListCategories, "setDataListCategories");
+})()</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addLoader">addLoader</a></li><li><a href="global.html#ajaxHandler">ajaxHandler</a></li><li><a href="global.html#emptyContent">emptyContent</a></li><li><a href="global.html#error404">error404</a></li><li><a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li><li><a href="global.html#keyAPI">keyAPI</a></li><li><a href="global.html#removeLoader">removeLoader</a></li><li><a href="global.html#setAction">setAction</a></li><li><a href="global.html#setButtonBack">setButtonBack</a></li><li><a href="global.html#setButtonReadMore">setButtonReadMore</a></li><li><a href="global.html#setDataBooks">setDataBooks</a></li><li><a href="global.html#setDataCategoryTitle">setDataCategoryTitle</a></li><li><a href="global.html#setDataListCategories">setDataListCategories</a></li><li><a href="global.html#urlAPIListBooks">urlAPIListBooks</a></li><li><a href="global.html#urlAPIListCategories">urlAPIListCategories</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue Jan 14 2020 18:09:54 GMT+0100 (GMT+01:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

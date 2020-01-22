@@ -1,0 +1,185 @@
+:root {
+	--color-brand-1: orange;
+}
+
+::-moz-selection {
+	color: black;
+	background-color: var(--color-brand-1);
+}
+::selection {
+	color: black;
+	background-color: var(--color-brand-1);
+}
+
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 10px;
+}
+body {
+	font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+}
+
+/************* LOADER *************/
+.loader {
+	width: 50rem;
+	height: 50rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 999;
+	transform: translate(-50%, -50%);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("../img/loader.gif");
+}
+
+/************* BUTTON *************/
+.button {
+	padding: 1rem 2rem;
+	background-color: #fff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+/************* PAGE *************/
+.page {
+}
+.page__body {
+	padding: 5rem 5%;
+}
+.page__title {
+	margin-bottom: 5rem;
+	padding-bottom: 2rem;
+	font-size: 5rem;
+	color: var(--color-brand-1);
+	border-bottom: 0.1rem solid #ccc;
+}
+.page__subtitle {
+	margin-bottom: 6rem;
+	font-size: 3rem;
+	color: #000;
+	font-weight: 500;
+}
+.page__section {
+}
+.page__container {
+	width: 100%;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.page__content {
+}
+.page__inner {
+}
+
+/************* BOOK *************/
+.list-books {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.book {
+	width: 23.5%;
+	margin-right: 2%;
+	margin-bottom: 3rem;
+	padding: 3rem 2rem;
+	background-color: #fff;
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+.book:nth-child(4n + 4) {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+@media (max-width: 1280px) {
+	.book {
+		width: 32%;
+		margin-right: 0;
+	}
+	.book:nth-child(4n + 4) {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.book:nth-child(3n + 2) {
+		margin-right: 2%;
+		margin-left: 2%;
+	}
+}
+
+@media (max-width: 800px) {
+	.book {
+		width: 48%;
+	}
+	.book:nth-child(3n + 2) {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.book:nth-child(odd) {
+		margin-left: 0;
+		margin-right: 4%;
+	}
+}
+@media (max-width: 500px) {
+	.book {
+		width: 100%;
+	}
+	.book:nth-child(odd) {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+.book-item {
+}
+.book__item:not(:last-child) {
+	margin-bottom: 2rem;
+}
+.book__title {
+	margin-bottom: 2rem;
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+.book__image {
+	width: 100%;
+}
+.book__ranking {
+	display: inline-block;
+	font-size: 1.5rem;
+	font-weight: 300;
+	color: #ccc;
+}
+.book__text {
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+.book__button {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: #fff;
+	background-color: var(--color-brand-1);
+}
+.button a {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #fff;
+}
+.book__button:hover {
+	background-color: #000;
+}
+
+.book__icon {
+	margin-left: 1rem;
+	font-size: 2rem;
+}
