@@ -1,0 +1,396 @@
+:root {
+	--color-gray-1: #ededed;
+	--color-gray-2: #c2c2c2;
+	/*****/
+	--color-button-1: slategray;
+	--color-button-2: darkslategray;
+	/*****/
+	--color-error: tomato;
+	--color-success: teal;
+	/*****/
+	--color-circle: #3498db;
+	--color-square: #d35400;
+	--color-diamond: #16a085;
+	--color-hexagon: #c0392b;
+	--color-oval: #f1c40f;
+	--color-parallelogram: #fd8f00;
+	--color-pentagon: #24415d;
+	--color-rectangle: #aa6ddb;
+	--color-triangle: #35cf76;
+	--color-trapezoid: #4435cf;
+}
+
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 4rem 5% 10rem;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 10px;
+}
+
+h1 {
+	margin-bottom: 3rem;
+	font-size: 3rem;
+}
+
+/* 
+display: flow-root;
+https://css-tricks.com/clearfix-a-lesson-in-web-development-evolution/
+https://www.campusmvp.es/recursos/post/display-flow-root-para-limpiar-floats-css.aspx
+*/
+#canvas {
+	min-height: 30rem;
+	margin-top: 2rem;
+	padding: 1rem 2%;
+	display: flow-root;
+	position: relative;
+	background-color: var(--color-gray-1);
+}
+
+/** geometric-figures - start  ***********************/
+.geometric-figure {
+	min-height: 160px;
+	margin: 1rem;
+	position: relative;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*background-color: white;*/
+	cursor: pointer;
+}
+
+.geometric-figure__picture {
+}
+
+.geometric-figure__button-remove {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 3rem;
+	color: white;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.geometric-figure:hover .geometric-figure__button-remove {
+	opacity: 1;
+}
+
+/***********/
+
+/* CIRCLE */
+#circle .geometric-figure__picture {
+	width: 10rem;
+	height: 10rem;
+	display: inline-block;
+	border-radius: 50%;
+	background-color: var(--color-circle);
+}
+
+/* SQUARE */
+#square .geometric-figure__picture {
+	width: 10rem;
+	height: 10rem;
+	display: inline-block;
+	background-color: var(--color-square);
+}
+
+/* DIAMOND */
+#diamond .geometric-figure__picture {
+	width: 10rem;
+	height: 10rem;
+	display: inline-block;
+	transform: rotate(45deg) scale(0.7);
+	background-color: var(--color-diamond);
+}
+
+/* HEXAGON */
+#hexagon .geometric-figure__picture {
+	width: 100px;
+	height: 55px;
+	display: inline-block;
+	position: relative;
+	background-color: var(--color-hexagon);
+}
+
+#hexagon .geometric-figure__picture:before {
+	content: "";
+	width: 0;
+	height: 0;
+	display: inline-block;
+	position: absolute;
+	top: -25px;
+	left: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 25px solid var(--color-hexagon);
+}
+
+#hexagon .geometric-figure__picture:after {
+	content: "";
+	width: 0;
+	height: 0;
+	display: inline-block;
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid var(--color-hexagon);
+}
+
+/* OVALO */
+#oval .geometric-figure__picture {
+	width: 20rem;
+	height: 10rem;
+	display: inline-block;
+	border-radius: 20rem / 10rem;
+	background-color: var(--color-oval);
+}
+
+/* PARALELOGRAM */
+#parallelogram .geometric-figure__picture {
+	width: 15rem;
+	height: 10rem;
+	display: inline-block;
+	background-color: var(--color-parallelogram);
+	transform: skew(20deg) scale(0.8);
+}
+
+/* PENTAGON */
+#pentagon .geometric-figure__picture {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#pentagon .geometric-figure__picture:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	border-width: 50px 18px 0;
+	border-style: solid;
+	border-color: var(--color-pentagon) transparent;
+}
+
+#pentagon .geometric-figure__picture:before {
+	content: "";
+	height: 0;
+	width: 0;
+	display: inline-block;
+	border-width: 0 45px 35px;
+	border-style: solid;
+	border-color: transparent transparent var(--color-pentagon);
+}
+
+/* RECTANGLE */
+#rectangle .geometric-figure__picture {
+	width: 15rem;
+	height: 8rem;
+	display: inline-block;
+	background-color: var(--color-rectangle);
+}
+
+/* TRAPEZOID */
+#trapezoid .geometric-figure__picture {
+	width: 8rem;
+	height: 0;
+	display: inline-block;
+	border-left: 5rem solid transparent;
+	border-right: 5rem solid transparent;
+	border-bottom: 8rem solid var(--color-trapezoid);
+}
+
+/* TRIANGLE */
+#triangle .geometric-figure__picture {
+	width: 0px;
+	height: 0px;
+	display: inline-block;
+	border-style: solid;
+	border-width: 0 8rem 8rem 8rem;
+	border-color: transparent transparent var(--color-triangle) transparent;
+}
+
+/** geometric-figures - end  ***********************/
+
+/** form - start  ***********************/
+/* FORM */
+.c-form {
+	display: flow-root;
+}
+
+.c-form__group {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+	.c-form__group {
+		flex-direction: column;
+	}
+}
+
+.c-form__column {
+	flex: 1;
+}
+
+.c-form__column:not(:last-of-type) {
+	margin-right: 2rem;
+}
+
+.c-form__column--2 {
+	width: 45%;
+}
+
+@media (max-width: 800px) {
+	.c-form__column {
+		width: 100% !important;
+	}
+}
+
+.c-form__field {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 100%;
+	padding: 0.8rem 2rem 0.8rem 1.5rem;
+	display: inline-block;
+	font-size: 1.5rem;
+	border-radius: 0;
+	border: 0.15rem solid black;
+	outline: none;
+}
+
+/* MESSAGE */
+.c-message {
+	width: 100%;
+	padding: 1.5rem 5%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	display: inline-block;
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: 900;
+	color: white;
+	background-color: var(--color-gray-2);
+	transition: translate3d 1s ease-out;
+}
+
+.c-message--success {
+	background-color: var(--color-success);
+}
+
+.c-message--error {
+	background-color: var(--color-error);
+}
+
+.c-message.is-show {
+	transform: translate3d(0, 0, 0);
+}
+
+.c-message.is-hide {
+	transform: translate3d(0, 100%, 0);
+}
+
+/* LABEL */
+.c-label {
+	margin-bottom: 1rem;
+	display: inline-block;
+	font-weight: 300;
+	font-size: 1.5rem;
+}
+
+/* LEYEND */
+.c-leyend {
+	width: 100%;
+	margin-bottom: 1.5rem;
+	display: inline-block;
+	font-weight: 900;
+	font-size: 2rem;
+	color: var(--color--button-2);
+}
+
+/* FIELDSET */
+.c-fieldset {
+	appearance: none;
+	-webkit-appearance: none;
+	border: none;
+}
+
+@media (max-width: 800px) {
+	.c-form__column.c-fieldset:not(:last-of-type) {
+		margin-bottom: 2rem;
+	}
+}
+
+/* INPUT */
+.c-input::placeholder {
+	font-style: italic;
+	font-weight: 100;
+	color: var(--color-gray-2);
+}
+
+/* SELECT */
+.c-select {
+	cursor: pointer;
+}
+
+.c-select__wrapper {
+	position: relative;
+}
+
+.c-select__arrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	right: 1.5rem;
+	transform: translate(0, -50%);
+	font-size: 2rem;
+	color: black;
+	pointer-events: none;
+}
+
+/* BUTTON */
+.c-button {
+	margin-top: 2rem;
+	padding: 0.8rem 1.5rem;
+	float: right;
+	display: flex;
+	align-items: center;
+	font-size: 1.5rem;
+	border: 0.15rem solid black;
+	background-color: white;
+	outline: none;
+	cursor: pointer;
+}
+
+.c-button__text {
+	margin-right: 1rem;
+}
+
+.c-button__icon {
+	font-size: 2rem;
+}
+
+.c-button--add {
+	color: var(--color-button-1);
+	border-color: var(--color-button-1);
+}
+
+.c-button--add:hover {
+	color: white;
+	background-color: var(--color-button-1);
+}
+/** form - end  ***********************/

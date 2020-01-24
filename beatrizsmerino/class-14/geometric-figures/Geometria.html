@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../../../assets/icomoon/style.css">
+</head>
+
+<body>
+	<!--
+    <div id="circle" class="forma"></div>
+    <div id="square" class="forma"></div>
+    <div id="diamond" class="forma"></div>
+    <div id="hexagon" class="forma"></div>
+    <div id="oval" class="forma"></div>
+    <div id="parallelogram" class="forma"></div>
+    <div id="pentagon" class="forma"></div>
+    <div id="rectangle" class="forma"></div>
+    <div id="trapezoid" class="forma"></div>
+    <div id="triangle" class="forma"></div>
+    -->
+
+	<h1>
+		Geometric figures
+	</h1>
+
+	<form class="c-form" action="" method="get">
+		<div class="c-form__group">
+			<fieldset class="c-form__column c-form__column--2 c-fieldset">
+				<leyend class="c-leyend">
+					Option 1:
+				</leyend>
+				<div class="c-form__item">
+					<label class="c-label" for="option1Figures">
+						Select a figure
+					</label>
+					<div class="c-select__wrapper">
+						<span class="c-select__arrow">
+							<i class="icon-chevron-thin-down"></i>
+						</span>
+						<select id="option1Figures" class="c-select c-form__field" name="option1Figures">
+							<option value="" disabled hidden selected>
+								--- Select one ---
+							</option>
+						</select>
+					</div>
+				</div>
+				<button id="buttonAddFigure" class="c-button c-button--add" type="button">
+					<span class="c-button__text">
+						ADD
+					</span>
+					<i class="c-button__icon icon-circle-with-plus"></i>
+				</button>
+			</fieldset>
+
+			<fieldset class="c-form__column c-form__column--2 c-fieldset">
+				<leyend class="c-leyend">
+					Option 2:
+				</leyend>
+
+				<div class="c-form__item">
+					<label class="c-label" for="option2Figures">
+						Write a figure
+					</label>
+					<input id="option2Figures" class="c-input c-form__field" name="option2Figures" type="text"
+						placeholder="Ej. Square" />
+				</div>
+			</fieldset>
+		</div>
+	</form>
+
+	<div id="canvas"></div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
