@@ -68,6 +68,7 @@ Fecha | Teoría | Recursos | Contenido
 22/01/20 | [Clase 32](teoria/clase32.md) | [Clase 32](recursos/clase32.md)| Patrones en JS I: Antipatrones
 24/01/20 | [Clase 33](teoria/clase33.md) | [Clase 33](recursos/clase33.md)| 	HTML5: Geo y mapas
 27/01/20 | [Clase 34](teoria/clase34.md) | [Clase 34](recursos/clase34.md)| 	Regex I: Teoría
+29/01/20 | [Clase 35](teoria/clase35.md) | [Clase 35](recursos/clase35.md)| 	Regex II: Ejercicios
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
