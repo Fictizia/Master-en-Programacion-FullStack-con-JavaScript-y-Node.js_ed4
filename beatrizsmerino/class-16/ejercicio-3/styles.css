@@ -1,0 +1,74 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 2rem;
+}
+ul:last-of-type,
+p:last-of-type{
+    margin-bottom: 0;
+}
+
+/* Electrical panels - start */
+.list-of-electrical-panels {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.electrical-panel {
+    width: calc(33.333% - 2rem);
+    margin: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    border: 1px solid black;
+}
+.electrical-panel__index{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+.electrical-panel__data-title{
+    margin-bottom: 0;
+}
+.electrical-panel__data-list{
+    margin-top: 0;
+}
+.electrical-panel__street{
+    margin-top: 0;
+    padding-right: 3rem;
+}
+
+@media(max-width: 800px) {
+    .electrical-panel {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media(max-width: 600px) {
+    .electrical-panel {
+        width: calc(100% - 2rem);
+    }
+}
+/* Electrical panels - end */
+
+/* Loading - start */
+#loading {
+    width: 10rem;
+    height: 10rem;
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('./images/loading.gif');
+}
+/* loading - end */
