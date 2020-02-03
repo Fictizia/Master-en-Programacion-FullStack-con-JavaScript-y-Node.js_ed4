@@ -1,11 +1,11 @@
 page.base('/AireMAD');
-page('/index', index);
+page('/', index);
 page('/estaciones', stations);
 page('/estaciones/:id', stationID);
+page('*', index);
 page();
 
-const urlStation = "http://airemad.com/api/v1/station";
-
+const urlStations = "http://airemad.com/api/v1/station";
 
 function index(){
     document.querySelector('section').textContent = 'Bienvenidos al visor de estaciones de AireMAD';
@@ -13,7 +13,7 @@ function index(){
 
 function stations(){
     document.querySelector('section').textContent = 'Estaciones';
-    airemad(urlStation)
+    airemad(urlStations)
         .get()
         .then(data => {
             console.log(data);
@@ -23,9 +23,19 @@ function stations(){
         })
 }
 
-function stationID() {
+function stationID(id) {
+    var template = document.getElementById('template').innerHTML;
     document.querySelector('section').innerHTML = '';
-    document.querySelector('section').innerHTML += `<p>DENTRO</p>`;
+    
+    airemad(urlStations+"/"+id.params.id)
+    .get()
+    .then(data => {
+        let rendered = Mustache.render(template,{data, name: data.nombre_estacion, adress: data.direccion, latitud: data.latitud, longitud: data.longitud});
+        document.querySelector('section').innerHTML = rendered;
+    })
+
+   
+
 }
 
 /* AIREMAD */

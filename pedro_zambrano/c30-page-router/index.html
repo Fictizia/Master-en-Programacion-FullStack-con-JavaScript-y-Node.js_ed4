@@ -14,17 +14,28 @@
     </header>
     <nav>
         <ul>
-            <li><a href="/AireMAD/index">Index</a></li>
+            <li><a href="/AireMAD/">Index</a></li>
             <li><a href="/AireMAD/estaciones">Estaciones</a></li>
         </ul>
     </nav>
     <section>
-
+     
     </section>
     <footer>
 
     </footer>
 
+    <!--MUSTACHE-->
+
+    <template id="template" type="x-tmpl-mustache">
+        <p>Nombre: {{ name }}</p>
+        <p>Direccion: {{ adress }}</p>
+        <p>Latitud: {{ latitud }}</p>
+        <p>Longitud: {{ longitud }}</p>
+    </template>
+
+    <script src="https://unpkg.com/mustache@latest"></script>
     <script src="js/script.js"></script>
+
 </body>
 </html>
