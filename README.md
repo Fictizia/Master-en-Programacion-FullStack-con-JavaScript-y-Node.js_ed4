@@ -70,7 +70,8 @@ Fecha | Teoría | Recursos | Contenido
 27/01/20 | [Clase 34](teoria/clase34.md) | [Clase 34](recursos/clase34.md)| 	Regex I: Teoría
 29/01/20 | [Clase 35](teoria/clase35.md) | [Clase 35](recursos/clase35.md)| 	Regex II: Ejercicios
 31/01/20 | [Clase 36](teoria/clase36.md) | [Clase 36](recursos/clase36.md)| 	HTML5: Programación creativa con Canvas, Gráficos y 3D
-01/02/20 | [Clase 37](teoria/clase37.md) | [Clase 37](recursos/clase37.md)| 	Paradigmas: Programación Funcional
+01/02/20 | [Clase 37](teoria/clase37.md) | [Clase 37](recursos/clase37.md)| Paradigmas: Programación Funcional
+03/02/20 | [Clase 38](teoria/clase38.md) | [Clase 38](recursos/clase38.md)| HTML5: LocalStorage y contentEditor
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
