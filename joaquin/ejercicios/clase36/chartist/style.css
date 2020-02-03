@@ -1,0 +1,36 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgba(0,0,0,.80)!important;
+  fill: rgba(0,0,0,.80)!important;
+}
+h3 {
+  font-size: 16px;
+  font-weight: normal;
+  fill: rgba(0,0,0,.5);
+  color: rgba(0,0,0,.5);
+}
+
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.chart-wrapper > div {
+  text-align: center;
+  min-width: 1200px;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: rgba(0,0,0,.5);
+}
+
+footer > a {
+  color: #9f7aea;
+}
