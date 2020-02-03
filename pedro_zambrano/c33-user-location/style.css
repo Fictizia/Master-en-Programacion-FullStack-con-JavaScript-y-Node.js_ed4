@@ -1,0 +1,10 @@
+#where {
+    display: block;
+    margin: 20px auto;
+}
+
+#mapid { 
+    width: 80%;
+    height: 50vh; 
+    margin: auto;
+}

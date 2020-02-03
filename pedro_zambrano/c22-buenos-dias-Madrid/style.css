@@ -23,3 +23,8 @@ section {
 .pollution {
     color: red;
 }
+
+#cameras {
+    width: 80%;
+    height: 20vw;
+}
