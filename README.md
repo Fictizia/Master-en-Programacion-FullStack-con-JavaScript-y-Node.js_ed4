@@ -72,6 +72,7 @@ Fecha | Teoría | Recursos | Contenido
 31/01/20 | [Clase 36](teoria/clase36.md) | [Clase 36](recursos/clase36.md)| 	HTML5: Programación creativa con Canvas, Gráficos y 3D
 01/02/20 | [Clase 37](teoria/clase37.md) | [Clase 37](recursos/clase37.md)| Paradigmas: Programación Funcional
 03/02/20 | [Clase 38](teoria/clase38.md) | [Clase 38](recursos/clase38.md)| HTML5: LocalStorage y contentEditor
+05/02/20 | [Clase 39](teoria/clase39.md) | [Clase 39](recursos/clase39.md)| Patrones en JS II: Metaprogramación y Patrones
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
