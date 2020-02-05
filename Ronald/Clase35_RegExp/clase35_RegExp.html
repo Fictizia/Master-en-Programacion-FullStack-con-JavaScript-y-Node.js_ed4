@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>clase35_RegExp</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="clase35_RegExp.css">
+
+</head>
+<body>
+
+    <div  id="cajonPrincipal">
+    
+    <p>Seleccione un email para validarlo:</p>
+        <select id="email">
+            <option>demo@demo.com</option>
+            <option>demo_demo@demo.com.ar</option>
+            <option>demo-demo12312@sub.dom.com.ar</option>
+            <option>demo@novalido</option>
+            <option>novalido>@demo.com</option>
+            <option>demo@novalido-.com</option>
+            <option>demo@-novalido.com</option>
+        </select>
+        <input type="submit" id="envioEmail">
+    
+    <p id="resultadoEmail"></p><br><br>
+
+
+    <p>Seleccione un DNI para validarlo:</p>
+        <select id="dni">
+            <option>12345678-A</option>
+            <option>11223344A</option>
+            <option>A11223344</option>
+            <option>1234567K</option>
+            <option>515162778888A</option>
+            <option>12345678</option>
+            <option>123-AAAAAA</option>
+        </select>
+        <input type="submit" id="envioDNI">
+    
+    <p id="resultadoDNI"></p><br><br>
+    
+    
+    <p>Seleccione un NIE para validarlo:</p>
+        <select id="nie">
+            <option>12345678-A</option>
+            <option>X-1234567-A</option>
+            <option>A-1234567-B</option>
+            <option>1234567K</option>
+            <option>515162778888A</option>
+            <option>Y-1234567-F</option>
+            <option>123-AAAAAA</option>
+            <option>Z-1234567-B</option>
+            <option>X1234567B</option>
+        </select>
+        <input type="submit" id="envioNIE">
+    
+    <p id="resultadoNIE"></p><br><br>
+
+
+    <p>Seleccione un contraseña para validarla:<br>
+        (Para que sea validada tendrá que tener al menos una letra mayúscula, al menos una letra minúscula, al menos un dígito, al menos un caracter especial de @#$%& y ser entre 6-20 caracteres)
+    </p>
+        <select id="contraseña">
+            <option>elpapichulo</option>
+            <option>jennylachoni17</option>
+            <option>JoseMaquinon1986</option>
+            <option>elColetaPodemita666%</option>
+            <option>monederoysupandadeVenezuela</option>       
+        </select>
+        <input type="submit" id="envioContraseña">
+    
+    <p id="resultadoContraseña"></p><br><br>
+    
+
+    <p>Escriba un contraseña para validarla:<br>
+        (Para que sea validada tendrá que tener al menos una letra mayúscula, al menos una letra minúscula, al menos un dígito, al menos un caracter especial de @#$%&, y ser entre 6-20 caracteres)
+    </p>
+        <input type="text" id="contraseña2">
+        <input type="submit" id="envioContraseña2">
+    
+    <p id="resultadoContraseña2"></p><br>
+        
+    </div>
+
+<script src="clase35_RegExp.js"></script>
+
+</body>
+</html>
