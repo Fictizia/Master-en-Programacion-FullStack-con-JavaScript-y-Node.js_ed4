@@ -73,6 +73,8 @@ Fecha | Teoría | Recursos | Contenido
 01/02/20 | [Clase 37](teoria/clase37.md) | [Clase 37](recursos/clase37.md)| Paradigmas: Programación Funcional
 03/02/20 | [Clase 38](teoria/clase38.md) | [Clase 38](recursos/clase38.md)| HTML5: LocalStorage y contentEditor
 05/02/20 | [Clase 39](teoria/clase39.md) | [Clase 39](recursos/clase39.md)| Patrones en JS II: Metaprogramación y Patrones
+07/02/20 | [Clase 40](teoria/clase40.md) | [Clase 40](recursos/clase40.md)| HTML5: Offline
+08/02/20 | [Clase 41](teoria/clase41.md) | [Clase 41](recursos/clase41.md)| HTML5: WebWorkers, Blob y FileSystem
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
