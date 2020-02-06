@@ -209,7 +209,7 @@ if (appCache.status == window.applicationCache.UPDATEREADY) {
 
 ![img](../assets/clase40/cm-stale-while-revalidate.png)
 - [Can I Use - Service Workers](https://caniuse.com/#search=service%20workers)
-- [Service Workers registrados en nuestro navegador](chrome://serviceworker-internals/)
+- [Service Workers registrados en nuestro navegador chrome://serviceworker-internals/](chrome://serviceworker-internals/)
 - [Service Workers MDN API](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API)
 - [Usando Service Workers](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API/Using_Service_Workers
