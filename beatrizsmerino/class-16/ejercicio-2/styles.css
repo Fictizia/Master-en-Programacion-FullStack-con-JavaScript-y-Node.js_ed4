@@ -1,0 +1,45 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 2rem;
+}
+.location-weather{
+    display: flex;
+}
+.location-weather__item{
+    width: 33.333%;
+}
+@media (max-width: 1000px){
+    .location-weather__item{
+        width: 100%;
+    }
+}
+.location-weather__name{
+    font-size: 1.8rem;
+}
+.location-weather__data-list,
+.location-weather__data-title{
+    margin: 0;
+}
+.location-weather__group{
+    padding: 1rem;
+	border-left: 0.5rem solid #ededed;
+}
+.location-weather__icon{
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.navigation-weather__button{
+    outline: none;
+}
+.navigation-weather__button.is-disabled{
+    background-color: #ededed;
+}
