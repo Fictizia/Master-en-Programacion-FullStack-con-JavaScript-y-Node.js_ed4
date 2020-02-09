@@ -56,7 +56,7 @@
 //   Aa3@ --> longitud 4 inferior al mínima de 6
 //   UnaPassw@rdDe21Caract --> longitud 21 superior al máximo de 20 
 
-// https://regex101.com/r/zrkhgT/1/tests
+// https://regex101.com/r/29njvB/4/tests
 const pwds = [
   'Aa3@56', 'Cami@n22', 'UnaPassw@rdDe20Carac', 'S3cret#Profesional', '$$%%##@@MuyEspecial2',
   'aa3@56', 'AA3@56', 'Password#', 'Contraseña33', 'Aa3@', 'UnaPassw@rdDe21Caract'
