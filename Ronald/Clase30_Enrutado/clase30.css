@@ -1,0 +1,36 @@
+body{
+    background-color: #E3EEF3;
+}
+.saludo{
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.rutas{
+    border: 1px solid gray;
+}
+
+.efectos{
+    width: 850px;
+    height: 1500px;
+}
+img{
+    
+    margin-left: 60px;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+    
+}
+
+.rutas{
+    text-decoration-color: red;
+}
+
