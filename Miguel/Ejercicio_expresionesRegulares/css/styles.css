@@ -1,0 +1,25 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}nav ul{list-style-type:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}img{display:block}video{display:block}a{text-decoration:none}
+
+#wrapper{
+  margin: 20% auto;
+  background-color: rgb(255, 145, 106);
+  width: 50%;
+  padding: 10px;
+  box-shadow: 0 0 5px black;
+  color:white
+}
+#wrapper *{
+  margin: 3% auto ;
+  text-align:center;
+  display: block;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+button,input{
+  border-radius: 20px;
+  border:1px solid grey;
+}
+#btn:hover{
+  background-color: rgb(121, 121, 255);
+  color:white;
+}
