@@ -77,7 +77,7 @@ Fecha | Teoría | Recursos | Contenido
 08/02/20 | [Clase 41](teoria/clase41.md) | [Clase 41](recursos/clase41.md)| HTML5: WebWorkers, Blob y FileSystem
 10/02/20 | [Clase 42](teoria/clase42.md) | [Clase 42](recursos/clase42.md)| 	HTML5: PWA
 12/02/20 | [Clase 43](teoria/clase43.md) | [Clase 43](recursos/clase43.md)| 	Firebase I: Intro + Realtime Database
-
+14/02/20 | [Clase 44](teoria/clase44.md) | [Clase 44](recursos/clase44.md)| 		Firebase I: Autenticación y Hosting
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
 
