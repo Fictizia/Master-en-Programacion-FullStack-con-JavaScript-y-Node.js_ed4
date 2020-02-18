@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi primer Service worker</title>
+</head>
+
+<body>
+    <h1>
+        Mi primer Service worker
+    </h1>
+
+
+    <script id="worker" type="javascript/worker">
+        ((s => {
+            const increment = 1;
+          let count = 0;
+          const loop = 999999999;
+          
+          s.onmessage = e => {
+              console.log(e.data);
+              let test = 0;
+              for( let i = 0 ; i < loop ;i++ ){
+                  test = i;
+                const int = Math.trunc( i*100/loop );
+                if( int === count ){
+                      s.postMessage( int );
+                  count += increment;
+                }
+              }
+            s.postMessage( {finish:'loop finished'} );
+          };
+        }))(self);
+     </script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
