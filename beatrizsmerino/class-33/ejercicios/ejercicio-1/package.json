@@ -1,0 +1,15 @@
+{
+	"name": "geolocation-user-google-maps",
+	"version": "1.0.0",
+	"description": "Geolocation with Google Map API.",
+	"main": "index.js",
+	"scripts": {
+		"docs": "jsdoc -c jsdoc.json"
+	},
+	"author": "beatrizsmerino@gmail.com",
+	"license": "ISC",
+	"devDependencies": {
+		"jsdoc": "^3.6.3"
+	},
+	"dependencies": {}
+}
