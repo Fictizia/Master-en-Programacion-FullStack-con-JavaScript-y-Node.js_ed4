@@ -1,0 +1,15 @@
+{
+	"name": "find-city-google-maps",
+	"version": "1.0.0",
+	"description": "Find your city on the map",
+	"main": "index.js",
+	"scripts": {
+		"docs": "jsdoc -c jsdoc.json"
+	},
+	"author": "beatrizsmerino@gmail.com",
+	"license": "ISC",
+	"devDependencies": {
+		"jsdoc": "^3.6.3"
+	},
+	"dependencies": {}
+}
