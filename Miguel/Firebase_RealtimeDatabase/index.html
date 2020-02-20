@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RealtimeDatabase</title>
+<link href="css/styles.css" rel="stylesheet">
+</head>
+    
+<body>
+  <h1>Series, películas y juegos con Firebase.</h1>
+  <div id="mainWrapper">
+    <div id="wrapper">
+      <div id="search">
+        <h2>Buscar por título</h2>
+        <input type="text" id="textBox" placeholder="Titulo">
+        <button id="btn">Buscar</button>
+      </div>
+      <div id="resultado"></div>
+    </div>
+    <div id="wrapper2">
+      <h2>Tu lista</h2>
+      <div id="listaPelis"></div>
+    </div>
+  </div>
+  <div id="datosPeli"></div>
+  <div id="borroso"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>   
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+  <script src="js/javascript.js"></script> 
+</body>
+</html>

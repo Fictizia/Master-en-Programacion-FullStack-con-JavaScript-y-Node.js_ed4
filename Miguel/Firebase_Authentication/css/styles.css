@@ -1,0 +1,43 @@
+body{
+  font-family: sans-serif;
+  padding-top:5%;
+}
+#mainWrapper{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;  
+  text-align: center;
+}
+#wrapper1{
+  height: max-content;
+}
+#wrapper1,#wrapper4{
+  width: 40%;
+  border:2px solid black;
+  padding:2%;
+}
+button{
+  border-radius: 4px;
+  background-color:rgb(117, 189, 206);
+  color:rgb(0, 9, 141);
+  border:none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+  outline: none;
+  margin:1%;
+  padding: 2%;
+}
+button:hover{
+  background-color:rgb(172, 233, 246);
+}
+input{
+  font-size: 16px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+.userGithub img{
+  width: 80px;
+  display: block;
+  margin:0 auto;
+}
