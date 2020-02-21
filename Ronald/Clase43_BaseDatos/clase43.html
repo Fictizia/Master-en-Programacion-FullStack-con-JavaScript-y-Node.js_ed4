@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Clase43</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="clase43.css">
+  </head>
+  <body>
+    <h1>Firebase peliculas (como documentos)</h1>
+      <div id="contenedor">
+        <div>
+          <h3>Introduzca una pelicula:</h3>
+          <input type="text" id="pelicula">
+          <input type="submit" id="enviar">
+          <p id="contenido"></p>
+          <img id="poster">
+        </div>
+        <div>
+          <h3>Películas buscadas previamente:<br>
+             <span class="detalle">(almacenadas en la base de datos)</span></h3>
+          <p id="busquedas"></p>
+        </div>
+        <div>
+          <h3>Borrar una pelicula de la base de datos:</h3>
+          <input type="text" id="peliculaBorrar">
+          <input type="submit" id="enviarBorrar">
+        </div>
+      </div>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script> <!--Para la base de datos-->
+    
+    
+      <script src="clase43.js"></script>
+  </body>
+</html>
