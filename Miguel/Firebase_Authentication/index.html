@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authentication</title>
+<link href="css/styles.css" rel="stylesheet">
+</head>
+    
+<body>
+  <div id="mainWrapper">
+    <div id="wrapper1">
+      <h1>Autenticación con Firebase</h1>      
+      <input id="textBox" type="text" placeholder="Email">
+      <input id="passBox" type="password" placeholder="Password">
+      </br>
+      <button id="btnSignUp">Registrar</button>
+      <button id="btnLogIn">Acceder</button>
+      <button id="btnLogOut">Salir</button>
+      <button id="btnRemove">Borrar</button>
+      </br>
+      <button id="btnGitHub">Entrar con GitHub</button>
+    </div>
+    <div id="wrapper4">
+      <div id="wrapper2">
+        <h2>Usuario conectado</h2>
+        <p id="currentUser"></p>
+      </div>
+
+      <div id="wrapper3">
+        <h2>Lista de Usuarios</h2>
+        <div id="resultado"></div>
+      </div>
+    </div>
+  </div>  
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+ <script src="js/javascript.js"></script>   
+</body>
+</html>
