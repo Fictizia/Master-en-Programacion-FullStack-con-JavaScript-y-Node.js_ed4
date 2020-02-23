@@ -1,7 +1,8 @@
+//Se necesita añadir la api key de OMDB en la url de mas abajo.
 //Ejercicio peliculas,series y juegos con Firebase Realtime Database.
 //Configuracion e inicializacion de Firebase Realtime Database.
 var firebaseConfig = {
-  apiKey: "AIzaSyBEytCCba60qA8vhtBFzecxM8eOXGpsP0Y",
+  apiKey: "",
   authDomain: "mispeliculas-138a5.firebaseapp.com",
   databaseURL: "https://mispeliculas-138a5.firebaseio.com",
   projectId: "mispeliculas-138a5",
@@ -18,7 +19,7 @@ var ref = firebase.database().ref("/Peliculas");
 var lista =[];
 function search(){
   let title = document.getElementById("textBox").value;
-  let url = `http://www.omdbapi.com/?s=${title}&apikey=4d37a518`;
+  let url = `http://www.omdbapi.com/?s=${title}&apikey=`;//**AÑADIR API KEY AQUI**
   fetch(url)
   .then(data=>data.json())
   .then(res=>{

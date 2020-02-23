@@ -1,7 +1,7 @@
 //Ejercicio autenticacion con Firebase.
 //Configuracion e inicializacion.
 var firebaseConfig = {
-  apiKey: "AIzaSyDzCrzBwM7KYYyLgjDDF5zHe8WAeArO9tA",
+  apiKey: "",
   authDomain: "ejercicio-autenticacion.firebaseapp.com",
   databaseURL: "https://ejercicio-autenticacion.firebaseio.com",
   projectId: "ejercicio-autenticacion",
