@@ -1,0 +1,180 @@
+/*************** VARIABLES ***************/
+:root {
+	--google-maps-height: 35rem;
+	--color-brand-1: #52f2db;
+	--color-brand-2: #63bfa5;
+	--color-brand-3: #518c7c;
+	--color-light: #ededed;
+	--color-gray: #b8b8b8;
+	--color-dark: #262626;
+	--color-black: #0d0d0d;
+}
+
+/*************** RESET ***************/
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+input,
+button {
+	width: auto;
+	display: inline-block;
+	appearance: none;
+	-moz-appearance: none;
+	border: 0;
+	outline: none;
+}
+
+/*************** PAGE ***************/
+.page {
+	font-family: "Ubuntu", sans-serif;
+	font-size: 10px;
+}
+
+.page__body {
+	padding: 7rem 5% 5rem;
+}
+
+.page__header {
+	margin-bottom: 6rem;
+}
+
+.page__title {
+	width: fit-content;
+	padding-left: 8rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1rem;
+	font-size: 4rem;
+	color: var(--color-brand-1);
+	background-color: var(--color-black);
+}
+
+.page__subtitle {
+	font-size: 2rem;
+}
+
+.page__content {
+	margin-top: 2rem;
+}
+
+.page__footer {
+	margin-top: 1rem;
+	text-align: right;
+	font-size: 1.5rem;
+	color: var(--color-gray);
+}
+
+@media (max-width: 600px) {
+	.page__title {
+		padding: 0 0.5rem;
+		text-align: center;
+	}
+}
+
+/*************** BUTTON ***************/
+.button {
+	padding: 1rem 2rem;
+	font-size: 1.6rem;
+	font-weight: 500;
+	border: 0.2rem solid var(--color-black);
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.button:hover {
+	color: #fff;
+	border-color: var(--color-dark);
+	background-color: var(--color-dark);
+}
+
+.button--color {
+	color: #fff;
+	border-color: var(--color-brand-2);
+	background-color: var(--color-brand-2);
+}
+
+@media (max-width: 700px) {
+	.button {
+		width: 100%;
+		margin-top: 1rem;
+	}
+}
+
+/************* ICON *************/
+.icon {
+	width: 2rem;
+	height: 2rem;
+	display: inline-block;
+}
+
+.icon__svg {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	overflow: visible;
+}
+
+.icon__use {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+/************* CLIPBOARD *************/
+.clipboard {
+	display: flex;
+	align-items: center;
+}
+
+.clipboard__field {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: var(--color-gray);
+	background-color: #fff;
+}
+
+.clipboard__button {
+	width: auto;
+	margin-left: 0.8rem;
+	margin-top: 0;
+	padding: 0.5rem;
+	border: 0;
+}
+
+.clipboard__button .icon__use {
+	fill: var(--color-gray);
+}
+
+.clipboard__button:hover {
+	background-color: transparent;
+}
+
+.clipboard__button:hover .icon__use {
+	fill: var(--color-brand-2);
+}
+
+/************* LOADER *************/
+.loader {
+	width: 20rem;
+	height: 20rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 999;
+	transform: translate(-50%, -50%);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("../img/loader.gif");
+}
+
+/*************** LEALEFT ***************/
+.map {
+	height: 45rem;
+	background-color: var(--color-light);
+}

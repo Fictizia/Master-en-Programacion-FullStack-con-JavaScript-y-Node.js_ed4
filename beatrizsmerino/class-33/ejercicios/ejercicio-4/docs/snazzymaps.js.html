@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: snazzymaps.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: snazzymaps.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file Map styles with 'Snazzymaps" for 'Google Maps API'
+ * @module snazzymaps
+ * @author Beatriz Sopeña Merino &lt;beatrizsmerino@gmail.com>
+ * @copyright (2020)
+ */
+
+
+
+
+/**
+ * @const module:snazzymaps.mapStyles
+ * @description Styles for a map of the 'API Google Maps'.
+ * @type {Object}
+ * @see Used in:
+ * @see - 'google-maps.js' -> {@link module:googleMaps.setMap}
+ */
+export const mapStyles = [
+	{
+		"elementType": "geometry",
+		"stylers": [
+			{
+				"color": "#1d2c4d"
+			}
+		]
+	},
+	{
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{
+				"color": "#8ec3b9"
+			}
+		]
+	},
+	{
+		"elementType": "labels.text.stroke",
+		"stylers": [
+			{
+				"color": "#1a3646"
+			}
+		]
+	},
+	{
+		"featureType": "administrative.country",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{
+				"color": "#4b6878"
+			}
+		]
+	},
+	{
+		"featureType": "administrative.land_parcel",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{
+				"color": "#64779e"
+			}
+		]
+	},
+	{
+		"featureType": "administrative.province",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{
+				"color": "#4b6878"
+			}
+		]
+	},
+	{
+		"featureType": "landscape.man_made",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{
+				"color": "#334e87"
+			}
+		]
+	},
+	{
+		"featureType": "landscape.natural",
+		"elementType": "geometry",
+		"stylers": [
+			{
+				"color": "#023e58"
+			}
+		]
+	},
+	{
+		"featureType": "poi",
+		"elementType": "geometry",
+		"stylers": [
+			{
+				"color": "#283d6a"
+			}
+		]
+	},
+	{
+		"featureType": "poi",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{
+				"color": "#6f9ba5"
+			}
+		]
+	},
+	{
+		"featureType": "poi",
+		"elementType": "labels.text.stroke",
+		"stylers": [
+			{
+				"color": "#1d2c4d"
+			}
+		]
+	},
+	{
+		"featureType": "poi.park",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{
+				"color": "#023e58"
+			}
+		]
+	},
+	{
+		"featureType": "poi.park",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{
+				"color": "#3C7680"
+			}
+		]
+	},
+	{
+		"featureType": "road",
+		"elementType": "geometry",
+		"stylers": [
+			{
+				"color": "#304a7d"
+			}
+		]
+	},
+	{
+		"featureType": "road",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{
+				"color": "#98a5be"
+			}
+		]
+	},
+	{
+		"featureType": "road",
+		"elementType": "labels.text.stroke",
+		"stylers": [
+			{
+				"color": "#1d2c4d"
+			}
+		]
+	},
+	{
+		"featureType": "road.highway",
+		"elementType": "geometry",
+		"stylers": [
+			{
+				"color": "#2c6675"
+			}
+		]
+	},
+	{
+		"featureType": "road.highway",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{
+				"color": "#255763"
+			}
+		]
+	},
+	{
+		"featureType": "road.highway",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{
+				"color": "#b0d5ce"
+			}
+		]
+	},
+	{
+		"featureType": "road.highway",
+		"elementType": "labels.text.stroke",
+		"stylers": [
+			{
+				"color": "#023e58"
+			}
+		]
+	},
+	{
+		"featureType": "transit",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{
+				"color": "#98a5be"
+			}
+		]
+	},
+	{
+		"featureType": "transit",
+		"elementType": "labels.text.stroke",
+		"stylers": [
+			{
+				"color": "#1d2c4d"
+			}
+		]
+	},
+	{
+		"featureType": "transit.line",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{
+				"color": "#283d6a"
+			}
+		]
+	},
+	{
+		"featureType": "transit.station",
+		"elementType": "geometry",
+		"stylers": [
+			{
+				"color": "#3a4762"
+			}
+		]
+	},
+	{
+		"featureType": "water",
+		"elementType": "geometry",
+		"stylers": [
+			{
+				"color": "#0e1626"
+			}
+		]
+	},
+	{
+		"featureType": "water",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{
+				"color": "#4e6d70"
+			}
+		]
+	}
+];</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-geolocation.html">geolocation</a></li><li><a href="module-googleMaps.html">googleMaps</a></li><li><a href="module-loader.html">loader</a></li><li><a href="module-searchCity.html">searchCity</a></li><li><a href="module-snazzymaps.html">snazzymaps</a></li></ul><h3>Events</h3><ul><li><a href="global.html#~event:click">click</a></li></ul><h3>Global</h3><ul><li><a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue Feb 18 2020 21:38:18 GMT+0100 (GMT+01:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
