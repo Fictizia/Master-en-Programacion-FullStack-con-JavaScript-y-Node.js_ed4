@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grafica</title>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <link rel="stylesheet" href="css/styles.css">        
+</head>
+<body>
+    <h1 id="titulo">Datos de temperatura y humedad de Madrid</h1>
+    
+    <div id="leyendaWrapper">
+      <div class="leyenda"><div style="background-color: skyblue"></div><p>Temperatura Mínima</p></div>
+      <div class="leyenda"><div style="background-color:orangered;"></div><p>Temperatura Máxima</p></div>      
+      <div class="leyenda"><div style="background-color: yellow"></div><p>Humedad</p></div> 
+    </div>
+       
+    <div class="ct-chart ct-perfect-fourth" id="wrapper"></div>
+
+    <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>   
+    <script  src="js/javascript.js"></script>
+</body>
+</html>
