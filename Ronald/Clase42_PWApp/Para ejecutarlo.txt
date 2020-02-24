@@ -1,0 +1,5 @@
+Para ejecutarlo:
+Tiene que ir en el servidor, con lo cual si es con node, en la consola:
+node server.js
+Eso me activaría el puerto 8000
+luego abrir en el navegador: localhost:8000

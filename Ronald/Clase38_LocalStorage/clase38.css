@@ -1,0 +1,33 @@
+.cajaPrincipal{
+    background: #DBEDF0;
+    height: 100vh;
+    width: 180vh;
+    margin: auto;
+    padding: 0,5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.caja{
+    margin: 0,5em;
+    
+
+}
+
+.titulo{
+    font-size: 4em;
+    color: #118AB3;
+    margin-bottom: 0em;
+}
+.subtitulo{
+    color:  #118AB3;
+    margin-top: 0em;
+}
+.input{
+    
+    width: 200px;
+}
+div{
+    text-align: center;
+}
