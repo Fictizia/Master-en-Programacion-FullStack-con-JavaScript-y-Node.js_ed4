@@ -3,12 +3,12 @@
 //Configuracion e inicializacion de Firebase Realtime Database.
 var firebaseConfig = {
   apiKey: "",
-  authDomain: "mispeliculas-138a5.firebaseapp.com",
-  databaseURL: "https://mispeliculas-138a5.firebaseio.com",
-  projectId: "mispeliculas-138a5",
-  storageBucket: "mispeliculas-138a5.appspot.com",
-  messagingSenderId: "824715534421",
-  appId: "1:824715534421:web:7fb875ef895d523330f4dc"
+  authDomain: "mispeliculas-4adc7.firebaseapp.com",
+  databaseURL: "https://mispeliculas-4adc7.firebaseio.com",
+  projectId: "mispeliculas-4adc7",
+  storageBucket: "mispeliculas-4adc7.appspot.com",
+  messagingSenderId: "732916227867",
+  appId: "1:732916227867:web:2b2f5455e57e7a2b573dbe"
 };
 firebase.initializeApp(firebaseConfig);
 

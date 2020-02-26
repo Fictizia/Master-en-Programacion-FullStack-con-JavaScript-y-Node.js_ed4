@@ -2,12 +2,12 @@
 //Configuracion e inicializacion.
 var firebaseConfig = {
   apiKey: "",
-  authDomain: "ejercicio-autenticacion.firebaseapp.com",
-  databaseURL: "https://ejercicio-autenticacion.firebaseio.com",
-  projectId: "ejercicio-autenticacion",
-  storageBucket: "ejercicio-autenticacion.appspot.com",
-  messagingSenderId: "430873907932",
-  appId: "1:430873907932:web:219942797b074b5a54da19"
+  authDomain: "ejercicio-autenticacion-6dd6f.firebaseapp.com",
+  databaseURL: "https://ejercicio-autenticacion-6dd6f.firebaseio.com",
+  projectId: "ejercicio-autenticacion-6dd6f",
+  storageBucket: "ejercicio-autenticacion-6dd6f.appspot.com",
+  messagingSenderId: "181250421176",
+  appId: "1:181250421176:web:4c79232e210572385adf4d"
 };
 firebase.initializeApp(firebaseConfig);
 
