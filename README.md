@@ -82,6 +82,7 @@ Fecha | Teoría | Recursos | Contenido
 19/02/20 | [Clase 46](teoria/clase46.md) | [Clase 46](recursos/clase46.md)| 		Arquitectura en JS: Presentation Patters
 21/02/20 | [Clase 47](teoria/clase47.md) | [Clase 47](recursos/clase47.md)| 		Patrones de JS IV: Algoritmia y Estructuras de datos
 24/02/20 | [Clase 48](teoria/clase48.md) | [Clase 48](recursos/clase48.md)| 		Nodejs: Funcionamiento, ecosistema y ejemplos
+26/02/20 | [Clase 49](teoria/clase49.md) | [Clase 49](recursos/clase49.md)| 		Nodejs: Modularización y Librerías Core
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
