@@ -1,7 +1,7 @@
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyBEOpYEHknfzmX2c8Q3T2ku1pV2q6c9t0w",
+    apiKey: "",
     authDomain: "peliculas-f276d.firebaseapp.com",
     databaseURL: "https://peliculas-f276d.firebaseio.com",
     projectId: "peliculas-f276d",
