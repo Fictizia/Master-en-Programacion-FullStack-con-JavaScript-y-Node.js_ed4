@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Autenticacion</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="clase44.css">
+    
+  </head>
+
+  <body>
+      <h1>Autentificación con firebase</h1>
+
+
+  <div class="contenedor">
+
+    <div id="registro">
+      <p>Introduzca su nombre:<input type="text" id="nombre"></p>
+      <p>Introduzca su apellido:<input type="text" id="apellido"></p>
+      <p>Introduzca su email:<input type="text" id="correo"></p>
+      <p>Introduzca una contraseña:<input type="text" id="contraseña"></p><br>
+      <input type="submit" id="enviar">
+      <button id="salir">Salir</button>
+      <button id="boton">Acceder con cuenta ya registrada</button>
+      <button id="github">Acceder mediante cuenta de Github</button>
+    </div>
+
+    
+
+    <div id="acceso">
+      <p>Email:<input type="text" id="correo2"></p>
+      <p>Contraseña:<input type="text" id="contraseña2"></p><br>
+      <button id="enviar2">Acceder</button>
+      <button id="salir2">Salir</button>
+    </div>
+
+    <div>
+      <p id="usuariosOnline"></p>
+    </div>
+
+    <div>
+      <h3>Usuarios registrados previamente</h3>
+      <p id="usuariosRegistrados"></p>
+    </div>
+
+    <div>
+      <p id="validacion"></p>
+    </div>
+    
+  </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script> <!--Para la autentificacion-->
+    <script src="clase44.js"></script>
+  </body>
+
+</html>
