@@ -1,0 +1,65 @@
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+h1 {
+	margin: 0;
+}
+
+header > h1 {
+	padding: 1rem 1rem 0;
+}
+
+header > p,
+main {
+	padding: 0 1rem;
+}
+
+a:link,
+a:visited {
+	color: darkorchid;
+	font-weight: bold;
+	text-decoration: none;
+	-webkit-transition: color 500ms ease-out;
+	transition: color 500ms ease-out;
+}
+
+a:active,
+a:hover {
+	color: maroon;
+	-webkit-transition: color 500ms ease-in;
+	transition: color 500ms ease-in;
+}
+
+ul {
+	background: rgb(33, 33, 33);
+	list-style: none;
+	padding: 0;
+}
+
+ul li {
+	display: inline-block;
+}
+
+ul li a:link,
+ul li a:visited {
+	color: lightgray;
+	display: block;
+	padding: 1rem;
+}
+
+ul li a:active,
+ul li a:hover {
+	color: hotpink;
+	-webkit-transition: color 500ms ease-in;
+	transition: color 500ms ease-in;
+}

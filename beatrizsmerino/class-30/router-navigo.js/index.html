@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Vanilla JS Routing w/Navigo</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+		<header>
+			<h1>Client-side Routing Demo</h1>
+			<p>This pen demonstrates client-side routing using vanilla JS with Navigo.</p>
+			<ul>
+				<li><a href="/" data-navigo="">Home</a></li>
+				<li><a href="/cart" data-navigo="">Cart</a></li>
+				<li><a href="/products/4" data-navigo="">Product 4</a></li>
+			</ul>
+		</header>
+
+		<main>
+			<div id="app"></div>
+		</main>
+
+		<script src="https://cdn.rawgit.com/krasimir/navigo/master/lib/navigo.min.js"></script>
+		<script src="scripts.js"></script>
+	</body>
+
+</html>
