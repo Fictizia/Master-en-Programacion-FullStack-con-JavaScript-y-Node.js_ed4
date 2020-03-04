@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ejercicio Router</title>
+<link href="css/styles.css" rel="stylesheet">
+</head>
+    
+<body>
+  <header>
+    <h1>Ejercicio Router con AireMad</h1>
+    <nav>
+      <ul id="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/stations">Stations</a></li>
+        <li class="desplegable">
+          Station(id)
+          <ul></ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="view"></div>
+
+  <footer class="footer"></footer>
+
+  <script id="template" type="x-tmpl-mustache">
+    <p class="stationId">
+      Id: {{ id }} <br>
+      Nombre de estación: {{ nombre_estacion }} <br>
+      Dirección: {{ direccion }} <br>
+      Altitud: {{ altitud }} <br>
+      Latitud: {{ latitud }} <br>
+      Longitud: {{ longitud }} <br>
+      Latitud decimal: {{ longitud_decimal }} <br>
+      Longitud decimal: {{ longitud_decimal }} <br>
+    </p>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.5/page.min.js"></script>
+  <script src="js/main.js"></script>   
+</body>  
+</html>
