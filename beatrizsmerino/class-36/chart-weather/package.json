@@ -1,0 +1,14 @@
+{
+    "name": "weather-geolocation",
+    "version": "1.0.0",
+    "description": "Weather in your city. Temperature and humidity evolution graph based on the weather forecast using the Open Weather Map API.",
+    "main": "index.js",
+    "scripts": {
+        "docs": "jsdoc -c jsdoc.json"
+    },
+    "author": "beatrizsmerino@gmail.com",
+    "license": "ISC",
+    "devDependencies": {
+        "jsdoc": "^3.6.3"
+    }
+}
