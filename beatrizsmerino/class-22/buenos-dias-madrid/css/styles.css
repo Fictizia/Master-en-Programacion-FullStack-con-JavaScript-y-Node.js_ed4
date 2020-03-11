@@ -1,0 +1,122 @@
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	font-size: 10px;
+}
+
+img {
+	width: 100%;
+	max-width: 70rem;
+}
+
+/************ PAGE ************/
+.page__body {
+	padding: 5rem 3rem;
+}
+
+.page__main {
+}
+
+.page__header {
+	margin-bottom: 5rem;
+}
+
+.page__title {
+	font-size: 5rem;
+}
+
+.page__section {
+}
+.page__section:not(:last-of-type) {
+	margin-bottom: 6rem;
+}
+
+.page__article {
+	display: flow-root;
+}
+
+/************ SECTION ************/
+.section__title {
+	margin-bottom: 3rem;
+	font-size: 2.8rem;
+}
+
+.section__subtitle {
+	margin-bottom: 1.8rem;
+	font-size: 2rem;
+}
+.section__content {
+	padding: 0 1.8rem;
+}
+
+/************ LIST ************/
+.list {
+	margin-left: 3rem;
+	font-size: 1.5rem;
+}
+
+.list__item {
+}
+
+.list__item:not(:last-of-type) {
+	margin-bottom: 1rem;
+}
+
+/************ CLOCK ************/
+.clock {
+	font-size: 2rem;
+}
+
+/************ WEATHER NOW ************/
+.weather {
+	width: calc(33.333% - 3rem);
+	min-height: 200px;
+	padding: 2rem;
+	font-size: 1.5rem;
+	float: left;
+	border: 1px solid #000;
+}
+
+.weather:not(:last-of-type) {
+	margin-bottom: 3rem;
+	margin-right: 3rem;
+}
+@media (max-width: 1200px) {
+	.weather {
+		width: calc(50% - 3rem);
+	}
+}
+@media (max-width: 800px) {
+	.weather {
+		width: 100%;
+		min-height: auto;
+	}
+	.weather:not(:last-of-type) {
+		margin-right: 0;
+	}
+}
+
+.weather__item {
+}
+.weather__item:not(:last-of-type) {
+	margin-bottom: 0.7rem;
+}
+.weather__time {
+	font-style: italic;
+}
+.weather__description {
+	text-transform: capitalize;
+	font-size: 1.8rem;
+}
+.weather__temperature {
+	font-size: 1.8rem;
+}

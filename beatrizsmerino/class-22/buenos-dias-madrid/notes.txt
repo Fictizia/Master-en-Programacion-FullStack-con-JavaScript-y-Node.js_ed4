@@ -1,0 +1,29 @@
+1 - Realizaremos una aplicación que nos facilite toda la información necesaria para tomar buenas decisiones por la mañana. Nuestra Aplicación Buenos Días, Madrid! necesitará:
+
+El estado de la contaminación en Madrid
+El estado del tiempo ahora mismo
+La previsión meteorológica de los próximos 4/5 días
+Una imagen aleatoria del trafico de la ciudad usando las cámaras abiertas de la ciudad.
+Recursos:
+
+Para localizar los datos de la contaminación en tiempo real en formato .json puedes usar aireMad. Buscando una estación que nos resulte interesante por la localización. Documentacion Oficial
+El portal de datos abiertos de Madrid te ofrece los datos y ubicaciones de las cámaras de trafico
+Trucos:
+
+Encuentra la lógica en el nombre de las imagenes de las cámaras de tráfico para poder usar un número aleatorio.
+
+
+
+- Datos de la contaminación
+API aireMad
+http://airemad.com/#/
+
+API aireMad - documentacion
+https://github.com/Fictizia/aireMAD
+
+- Datos de Madrid
+https://datos.madrid.es/portal/site/egob
+
+- Ubicaciones de las camaras de trafico de Madrid
+https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=8803c23866b93410VgnVCM1000000b205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD
+https://datos.madrid.es/egob/catalogo/202088-0-trafico-camaras.dcat
