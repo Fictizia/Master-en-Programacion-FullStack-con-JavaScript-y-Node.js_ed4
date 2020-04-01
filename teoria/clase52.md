@@ -21,8 +21,3 @@
 ```javascript
     // Tu solucion
 ```
-
-**2 -** Opcional: Migra el ejercicio anterior a Gulp 4.
-```javascript
-    // Tu solucion
-```
