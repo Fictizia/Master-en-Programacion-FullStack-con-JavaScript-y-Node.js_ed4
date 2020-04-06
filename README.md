@@ -85,6 +85,9 @@ Fecha | Teoría | Recursos | Contenido
 26/02/20 | [Clase 49](teoria/clase49.md) | [Clase 49](recursos/clase49.md)| 		Nodejs: Modularización y Librerías Core
 28/02/20 | [Clase 50](teoria/clase50.md) | [Clase 50](recursos/clase50.md)| 		NPM, NPX, YARN y Bower
 01/03/20 | [Clase 51](teoria/clase51.md) | [Clase 51](recursos/clase51.md)| 		Grunt y Gulp
+30/03/20 | [Clase 52](teoria/clase52.md) | Clase 52| Gulp: Ejercicios
+01/04/20 | [Clase 53](teoria/clase53.md) | [Clase 53](recursos/clase51.md)| 	Paradigmas: Programación Reactiva
+03/04/20 | [Clase 54](teoria/clase54.md) | [Clase 54](recursos/clase54.md)| 	NPM Scripts
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
