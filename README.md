@@ -89,6 +89,7 @@ Fecha | Teoría | Recursos | Contenido
 01/04/20 | [Clase 53](teoria/clase53.md) | [Clase 53](recursos/clase51.md)| 	Paradigmas: Programación Reactiva
 03/04/20 | [Clase 54](teoria/clase54.md) | [Clase 54](recursos/clase54.md)| 	NPM Scripts
 06/04/20 | [Clase 55](teoria/clase55.md) | [Clase 55](recursos/clase55.md)| 		Shell Scripting
+08/04/20 | [Clase 56](teoria/clase56.md) | [Clase 56](recursos/clase56.md)| 		Shell Scripting: Ejercicios
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
