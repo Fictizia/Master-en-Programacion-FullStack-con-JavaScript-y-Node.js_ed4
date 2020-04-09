@@ -90,7 +90,7 @@ Fecha | Teoría | Recursos | Contenido
 03/04/20 | [Clase 54](teoria/clase54.md) | [Clase 54](recursos/clase54.md)| 	NPM Scripts
 06/04/20 | [Clase 55](teoria/clase55.md) | [Clase 55](recursos/clase55.md)| 		Shell Scripting
 08/04/20 | [Clase 56](teoria/clase56.md) | [Clase 56](recursos/clase56.md)| 		Shell Scripting: Ejercicios
-
+10/04/20 | [Clase 57](teoria/clase57.md) | [Clase 57](recursos/clase57.md)| Tiempo para proyecto personal + dudas
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
 
