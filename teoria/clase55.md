@@ -391,7 +391,7 @@ done
 ```bash
 Operaciones
 Fruits=('Manzana' 'Platano' 'Mandarina');
-Fruits=("${frutas[@]}" "Sandía")        # Push
+Fruits=("${Fruits[@]}" "Sandía")        # Push
 Fruits=( ${Fruits[@]/Man*/} )           # Eliminar un elemento usando REGEX
 unset Fruits[1]                         # Eliminar un elemento en concreto
 lines=(`cat "fichero.txt"`)             # Read from file
