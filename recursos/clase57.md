@@ -9,45 +9,7 @@
 
 ## Clase 57
 
-### Dudas + ejercicios pendientes
-Dudas que puedan surgir sobre temas vistos en clase
-
-![questions](../assets/clase57/questions.gif)
-
-### Proyecto personal
-
-![reto](../assets/clase57/77122a14-9162-4cbb-b305-485609f352bcd.gif)
-
-
-**Requisitos para este proyecto:**
-- Manipulación dinánima del DOM
-- Varias llamadas AJAX
-- Persistencia de datos en Firebase
-- Login Social con Firebase
-- HTML5 Apis como Localstorage, geolocalización, gráficos, etc...
-- Sin frameworks ni librerias externas en la medida de lo posible
-- Buenas practicas y código limpio
-- Gestión del proyecto desde el inicio en un repositorio propio en Github(commits, ramas por features, hacer push regularmente...).
-
-**Opcional (muuuy recomendado)**
-- Uso de al menos 3 patrones avanzados
-- Uso de Expresiones regulares
-- Rutas en el front para gestionar vistas
-- Arquitectura Limpia
-- Automatización de tareas
-- PWA y Offline First
-
-
-**Extras:**
-- Testing
-- JSDocs
-
-**Fecha de entrega:**
-- Aprox. Clase 67* (4/5/2020)
-
-![APIS](../assets/clase57/matrix.gif)
-
-
+### Tiempo para proyecto personal
 **APIs: Listados**
 - [Public APIs](https://github.com/toddmotto/public-apis)
 - [programmableweb - List](https://www.programmableweb.com/apis/directory)
@@ -71,7 +33,6 @@ Dudas que puedan surgir sobre temas vistos en clase
 - [Nutritionix API](https://www.nutritionix.com/business/api)
 - [API COVID-19](https://covid-19-apis.postman.com/)
 
-### Si vamos muy adelantados...
-Terminar ejercicios pendientes de clase + Katas
+**Katas**
 - [HackerRank](https://www.hackerrank.com/domains/shell?filters%5Bsubdomains%5D%5B%5D=bash&filters%5Bsubdomains%5D%5B%5D=grep-sed-awk&filters%5Bdifficulty%5D%5B%5D=easy)
 - [Katas de Shell en CMD Challenge](https://cmdchallenge.com/#/hello_world). `¯\_(ツ)_/¯`
