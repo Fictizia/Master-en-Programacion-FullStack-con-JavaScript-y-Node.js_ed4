@@ -41,3 +41,5 @@
 - [Programación Reactiva con RxJs](http://enmilocalfunciona.io/programacion-reactiva-con-rxjs/)
 - [RxJS y la programación reactiva](https://www.arquitecturajava.com/rxjs-la-programacion-reactiva/)
 - [Programación Reactiva (RX)](https://medium.com/blog-apside/programaci%C3%B3n-reactiva-rx-c800f35836c)
+- [Ejemplo AJAX RXJS](https://jsfiddle.net/leahloughran/e04LmgLj/)
+- [Learn RXJS. Tutorial con ejemplos](https://www.learnrxjs.io/)
