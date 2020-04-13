@@ -91,6 +91,7 @@ Fecha | Teoría | Recursos | Contenido
 06/04/20 | [Clase 55](teoria/clase55.md) | [Clase 55](recursos/clase55.md)| 		Shell Scripting
 08/04/20 | [Clase 56](teoria/clase56.md) | [Clase 56](recursos/clase56.md)| 		Shell Scripting: Ejercicios
 10/04/20 | [Clase 57](teoria/clase57.md) | [Clase 57](recursos/clase57.md)| Tiempo para proyecto personal + dudas
+13/04/20 | [Clase 58](teoria/clase58.md) | [Clase 58](recursos/clase58.md)| 	JavaScript Modular: AMD, Requirejs y Browserify
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
