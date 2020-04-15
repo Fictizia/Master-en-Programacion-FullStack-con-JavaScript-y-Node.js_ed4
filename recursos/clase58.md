@@ -120,3 +120,7 @@
 - [RequireJS Per-Page Modules](https://www.imarc.com/blog/requirejs-page-modules)
 - [Organize Your Code with RequireJS](http://blog.teamtreehouse.com/organize-your-code-with-requirejs)
 - [Introducción y ejemplo de RequireJS](http://elblogdepicodev.blogspot.com/2013/03/introduccion-y-ejemplo-de-requirejs.html)
+- [Ejemplos RequireJS](https://requirejs.org/docs/start.html#examples)
+- [CommonJS vs AMD vs ES6](https://programacionymas.com/blog/modulos-javascript-commonjs-amd-ecmascript)
+- [Ejemplo + teoría RequireJS](https://clubmate.fi/requirejs-from-scratch-and-the-amd-module-patterns/)
+- [Optimizando scripts con RequireJS](https://clubmate.fi/requirejs-part-2-optimizing-scripts-with-r-js/)
