@@ -1,0 +1,90 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Agenda de contactos</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+		integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-dark">
+	<header>
+		<div class="jumbotron jumbotron-fluid mb-3 bg-transparent text-center text-info">
+			<div class="container">
+				<h1 class="display-4">
+					Agenda de contactos
+				</h1>
+				<p class="lead">
+					Local Storage
+				</p>
+			</div>
+		</div>
+	</header>
+
+	<main class="container">
+		<div id="formSaveContact" class="card border-0 my-5 mx-auto bg-transparent">
+			<div class="card-body">
+				<input type="hidden" id="idContact">
+
+				<div class="form-group">
+					<div class="input-group input-group-lg">
+						<div class="input-group-prepend">
+							<div class="input-group-text bg-transparent">
+								<i class="fa fa-user text-info"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control" id="nameContact" placeholder="Nombre">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="input-group input-group-lg">
+						<div class="input-group-prepend">
+							<div class="input-group-text bg-transparent">
+								<i class="fa fa-phone text-info"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control" id="phoneContact" placeholder="Telefono">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="input-group input-group-lg">
+						<div class="input-group-prepend">
+							<div class="input-group-text bg-transparent">
+								<i class="fa fa-envelope text-info"></i>
+							</div>
+						</div>
+						<input type="email" class="form-control" id="emailContact" placeholder="Email">
+					</div>
+				</div>
+
+				<div class="text-center">
+					<button id="buttonSave" class="btn btn-info">
+						<i class="fa fa-save"></i> Guardar
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="listContact" class="mb-5">
+
+		</div>
+	</main>
+
+	<footer class="fixed-bottom py-4 px-5 bg-info">
+		<p class="m-0">&copy; Company 2020</p>
+	</footer>
+
+	<script src="js/script.js"></script>
+</body>
+
+</html>
