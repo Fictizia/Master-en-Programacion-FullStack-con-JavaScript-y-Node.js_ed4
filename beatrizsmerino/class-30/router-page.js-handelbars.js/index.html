@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" id="page" class="page">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Rounting and templates</title>
+	<link rel="icon" href="/images/loader.gif" type="image/gif">
+	<script src="https://cdn.jsdelivr.net/npm/page@1.11.5/page.min.js"> </script>
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/dompurify@2.0.8/dist/purify.min.js"></script>
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body class="page__body">
+	<header class="page__header">
+		<nav>
+			<ul>
+				<li>
+					<a href="/">
+						Home
+					</a>
+				</li>
+				<li>
+					<a href="/stations">
+						Stations
+					</a>
+				</li>
+				<li>
+					<a href="/fgfgfgfg">
+						Error404
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main id="pageMain" class="page__main">
+		<h1 id="pageTitle" class="page__title"></h1>
+		<div id="app"></div>
+	</main>
+
+	<footer class="page__footer">
+		Copyright 2020
+	</footer>
+
+	<!-- TEMPLATES HANDLEBARS - start -->
+	<script id="home" type="text/x-handlebars-template">
+		<!-- PAGE HOME -->
+		<section class="page__section">
+			<article class="page__article">
+				<h2 class="page__subtitle">
+					<span class="page__subtitle--1">
+						Rounting and template
+					</span>
+					<span class="page__subtitle--2">
+						made with <a href="{{{urlPagejs}}}" target="_blank">page.js</a> and <a href="{{{urlHandlebars}}}"
+							target="_blank">Handelbars</a> libraries
+					</span>
+					<span class="page__subtitle--3">
+						Exercise with the API <a href="{{{urlAPIdoc}}}" target="_blank">aireMad</a>
+					</span>
+				</h2>
+			</article>
+		</section>
+	</script>
+
+	<script id="stations" type="text/x-handlebars-template">
+		<!-- PAGE STATIONS -->
+		<section class="page__section">
+			<article class="page__article">
+				<h2 class="page__subtitle">List of stations</h2>
+				<p class="station__total">Total: {{station.length}}</p>
+
+				<div class="page__content scroll-content">
+					<ul class="stations-list">
+						{{#each station}}
+						<li class="station" data-index="{{@index}}">
+							<a class="button station__button" data-id="{{{id}}}" href="/stations/{{id}}">
+								{{nombre_estacion}}
+							</a>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+			</article>
+		</section>
+    </script>
+
+	<script id="station" type="text/x-handlebars-template">
+		<!-- PAGE STATION -->
+		<section class="page__section">
+			<article class="page__article">
+				<h2 class="page__subtitle">
+					{{station.nombre_estacion}}
+				</h2>
+				<div class="page__content">
+					<div class="station-details station-info">
+						<div class="station-info__content">
+							<span class="station-info__number">
+								#{{station.numero_estacion}}
+							</span>
+
+							<p>
+								<strong>Address:</strong> {{station.direccion}}
+							</p>
+							<p>
+								<strong>Altitude:</strong> {{station.altitud}}
+							</p>
+							<p>
+								<strong>Latitude:</strong> {{station.latitud}}
+							</p>
+							<p>
+								<strong>Logitude:</strong> {{station.longitud}}
+							</p>
+						</div>
+					</div>
+
+					<div class="station-weather station-info">
+						<h3 class="station-info__title">
+							<strong>
+								Weather
+							</strong>
+						</h3>
+						<div class="station-info__content">
+							{{#if weather}}
+								<ul class="station-info__list">
+									{{#each weather.list}}
+										<li class="station-info__item">
+											{{#each weather}}
+												<img src="http://openweathermap.org/img/w/{{icon}}.png" alt="{{main}}">
+											{{/each}}
+											<br>
+
+											<time datetime="{{dt_txt}}">
+												{{formatDate dt_txt 'dddd D, MMMM, YYYY'}}, {{formatDate dt_txt 'HH:mm'}}
+											</time>
+											<p>
+												<strong>
+													Temperature:
+												</strong>
+												{{main.temp}}°C
+											</p>
+											<p>
+												<strong>
+													Max Temperature:
+												</strong>
+												{{main.temp_min}}°C
+											</p>
+											<p>
+												<strong>
+													Min Temperature:
+												</strong>
+												{{main.temp_max}}°C
+											</p>
+											<p>
+												<strong>
+													Pressure:
+												</strong>
+												{{main.pressure}} hPa
+											</p>
+											<p>
+												<strong>
+													Humedity:
+												</strong>
+												{{main.humidity}}%
+											</p>
+										</li>
+									{{/each}}
+								</ul>
+							{{else}}
+								<p>
+									No information available
+								</p>
+							{{/if}}
+						</div>
+					</div>
+
+					<div class="station-pollen station-info">
+						<h3 class="station-info__title">
+							<strong>
+								Pollen
+							</strong>
+						</h3>
+
+						<div class="station-info__content">
+							{{#if pollen}}
+								<div class="station-info__group">
+									<h4 class="station-info__subtitle">
+										Meditions:
+									</h4>
+									<ul class="station-info__list">
+										{{#each pollen.mediciones}}
+										<li class="station-info__item">
+											<p>
+												<strong>{{@key}}:</strong>
+											</p>
+											<time datetime="{{fecha}}">
+												{{formatDate fecha 'dddd D, MMMM, YYYY, HH:mm'}}
+											</time>
+											<p>
+												{{valor}} ({{resumen}})
+											</p>
+										</li>
+										{{/each}}
+									</ul>
+								</div>
+
+								<div class="station-info__group">
+									<h4 class="station-info__subtitle">
+										Parameters:
+									</h4>
+									<ul class="station-info__list">
+										{{#each pollen.parametros}}
+											<li class="station-info__item">
+												<strong>
+													{{@key}}:
+												</strong>
+												<p>
+													Medio: {{medio}}
+												</p>
+												<p>
+													Alto: {{alto}}
+												</p>
+												<p>
+													Muy alto: {{muy_alto}}
+												</p>
+											</li>
+										{{/each}}
+									</ul>
+								</div>
+							{{else}}
+							<p>
+								No information available
+							</p>
+							{{/if}}
+						</div>
+					</div>
+
+					<div class="station-pollution station-info">
+						<h3 class="station-info__title">
+							<strong>
+								Pollution
+							</strong>
+						</h3>
+
+						<div class="station-info__content">
+							{{#if pollution}}
+								{{#if pollution.NO}}
+									<div class="station-info__group">
+										<p>
+											<strong>
+												{{pollution.NO.parameter}}
+											</strong>
+											({{pollution.NO.abrebiation}}):
+										</p>
+										<em>
+											{{pollution.NO.technique}}
+										</em>
+										<ul class="station-info__list">
+											{{#each pollution.NO.values}}
+												{{#if valor}}
+													<li>
+														<time datetime="{{date}}">
+															{{formatDate date 'dddd D, MMMM, YYYY, HH:mm'}}
+														</time>
+														<p>
+															Valor: {{valor}}
+														</p>
+													</li>
+												{{/if}}
+											{{/each}}
+										</ul>
+									</div>
+								{{/if}}
+
+								{{#if pollution.NO2}}
+									<div class="station-info__group">
+										<p>
+											<strong>
+												{{pollution.NO2.parameter}}
+											</strong>
+											({{pollution.NO2.abrebiation}}):
+										</p>
+										<em>
+											{{pollution.NO2.technique}}
+										</em>
+										<ul class="station-info__list">
+											{{#each pollution.NO2.values}}
+												{{#if valor}}
+													<li>
+														<time datetime="{{date}}">
+															{{formatDate date 'dddd D, MMMM, YYYY, HH:mm'}}
+														</time>
+														<p>
+															Valor: {{valor}}
+														</p>
+													</li>
+												{{/if}}
+											{{/each}}
+										</ul>
+									</div>
+								{{/if}}
+
+								{{#if pollution.NOX}}
+									<div class="station-info__group">
+										<p>
+											<strong>
+												{{pollution.NOX.parameter}}
+											</strong>
+											({{pollution.NOX.abrebiation}}):
+										</p>
+										<em>
+											{{pollution.NOX.technique}}
+										</em>
+										<ul class="station-info__list">
+											{{#each pollution.NOX.values}}
+												{{#if valor}}
+													<li>
+														<time datetime="{{date}}">
+															{{formatDate date 'dddd D, MMMM, YYYY, HH:mm'}}
+														</time>
+														<p>
+															Valor: {{valor}}
+														</p>
+													</li>
+												{{/if}}
+											{{/each}}
+										</ul>
+									</div>
+								{{/if}}
+
+								{{#if pollution.O3}}
+									<div class="station-info__group">
+										<p>
+											<strong>
+												{{pollution.O3.parameter}}
+											</strong>
+											({{pollution.O3.abrebiation}}):
+										</p>
+										<em>
+											{{pollution.O3.technique}}
+										</em>
+										<ul class="station-info__list">
+											{{#each pollution.03.values}}
+												{{#if valor}}
+													<li>
+														<time datetime="{{date}}">
+															{{formatDate date 'dddd D, MMMM, YYYY, HH:mm'}}
+														</time>
+														<p>
+															Valor: {{valor}}
+														</p>
+													</li>
+												{{/if}}
+											{{/each}}
+										</ul>
+									</div>
+								{{/if}}
+
+								{{#if pollution.S02}}
+									<div class="station-info__group">
+										<p>
+											<strong>
+												{{pollution.S02.parameter}}
+											</strong>
+											({{pollution.S02.abrebiation}}):
+										</p>
+										<em>
+											{{pollution.S02.technique}}
+										</em>
+										<ul class="station-info__list">
+											{{#each pollution.S02.values}}
+												{{#if valor}}
+													<li>
+														<time datetime="{{date}}">
+															{{formatDate date 'dddd D, MMMM, YYYY, HH:mm'}}
+														</time>
+														<p>
+															Valor: {{valor}}
+														</p>
+													</li>
+												{{/if}}
+											{{/each}}
+										</ul>
+									</div>
+								{{/if}}
+							{{else}}
+								<p>
+									No information available
+								</p>
+							{{/if}}
+						</div>
+					</div>
+
+					<div class="station-acustic station-info">
+						<h3 class="station-info__title">
+							<strong>
+								Acustic
+							</strong>
+						</h3>
+
+						<div class="station-info__content">
+							{{#if acustic}}
+
+								{{#if acustic.total}}
+									<div class="station-info__group">
+										<h4 class="station-info__subtitle">
+											Total
+										</h4>
+										<time datetime="{{acustic.total.date}}">
+											{{formatDate acustic.total.date 'dddd D, MMMM, YYYY'}}
+											<br>
+											{{formatDate acustic.total.date 'HH:mm'}}
+										</time>
+										<ul class="station-info__list">
+											<li>
+												<strong>
+													LAEQ:
+												</strong>
+												{{acustic.total.LAEQ}}
+											</li>
+											<li>
+												<strong>
+													LA501:
+												</strong>
+												{{acustic.total.LA501}}
+											</li>
+											<li>
+												<strong>
+													LA510:
+												</strong>
+												{{acustic.total.LA510}}
+											</li>
+											<li>
+												<strong>
+													LA550:
+												</strong>
+												{{acustic.total.LA550}}
+											</li>
+											<li>
+												<strong>
+													L590:
+												</strong>
+												{{acustic.total.L590}}
+											</li>
+											<li>
+												<strong>
+													LA599:
+												</strong>
+												{{acustic.total.LA599}}
+											</li>
+										</ul>
+									</div>
+								{{/if}}
+
+								{{#if acustic.diurno}}
+									<div class="station-info__group">
+										<h4 class="station-info__subtitle">
+											Diurno
+										</h4>
+										<time datetime="{{acustic.diurno.date}}">
+											{{formatDate acustic.diurno.date 'dddd D, MMMM, YYYY'}}
+											<br>
+											{{formatDate acustic.diurno.date 'HH:mm'}}
+										</time>
+										<ul class="station-info__list">
+											<li>
+												<strong>
+													LAEQ:
+												</strong>
+												{{acustic.diurno.LAEQ}}
+											</li>
+											<li>
+												<strong>
+													LA501:
+												</strong>
+												{{acustic.diurno.LA501}}
+											</li>
+											<li>
+												<strong>
+													LA510:
+												</strong>
+												{{acustic.diurno.LA510}}
+											</li>
+											<li>
+												<strong>
+													LA550:
+												</strong>
+												{{acustic.diurno.LA550}}
+											</li>
+											<li>
+												<strong>
+													L590:
+												</strong>
+												{{acustic.diurno.L590}}
+											</li>
+											<li>
+												<strong>
+													LA599:
+												</strong>
+												{{acustic.diurno.LA599}}
+											</li>
+										</ul>
+									</div>
+								{{/if}}
+
+								{{#if acustic.vespertino}}
+									<div class="station-info__group">
+										<h4 class="station-info__subtitle">
+											Vespertino
+										</h4>
+										<time datetime="{{acustic.vespertino.date}}">
+											{{formatDate acustic.vespertino.date 'dddd D, MMMM, YYYY'}}
+											<br>
+											{{formatDate acustic.vespertino.date 'HH:mm'}}
+										</time>
+										<ul class="station-info__list">
+											<li>
+												<strong>
+													LAEQ:
+												</strong>
+												{{acustic.vespertino.LAEQ}}
+											</li>
+											<li>
+												<strong>
+													LA501:
+												</strong>
+												{{acustic.vespertino.LA501}}
+											</li>
+											<li>
+												<strong>
+													LA510:
+												</strong>
+												{{acustic.vespertino.LA510}}
+											</li>
+											<li>
+												<strong>
+													LA550:
+												</strong>
+												{{acustic.vespertino.LA550}}
+											</li>
+											<li>
+												<strong>
+													L590:
+												</strong>
+												{{acustic.vespertino.L590}}
+											</li>
+											<li>
+												<strong>
+													LA599:
+												</strong>
+												{{acustic.vespertino.LA599}}
+											</li>
+										</ul>
+									</div>
+								{{/if}}
+
+								{{#if acustic.nocturno}}
+									<div class="station-info__group">
+										<h4 class="station-info__subtitle">
+											Nocturno
+										</h4>
+										<time datetime="{{acustic.nocturno.date}}">
+											{{formatDate acustic.nocturno.date 'dddd D, MMMM, YYYY'}}
+											<br>
+											{{formatDate acustic.nocturno.date 'HH:mm'}}
+										</time>
+										<ul class="station-info__list">
+											<li>
+												<strong>
+													LAEQ:
+												</strong>
+												{{acustic.nocturno.LAEQ}}
+											</li>
+											<li>
+												<strong>
+													LA501:
+												</strong>
+												{{acustic.nocturno.LA501}}
+											</li>
+											<li>
+												<strong>
+													LA510:
+												</strong>
+												{{acustic.nocturno.LA510}}
+											</li>
+											<li>
+												<strong>
+													LA550:
+												</strong>
+												{{acustic.nocturno.LA550}}
+											</li>
+											<li>
+												<strong>
+													L590:
+												</strong>
+												{{acustic.nocturno.L590}}
+											</li>
+											<li>
+												<strong>
+													LA599:
+												</strong>
+												{{acustic.nocturno.LA599}}
+											</li>
+										</ul>
+									</div>
+								{{/if}}
+							{{else}}
+								<p>
+									No information available
+								</p>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+    </script>
+
+	<script id="error404" type="text/x-handlebars-template">
+		<!-- PAGE ERROR 404 -->
+		<section class="page__section">
+			<article class="page__article">
+				<h2 class="page__subtitle">Error 404</h2>
+				<img src="/images/{{{image}}}" alt="Image of error 404. Page not found" />
+				<a class="button--back button" href="/stations">Back to the list stations</a>
+			</article>
+		</section>
+    </script>
+	<!-- TEMPLATES HANDLEBARS - end -->
+
+	<script src="/js/app-templates.js"></script>
+	<script src="/js/app-routes.js"></script>
+	<script src="/js/app-tools.js"></script>
+	<script src="/js/scripts.js"></script>
+</body>
+
+</html>
