@@ -1,0 +1,225 @@
+/*************** VARIABLES ***************/
+:root {
+	--color-brand-1: #52f2db;
+	--color-brand-2: #63bfa5;
+	--color-brand-3: #518c7c;
+	--color-light: #ededed;
+	--color-gray: #b8b8b8;
+	--color-dark: #262626;
+	--color-black: #0d0d0d;
+}
+
+/*************** RESET ***************/
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+/*************** PAGE ***************/
+.page {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+		sans-serif;
+	font-size: 10px;
+}
+
+.page__body {
+	padding: 7rem 5% 5rem;
+}
+
+.page__header {
+	margin-bottom: 6rem;
+}
+
+.page__main {
+	min-height: 580px;
+}
+
+.page__title {
+	width: fit-content;
+	padding-left: 8rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1rem;
+	font-size: 4rem;
+	color: var(--color-brand-1);
+	background-color: var(--color-black);
+}
+
+.page__subtitle {
+	font-size: 2rem;
+}
+
+.page__content {
+	margin-top: 2rem;
+}
+
+.page__footer {
+	margin-top: 1rem;
+	text-align: right;
+	font-size: 1.5rem;
+	color: var(--color-gray);
+}
+
+@media (max-width: 800px) {
+	.page__footer {
+		text-align: center;
+	}
+}
+
+@media (max-width: 600px) {
+	.page__title {
+		padding: 0 0.5rem;
+		text-align: center;
+	}
+
+	.page__subtitle br {
+		display: none;
+	}
+}
+
+/************* LOADER *************/
+.loader {
+	width: 20rem;
+	height: 20rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 999;
+	transform: translate(-50%, -50%);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("../img/loader.gif");
+}
+
+/************* SWITCH *************/
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--color-light);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: #fff;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background-color: var(--color-brand-2);
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px var(--color-brand-2);
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+/************* OPEN WEATHER - WIDGETS *************/
+
+.open-weather-widgets {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.open-weather-widgets [id^="openweathermap-widget"]:not(:last-of-type) {
+	margin-bottom: 2rem;
+	margin-right: 2rem;
+}
+
+/************* GRAPHIC CHARTJS *************/
+.chart__list {
+	margin: 5rem auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.chart__item {
+	width: 100%;
+	max-width: 3000px;
+	margin: 1.5rem 0;
+	padding: 2rem;
+	position: relative;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.4);
+	background-color: #fff;
+	height: 98px;
+	overflow: hidden;
+}
+@media (min-width: 1600px) {
+	.chart__item {
+		width: calc(50% - 3rem);
+	}
+	.chart__item:not(:last-of-type) {
+		margin-right: 3rem;
+	}
+}
+
+.chart__item.is-show {
+	height: auto;
+	overflow: visible;
+}
+
+.chart__canvas {
+	width: 100%;
+}
+.chart__header {
+	position: absolute;
+	right: 2rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.chart__switch {
+}
