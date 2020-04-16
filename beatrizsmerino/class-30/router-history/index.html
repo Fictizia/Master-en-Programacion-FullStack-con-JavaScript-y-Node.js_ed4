@@ -1,0 +1,171 @@
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Kittens!</title>
+		<style>
+			html {
+				background-color: #ddd;
+			}
+
+			body {
+				margin: 1em auto;
+				max-width: 600px;
+				background-color: #fff;
+				border: solid 1px #aaa;
+				padding: 15px;
+				font-family: Georgia, serif;
+			}
+
+			h1 {
+				font-family: Helvetica, Arial, sans-serif;
+				float: left;
+				width: 30%;
+				margin: 0;
+			}
+
+			nav {
+				display: block;
+				float: right;
+				width: 45%;
+			}
+
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			li {
+				display: inline-block;
+				padding: 0;
+				border-right: solid 1px #aaa;
+				margin: .5em 0 0;
+			}
+
+			li:last-child {
+				border-right: 0;
+			}
+
+			a {
+				color: rgb(0, 144, 210);
+				padding: .2em 0.5em;
+			}
+
+			a:hover {
+				text-decoration: none;
+			}
+
+			#content {
+				clear: left;
+				float: left;
+				width: 45%;
+				margin-right: 10%;
+				line-height: 1.4em;
+			}
+
+			#photo {
+				float: right;
+				width: 45%;
+				margin-top: 1em;
+			}
+
+			.cf:before,
+			.cf:after {
+				content: "";
+				display: table;
+			}
+
+			.cf:after {
+				clear: both;
+			}
+		</style>
+	</head>
+
+	<body class="cf" cz-shortcut-listen="true" style="">
+		<h1>Kittens!</h1>
+
+		<nav>
+			<ul class="cf">
+				<li><a href="/demos/history/fluffy">Fluffy</a></li>
+				<li><a href="/demos/history/socks">Socks</a></li>
+				<li><a href="/demos/history/whiskers">Whiskers</a></li>
+				<li><a href="/demos/history/bob">Bob</a></li>
+			</ul>
+		</nav>
+
+		<p id="content">Welcome to Kittens! Home of Fluffy, Socks, Whiskers and Bob. If you're not suffering from a cute
+			overdose within the hour, then you really are a heartless bugger! Now lets look at some cats!</p>
+
+		<img src="http://placekitten.com/300/300" alt="A heartbreakingly cute kitten!" id="photo">
+
+		<script>
+			// Not the most elegant code but fit enough for this example. Enjoy the kitten goodness!
+			var contentEl = document.getElementById('content'),
+				photoEl = document.getElementById('photo'),
+				linkEls = document.getElementsByTagName('a'),
+				cats = {
+					fluffy: {
+						content: 'Fluffy!',
+						photo: 'http://placekitten.com/200/200'
+					},
+					socks: {
+						content: 'Socks!',
+						photo: 'http://placekitten.com/280/280'
+					},
+					whiskers: {
+						content: 'Whiskers!',
+						photo: 'http://placekitten.com/350/350'
+					},
+					bob: {
+						content: 'Just Bob.',
+						photo: 'http://placekitten.com/320/270'
+					}
+				};
+
+			// Switcheroo!
+			function updateContent(data) {
+				if (data == null)
+					return;
+
+				contentEl.textContent = data.content;
+				photoEl.src = data.photo;
+			}
+
+			// Load some mock JSON data into the page
+			function clickHandler(event) {
+				var cat = event.target.getAttribute('href').split('/').pop(),
+					data = cats[cat] || null; // In reality this could be an AJAX request
+
+				updateContent(data);
+
+				// Add an item to the history log
+				history.pushState(data, event.target.textContent, event.target.href);
+
+				return event.preventDefault();
+			}
+
+			// Attach event listeners
+			for (var i = 0, l = linkEls.length; i < l; i++) {
+				linkEls[i].addEventListener('click', clickHandler, true);
+			}
+
+			// Revert to a previously saved state
+			window.addEventListener('popstate', function (event) {
+				console.log('popstate fired!');
+
+				updateContent(event.state);
+			});
+
+			// Store the initial content so we can revisit it later
+			history.replaceState({
+				content: contentEl.textContent,
+				photo: photoEl.src
+			}, document.title, document.location.href);
+		</script>
+
+
+
+	</body>
+
+</html>
