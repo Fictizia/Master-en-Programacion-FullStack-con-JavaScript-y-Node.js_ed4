@@ -1,0 +1,110 @@
+body {
+    font-family: Roboto;
+}
+
+h1.firstTittle {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    display: grid;
+    text-transform: uppercase;
+}
+
+h1.firstTittle span {
+    margin-top: -10px;
+    font-size: 50px;
+}
+
+
+div#big {
+    display: grid;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin: 140px 0 0 0;
+}
+
+h2.titulo {
+    position: relative;
+    bottom: 352px;
+}
+
+svg {
+    width: 466px;
+    height: 520px;
+}
+
+path.cls-1 {
+    fill: #ffd766;
+}
+
+path.cls-2 {
+    fill: #90e0f8;
+}
+path.cls-3 {
+    fill: #ff7d66;
+}
+
+.grid2 {
+    grid-template-columns: auto auto;
+
+}
+
+.grid1 {
+    grid-template-columns: auto auto auto;
+
+}
+
+
+div.cajasPlants0 , div.cajasPlants1, div.cajasPlants2  {
+    font-size: 18px;
+    text-transform: initial;
+}
+
+div#cont20 div, div#cont21 div, div#cont22 div {
+    display: grid;
+    grid-template-columns: 413px auto;
+}
+
+.cerrar {
+    text-align: right;
+    position: absolute;
+    right: 10%;
+    font-size: 60px;
+    top: 100px;
+    font-weight: 900;
+    padding: 10px 30px;
+    background-color: #d40b2a;
+    color: white;
+    display: none;
+}
+
+.cerrar:hover {
+    text-align: right;
+    position: absolute;
+    right: 10%;
+    font-size: 60px;
+    top: 100px;
+    font-weight: 900;
+    padding: 10px 30px;
+    background-color: #6b0b1a;
+    color: white;
+}
+
+.cls-1:hover {
+    stroke: #ffc566;
+    stroke-width: 4px;
+    stroke-dasharray: 1800.124;
+    stroke-dashoffset: 1800.124;
+    animation: dash 5s linear 1;
+}
+  
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1800.124;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+}
+

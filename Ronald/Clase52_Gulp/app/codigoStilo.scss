@@ -1,0 +1,35 @@
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    li { display: inline-block;}
+  
+    a {
+      display: inline-block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+  }
+
+body {
+  background-color: rgb(199, 73, 48);
+  text-align: center;
+}
+
+body{
+  li{
+    list-style-type: none;
+  }
+}
+
+#caja3{
+  display: flex;
+  flex-direction: row; 
+}
+
+.tiempos{
+  margin: 5%;
+}

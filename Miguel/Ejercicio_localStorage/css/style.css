@@ -1,0 +1,77 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}nav ul{list-style-type:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}img{display:block}a{text-decoration:none}
+body{
+  padding: 2%;
+  font-family: "-apple-system","system-ui","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif;
+}
+#mainWrapper{
+  width: 100%;
+}
+#wrapper{
+  background-color: rgb(245, 112, 64);
+  width: 50%;
+  margin: 0 auto;
+  padding: 3%;
+  border: 1px solid black;
+  border-radius: 2px;
+  text-align: center;
+}
+input{
+  display: block;
+  margin: 0 auto 20px;
+  font-size: 18px;
+  padding: 6px;
+  border:1px solid black;
+  border-radius: 2px;
+  height: 30px;
+}
+button{
+  width: 150px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50px;
+  border: 2px solid white;
+  background-color: rgb(246, 150, 115);
+  margin:2px;
+  color:white;
+  outline: none;
+}
+button:hover{
+  background-color: rgb(248, 194, 174);
+}
+button:active{
+  color:skyblue;
+  background-color: rgb(177, 115, 92);
+}
+h2{
+  font-size: 34px;
+  margin-bottom:20px;
+  text-transform: uppercase;
+  color:white;
+  line-height: 1.4;
+}
+h2 span{
+  text-transform: none;
+}
+#resultado{
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#resultado div{
+  display: flex;
+  width: 500px;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+p{
+  width:100%;
+  font-size: 18px;
+  text-align: center;
+  line-height: 2;
+  padding: 3% 0;
+}

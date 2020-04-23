@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+:root {
+	--color-danger: #c14545;
+	--color-danger-dark: #9e3535;
+	--color-warning: #f0ca6d;
+	--color-warning-dark: #ebb93f;
+	--color-info: #73b1c1;
+	--color-info-dark: #509db1;
+	--color-success: #6db193;
+	--color-success-dark: #56a180;
+}
+
+.btn-danger {
+	border-color: var(--color-danger) !important;
+	background-color: var(--color-danger) !important;
+}
+.btn-danger:hover {
+	border-color: var(--color-danger-dark) !important;
+	background-color: var(--color-danger-dark) !important;
+}
+
+.btn-warning {
+	border-color: var(--color-warning) !important;
+	background-color: var(--color-warning) !important;
+}
+.btn-warning:hover {
+	border-color: var(--color-warning-dark) !important;
+	background-color: var(--color-warning-dark) !important;
+}
+
+.btn-success {
+	border-color: var(--color-success) !important;
+	background-color: var(--color-success) !important;
+}
+.btn-success:hover {
+	border-color: var(--color-success-dark) !important;
+	background-color: var(--color-success-dark) !important;
+}
+
+.btn-info {
+	border-color: var(--color-info) !important;
+	background-color: var(--color-info) !important;
+}
+.btn-info:hover {
+	border-color: var(--color-info-dark) !important;
+	background-color: var(--color-info-dark) !important;
+}
+
+.bg-info {
+	background-color: var(--color-info) !important;
+}
+
+.text-info {
+	color: var(--color-info) !important;
+}
+
+body {
+	padding-bottom: 72px;
+}
+
+.jumbotron h1 {
+	line-height: 100%;
+}
+
+.list-errors {
+	color: var(--color-danger);
+}

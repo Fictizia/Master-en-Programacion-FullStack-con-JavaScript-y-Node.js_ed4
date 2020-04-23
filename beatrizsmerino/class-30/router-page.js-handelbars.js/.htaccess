@@ -1,0 +1,9 @@
+Options All -Indexes
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !index
+RewriteRule ^.*$ ./index.html

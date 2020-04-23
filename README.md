@@ -72,7 +72,30 @@ Fecha | Teoría | Recursos | Contenido
 31/01/20 | [Clase 36](teoria/clase36.md) | [Clase 36](recursos/clase36.md)| 	HTML5: Programación creativa con Canvas, Gráficos y 3D
 01/02/20 | [Clase 37](teoria/clase37.md) | [Clase 37](recursos/clase37.md)| Paradigmas: Programación Funcional
 03/02/20 | [Clase 38](teoria/clase38.md) | [Clase 38](recursos/clase38.md)| HTML5: LocalStorage y contentEditor
-
+05/02/20 | [Clase 39](teoria/clase39.md) | [Clase 39](recursos/clase39.md)| Patrones en JS II: Metaprogramación y Patrones
+07/02/20 | [Clase 40](teoria/clase40.md) | [Clase 40](recursos/clase40.md)| HTML5: Offline
+08/02/20 | [Clase 41](teoria/clase41.md) | [Clase 41](recursos/clase41.md)| HTML5: WebWorkers, Blob y FileSystem
+10/02/20 | [Clase 42](teoria/clase42.md) | [Clase 42](recursos/clase42.md)| 	HTML5: PWA
+12/02/20 | [Clase 43](teoria/clase43.md) | [Clase 43](recursos/clase43.md)| 	Firebase I: Intro + Realtime Database
+14/02/20 | [Clase 44](teoria/clase44.md) | [Clase 44](recursos/clase44.md)| 		Firebase I: Autenticación y Hosting
+17/02/20 | [Clase 45](teoria/clase45.md) | [Clase 45](recursos/clase45.md)| 		Firebase I: Cloud Storage
+19/02/20 | [Clase 46](teoria/clase46.md) | [Clase 46](recursos/clase46.md)| 		Arquitectura en JS: Presentation Patters
+21/02/20 | [Clase 47](teoria/clase47.md) | [Clase 47](recursos/clase47.md)| 		Patrones de JS IV: Algoritmia y Estructuras de datos
+24/02/20 | [Clase 48](teoria/clase48.md) | [Clase 48](recursos/clase48.md)| 		Nodejs: Funcionamiento, ecosistema y ejemplos
+26/02/20 | [Clase 49](teoria/clase49.md) | [Clase 49](recursos/clase49.md)| 		Nodejs: Modularización y Librerías Core
+28/02/20 | [Clase 50](teoria/clase50.md) | [Clase 50](recursos/clase50.md)| 		NPM, NPX, YARN y Bower
+01/03/20 | [Clase 51](teoria/clase51.md) | [Clase 51](recursos/clase51.md)| 		Grunt y Gulp
+30/03/20 | [Clase 52](teoria/clase52.md) | Clase 52| Gulp: Ejercicios
+01/04/20 | [Clase 53](teoria/clase53.md) | [Clase 53](recursos/clase51.md)| 	Paradigmas: Programación Reactiva
+03/04/20 | [Clase 54](teoria/clase54.md) | [Clase 54](recursos/clase54.md)| 	NPM Scripts
+06/04/20 | [Clase 55](teoria/clase55.md) | [Clase 55](recursos/clase55.md)| 		Shell Scripting
+08/04/20 | [Clase 56](teoria/clase56.md) | [Clase 56](recursos/clase56.md)| 		Shell Scripting: Ejercicios
+10/04/20 | [Clase 57](teoria/clase57.md) | [Clase 57](recursos/clase57.md)| Tiempo para proyecto personal + dudas
+13/04/20 | [Clase 58](teoria/clase58.md) | [Clase 58](recursos/clase58.md)| 	JavaScript Modular: AMD, Requirejs y Browserify
+15/04/20 | [Clase 59](teoria/clase59.md) | [Clase 59](recursos/clase59.md)| 	Yeoman I
+17/04/20 | [Clase 60](teoria/clase60.md) | [Clase 60](recursos/clase60.md)| 	Yeoman II
+20/04/20 | [Clase 61](teoria/clase61.md) | [Clase 61](recursos/clase61.md)| 	Frameworks I: Anatomía y funcionalidades
+22/04/20 | [Clase 62](teoria/clase62.md) | [Clase 62](recursos/clase62.md)| 	Frameworks II: Ecosistema, soluciones y contextualización
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
 

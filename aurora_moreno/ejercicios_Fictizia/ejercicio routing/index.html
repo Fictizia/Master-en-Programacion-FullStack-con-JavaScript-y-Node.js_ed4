@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/page/page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+
+    <base href="">
+</head>
+
+<body>
+    <header>
+        <h1>Aire Madrid</h1>
+    </header>
+
+
+
+    <nav>
+        <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="./estaciones">Estaciones</a></li>
+        </ul>
+    </nav>
+
+
+    <div id="target">Loading...</div>
+
+    
+    <template id="template" type="x-tmpl-mustache">
+        <ul>{{#data}}<li><a href="/estaciones/{{ids}}">{{name}}</a></li>{{/data}}</ul>
+    </template>
+
+
+    <template id="templateIndv" type="x-tmpl-mustache">
+        <h2>{{name}}</h2><ul>{{#dataInd}}<li>{{pollution}}</li>{{/dataInd}}</ul>
+    </template>
+
+
+    <main>
+
+        <h2 id="states"> </h2>
+
+
+    </main>
+
+
+    <footer>
+        <h4>Pie de pagina</h4>
+    </footer>
+
+</body>
+<script src="https://unpkg.com/mustache@latest"></script>
+<script src="script.js"></script>
+
+
+</html>
