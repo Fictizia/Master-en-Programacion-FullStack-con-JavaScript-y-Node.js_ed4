@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="ISO-8859-1">
+	<title>Robot NASA</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<div id="tablero">
+		<canvas height="300px" width="300px" id="micanvas">
+			Su navegador no soporta en elemento CANVAS</canvas>
+
+		<div id="robot"></div>
+
+	</div>
+<h3 id="aviso"></h3>
+	<div id="datos">
+		<h2>Introduce las coordenadas iniciales del robot</h2>
+		<input id="corX" type="text" placeholder="coordenada X">
+		<input id="corY" type="text" placeholder="coordenada Y">
+		<button id="asigBut">Asignar</button>
+		<h2>Introducela dirección inicial del robot</h2>
+		<div id="direcT">
+			<div id="nord" class="direcSt">N</div>
+			<div id="second">
+				<div id="oest" class="direcSt">O</div>
+				<p id="selectDirection" class="direcSt"></p>
+				<div id="est" class="direcSt">E</div>
+			</div>
+			<div id="sur" class="direcSt">S</div>
+		</div>
+		<h2>Introducela las instrucciones del robot</h2>
+		<input id="instruct" >
+
+		<div id="second">
+		<img id="left" src="img/leftDirect.png" alt="" >
+		<img id="rect" src="img/rectDirect.png" alt="" >
+		<img id="rigth" src="img/rightDirect.png" alt="" >
+		</div>
+		<button id="initRobot">Iniciar</button>
+	</div>
+
+
+</body>
+<script src="script/script.js"></script>
+
+</html>
