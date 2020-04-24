@@ -96,6 +96,9 @@ Fecha | Teoría | Recursos | Contenido
 17/04/20 | [Clase 60](teoria/clase60.md) | [Clase 60](recursos/clase60.md)| 	Yeoman II
 20/04/20 | [Clase 61](teoria/clase61.md) | [Clase 61](recursos/clase61.md)| 	Frameworks I: Anatomía y funcionalidades
 22/04/20 | [Clase 62](teoria/clase62.md) | [Clase 62](recursos/clase62.md)| 	Frameworks II: Ecosistema, soluciones y contextualización
+24/04/20 | [Clase 63](teoria/clase63.md) | [Clase 63](recursos/clase63.md)| 	WebSockets: Fundamentos
+
+
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
 
