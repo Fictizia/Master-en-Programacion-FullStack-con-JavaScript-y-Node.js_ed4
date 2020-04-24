@@ -171,6 +171,6 @@ socket.close(); // Si quieres reabrir. -> socket.connect();
 
 **Concepto**
 
-![](../assets/clase63/749c3b17-c393-4608-9cba-d1eaef3a4630.gif)
+![](../assets/clase63/749c3b17-c393-4608-9cba-d1eaef3a4620.gif)
 
-**[Solución](*)**
+**Solución**
