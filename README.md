@@ -14,7 +14,7 @@ También aprenderás a trabajar con APIs modernas para compartir datos con otros
 
 Como metodología de trabajo durante el curso, desarrollarás como prácticas troncales diversas aplicaciones web que te servirá además de repositorio de todo lo aprendido. El Máster se gestiona íntegramente a través de GitHub, lo que te permitirá desarrollar las practicas en un entorno colaborativo y acorde a tu labor posterior en tu puesto de trabajo.
 
-Durante este Máster en Programación FullStack con JavaScript y Node.js, irás aprendiendo mediante el desarrollo de ejercicios prácticos orientados a proyectos reales. También desarrollarás dos proyectos personales con tutorías individualizadas con tu profesor Ulises Gascón. Además, contribuirás a proyectos Open Source reales y, al final del programa de estudios, crearás un proyecto FullStack personal para afianzar todos lo aprendido.
+Durante este Máster en Programación FullStack con JavaScript y Node.js, irás aprendiendo mediante el desarrollo de ejercicios prácticos orientados a proyectos reales. También desarrollarás dos proyectos personales con tutorías individualizadas con tus profesores Alejandro Reyes y Ulises Gascón. Además, contribuirás a proyectos Open Source reales y, al final del programa de estudios, crearás un proyecto FullStack personal para afianzar todos lo aprendido.
 
 Sobre el Curso
 =================
