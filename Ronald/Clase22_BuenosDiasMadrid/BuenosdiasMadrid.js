@@ -65,16 +65,7 @@ function tiempo_actual(){
         document.getElementById("datos0").innerHTML = data.list[1].main.temp+" ºC<br>"+"Min "+data.list[1].main.temp_min+" ºC | "+"Max "+data.list[1].main.temp_max+" ºC<br>"+
         "Hum "+data.list[1].main.humidity+"% | "+"Pres "+data.list[1].main.pressure+" psi<br>"+
         "Viento "+data.list[1].wind.deg+"º | "+data.list[1].wind.speed+" Km/h";
-           /* console.log(data.list[1].main.temp);
-            data.list[1].main.temp_min
-            data.list[1].main.temp_max
-            data.list[1].main.humidity
-            data.list[1].main.pressure
-            data.list[1].wind.deg
-            data.list[1].wind.speed
-            console.log(data.list[1].weather[0].description);
-            console.log(data.list[1].weather[0].icon);
-           */
+
         
         document.getElementById("icono1").setAttribute("src", "icons/"+data.list[9].weather[0].icon+".png");
         document.getElementById("descripcion1").innerHTML = data.list[9].weather[0].description;
@@ -131,8 +122,6 @@ function contaminacion(){
           }
           
        }
-       //aplicarle un for in
-       //document.getElementById("datosContaminacion").innerHTML = data.SO2.parameter+" ("+data.SO2.abrebiation+") :"+data.SO2[12].valor+"&micro g  Medido por: " +data.SO2.technique;
        
 
     })
