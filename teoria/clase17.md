@@ -432,7 +432,7 @@ Server:
 
 ![NYTimes.png](../OTROS/NYTimes.png)
 
-**[Solución](../OTROS/NYTimes/NYTimes_hardcover_fiction_today.html)**
+**[Solución](https://gist.github.com/alejandroereyesb/81b2413577d1c99388836f0555143095)**
 
 
 ### Tiempo para proyecto personal
