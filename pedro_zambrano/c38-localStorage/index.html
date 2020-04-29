@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body class="container-fluid">
+    <div class="row justify-content-center mt-5">
+        <div class="col col-md-6 col-xl-4">
+            <header>
+                <h1>Agenda de contactos</h1>
+                <h2 class="text-secondary">LocalStorage</h2>
+            </header>   
+            <hr/>
+            <section>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="nameForm" placeholder="Nombre">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">0034-</span>
+                    </div>
+                    <input type="text" class="form-control" id="tlf" placeholder="Movil">
+                </div>
+            </section>
+            <hr/>
+            <section>
+                <div class="row justify-content-between mb-3">
+                    <input type="submit" id="save" value="Guardar" class="btn btn-primary col-3">
+                    <input type="button" value="Recuperar" class="btn btn-success col-3">
+                    <input type="button" id="delete" value="Eliminar" class="btn btn-danger col-3">
+                </div>
+                <div class="row mb-3">
+                    <input type="button" id="deleteAll" value="Eliminar todos" class="btn btn-danger col">
+                </div>
+                <div class="row" id="users">
+
+                </div>
+            </section>
+        </div>
+    </div>
+        
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
