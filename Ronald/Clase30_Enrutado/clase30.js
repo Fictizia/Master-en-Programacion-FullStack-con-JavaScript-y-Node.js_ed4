@@ -1,23 +1,23 @@
-var direccion = "http://airemad.com/api/v1/pollution/"  //la direccion a la que se hará la peticion fetch
+var direccion = "http://airemad.com/api/v1/pollution/" 
 
 //las rutas con la librería de page.js
-page.base('/');  //al cargar el html me lanzará a la pagina inicial directamente, no a una ruta concreta
-page('/', index); //llevaría al index, pagina principal
-page('estaciones', estaciones ); //ruta a todas las estaciones
-page('estaciones/:id', generaEstacion ); //ruta a una estacion concreta que se encontraría dentro de la ruta general de estaciones
-page('efectos', efectos); //ruta a una imagen de los efectos de la contaminacion
-page('*', notfound); //en caso de no dirigirse a una ninguna ruta especificada
-page(); //para que se ejecute las rutas, ya que es una funcion
+page.base('/');  
+page('/', index); 
+page('estaciones', estaciones ); 
+page('estaciones/:id', generaEstacion ); 
+page('efectos', efectos); 
+page('*', notfound); 
+page(); 
 page("/");
 
 function index() {
   document.querySelector('p')
-    .textContent = 'Bienvenido!!'; //al cargar la página nos mostraría un saludo.
+    .textContent = 'Bienvenido!!'; 
 }
 
 function estaciones() {
-  document.getElementById("datosContaminacion").innerHTML = "";  //limpio el html de cualquier dato previo
-  fetch("http://airemad.com/api/v1/pollution")  //fetch a una json con todos los nombres de las estaciones de Madrid
+  document.getElementById("datosContaminacion").innerHTML = "";  
+  fetch("http://airemad.com/api/v1/pollution")  
          .then(function(response){
             return response.json();
          })
@@ -36,8 +36,8 @@ function estaciones() {
          })
 }
 
-function generaEstacion(ctx){ //ctx es un parametro que me llegaría cuando el usuario se posiciona encima de cada estacion.
-  console.log(ctx.params.id);  //paramst.id lo añado para llegar exclusivamente al id de cada estacion y asi añadirlo a la url del fetch y poder traer los datos de una estacion concreta con su id.
+function generaEstacion(ctx){ 
+  console.log(ctx.params.id);  
 
   fetch(direccion+ctx.params.id)
         .then(function(response){
@@ -59,7 +59,7 @@ function generaEstacion(ctx){ //ctx es un parametro que me llegaría cuando el u
         })      
 }
 
-function efectos () {   //Esta función me daría mostraría en el dom una foto de los efectos de la contaminacion, retirando previamente el contenido de las otras rutas.
+function efectos () {   //foto de los efectos de la contaminacion
   document.getElementById("datosContaminacion").innerHTML = "";
   let foto = document.createElement("img");
   foto.classList.add("efectos");
