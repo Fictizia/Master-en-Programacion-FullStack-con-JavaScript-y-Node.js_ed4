@@ -34,4 +34,4 @@
 
 ![buenos_dias_madrid.png](../OTROS/buenos_dias_madrid.png)
 
-**[Solución](*)**
+**[Solución](../OTROS/buenos_dias_madrid)**

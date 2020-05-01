@@ -14,7 +14,7 @@ También aprenderás a trabajar con APIs modernas para compartir datos con otros
 
 Como metodología de trabajo durante el curso, desarrollarás como prácticas troncales diversas aplicaciones web que te servirá además de repositorio de todo lo aprendido. El Máster se gestiona íntegramente a través de GitHub, lo que te permitirá desarrollar las practicas en un entorno colaborativo y acorde a tu labor posterior en tu puesto de trabajo.
 
-Durante este Máster en Programación FullStack con JavaScript y Node.js, irás aprendiendo mediante el desarrollo de ejercicios prácticos orientados a proyectos reales. También desarrollarás dos proyectos personales con tutorías individualizadas con tu profesor Ulises Gascón. Además, contribuirás a proyectos Open Source reales y, al final del programa de estudios, crearás un proyecto FullStack personal para afianzar todos lo aprendido.
+Durante este Máster en Programación FullStack con JavaScript y Node.js, irás aprendiendo mediante el desarrollo de ejercicios prácticos orientados a proyectos reales. También desarrollarás dos proyectos personales con tutorías individualizadas con tus profesores Alejandro Reyes y Ulises Gascón. Además, contribuirás a proyectos Open Source reales y, al final del programa de estudios, crearás un proyecto FullStack personal para afianzar todos lo aprendido.
 
 Sobre el Curso
 =================
@@ -98,6 +98,8 @@ Fecha | Teoría | Recursos | Contenido
 22/04/20 | [Clase 62](teoria/clase62.md) | [Clase 62](recursos/clase62.md)| 	Frameworks II: Ecosistema, soluciones y contextualización
 24/04/20 | [Clase 63](teoria/clase63.md) | [Clase 63](recursos/clase63.md)| 	WebSockets: Fundamentos
 27/04/20 | [Clase 64](teoria/clase64.md) | [Clase 64](recursos/clase64.md)| 	Intro al backend + def. PFM
+29/04/20 | [Clase 65](teoria/clase65.md) | [Clase 65](recursos/clase65.md)| 	Express I: Básicos y enrutamiento
+01/04/20 | [Clase 66](teoria/clase66.md) | [Clase 66](recursos/clase66.md)| 	Express II: Server Render y plantillas
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================

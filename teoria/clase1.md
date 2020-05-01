@@ -51,6 +51,7 @@ Por definición todo es nivel básico, pero en partes del contenido se incluyen 
 "Software developer, ingeniero de teleco, emprendedor, freelance, formador, en ratos libres toco guitarra y percusión, voluntario en coding program en [@madridforefugees](https://madridforrefugees.org/es/la-organizacion/mfr-coding-es/). Profe en [@fictiziaescuela](http://www.fictizia.com/profesores/). Co-founder de [@freeyourculture](https://www.instagram.com/freeyourculture)
 
 **Redes Sociales:**
+- [Twitter](https://twitter.com/Alejandreye5)
 - [Github](https://github.com/alejandroereyesb)
 - [Linkedin](https://www.linkedin.com/in/alejandroreyesb/)
 
