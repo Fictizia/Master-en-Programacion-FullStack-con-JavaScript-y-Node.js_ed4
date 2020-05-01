@@ -98,7 +98,8 @@ Fecha | Teoría | Recursos | Contenido
 22/04/20 | [Clase 62](teoria/clase62.md) | [Clase 62](recursos/clase62.md)| 	Frameworks II: Ecosistema, soluciones y contextualización
 24/04/20 | [Clase 63](teoria/clase63.md) | [Clase 63](recursos/clase63.md)| 	WebSockets: Fundamentos
 27/04/20 | [Clase 64](teoria/clase64.md) | [Clase 64](recursos/clase64.md)| 	Intro al backend + def. PFM
-29/04/20 | [Clase 65](teoria/clase65.md) | [Clase 64](recursos/clase65.md)| 	Express I: Básicos y enrutamiento
+29/04/20 | [Clase 65](teoria/clase65.md) | [Clase 65](recursos/clase65.md)| 	Express I: Básicos y enrutamiento
+01/04/20 | [Clase 66](teoria/clase66.md) | [Clase 66](recursos/clase66.md)| 	Express II: Server Render y plantillas
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
