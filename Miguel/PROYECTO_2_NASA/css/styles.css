@@ -1,0 +1,429 @@
+@font-face {
+  font-family: 'SpaceAge';
+  src: url('/css/fonts/SpaceAge.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset de reglas de formato por defecto */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}nav ul{list-style-type:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}/* Añadidos =>*/img{display:block}video{display:block}a{text-decoration:none}div{box-sizing:border-box}
+
+/* reglas generales de elementos */
+html{
+  font-size: 100%;
+  font-family: calibri,helvetica, sans-serif;
+}
+body{
+  background-color: rgb(29, 22, 22);
+  color: rgb(46, 102, 46);
+  transition: color .3s 1.5s;
+  overflow: hidden;
+}
+h2{
+  margin-bottom: 2rem;
+}
+h3{
+  margin: 1rem;
+}
+a{
+  color: #06C2CD;
+  text-transform: uppercase;
+}
+li{
+  padding: 1rem .8rem;
+  user-select: none;
+}
+a:hover{
+  color: crimson;
+}
+
+/* reglas para vista HOME */
+.nasaLink{
+  text-transform: initial;
+  color: #06C2CD;
+}
+.homeInfo__wrapper{
+  font-size: 1.5rem;
+  width: 80%;
+  margin: 2% auto 0;
+  position: relative;
+}
+.homeGreeting{
+  font-family: SpaceAge;
+  font-size: 4rem;
+  color: rgb(114, 243, 114);
+  width: fit-content;
+}
+.homeGreeting__wrapper{
+  margin-left: 10%;
+  margin-top: 3%;
+  width: 0;
+  overflow: hidden;
+  animation: greeting 3s 3.2s;
+}
+@keyframes greeting {
+  40%{width: 100%}
+  80%{width: 100%}
+}
+
+/* reglas para los input type select, date y text*/
+.logInWrapper input, .nearObjectsSelect, .dateSelect{
+  color: #fff;
+  border: 1px solid rgb(105, 104, 104);
+  border-radius: 2px;
+  background-color: rgb(83, 76, 76);
+  padding: .2rem;
+  margin: 0 .5rem;
+}
+
+/* reglas para vista ACCOUNT */
+.actionInfo__wrapper{
+  width: fit-content;
+  margin: 1rem auto;
+  border: 1px solid #06C2CD;
+  color: #06C2CD;
+  border-radius: 4px;
+  padding: .2rem .8rem;
+}
+.sessionWrapper{
+  display: flex;
+  justify-content: space-around;
+}
+.sessionWrapper__userList{
+  width: 30%;
+}
+.sessionWrapper__userData{
+  margin-top: 2rem;
+  width: 50%;
+  padding: .2rem .8rem;
+  text-align: center;
+}
+.sessionWrapper__userData ul{
+  margin-top: .2rem;
+  border: 1px solid rgb(114, 243, 114);
+  border-radius: 2px;
+  list-style: none;
+}
+.sessionWrapper__userData h3{
+  color: rgb(2, 180, 2);
+}
+.sessionWrapper__userList div{
+  width: fit-content;
+  border: 1px solid rgb(114, 243, 114);
+  border-radius: 2px;
+}
+.sessionWrapper__userList p{
+  margin: 1rem .8rem;
+}
+
+/* reglas generales para botones de la aplicacion */
+.btnStandar{
+  border: 1px solid rgb(114, 243, 114);
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: rgb(114, 243, 114);
+  background-color: #1D1717;
+  padding: .2rem .3rem;
+  margin: 0 .3rem;
+}
+.btnStandar:hover{
+  color: #06C2CD;
+  border-color: #06C2CD;
+}
+.btnDelete{
+  border: 1px solid rgb(114, 243, 114);
+  border-radius: 4px;
+  color: rgb(114, 243, 114);
+  background-color: #1D1717;
+  padding: .2rem .3rem;
+  margin: 0 .5rem;
+}
+.btnDelete:hover{
+  color: crimson;
+  border-color: crimson;
+}
+
+/* vista pictureOfTheDay */
+.pictureOfTheDay__wrapper{
+  display: flex;
+  justify-content: space-around;
+}
+.imgDayButtons{
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+}
+.imgDayButtons * {
+  margin: .5rem 0;
+}
+.nasaImage{
+  max-width: 35rem;
+}
+picture{
+  margin: 0 auto;
+}
+
+/* header y footer */
+.mainHeader{
+  background-color: #00487E;
+  height: 3.5rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 2rem;
+  display: flex;
+  box-shadow: inset 0 -3.5rem 80px black;
+  z-index: 1;
+}
+.mainHeader::after{
+  display: block;
+  content: "";
+  width: 25%;
+  height: 0;
+  border-top: 2.8rem solid #00080F;
+  border-right: 40px solid transparent;
+  border-left: 40px solid transparent;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%);
+  z-index: -1;
+}
+.mainFooter{
+  background-color: #00487E;
+  height: 3.5rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  box-shadow: inset 0 5rem 80px black;
+}
+.mainFooter::after{
+  display: block;
+  content: "";
+  width: 25%;
+  height: 0;
+  border-top: 2.8rem solid #1D1616;
+  border-right: 40px solid transparent;
+  border-left: 40px solid transparent;
+  position: absolute;
+  left: 50%;
+  bottom: .8rem;
+  transform: translate(-50%);
+}
+.title__wrapper{
+  background-color: rgb(29, 22, 22);
+  width: 22%;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 1% 0;
+  border-radius: 3px;
+  text-align: center;
+  position: relative;
+  top: 80%;
+  box-shadow: inset 0 0 30px rgb(21, 78, 59);
+  border: 1px solid rgb(71, 71, 71);
+}
+.title{
+  user-select: none;
+  font-family: SpaceAge;
+  font-size: 1.5rem;
+}
+.mainNav{
+  font-size: 1rem;
+  font-family: SpaceAge;
+  width: 8rem;
+  height: 100%;
+  padding: 0 .8rem;
+  position: absolute;
+  top: 0;
+  right: 11%;
+}
+.mainNav__title{
+  font-size: 1.4rem;
+  background-color: rgb(29, 22, 22);
+  border-radius: 6px;
+  position: relative;
+  top: 40%;
+  text-align: center;
+  user-select: none;
+  box-shadow: inset 0 0 10px rgb(21, 78, 59);
+  border: 1px solid rgb(80, 76, 76);
+}
+.mainNav ul{
+  background-color: rgb(29, 22, 22);
+  width: 8rem;
+  height: 0;
+  position: absolute;
+  top: 3.5rem;
+  box-sizing: border-box;
+  pointer-events: none;
+  color : transparent;
+  border-bottom: 2px solid rgb(80, 76, 76);
+  border-left: 1px solid rgb(80, 76, 76);
+  border-right: 1px solid rgb(80, 76, 76);
+  box-shadow: inset 0 0 15px rgb(21, 78, 59);
+  transition: all .5s ;
+  overflow: hidden;
+}
+.mainNav:hover ul{
+  height: 9.5rem;
+  pointer-events: auto;
+  border-radius: 2px;
+  border-color: rgb(80, 76, 76);
+}
+.mainNav__a{
+  color: rgb(114, 243, 114)
+}
+.logoWrapper{
+  width: 7.5rem;
+  position: absolute;
+  left: 5%
+} 
+.logoWrapper img{
+  max-width: 100%;
+}
+
+/* vista data */
+.dataButtons{
+  display: flex;
+  margin-top: 5rem;
+  justify-content: space-evenly;
+}
+.dataButtons__a{
+  border: 1px solid rgb(114, 243, 114);
+  padding: .8%;
+  width: fit-content;
+}
+
+/* div del contenido dinamico */
+.content__wrapper{
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  box-shadow: inset 0 2rem 80px rgb(21, 78, 59);
+}
+.content{ /* animacion */
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  position: relative;
+  top: 4.5rem;
+  border: 1px solid #06C2CD;
+  border-radius: 2px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 1s 2s;
+}
+.content::-webkit-scrollbar { /*estilos scroll bar*/
+  width: 8px;     
+  height: 8px; 
+}
+.content::-webkit-scrollbar-thumb {
+  background: #0091ff;
+  border-radius: 4px;
+  border: 2px solid #14507e;
+}
+.content::-webkit-scrollbar-thumb:hover {
+  background: #95eaff;
+}
+
+/* tablas de datos */
+table, th, td{
+  border: 1px solid rgb(139, 139, 139);
+  border-radius: 2px;
+  background-color: rgb(46, 43, 43);
+  border-collapse: collapse;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+/* graficos */
+.wrapperChart{
+  width: 60%;
+}
+canvas{
+  margin-left: 50%;
+  transform: translateX(-25%);
+}
+
+/* HUD , animaciones primera carga*/
+.hud__right{
+  width: 12.5%;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  box-sizing: border-box;
+  transition: top 1s 2s;
+}
+.hud__right img{
+  max-width: 100%;
+}
+
+.hud__left{
+  font-size: 1rem;
+  font-family: SpaceAge;
+  width: 12.5%;
+  height: 10rem;
+  position: absolute;
+  top: 4.5rem;
+  left: 0;
+  box-sizing: border-box;
+  padding: 2%;
+  text-align: end;
+  line-height: 2;
+}
+.hud__left * {
+  position: relative;
+}
+.system::after, .title__wrapper::after{
+  content: "";
+  display: block;
+  width: .8rem;
+  height: .8rem;
+  border: 1px solid rgb(66, 62, 62);
+  border-radius: 100%;
+  background-color: crimson;
+  position: absolute;
+  right: -1.4rem;
+  top: .7rem;
+  transition: all 0s 1s;
+}
+.fuel::after, .energy::after ,.shield::after{
+  content: "";
+  display: block;
+  width: 0;
+  height: .4rem;
+  background-color: #06C2CD;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transition: all 3s 3s ;
+}
+.engines__wrapper{
+  text-align: center;
+  width: 8rem;
+  position: absolute;
+  right: 8%;
+}
+.lights__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.lights{
+  display: block;
+  width: .8rem;
+  height: .8rem;
+  border: 1px solid rgb(66, 62, 62);
+  border-radius: 100%;
+  background-color: crimson;
+  transition: all .3s 2.5s;
+}
+.lights-title{
+  font-family: SpaceAge;
+}

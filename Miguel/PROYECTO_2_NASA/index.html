@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyecto NASA</title>
+<link href="dist/styles-min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+    
+<body>
+  <header class="mainHeader">
+
+    <div class="logoWrapper">
+      <img src="css/ui-img/logo_nasa-1.png" alt="logotipo-nasa">
+    </div>
+
+    <div class="title__wrapper">
+      <h1 class="title" id="titulo">Welcome</h1>
+    </div>
+
+    <nav class="mainNav">
+      <p class="mainNav__title">MENU</p> 
+      <ul>
+        <li><a class="mainNav__a" href="./home" id="home">home</a></li>
+        <li><a class="mainNav__a" href="./account" id="account">account</a></li>
+        <li><a class="mainNav__a" href="./data" id="data">data</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  
+  <div class="hud__left">
+    <p class="system">system</p>
+    <p class="fuel">fuel</p>
+    <p class="energy">energy</p>
+    <p class="shield">shield</p>
+  </div>
+
+  <div class="hud__right">
+    <img src="css/ui-img/vectorpaint.png" alt="">
+  </div>
+
+  <div class="content__wrapper">
+    <main class="content" id="content">
+      <div class="homeGreeting__wrapper">
+        <h2 class="homeGreeting">WELCOME</h2>
+      </div>
+    </main>
+  </div> 
+
+  <footer class="mainFooter">
+    <div class="engines__wrapper">
+      <div class="lights__wrapper">
+        <span class="lights lights-1"></span>
+        <span class="lights lights-2"></span>
+        <span class="lights lights-3"></span>
+      </div>
+      <p class="lights-title">engines</p>
+    </div>
+  </footer>
+  
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+
+  <script src="dist/all-min.js"></script>
+</body>
+</html>
