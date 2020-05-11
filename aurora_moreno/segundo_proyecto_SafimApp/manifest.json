@@ -1,0 +1,21 @@
+{
+    "name": "Safim App",
+    "short_name": "Safim ",
+    "theme_color": "#3273b8",
+    "background_color": "#021427",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "description": "App para el guardado de peliculas vistas y pendientes de ver",
+
+    "icons": [{
+        "src": "/src/img/favicon.ico",
+        "sizes": "192x192",
+        "type": "image/ico"
+    } , {
+        "src": "/src/img/logo_app.png",
+        "sizes": "70x120",
+        "type": "image/png"
+      }]
+  }
+  

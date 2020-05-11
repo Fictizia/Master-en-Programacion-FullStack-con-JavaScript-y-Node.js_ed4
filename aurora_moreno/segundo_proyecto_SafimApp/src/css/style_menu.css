@@ -1,0 +1,117 @@
+div#menuPrincipal {
+    margin-left: 1%;
+    width: 42%;
+  }
+  
+  .hamburger{
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    padding: 26px 20px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    z-index: 1002;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: right;
+  }
+  .hamburger.is-active{
+  background-color:none;
+  }
+  ._layer{
+  background: #ffffff;
+    margin-bottom: 4px;
+    margin-top: 3px;
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  }
+  .hamburger:hover .-top{
+  -webkit-transform:translateY(-100%);
+  -ms-transform:translateY(-100%);
+  transform:translateY(-100%);
+  }
+  .hamburger:hover .-bottom{
+  -webkit-transform:translateY(100%);
+  -ms-transform:translateY(100%);
+  transform:translateY(100%);
+  }
+  .hamburger.is-active .-top{
+  -webkit-transform:translateY(200%) rotate(45deg) !important;
+  -ms-transform:translateY(200%) rotate(45deg) !important;
+  transform:translateY(200%) rotate(45deg) !important;
+  }
+  .hamburger.is-active .-mid{
+  opacity:0;
+  }
+  .hamburger.is-active .-bottom{
+  -webkit-transform:translateY(-200%) rotate(135deg) !important;
+  -ms-transform:translateY(-200%) rotate(135deg) !important;
+  transform:translateY(-200%) rotate(135deg) !important;
+  }
+  
+  .menuppal.is_active {
+    transform: translateY(0px);
+    z-index: 1;
+  }
+
+  .menuppal {
+    background-color: rgb(195, 224, 255);
+    transform: translateY(-102%);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  .menuppal ul{
+  margin:0;padding:0;
+  }
+  
+  .menuppal ul li {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    line-height: 3em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 10px;
+  }
+  
+  .menuppal ul li:hover {
+    background: #407ec159;
+  }
+  
+  .menuppal ul a{
+  text-decoration:none;
+  color: #021427;
+  }
+  .menuppal ul a:hover{
+  text-decoration:none;
+  color: #3273b8;
+  
+  }
+  
+  
+  
+  @keyframes translateX {
+  0% {
+    transform: translateX(100%);
+  
+  }
+  
+  100% {
+    transform: translateX(0%);
+  
+  }
+  }

@@ -1,0 +1,389 @@
+body {
+    margin: 0;
+    font-family: 'Oxanium';
+    width: 100%;
+    background-color: hsl(210, 91%, 8%);
+    overflow: hidden visible;
+}
+
+header {
+    padding: 40px 0;
+    background-color: hsl(210, 91%, 8%);
+}
+
+@keyframes opacityHeader {
+    0% {
+      opacity: 0;
+  
+    }
+  
+    100% {
+        opacity: 1;
+  
+    }
+  }
+
+main {
+    padding: 20px;
+}
+
+section#initSection {
+    flex-direction: column;
+    margin: auto;
+    max-width: 500px;
+    min-width: 310px;
+  
+}
+
+
+h1 {
+    font-size: 45px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+}
+
+h3{
+    color: white;;
+}
+
+img#logoApp {
+    height: auto;
+    margin-right: 15px;
+}
+
+.gnralButtonStyle {    
+    margin: 10px auto;
+    padding: 10px 0;
+    font-family: 'Oxanium';
+    font-size: 15px;
+    border-radius: 20px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+    width: 90%;
+}
+
+#loginButton {
+    background: none;
+    border: 2px solid #4ea4ff;
+    color: #4ea4ff;
+}
+
+#loginButton:hover {
+    background: #09233e;
+}
+
+#loginButton:focus {
+    background-color: #09233e;
+    outline: none;
+}
+
+
+.blueStyleButton {
+    background-color: #4ea4ff;
+    color: white;
+}
+
+.blueStyleButton:hover {
+    background-color: #4285ce;
+}
+
+.blueStyleButton:focus {
+    outline: none;
+    background-color: #346ba7;
+}
+
+.gnralWhiteStyle {
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 2s ease;
+}
+
+.gnralWhiteStyle input {
+    margin: 10px 0;
+    padding:15px 10px;
+    background-color: #021427;
+    border: none;
+    color: white;
+    border-radius: 0px 6px 6px 0px;
+    width: 80%;
+}
+
+
+.linkedClass {
+    font-size: 15px;
+    color: #4ea4ff;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.linkedClass:hover {
+    text-decoration: underline;
+}
+
+.errorMsStyle {
+    color: red;
+    font-size: 14px;
+    font-family: sans-serif;
+    width: 62%;
+    margin: auto;
+}
+
+
+section#menuSection {
+    background: #3273b8;
+    align-items: center;
+    height: 82px;
+    transition: all 2s cubic-bezier(0, 0.72, 0.25, 1);
+    padding: 20px;
+}
+
+div#user_select h3 {
+    font-size: 23px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+div#user_select {
+    width: 54%;
+    text-align: right;
+}
+
+#login h4 {
+    color: white;
+    margin-top: 36px;
+    font-size: 30px;
+    font-weight: 500;
+    z-index: 2;
+}
+
+button#googleLogin {
+    align-items: center;
+}
+
+
+
+button#googleLogin:hover {
+    background: hsla(0, 0%, 91%, 1);
+}
+button#googleLogin:focus {
+    outline: none;
+}
+button#googleLogin:active {
+    background: hsla(0, 0%, 83%, 1);
+}
+
+
+button#googleLogin img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.iconsBox {
+    width: 90%;
+    margin: auto;
+    align-items: center;
+}
+
+.iconsBox i {color: #c6c6c6;font-size: 22px;}
+
+
+.iconsBox div {
+    height: 45px;
+    background: #021427;
+    border-radius: 6px 0px 0px 6px;
+    width: 12%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-right: 1px solid white;
+}
+
+div#separador {
+    align-items: center;
+    margin: 40px 0px 9px;
+}
+
+#separador hr {
+    border: none;
+    height: 1px;
+    background: #021427;
+    width: 35%;
+    margin: 0;
+}
+
+#separador h6 {
+    text-align: center;
+    margin: 0 20px;
+    font-size: 18px;
+    font-family: Roboto;
+    font-weight: 300;
+}
+
+
+section#searchfilms {
+    min-width: 300px;
+    width: 20%;
+    margin: 40px auto;
+}
+
+#searchfilms div {
+    background: #3273b8;
+    height: 60px;
+    width: 16%;
+    min-width: 50px;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+#searchfilms div:hover {
+    background: #224b77;
+}
+
+
+input#filmName {
+    width: 75%;
+    padding-left: 10px;
+    border: none;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#searchfilms i {
+    color: white;
+    font-size: 35px;
+}
+
+
+
+section.whiteSpace {
+    padding: 0 30px;
+}
+
+div.newFilms {
+    width: 300px;
+    margin: 30px 20px;
+    background: white;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    height: 690px;
+}
+
+.newFilms img {
+    height: 447px;
+    width: 300px;
+}
+
+.newFilms div {
+    padding: 20px;
+}
+
+.newFilms h2 {
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.newFilms h3 {
+    color: #3273b8;
+    font-size: 16px;
+    margin-top: 4px;
+    font-family: 'Roboto';
+}
+
+.newFilms button {
+    position: absolute;
+    bottom: 0px;
+    margin: 20px;
+    width: 260px;
+}
+
+
+#seeFilms img {
+    width: 37px;
+    height: 34px;
+}
+
+div#seeFilms {
+    padding: 0;
+    position: absolute;
+    bottom: 68px;
+    align-items: center;
+}
+
+#seeFilms div {
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-color: hsl(211, 57%, 46%);
+    box-shadow: 0 1px 2px hsl(224, 27%, 55%);
+    background-image: linear-gradient(to bottom, hsl(211, 65%, 54%), hsl(211, 53%, 43%));
+}
+
+#seeFilms div:hover {
+    border-color: hsl(211, 56%, 39%)!important;
+    background-image: linear-gradient(to bottom, hsl(211, 52%, 44%), hsl(211, 60%, 52%))!important;
+    box-shadow: inset 0 2px 5px 1px hsla(224, 69%, 24%, 0.78)!important;
+}
+
+[role="button"][aria-pressed="true"] {
+    border-color: hsl(211, 56%, 39%)!important;
+    background-image: linear-gradient(to bottom, hsl(196, 62%, 55%), hsl(204, 60%, 52%))!important;
+    box-shadow: inset 0 2px 5px 1px hsl(211, 56%, 39%)!important;
+
+
+}
+
+.ct-chart{
+    width: 100%; 
+    text-align: center;
+
+}
+
+.ct-grid {
+    stroke: none!important;
+}
+
+.ct-bar {
+    stroke-width: 52px!important;
+}
+
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut  {
+    stroke: #3273b8!important;
+}
+
+.ct-label {
+    color: rgba(255, 255, 255, 0.4)!important;
+}
+
+
+section#offline {
+    color: white;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hidden{
+    display: none;
+}
