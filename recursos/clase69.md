@@ -29,8 +29,8 @@
 
 ### Web frameworks: Strongloop y Loopback
 - [Web Oficial](http://loopback.io/)
-- [Loopback | Getting started](https://loopback.io/getting-started/)
-- [Loopback | Examples](https://loopback.io/examples/)
+- [Loopback | Getting started](https://loopback.io/doc/en/lb4/Getting-started.html)
+- [Loopback | Examples](https://loopback.io/doc/en/lb4/Examples.html)
 - [Loopback | Docs](https://loopback.io/doc/)
 - [Loopback | Resources](https://loopback.io/resources/)
 - [Loopback | Contributing](https://loopback.io/contributing/)
@@ -51,7 +51,6 @@
 - [Create a Server in Hapi JS](https://medium.com/@vsvaibhav2016/create-a-server-in-hapi-js-7d0c43add545)
 - [Introduction to Hapi.js](https://medium.com/@jsonmez/introduction-to-hapi-js-c128f40bd919)
 - [How to set-up a powerful API with Nodejs, GraphQL, MongoDB, Hapi, and Swagger](https://medium.freecodecamp.org/how-to-setup-a-powerful-api-with-nodejs-graphql-mongodb-hapi-and-swagger-e251ac189649)
-- [Creating RESTful API with Node.js: Hapi vs. Express](https://medium.com/@cabot_solutions/creating-restful-api-with-node-js-hapi-vs-express-ccb97a776c02)
 
 ### Web frameworks: Sails.js
 - [Web Oficial](https://github.com/balderdashy/sails)
