@@ -147,4 +147,4 @@ fetch('https://davidwalsh.name/submit', {
 ![NYTimes.png](../OTROS/NYTimes/img/best_sellers2.png)
 
 
-**[Solución](#)**
+**[Solución](https://gist.github.com/alejandroereyesb/4865d7fe93a48847b013c2315e6f6733)**

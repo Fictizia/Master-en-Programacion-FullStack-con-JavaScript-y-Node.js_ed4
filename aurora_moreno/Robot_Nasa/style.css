@@ -1,0 +1,54 @@
+div#robot {
+    height: 55px;
+    width: 55px;
+    background-color: rebeccapurple;
+    position: relative;
+    top: -61px;
+    left: 0px;
+    margin: auto;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    transition: 2s ease all;
+}
+
+
+body {
+    width: 550px;
+    margin: auto;
+    text-align: center;
+}
+
+div#direcT {
+    width:160px;
+    text-align: center;
+    margin: auto;
+}
+
+div#second {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 15px;
+}
+
+.direcSt {
+    width: 20px;
+    margin: 3px auto;
+    background: firebrick;
+    padding: 7px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 7px -1px #3a1d1d;
+    font-family: sans-serif;
+}
+
+
+
+div#second img {
+    width: 80px;
+}
+
+
+input#instruct {
+    margin-bottom: 20px;
+}

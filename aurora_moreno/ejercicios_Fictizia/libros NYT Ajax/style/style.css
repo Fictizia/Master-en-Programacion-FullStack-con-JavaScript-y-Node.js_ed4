@@ -1,0 +1,31 @@
+div#bigcontent {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 20px;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: Roboto;
+}
+
+
+.books {
+    padding: 0px 63px;
+}
+.books p {
+    text-align: left;
+}
+.books h4 {
+    text-align: left;
+}
+
+.books {
+    background-color: #ffe6ce;
+    margin: 5px;
+}
+
+h2 {
+    margin-top: 40px;
+}

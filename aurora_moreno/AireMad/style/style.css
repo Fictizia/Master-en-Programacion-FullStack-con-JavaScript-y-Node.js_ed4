@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header {
+    padding: 80px 0;
+    background-color: #b9ddff;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+nav {
+    text-align: center;
+    padding: 25px;
+    background: #fff6f4;
+}
+
+input#searchBox {
+    height: 39px;
+    width: 20%;
+    border: 2px solid #b9ddff;
+    border-radius: 20px;
+}
+
+div#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.indvContent {
+    padding: 35px 0;
+    width: 200px;
+    text-align: center;
+    background-color: #b9ddff;
+    margin: 20px;
+}
+
+#mainContent h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    color: #4d5c6b;
+    margin-top: 42px;
+    margin-bottom: 17px;
+}
+
+div#firstBox {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 120px 20px;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+}
+
+div#pollutionBox {
+    /* flex-grow: 3; */
+}
+
+div#weatherBox {
+    /* flex-grow: 2; */
+}
+
+i.owf {color: #4d5c6b;border-radius: 0;border-color: #4d5c6b3d;}
+
+h3 {}
+
+div#weatherBox h3 {
+    text-transform: uppercase;
+    color: #4d5c6b;
+    font-size: 25px;
+    margin-left: 19px;
+}
+
+div#weatherBox p {
+    margin: 10px;
+    margin-left: 152px;
+    color: #4d5c6b;
+    font-size: 15px;
+}
+
+div#pollutionBox p {
+    margin-bottom: 35px;
+}
+
+div#pollutionBox h3 {
+    color: #FF5722;
+}
+
+div#pollutionBox p {
+    color: #4d5c6b;
+}
+
+div#futureWeatherBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 88px;
+}
+
+.indvFutWeather i {
+    margin-bottom: 20px;
+}
+
+.indvFutWeather h4 {text-transform: uppercase;color: #4d5c6b;}
+
+.indvFutWeather h5 {
+    margin-top: 5px;
+}
+
+.indvFutWeather {
+}
+
+main#mainContent {
+    background-color: #ff57220d;
+    padding-top: 18px;
+}
+
+main#mainContent hr {
+    width: 83px;
+    height: 6px;
+    background-color: #4d5c6b;
+    border: none;
+    margin-bottom: 40px;
+}

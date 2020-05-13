@@ -26,4 +26,4 @@ Hagamos una aplicación web que nos pregunte por un usuario de github...
 - Devolveremos su información de perfil incluyendo el email.
 - Si el email no aparece, utilizaremos los eventos para mostrarlo.
 
-**[Tu solución]**
+**[Tu solución](https://gist.github.com/alejandroereyesb/b5a06b4b587f2025d95478ad161efa35)**
