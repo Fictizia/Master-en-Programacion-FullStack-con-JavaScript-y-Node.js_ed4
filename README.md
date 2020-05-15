@@ -104,6 +104,7 @@ Fecha | Teoría | Recursos | Contenido
 08/05/20 | [Clase 68](teoria/clase68.md) |Clase 68|Express: Resolviendo Ejercicios y repasando
 11/05/20 | [Clase 69](teoria/clase69.md) |[Clase 69](recursos/clase69.md)|Express IV: Mas allá de Express
 13/05/20 | [Clase 70](teoria/clase70.md) |Clase 70|Express: Resolviendo Ejercicios y repasando
+15/05/20 | [Clase 71](teoria/clase71.md) | [Clase 71](recursos/clase71.md) | WebSockets Backend y MQTT
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
