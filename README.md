@@ -105,7 +105,7 @@ Fecha | Teoría | Recursos | Contenido
 11/05/20 | [Clase 69](teoria/clase69.md) |[Clase 69](recursos/clase69.md)|Express IV: Mas allá de Express
 13/05/20 | [Clase 70](teoria/clase70.md) |Clase 70|Express: Resolviendo Ejercicios y repasando
 15/05/20 | [Clase 71](teoria/clase71.md) | [Clase 71](recursos/clase71.md) | WebSockets Backend y MQTT
-
+18/05/19 | [Clase 72](teoria/clase72.md) | [Clase 72](recursos/clase72.md) | Nodejs: Conceptos Avanzados de Core (Child Process, C/C++ Addons, Cluster...)
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
 
