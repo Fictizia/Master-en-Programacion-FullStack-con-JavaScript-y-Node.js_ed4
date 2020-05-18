@@ -11,17 +11,17 @@
 
 ### MQTT
 
-![esquema](../assets/clase73/7d191489-10c2-4bfb-9f59-b322c9c9a91f.png)
+![esquema](../assets/clase71/7d191489-10c2-4bfb-9f59-b322c9c9a91f.png)
 
 > MQTT es un protocolo de mensajería basado en ISO estándar publicación-suscripción. Funciona sobre el protocolo TCP / IP. Está diseñado para conexiones con ubicaciones remotas donde se requiere una "huella de código pequeño" o el ancho de banda de la red es limitado [Wikipedia](https://en.wikipedia.org/wiki/MQTT)
 
 **Funcionamiento del protocolo**
 
-![esquema](../assets/clase73/50878162-7312-4cb9-bca9-c54dd0a0204a.png)
+![esquema](../assets/clase71/50878162-7312-4cb9-bca9-c54dd0a0204a.png)
 
 **Esquema con web**
 
-![esquema](../assets/clase73/871906eb-19e3-4caf-a72b-2e6656419c19.png)
+![esquema](../assets/clase71/871906eb-19e3-4caf-a72b-2e6656419c19.png)
 
 **Recursos**
 - [How to Build an High Availability - MQTT Cluster for the Internet of Things](https://medium.com/@lelylan/how-to-build-an-high-availability-mqtt-cluster-for-the-internet-of-things-8011a06bd000)
@@ -153,7 +153,7 @@ http.listen(3000, () => {
 
 ### Mosca
 
-![esquema](../assets/clase73/592e23e9-6f9c-4fd2-bf42-c514f3554343.png)
+![esquema](../assets/clase71/592e23e9-6f9c-4fd2-bf42-c514f3554343.png)
 
 **Claves**
 
@@ -168,7 +168,7 @@ http.listen(3000, () => {
 
 **Esquema de funcionamiento**
 
-![esquema](../assets/clase73/6086ddf2-f3a0-4136-9b19-42bf7492a226.png)
+![esquema](../assets/clase71/6086ddf2-f3a0-4136-9b19-42bf7492a226.png)
 
 **Servidor standalone**
 ```js
@@ -228,12 +228,12 @@ function setup() {
 
 ### Node RED
 
-![logo](../assets/clase73/ceab7c18-c684-4c2d-99eb-9202c7f78a43.png)
+![logo](../assets/clase71/ceab7c18-c684-4c2d-99eb-9202c7f78a43.png)
 
 
 **[Funcionamieto](https://www.youtube.com/watch?v=f5o4tIz2Zzc)**
 
-![ejemplo](../assets/clase73/ccc716f8-beb2-41c8-b376-a6c2aff64db6.jpg)
+![ejemplo](../assets/clase71/ccc716f8-beb2-41c8-b376-a6c2aff64db6.jpg)
 
 **Recursos**
 - [Node-RED](https://nodered.org/)
