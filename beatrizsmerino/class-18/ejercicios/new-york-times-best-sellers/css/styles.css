@@ -27,13 +27,14 @@ body {
 
 /************* LOADER *************/
 .loader {
-	width: 50rem;
-	height: 50rem;
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	z-index: 999;
 	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.2);
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -86,6 +87,7 @@ body {
 	font-size: 2rem;
 	border: 1px solid #000;
 }
+
 .button--read-more:hover {
 	color: #fff;
 }
@@ -100,21 +102,26 @@ body {
 .page__title {
 	margin-bottom: 5rem;
 }
+
 .page__title--1 {
+	width: 100%;
 	position: relative;
-	display: block;
+	display: inline-block;
 	font-size: 3rem;
 	color: #000;
 	font-weight: 500;
 }
+
 .page__title--1 sub {
 	position: absolute;
 	bottom: 0;
 	font-size: 1.5rem;
 }
+
 .page__title--2 {
-	padding-left: 12rem;
-	padding-right: 2rem;
+	padding-left: 10vw;
+	padding-right: 5vw;
+	display: inline-block;
 	position: relative;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	font-size: 8rem;
@@ -122,11 +129,18 @@ body {
 	font-weight: 500;
 	color: #fff;
 }
+
+@media (max-width: 600px) {
+	.page__title--2 {
+		padding-left: 15vw;
+	}
+}
+
 .page__title--2:after {
 	content: "";
 	display: inline-block;
 	width: 100%;
-	height: 67%;
+	height: 80%;
 	position: absolute;
 	top: 50%;
 	left: 0;
@@ -134,6 +148,13 @@ body {
 	z-index: -1;
 	background-color: #000;
 }
+
+@media (max-width: 600px) {
+	.page__title--2:after {
+		height: 87%;
+	}
+}
+
 .page__section {
 }
 .page__container {
@@ -286,8 +307,10 @@ body {
 .book__inner {
 	padding: 3rem 2rem;
 }
+
 .book-item {
 }
+
 .book__item:not(:last-child) {
 	margin-bottom: 2rem;
 }
