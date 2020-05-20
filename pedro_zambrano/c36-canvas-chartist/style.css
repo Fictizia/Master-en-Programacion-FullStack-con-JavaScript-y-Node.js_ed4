@@ -1,0 +1,15 @@
+/*LINES*/
+
+.ct-series-a path {
+    stroke: orange !important;
+}
+
+.ct-series-b path {
+    stroke: darkcyan !important;
+}
+
+/*POINTS*/
+
+.ct-series-a line, .ct-series-b line {
+    stroke: #000 !important;
+}
