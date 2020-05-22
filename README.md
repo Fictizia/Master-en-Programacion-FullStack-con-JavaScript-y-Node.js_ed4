@@ -107,6 +107,7 @@ Fecha | Teoría | Recursos | Contenido
 15/05/20 | [Clase 71](teoria/clase71.md) | [Clase 71](recursos/clase71.md) | WebSockets Backend y MQTT
 18/05/19 | [Clase 72](teoria/clase72.md) | [Clase 72](recursos/clase72.md) | Nodejs: Conceptos Avanzados de Core (Child Process, C/C++ Addons, Cluster...)
 20/05/19 | [Clase 73](teoria/clase73.md) | [Clase 73](recursos/clase73.md) | Hablemos de Seguridad Web
+22/05/19 | [Clase 74](teoria/clase74.md) | [Clase 74](recursos/clase74.md) | Arquitectura (Monolito, Microservicios, serverless...)
 
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
