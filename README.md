@@ -105,9 +105,10 @@ Fecha | Teoría | Recursos | Contenido
 11/05/20 | [Clase 69](teoria/clase69.md) | [Clase 69](recursos/clase69.md) | Express IV: Mas allá de Express
 13/05/20 | [Clase 70](teoria/clase70.md) | Clase 70 | Express: Resolviendo Ejercicios y repasando
 15/05/20 | [Clase 71](teoria/clase71.md) | [Clase 71](recursos/clase71.md) | WebSockets Backend y MQTT
-18/05/19 | [Clase 72](teoria/clase72.md) | [Clase 72](recursos/clase72.md) | Nodejs: Conceptos Avanzados de Core (Child Process, C/C++ Addons, Cluster...)
-20/05/19 | [Clase 73](teoria/clase73.md) | [Clase 73](recursos/clase73.md) | Hablemos de Seguridad Web
-22/05/19 | [Clase 74](teoria/clase74.md) | [Clase 74](recursos/clase74.md) | Arquitectura (Monolito, Microservicios, serverless...)
+18/05/20 | [Clase 72](teoria/clase72.md) | [Clase 72](recursos/clase72.md) | Nodejs: Conceptos Avanzados de Core (Child Process, C/C++ Addons, Cluster...)
+20/05/20 | [Clase 73](teoria/clase73.md) | [Clase 73](recursos/clase73.md) | Hablemos de Seguridad Web
+22/05/20 | [Clase 74](teoria/clase74.md) | [Clase 74](recursos/clase74.md) | Arquitectura (Monolito, Microservicios, serverless...)
+25/05/20 | [Clase 75](teoria/clase75.md) | [Clase 75](recursos/clase75.md) | Firebase II: Google Cloud Functions
 
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
