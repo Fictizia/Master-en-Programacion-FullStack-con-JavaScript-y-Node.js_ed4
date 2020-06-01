@@ -111,6 +111,7 @@ Fecha | Teoría | Recursos | Contenido
 25/05/20 | [Clase 75](teoria/clase75.md) | [Clase 75](recursos/clase75.md) | Firebase II: Google Cloud Functions
 27/05/20 | [Clase 76](teoria/clase76.md) | Clase 76 | Firebase II: Ejercicios de Cloud Functions
 29/05/20 | [Clase 77](teoria/clase77.md) | [Clase 77](recursos/clase77.md)| Firebase II: Cloud Messaging
+01/06/20 | [Clase 78](teoria/clase78.md) | [Clase 78](recursos/clase78.md)| Bases de datos: Fundamentos y GoblinDB
 
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
