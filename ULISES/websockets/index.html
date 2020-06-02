@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #000;
+            color: lightgreen;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>COVID 19</h1>
+    <h2>Realtime Data, news and more...</h2>
+
+    <h3>News</h3>
+    <div id="news">
+        No data yet...
+    </div>
+
+    <h3>Data</h3>
+    <div id="data">
+        No data yet...
+    </div>
+    
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io("http://localhost:3000");
+
+        const dataSelector = document.getElementById('data')
+        const newsSelector = document.getElementById('news')
+
+        const printNews = ({news}) => {
+            console.log(news)
+
+            const htmlContent = news.articles.map(article => {
+                return `<p><a target="_blank" href="${article.url}">[${article.source.name}] ${article.title} ${article.author ? `by ${article.author}` : ""}</a></p>`
+            }).join('')
+            // estruct
+            newsSelector.innerHTML += htmlContent
+        };
+        const printData  = ({data}) => {
+            console.log(data);
+            const globalData = (global) => Object.keys(global).map(item =>`<p>${item}: ${global[item]}</p>`).join('');
+            const htmlContent = `
+             <p>Total coutries in scope: ${data.Countries.length}</p>
+             ${globalData(data.Global)}
+            `
+            dataSelector.innerHTML += htmlContent
+        };
+
+        socket.on("news", printNews)
+        socket.on("data", printData)
+</script>
+
+</body>
+</html>
