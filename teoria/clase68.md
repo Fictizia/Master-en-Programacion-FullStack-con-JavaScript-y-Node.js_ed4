@@ -72,7 +72,7 @@ Estructura de datos por película:
 }
 ```
 
-**Solución**
+**[Solución](../OTROS/movie_fire/server_render-firebase_legacy)**
 
 
 **2 -** Mejora MovieFire
@@ -81,4 +81,4 @@ Objetivos:
 - Usa Bootstrap e [includes](https://pugjs.org/language/includes.html) de Pug
 - Manten una buena estructura separando rutas y modelos, puedes usar `async/await` para simplificar el trabajo
 
-**Solución**
+**[Solución](../OTROS/movie_fire/server_render-firebase)**
