@@ -1,0 +1,7 @@
+img#poster(src=filmData.Poster)
+-
+each value, key in filmData
+    if key!='Ratings'
+        p.contenido=  key +' : '+value 
+
+a(class='button' , href='/') Volver a página principal
