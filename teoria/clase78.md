@@ -130,7 +130,12 @@
 - [AireMAD](http://airemad.com/#/)
 - [Vanity.pillarsjs](https://github.com/pillarsjs/vanity/tree/dev)
 
+### LowDB
+> A small local database for small projects  (powered by lodash API)
 
+- [NPM](https://www.npmjs.com/package/lowdb)
+- [Github](https://github.com/typicode/lowdb)
+- [Tutorial](https://www.diycode.cc/projects/typicode/lowdb)
 
 ### Ejercicios
 
