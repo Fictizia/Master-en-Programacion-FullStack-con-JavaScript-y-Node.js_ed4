@@ -58,6 +58,8 @@
 - [Web Oficial](https://mariadb.org/)
 - [Download](https://mariadb.org/download/)
 - [Learn](https://mariadb.org/learn/)
+- [MariaDB - Getting Started With the Node.js Connector](https://mariadb.com/kb/en/getting-started-with-the-nodejs-connector/)
+- [Github - MariaDB Node.js connector](https://github.com/mariadb-corporation/mariadb-connector-nodejs)
 - [Useful MariaDB Queries](https://mariadb.com/kb/en/library/useful-mariadb-queries/)
 - [A 10-minute MariaDB primer](https://mariadb.com/kb/en/mariadb/a-mariadb-primer/)
 - [List of basic SQL statements](https://mariadb.com/kb/en/mariadb/basic-sql-statements/)
@@ -91,3 +93,4 @@
 - [Node.js GraphQL & PostgreSQL Quickstart](https://medium.com/@james_mensch/node-js-graphql-postgresql-quickstart-91ffa4374663)
 - [Deploying a Node.js + PostgreSQL app to Heroku](https://medium.com/@aem_iro/deploying-a-node-js-postgressql-app-to-heroku-hosting-platform-cc611287ae76)
 - [Node Hero - Node.js Database Tutorial](https://blog.risingstack.com/node-js-database-tutorial/)
+- [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
