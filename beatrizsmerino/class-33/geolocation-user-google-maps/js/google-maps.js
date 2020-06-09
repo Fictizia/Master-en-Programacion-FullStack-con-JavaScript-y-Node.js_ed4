@@ -44,23 +44,6 @@ export const API_KEY_MAP = "XXXXXXXXXXX";
 
 
 /**
- * @const module:googleMaps~API_KEY_STREETVIEW
- * @description Street View Static API key of 'Google Maps'
- * Instrucctions of use:
- * 1. Go to './google-maps.js', inside the function imageRoot() copy the url with the real data (without literal templates) without signature parameter
- * 2. Go to https://console.cloud.google.com/google/maps-apis/apis/street-view-image-backend.googleapis.com/staticmap and generate signature of the url copied
- * 3. Change the string "XXXXXXXXXXX" for your API KEY
- * @type {String}
- * @see Used in:
- * @see - 'google-maps.js' -> {@link module:googleMaps.setImage}
- */
-export const API_KEY_STREETVIEW = "XXXXXXXXXXX";
-
-
-
-
-
-/**
  * @function module:googleMaps.insertTagScript
  * @description Insert the tag html 'script' with the root of the 'API Google Maps'.
  * @see Used inside:
@@ -146,7 +129,7 @@ export function setMap(coords) {
 	*/
 	function addMarker(contentMarker = null, coords, map) {
 		const iconMarker = {
-			url: './img/location.png', // url
+			url: './img/icon-location.svg', // url
 			scaledSize: new google.maps.Size(50, 50), // scaled size
 			// origin: new google.maps.Point(0, 0), // origin
 			// anchor: new google.maps.Point(0, 0) // anchor
@@ -221,7 +204,7 @@ export function setMap(coords) {
  * @param {Number} imageRadius - Image search radius
  * @param {String} imageSource - Image indoord or outdoor
  * @see Used inside:
- * @see - 'google-maps-config.js' -> {@link module:googleMaps~API}, {@link module:googleMaps~API_KEY_MAP}, {@link module:googleMaps~API_KEY_STREETVIEW}
+ * @see - 'google-maps-config.js' -> {@link module:googleMaps~API}, {@link module:googleMaps~API_KEY_MAP}
  * @see Used in:
  * @see - 'geolocation.js' -> {@link module:geolocation.set}
  */
@@ -234,7 +217,6 @@ export function setImage(coords, imageSize, imageHeading, imageFov, imagePitch, 
 		key: API_KEY_MAP, // (required) you need an API key
 		location: `${coords.latitude},${coords.longitude}`, // (required) coords of latitude and longitude
 		size: imageSize || "400x400", // (required) size image, specified in pixels, of the width and height
-		signature: API_KEY_STREETVIEW, // (optional) digital signature used to verify that any site generating requests using your API key is authorized to do so.
 		heading: imageHeading || null, // (optional) compass heading, specified in degrees, of the camera | (by default: location) | (values acepted: 0-360) (North: 0 and 360, East: 90, West: 270, South: 180)
 		fov: imageFov || 90, // (optional) horizontal field, specified in degrees, of view of the image | (by default: 90) | (max value acepted: 120)
 		pitch: imagePitch || 0, // (optional) vertical field, specified in degrees, of the camera relative to the Street View vehicle. | (by default: 0) | (Up: 90, Down: -90)
@@ -242,7 +224,6 @@ export function setImage(coords, imageSize, imageHeading, imageFov, imagePitch, 
 		source: imageSource || "default" // (optional) Limits Street View searches to selected sources | (by default: default) | (values acepted: default or outdoor)
 	};
 
-	// I removed this parametter &signature=${settings.signature} do not work fot me
 	const imageRoot = `${API}streetview?key=${settings.key}&location=${settings.location}&size=${settings.size}&heading=${settings.heading}&fov=${settings.fov}&pitch=${settings.pitch}&radius=${settings.radius}&source=${settings.source}`;
 	// console.log(imageRoot);
 	image.src = imageRoot;
