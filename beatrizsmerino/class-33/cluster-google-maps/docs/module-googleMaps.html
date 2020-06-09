@@ -202,7 +202,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line21">line 21</a>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -288,7 +288,7 @@ Instrucctions of use:</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line34">line 34</a>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -325,161 +325,7 @@ Instrucctions of use:</p>
     
 
     
-    <h4 class="name" id=".createMap"><span class="type-signature">(static) </span>createMap<span class="signature">(coords)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Create a map with the 'API Google Maps'.
-This map is customized with styles of 'snazzymaps.com'.
-It has a unique animated marker with an information window that appears when you click on it.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>coords</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Coordinates</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line77">line 77</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li>Used inside:</li>
-        
-            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~initMap">module:googleMaps~initMap</a></li>
-        
-            <li>- 'snazzymaps.js' -> <a href="module-snazzymaps.html#.mapStyles">module:snazzymaps.mapStyles</a></li>
-        
-            <li>Used in:</li>
-        
-            <li>- 'script.js' -> <a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id=".insertTagScript"><span class="type-signature">(static) </span>insertTagScript<span class="signature">(url)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".insertTagScript"><span class="type-signature">(static) </span>insertTagScript<span class="signature">(url)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
     
 
     
@@ -580,7 +426,7 @@ It has a unique animated marker with an information window that appears when you
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line50">line 50</a>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line51">line 51</a>
     </li></ul></dd>
     
 
@@ -590,10 +436,6 @@ It has a unique animated marker with an information window that appears when you
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>Used inside:</li>
-        
-            <li>- 'google-maps-config.js' -> <a href="module-googleMaps.html#.API">module:googleMaps.API</a>, <a href="module-googleMaps.html#.API_KEY_MAP">module:googleMaps.API_KEY_MAP</a></li>
-        
             <li>Used in:</li>
         
             <li>- 'srcript.js' -> <a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li>
@@ -618,6 +460,24 @@ It has a unique animated marker with an information window that appears when you
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -629,7 +489,7 @@ It has a unique animated marker with an information window that appears when you
     
 
     
-    <h4 class="name" id="~addCluster"><span class="type-signature">(inner) </span>addCluster<span class="signature">(markers, map)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="~addCluster"><span class="type-signature">(inner) </span>addCluster<span class="signature">(markers, map)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -637,7 +497,7 @@ It has a unique animated marker with an information window that appears when you
 
 
 <div class="description">
-    <p>Add a marker clusterer to manage the markers.</p>
+    <p>Add and return a marker clusterer to manage the markers.</p>
 </div>
 
 
@@ -753,7 +613,7 @@ It has a unique animated marker with an information window that appears when you
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line136">line 136</a>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line177">line 177</a>
     </li></ul></dd>
     
 
@@ -765,7 +625,7 @@ It has a unique animated marker with an information window that appears when you
         <ul>
             <li>Used in:</li>
         
-            <li>- 'google-maps.js' -><a href="module-googleMaps.html#~initMap">module:googleMaps~initMap</a></li>
+            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~initMap">module:googleMaps~initMap</a>, <a href="module-googleMaps.html#~refreshMarkers">module:googleMaps~refreshMarkers</a></li>
         </ul>
     </dd>
     
@@ -787,6 +647,24 @@ It has a unique animated marker with an information window that appears when you
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -806,7 +684,7 @@ It has a unique animated marker with an information window that appears when you
 
 
 <div class="description">
-    <p>Create and and marker</p>
+    <p>Create, add to the map and return marker</p>
 </div>
 
 
@@ -945,7 +823,7 @@ It has a unique animated marker with an information window that appears when you
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line187">line 187</a>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line103">line 103</a>
     </li></ul></dd>
     
 
@@ -961,7 +839,7 @@ It has a unique animated marker with an information window that appears when you
         
             <li>Used in:</li>
         
-            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~initMap">module:googleMaps~initMap</a></li>
+            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~addMultipleMarkers">module:googleMaps~addMultipleMarkers</a></li>
         </ul>
     </dd>
     
@@ -1020,7 +898,7 @@ It has a unique animated marker with an information window that appears when you
 
 
 <div class="description">
-    <p>Add multiple markers to</p>
+    <p>Add and return multiple markers to the map</p>
 </div>
 
 
@@ -1062,7 +940,7 @@ It has a unique animated marker with an information window that appears when you
             <td class="type">
             
                 
-<span class="param-type">*</span>
+<span class="param-type">Object</span>
 
 
             
@@ -1085,7 +963,7 @@ It has a unique animated marker with an information window that appears when you
             <td class="type">
             
                 
-<span class="param-type">*</span>
+<span class="param-type">Object</span>
 
 
             
@@ -1136,7 +1014,7 @@ It has a unique animated marker with an information window that appears when you
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line155">line 155</a>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line146">line 146</a>
     </li></ul></dd>
     
 
@@ -1148,11 +1026,11 @@ It has a unique animated marker with an information window that appears when you
         <ul>
             <li>Used inside:</li>
         
-            <li>- 'google-maps.js' -><a href="module-googleMaps.html#~addMarker">module:googleMaps~addMarker</a></li>
+            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~addMarker">module:googleMaps~addMarker</a></li>
         
             <li>Used in:</li>
         
-            <li>- 'google-maps.js' -><a href="module-googleMaps.html#~initMap">module:googleMaps~initMap</a></li>
+            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~refreshMarkers">module:googleMaps~refreshMarkers</a>, <a href="module-googleMaps.html#~createMap">module:googleMaps~createMap</a></li>
         </ul>
     </dd>
     
@@ -1350,7 +1228,7 @@ It has a unique animated marker with an information window that appears when you
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line234">line 234</a>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line77">line 77</a>
     </li></ul></dd>
     
 
@@ -1395,7 +1273,675 @@ It has a unique animated marker with an information window that appears when you
     
 
     
-    <h4 class="name" id="~initMap"><span class="type-signature">(inner) </span>initMap<span class="signature">(dataAPI, mapDom, jsonStyles)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="~createMap"><span class="type-signature">(inner) </span>createMap<span class="signature">(dataAPI, mapDom, jsonStyles)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Create the map with markers and cluster; and refresh it.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dataAPI</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mapDom</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Element</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>jsonStyles</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line277">line 277</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside:</li>
+        
+            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~setGetMap">module:googleMaps~setGetMap</a>, <a href="module-googleMaps.html#~addMultipleMarkers">module:googleMaps~addMultipleMarkers</a>, <a href="module-googleMaps.html#~addCluster">module:googleMaps~addCluster</a>, <a href="module-googleMaps.html#~refreshMarkers">module:googleMaps~refreshMarkers</a></li>
+        
+            <li>Used in:</li>
+        
+            <li>- 'google-maps.js' -> module:googleMaps.initMap</li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~initMap"><span class="type-signature">(inner) </span>initMap<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Create a map with the 'API Google Maps'.
+This map is customized with styles of 'snazzymaps.com'.
+It has a unique animated marker with an information window that appears when you click on it.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line302">line 302</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside:</li>
+        
+            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~createMap">module:googleMaps~createMap</a></li>
+        
+            <li>- 'snazzymaps.js' -> <a href="module-snazzymaps.html#.mapStyles">module:snazzymaps.mapStyles</a></li>
+        
+            <li>Used in:</li>
+        
+            <li>- 'script.js' -> <a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~refreshMarkers"><span class="type-signature">(inner) </span>refreshMarkers<span class="signature">(markerCluster, markers, map)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Refresh the markers: Remove and add it again.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>markerCluster</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>markers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>map</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line216">line 216</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside:</li>
+        
+            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~removeMarkers">module:googleMaps~removeMarkers</a>, <a href="module-googleMaps.html#~addMultipleMarkers">module:googleMaps~addMultipleMarkers</a>, <a href="module-googleMaps.html#~addCluster">module:googleMaps~addCluster</a></li>
+        
+            <li>- 'data-api.js' -> module:apiMetro~getData</li>
+        
+            <li>Used in:</li>
+        
+            <li>- 'script.js' -> <a href="module-googleMaps.html#~createMap">module:googleMaps~createMap</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~removeMarkers"><span class="type-signature">(inner) </span>removeMarkers<span class="signature">(markerCluster, markers)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Remove markers and cluster</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>markerCluster</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>markers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line198">line 198</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used in:</li>
+        
+            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~refreshMarkers">module:googleMaps~refreshMarkers</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~setGetMap"><span class="type-signature">(inner) </span>setGetMap<span class="signature">(dataAPI, mapDom, jsonStyles)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -1468,7 +2014,7 @@ It has a unique animated marker with an information window that appears when you
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">Element</span>
 
 
             
@@ -1542,7 +2088,7 @@ It has a unique animated marker with an information window that appears when you
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line100">line 100</a>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line245">line 245</a>
     </li></ul></dd>
     
 
@@ -1552,13 +2098,9 @@ It has a unique animated marker with an information window that appears when you
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li>Used inside:</li>
-        
-            <li>- 'google-maps.js' -> <a href="module-googleMaps.html#~addMultipleMarkers">module:googleMaps~addMultipleMarkers</a>, <a href="module-googleMaps.html#~addCluster">module:googleMaps~addCluster</a></li>
-        
             <li>Used in:</li>
         
-            <li>- 'google-maps.js' -><a href="module-googleMaps.html#.createMap">module:googleMaps.createMap</a></li>
+            <li>- 'google-maps.js' ->module:googleMaps.createMap</li>
         </ul>
     </dd>
     
@@ -1580,6 +2122,24 @@ It has a unique animated marker with an information window that appears when you
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1647,7 +2207,7 @@ It has a unique animated marker with an information window that appears when you
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line248">line 248</a>
+        <a href="google-maps.js.html">google-maps.js</a>, <a href="google-maps.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -1695,7 +2255,7 @@ It has a unique animated marker with an information window that appears when you
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue Feb 18 2020 22:57:18 GMT+0100 (GMT+01:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue Jun 09 2020 16:34:44 GMT+0200 (GMT+02:00)
 </footer>
 
 <script> prettyPrint(); </script>
