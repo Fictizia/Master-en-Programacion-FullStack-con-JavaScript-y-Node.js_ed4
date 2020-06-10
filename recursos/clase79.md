@@ -94,3 +94,4 @@
 - [Deploying a Node.js + PostgreSQL app to Heroku](https://medium.com/@aem_iro/deploying-a-node-js-postgressql-app-to-heroku-hosting-platform-cc611287ae76)
 - [Node Hero - Node.js Database Tutorial](https://blog.risingstack.com/node-js-database-tutorial/)
 - [Setting up a RESTful API with Node.js and PostgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
+- [Fetch the data from multiple tables using postgresql and sequelize](https://medium.com/better-programming/fetch-the-data-from-multiple-tables-using-postgresql-and-sequelize-dc9ea69a34)
