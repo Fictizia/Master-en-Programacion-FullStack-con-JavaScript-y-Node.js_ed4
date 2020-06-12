@@ -115,7 +115,8 @@ Fecha | Teoría | Recursos | Contenido
 03/06/20 | [Clase 79](teoria/clase79.md) | [Clase 79](recursos/clase79.md)| 	Bases de datos: Relacionales I
 05/06/20 | [Clase 80](teoria/clase80.md) | Clase 80 | 	Bases de datos: Relacionales II
 08/06/20 | [Clase 81](teoria/clase81.md) | [Clase 81](recursos/clase81.md) | 	Bases de datos: No-relacionales I
-10/06/20 | [Clase 82](teoria/clase82.md) | Clase 82 | 	Bases de datos: No-relacionales II
+10/06/20 | [Clase 82](teoria/clase82.md) | Clase 82 | Bases de datos: No-relacionales II
+12/06/20 | [Clase 83](teoria/clase83.md) | Clase 83 | Firebase III: Cloud Firestore
 
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
