@@ -18,6 +18,7 @@
 - [MongoDB | What is MongoDB?](https://www.mongodb.com/what-is-mongodb)
 - [Learn MongoDB from MongoDB](https://university.mongodb.com/?_ga=2.109174149.1499384364.1547993054-746999495.1547993054)
 - [MongoDB | Blog](https://www.mongodb.com/blog)
+- [NodeJS-mongodb driver async/await queries](https://stackoverflow.com/questions/47370487/node-js-mongodb-driver-async-await-queries)
 
 
 ### MongoDB: [Instalación](https://docs.mongodb.com/manual/installation/#mongodb-community-edition)
