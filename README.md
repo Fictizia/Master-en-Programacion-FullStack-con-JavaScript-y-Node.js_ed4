@@ -117,6 +117,7 @@ Fecha | Teoría | Recursos | Contenido
 08/06/20 | [Clase 81](teoria/clase81.md) | [Clase 81](recursos/clase81.md) | 	Bases de datos: No-relacionales I
 10/06/20 | [Clase 82](teoria/clase82.md) | Clase 82 | Bases de datos: No-relacionales II
 12/06/20 | [Clase 83](teoria/clase83.md) | Clase 83 | Firebase III: Cloud Firestore
+15/06/20 | [Clase 84](teoria/clase84.md) | [Clase 84](recursos/clase84.md) | Scraping con Puppeteer
 
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
