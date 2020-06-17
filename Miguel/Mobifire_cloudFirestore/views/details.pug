@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  head
+    title DETALLES
+  body
+    a(href='/', role='button')
+      i Back to home
+
+    h1 Details - #{data.details.Title}
+    
+    if data
+      ul
+        li Director: #{data.details.Director}
+        li Year: #{data.details.Year}
+        li Actors: #{data.details.Actors}
+        li Genre: #{data.details.Genre}
+        li Country: #{data.details.Country}
+      img(src=data.details.Poster)

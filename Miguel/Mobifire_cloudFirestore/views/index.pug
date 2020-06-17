@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  head
+    title Jade
+  body
+    h1 Películas
+    input#name(type='text', placeholder='film name')
+    button#getFilm(type='button') Search
+    button#getDetails(type='button') Details
+    button#deleteFilm(type='button') Delete
+    button#updateName(type='button') Update
+    #container.col
+      ul
+        if data
+          each film, i in data 
+            li= film.name 
+
+    script(src='./main.js')
