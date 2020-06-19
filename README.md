@@ -119,6 +119,7 @@ Fecha | Teoría | Recursos | Contenido
 12/06/20 | [Clase 83](teoria/clase83.md) | [Clase 83](recursos/clase83.md) | Firebase III: Cloud Firestore
 15/06/20 | [Clase 84](teoria/clase84.md) | [Clase 84](recursos/clase84.md) | Scraping con Puppeteer
 17/06/20 | [Clase 85](teoria/clase85.md) | [Clase 85](recursos/clase85.md) | 	CLI con Nodejs
+19/06/20 | [Clase 86](teoria/clase86.md) | [Clase 86](recursos/clase86.md) | 	Testing: Fundamentos
 
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
