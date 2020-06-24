@@ -121,10 +121,9 @@ Fecha | Teoría | Recursos | Contenido
 17/06/20 | [Clase 85](teoria/clase85.md) | [Clase 85](recursos/clase85.md) | CLI con Nodejs
 19/06/20 | [Clase 86](teoria/clase86.md) | [Clase 86](recursos/clase86.md) | Testing: Fundamentos
 22/06/20 | [Clase 87](teoria/clase87.md) | [Clase 87](recursos/clase87.md) | Testing: Unit Testing
-24/06/19 | [Clase 88](teoria/clase88.md) | [Clase 88](recursos/clase88.md) | Testing: E2E Testing & Específicos
+24/06/20 | [Clase 88](teoria/clase88.md) | [Clase 88](recursos/clase88.md) | Testing: E2E Testing & Específicos
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
-
 =================
 
 **Bases lógicas de la programación**
