@@ -112,18 +112,19 @@ Fecha | Teoría | Recursos | Contenido
 27/05/20 | [Clase 76](teoria/clase76.md) | Clase 76 | Firebase II: Ejercicios de Cloud Functions
 29/05/20 | [Clase 77](teoria/clase77.md) | [Clase 77](recursos/clase77.md)| Firebase II: Cloud Messaging
 01/06/20 | [Clase 78](teoria/clase78.md) | [Clase 78](recursos/clase78.md)| Bases de datos: Fundamentos y GoblinDB
-03/06/20 | [Clase 79](teoria/clase79.md) | [Clase 79](recursos/clase79.md)| 	Bases de datos: Relacionales I
+03/06/20 | [Clase 79](teoria/clase79.md) | [Clase 79](recursos/clase79.md)| Bases de datos: Relacionales I
 05/06/20 | [Clase 80](teoria/clase80.md) | Clase 80 | 	Bases de datos: Relacionales II
-08/06/20 | [Clase 81](teoria/clase81.md) | [Clase 81](recursos/clase81.md) | 	Bases de datos: No-relacionales I
+08/06/20 | [Clase 81](teoria/clase81.md) | [Clase 81](recursos/clase81.md) | Bases de datos: No-relacionales I
 10/06/20 | [Clase 82](teoria/clase82.md) | Clase 82 | Bases de datos: No-relacionales II
 12/06/20 | [Clase 83](teoria/clase83.md) | [Clase 83](recursos/clase83.md) | Firebase III: Cloud Firestore
 15/06/20 | [Clase 84](teoria/clase84.md) | [Clase 84](recursos/clase84.md) | Scraping con Puppeteer
-17/06/20 | [Clase 85](teoria/clase85.md) | [Clase 85](recursos/clase85.md) | 	CLI con Nodejs
-19/06/20 | [Clase 86](teoria/clase86.md) | [Clase 86](recursos/clase86.md) | 	Testing: Fundamentos
-22/06/20 | [Clase 87](teoria/clase87.md) | [Clase 87](recursos/clase87.md) | 	Testing: Unit Testing
-
+17/06/20 | [Clase 85](teoria/clase85.md) | [Clase 85](recursos/clase85.md) | CLI con Nodejs
+19/06/20 | [Clase 86](teoria/clase86.md) | [Clase 86](recursos/clase86.md) | Testing: Fundamentos
+22/06/20 | [Clase 87](teoria/clase87.md) | [Clase 87](recursos/clase87.md) | Testing: Unit Testing
+24/06/19 | [Clase 88](teoria/clase88.md) | [Clase 88](recursos/clase88.md) | Testing: E2E Testing & Específicos
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
+
 =================
 
 **Bases lógicas de la programación**
