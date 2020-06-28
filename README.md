@@ -122,6 +122,7 @@ Fecha | Teoría | Recursos | Contenido
 19/06/20 | [Clase 86](teoria/clase86.md) | [Clase 86](recursos/clase86.md) | Testing: Fundamentos
 22/06/20 | [Clase 87](teoria/clase87.md) | [Clase 87](recursos/clase87.md) | Testing: Unit Testing
 24/06/20 | [Clase 88](teoria/clase88.md) | [Clase 88](recursos/clase88.md) | Testing: E2E Testing & Específicos
+26/06/20 | [Clase 89](https://docs.google.com/presentation/d/1igTaxzjO_9ZmAVQHOeu38G9ojA0EnJR7tcYVKOMlVhE/edit?usp=sharing) | [Clase 89](https://github.com/rubnvp/vue-pokedex) | Front-end: Introducción a Vue.js
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
