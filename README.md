@@ -125,6 +125,9 @@ Fecha | Teoría | Recursos | Contenido
 26/06/20 | [Clase 89](https://docs.google.com/presentation/d/1igTaxzjO_9ZmAVQHOeu38G9ojA0EnJR7tcYVKOMlVhE/edit?usp=sharing) | [Clase 89](https://github.com/rubnvp/vue-pokedex) | Front-end: Introducción a Vue.js
 27/06/20 | Clase 90 | Clase 90 | Taller refactor Airemad I
 29/06/20 | [Clase 91](teoria/clase91.md) | [Clase 91](recursos/clase91.md) | Node funcionando con PM2, Nodemon, etc...
+03/07/20 | [Clase 93](teoria/clase93.md) | [Clase 93](recursos/clase93.md) | DevOps: CI y CD
+04/07/20 | Clase 94 | Clase 94 | Taller refactor Airemad II
+
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
