@@ -129,7 +129,7 @@ Fecha | Teoría | Recursos | Contenido
 03/07/20 | [Clase 93](teoria/clase93.md) | [Clase 93](recursos/clase93.md) | DevOps: CI y CD
 04/07/20 | Clase 94 | Clase 94 | Taller refactor Airemad II
 06/07/20 | Clase 95 | Clase 95 | Frameworks III: Introducción a Angular
-
+08/07/20 | [Clase 96](teoria/clase96.md) | [Clase 96](teoria/clase96.md) | Deploy en Cloud
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
