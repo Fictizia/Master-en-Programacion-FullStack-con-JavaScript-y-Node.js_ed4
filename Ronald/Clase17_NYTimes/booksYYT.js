@@ -30,9 +30,6 @@ xmlHttp.onreadystatechange = function() {
             document.getElementsByTagName("A")[i].setAttribute("href",objeto[i].amazon_product_url);
             document.getElementsByTagName("A")[i].innerHTML = "Comprarlo en Amazon";
 
-            //document.getElementById("libros").innerHTML += "<br>"+objeto[i].title;
-           // document.getElementById("libros").innerHTML += "<br>"+objeto[i].bookimage;
-
         }
 
         
