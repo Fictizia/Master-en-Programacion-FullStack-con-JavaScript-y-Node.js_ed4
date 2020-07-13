@@ -131,7 +131,6 @@ Fecha | Teoría | Recursos | Contenido
 06/07/20 | Clase 95 | Clase 95 | Frameworks III: Introducción a Angular
 08/07/20 | [Clase 96](teoria/clase96.md) | [Clase 96](teoria/clase96.md) | Deploy en Cloud
 10/07/20 | [Clase 97](teoria/clase97.md) | [Clase 97](teoria/clase97.md) | Virtualización con Docker y Kubernetes
-
 13/07/20 | [Clase 98](teoria/clase98.md) | Clase 98| Entrevistas
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
