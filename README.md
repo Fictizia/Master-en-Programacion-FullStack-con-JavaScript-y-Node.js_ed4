@@ -112,7 +112,26 @@ Fecha | Teoría | Recursos | Contenido
 27/05/20 | [Clase 76](teoria/clase76.md) | Clase 76 | Firebase II: Ejercicios de Cloud Functions
 29/05/20 | [Clase 77](teoria/clase77.md) | [Clase 77](recursos/clase77.md)| Firebase II: Cloud Messaging
 01/06/20 | [Clase 78](teoria/clase78.md) | [Clase 78](recursos/clase78.md)| Bases de datos: Fundamentos y GoblinDB
-
+03/06/20 | [Clase 79](teoria/clase79.md) | [Clase 79](recursos/clase79.md)| Bases de datos: Relacionales I
+05/06/20 | [Clase 80](teoria/clase80.md) | Clase 80 | 	Bases de datos: Relacionales II
+08/06/20 | [Clase 81](teoria/clase81.md) | [Clase 81](recursos/clase81.md) | Bases de datos: No-relacionales I
+10/06/20 | [Clase 82](teoria/clase82.md) | Clase 82 | Bases de datos: No-relacionales II
+12/06/20 | [Clase 83](teoria/clase83.md) | [Clase 83](recursos/clase83.md) | Firebase III: Cloud Firestore
+15/06/20 | [Clase 84](teoria/clase84.md) | [Clase 84](recursos/clase84.md) | Scraping con Puppeteer
+17/06/20 | [Clase 85](teoria/clase85.md) | [Clase 85](recursos/clase85.md) | CLI con Nodejs
+19/06/20 | [Clase 86](teoria/clase86.md) | [Clase 86](recursos/clase86.md) | Testing: Fundamentos
+22/06/20 | [Clase 87](teoria/clase87.md) | [Clase 87](recursos/clase87.md) | Testing: Unit Testing
+24/06/20 | [Clase 88](teoria/clase88.md) | [Clase 88](recursos/clase88.md) | Testing: E2E Testing & Específicos
+26/06/20 | [Clase 89](https://docs.google.com/presentation/d/1igTaxzjO_9ZmAVQHOeu38G9ojA0EnJR7tcYVKOMlVhE/edit?usp=sharing) | [Clase 89](https://github.com/rubnvp/vue-pokedex) | Frameworks I: Introducción a Vue.js
+27/06/20 | Clase 90 | Clase 90 | Taller refactor Airemad I
+29/06/20 | [Clase 91](teoria/clase91.md) | [Clase 91](recursos/clase91.md) | Node funcionando con PM2, Nodemon, etc...
+01/07/20 | Clase 92 | Clase 92 | Frameworks II: Introducción a React
+03/07/20 | [Clase 93](teoria/clase93.md) | [Clase 93](recursos/clase93.md) | DevOps: CI y CD
+04/07/20 | Clase 94 | Clase 94 | Taller refactor Airemad II
+06/07/20 | Clase 95 | Clase 95 | Frameworks III: Introducción a Angular
+08/07/20 | [Clase 96](teoria/clase96.md) | [Clase 96](teoria/clase96.md) | Deploy en Cloud
+10/07/20 | [Clase 97](teoria/clase97.md) | [Clase 97](teoria/clase97.md) | Virtualización con Docker y Kubernetes
+13/07/20 | [Clase 98](teoria/clase98.md) | Clase 98| Entrevistas
 
 [Temario](https://coggle.it/diagram/W5ZfeGRd293lprIt/t/master-js-y-node-de-fictizia)
 =================
