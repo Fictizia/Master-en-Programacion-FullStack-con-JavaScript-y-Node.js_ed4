@@ -1,0 +1,15 @@
+{
+	"name": "poo",
+	"version": "1.0.0",
+	"description": "Exercise POO: person, studient and professor",
+	"main": "index.js",
+	"scripts": {
+		"docs": "jsdoc -c jsdoc.json"
+	},
+	"author": "beatrizsmerino@gmail.com",
+	"license": "ISC",
+	"devDependencies": {
+		"jsdoc": "^3.6.3"
+	},
+	"dependencies": {}
+}
