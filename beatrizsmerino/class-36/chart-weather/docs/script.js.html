@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: script.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: script.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file Main file
+ * @author Beatriz Sopeña Merino &lt;beatrizsmerino@gmail.com>
+ * @copyright (2020)
+ */
+
+
+
+
+
+/**
+ * @requires tool
+ * @requires loader
+ * @requires geolocation
+ * @requires weatherOpenweather
+ * @requires graphicChart
+ */
+import * as loader from './loader.js';
+import * as geolocation from './geolocation.js';
+import * as weatherOpenweather from './weather-openweather.js';
+import * as weatherAiremad from './weather-airemad.js';
+import * as graphicChart from './graphic-chart.js';
+
+
+
+
+
+/**
+ * @function functionAnonimAutoExecuted
+ * @description Anonymous auto executed function.
+ * @see Used inside:
+ * @see - 'geolocation.js' -> {@link module:geolocation.get}, {@link module:geolocation.showPosition}, {@link module:geolocation.showError}
+ * @see - 'loader.js' -> {@link module:loader.add}, {@link module:loader.remove}
+ * @see - 'weather-openweather.js' -> {@link module:weatherOpenweather.getDataByCoords}, {@link module:weatherOpenweather.setWidget}
+ * @see - 'weather-airemad.js' -> {@link module:weatherAiremad.getStations}, {@link module:weatherAiremad.getWeatherById}
+ * @see - 'graphic-chart.js' -> {@link module:graphicChart.set}
+ */
+(function () {
+	geolocation.get()
+		.then(position => {
+			// console.info(position);
+
+			loader.add();
+
+			geolocation.showPosition(position);
+
+			let coords = {
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude
+			};
+			// console.table(coords);
+
+			return coords;
+
+		}).then(coords => {
+			weatherOpenweather.getDataByCoords(coords)
+				.then(weatherCoords => {
+					// console.info(weatherCoords);
+
+					loader.remove();
+
+					weatherOpenweather.setWidget({ widgetType: 5 }, "España", ".page__content");
+					weatherOpenweather.setWidget({ widgetType: 2 }, coords, ".page__content");
+				})
+		})
+		.catch(
+			error => {
+				loader.remove();
+
+				geolocation.showError(error);
+			}
+		);
+
+
+	weatherAiremad.getStations()
+		.then(stations => {
+			loader.add();
+
+			// console.log(stations);
+
+			const dataGraphicListStations = stations.map(station => {
+				return {
+					id: station.id,
+					name: station.nombre_estacion
+				};
+			});
+
+			const promises = dataGraphicListStations.map(station => {
+				return weatherAiremad.getWeatherById(station.id)
+					.then(weatherResponse => {
+						return weatherResponse;
+					});
+			});
+
+			return Promise.all(promises)
+				.then(stationsWeather => ({ dataGraphicListStations, stationsWeather }))
+		})
+		.then(({ dataGraphicListStations, stationsWeather }) => {
+			// console.log(stationsWeather);
+
+			const dataGraphicListWeather = stationsWeather.map(stationsWeatherItem => {
+				let dataGraphicWeather = {
+					time: [],
+					temperature: [],
+					temperature_max: [],
+					temperature_min: [],
+					humidity: []
+				};
+
+				stationsWeatherItem.list.map(forecastItem => {
+					dataGraphicWeather.time.push(moment(forecastItem.dt_txt).format('D/M/YY HH:mm'));
+					dataGraphicWeather.temperature.push(forecastItem.main.temp);
+					dataGraphicWeather.temperature_max.push(forecastItem.main.temp_max);
+					dataGraphicWeather.temperature_min.push(forecastItem.main.temp_min);
+					dataGraphicWeather.humidity.push(forecastItem.main.humidity);
+				});
+
+				return dataGraphicWeather;
+			});
+
+			return Promise.all(dataGraphicListWeather)
+				.then((dataGraphicListWeather) => ({ dataGraphicListStations, dataGraphicListWeather }))
+				.then(({ dataGraphicListStations, dataGraphicListWeather }) => {
+					const dataGraphic = dataGraphicListStations.map((item) => item);
+
+					for (let i = 0; i &lt; dataGraphic.length; i++) {
+						const dataGraphicItem = dataGraphic[i];
+						dataGraphicItem.weather = dataGraphicListWeather[i];
+					}
+
+					return dataGraphic;
+
+				}).then((dataGraphic) => dataGraphic);
+		})
+		.then(dataGraphic => {
+			loader.remove();
+			console.log(dataGraphic);
+			graphicChart.set(dataGraphic, ".page__content");
+		});
+})();</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-geolocation.html">geolocation</a></li><li><a href="module-graphicChart.html">graphicChart</a></li><li><a href="module-loader.html">loader</a></li><li><a href="module-tool.html">tool</a></li><li><a href="module-weatherAiremad.html">weatherAiremad</a></li><li><a href="module-weatherOpenweather.html">weatherOpenweather</a></li></ul><h3>Global</h3><ul><li><a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue May 19 2020 04:00:52 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
