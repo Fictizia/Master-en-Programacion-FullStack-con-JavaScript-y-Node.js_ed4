@@ -1,0 +1,14 @@
+{
+	"name": "buenos-dias-madrid",
+	"version": "1.0.0",
+	"description": "Real-time application of pollution, weather, with a weather forecast for the next 4/5 days and a random image from traffic cameras in Madrid with the API aireMad.",
+	"main": "index.js",
+	"scripts": {
+		"docs": "jsdoc -c jsdoc.json"
+	},
+	"author": "beatrizsmerino@gmail.com",
+	"license": "ISC",
+	"devDependencies": {
+		"jsdoc": "^3.6.3"
+	}
+}

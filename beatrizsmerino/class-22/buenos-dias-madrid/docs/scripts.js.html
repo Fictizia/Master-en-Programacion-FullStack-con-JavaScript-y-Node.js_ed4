@@ -1,6 +1,34 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * @file Main file
- * @author Beatriz Sopeña Merino <beatrizsmerino@gmail.com>
+ * @author Beatriz Sopeña Merino &lt;beatrizsmerino@gmail.com>
  * @copyright (2020)
  */
 
@@ -144,7 +172,7 @@ function setStations() {
 		.then(data => {
 			// console.info("Stations: ", data);
 
-			if (data >= 400 && data < 600) {
+			if (data >= 400 &amp;&amp; data &lt; 600) {
 				throw new Error("Bad response from server");
 			} else {
 				const section = createSection("stations");
@@ -208,7 +236,7 @@ function lastMeasurementPollution(item) {
 	let measurements = item.values;
 
 	if (
-		typeof (measurements) === "object" &&
+		typeof (measurements) === "object" &amp;&amp;
 		Array.isArray(measurements)
 	) {
 
@@ -239,7 +267,7 @@ function setPollution(idStation) {
 			// console.info("Pollution: ", data);
 			// console.log(data.status);
 
-			if (data >= 400 && data < 600) {
+			if (data >= 400 &amp;&amp; data &lt; 600) {
 				throw new Error("Bad response from server");
 			} else {
 				const section = createSection("pollution");
@@ -258,19 +286,19 @@ function setPollution(idStation) {
 				for (let key in data) {
 					const element = data[key];
 
-					if (typeof (element) === "object" && Array.isArray(element.values)) {
+					if (typeof (element) === "object" &amp;&amp; Array.isArray(element.values)) {
 						let lastMeasurement = lastMeasurementPollution(element);
 
 						let dataText;
 						if (!lastMeasurement) {
 							dataText = "informacion no disponible";
 						} else {
-							dataText = `<span>${lastMeasurement} μg/m3</span> <span>medido por ${element.technique}</span><br> <em>(${element.period})</em>`;
+							dataText = `&lt;span>${lastMeasurement} μg/m3&lt;/span> &lt;span>medido por ${element.technique}&lt;/span>&lt;br> &lt;em>(${element.period})&lt;/em>`;
 						}
 
 						let liDOM = document.createElement("li");
 						liDOM.setAttribute("class", "list__item");
-						let text = `<p><strong>${element.parameter} (${element.abrebiation}):</strong> ${dataText}</p>`;
+						let text = `&lt;p>&lt;strong>${element.parameter} (${element.abrebiation}):&lt;/strong> ${dataText}&lt;/p>`;
 						let textNode = document.createRange().createContextualFragment(text);
 						liDOM.appendChild(textNode);
 						ulDOM.appendChild(liDOM);
@@ -304,7 +332,7 @@ function setNowWeather(idStation) {
 		.then(data => {
 			// console.info("Weather: ", data);
 
-			if (data >= 400 && data < 600) {
+			if (data >= 400 &amp;&amp; data &lt; 600) {
 				throw new Error("Bad response from server");
 			} else {
 				const section = createSection("weather");
@@ -318,7 +346,7 @@ function setNowWeather(idStation) {
 				articleDOM.setAttribute("class", "page__article");
 
 				const dataList = data.list;
-				for (let index = 0; index < dataList.length; index++) {
+				for (let index = 0; index &lt; dataList.length; index++) {
 					const element = dataList[index];
 					const dataWeather = {
 						date: element.dt_txt,
@@ -331,19 +359,19 @@ function setNowWeather(idStation) {
 						windDeg: element.wind.deg,
 						windSpeed: element.wind.speed
 					};
-					let text = `<div class="weather-data">
-								<p class="weather-data__item"><time class="weather__time" datetime="${dataWeather.date}">${dataWeather.date}</time><br> (datos cada 3horas)</p>
-								<p class="weather-data__item"><span class="weather__description">${dataWeather.description}</span> <span class="weather__temperature">${dataWeather.temperature}°C</span></p>
-								<p class="weather-data__item"><strong>Min:</strong> ${dataWeather.temperatureMin}°C | <strong>Max:</strong> ${dataWeather.temperatureMax}°C</p>
-								<p class="weather-data__item"><strong>Humedad:</strong> ${dataWeather.humidity} + % | <strong>Presión:</strong> ${dataWeather.pressure} psi</p>
-								<p class="weather-data__item"><strong>Viento:</strong> ${dataWeather.windDeg}º | ${dataWeather.windSpeed} km/h</p>
-							</div>`;
+					let text = `&lt;div class="weather-data">
+								&lt;p class="weather-data__item">&lt;time class="weather__time" datetime="${dataWeather.date}">${dataWeather.date}&lt;/time>&lt;br> (datos cada 3horas)&lt;/p>
+								&lt;p class="weather-data__item">&lt;span class="weather__description">${dataWeather.description}&lt;/span> &lt;span class="weather__temperature">${dataWeather.temperature}°C&lt;/span>&lt;/p>
+								&lt;p class="weather-data__item">&lt;strong>Min:&lt;/strong> ${dataWeather.temperatureMin}°C | &lt;strong>Max:&lt;/strong> ${dataWeather.temperatureMax}°C&lt;/p>
+								&lt;p class="weather-data__item">&lt;strong>Humedad:&lt;/strong> ${dataWeather.humidity} + % | &lt;strong>Presión:&lt;/strong> ${dataWeather.pressure} psi&lt;/p>
+								&lt;p class="weather-data__item">&lt;strong>Viento:&lt;/strong> ${dataWeather.windDeg}º | ${dataWeather.windSpeed} km/h&lt;/p>
+							&lt;/div>`;
 
 					const nowDate = moment().format('YYYY-MM-DD HH:00:00');
 					const nowDateArr = nowDate.split(" ");
 					const dateArr = dataWeather.date.split(" ");
 
-					if (nowDateArr[0] === dateArr[0] && nowDateArr[1] === dateArr[1]) {
+					if (nowDateArr[0] === dateArr[0] &amp;&amp; nowDateArr[1] === dateArr[1]) {
 						let textNode = document.createRange().createContextualFragment(text);
 						articleDOM.appendChild(textNode);
 						break;
@@ -379,7 +407,7 @@ function setForecastWeather(idStation) {
 		.then(data => {
 			// console.info("Forecast weather: ", data);
 
-			if (data >= 400 && data < 600) {
+			if (data >= 400 &amp;&amp; data &lt; 600) {
 				throw new Error("Bad response from server");
 			} else {
 				const section = createSection("forecastWeather");
@@ -393,7 +421,7 @@ function setForecastWeather(idStation) {
 				articleDOM.setAttribute("class", "page__article");
 
 				const dataList = data.list;
-				for (let index = 0, counter = 0; index < dataList.length; index++) {
+				for (let index = 0, counter = 0; index &lt; dataList.length; index++) {
 					const element = dataList[index];
 					const dataWeather = {
 						date: element.dt_txt,
@@ -411,16 +439,16 @@ function setForecastWeather(idStation) {
 					const nowDateArr = nowDate.split(" ");
 					const dateArr = dataWeather.date.split(" ");
 
-					let text = `<div class="weather-data">
-								<p class="weather-data__item"><time class="weather__time" datetime="">${dataWeather.date}</time><br> (datos cada 3horas)</p>
-								<p class="weather-data__item"><span class="weather__description">${dataWeather.description}</span> <span class="weather__temperature">${dataWeather.temperature}°C</span></p>
-								<p class="weather-data__item"><strong>Min:</strong> ${dataWeather.temperatureMin}°C | <strong>Max:</strong> ${dataWeather.temperatureMax}°C</p>
-								<p class="weather-data__item"><strong>Humedad:</strong> ${dataWeather.humidity} + % | <strong>Presión:</strong> ${dataWeather.pressure} psi</p>
-								<p class="weather-data__item"><strong>Viento:</strong> ${dataWeather.windDeg}º | ${dataWeather.windSpeed} km/h</p>
-							</div>`;
+					let text = `&lt;div class="weather-data">
+								&lt;p class="weather-data__item">&lt;time class="weather__time" datetime="">${dataWeather.date}&lt;/time>&lt;br> (datos cada 3horas)&lt;/p>
+								&lt;p class="weather-data__item">&lt;span class="weather__description">${dataWeather.description}&lt;/span> &lt;span class="weather__temperature">${dataWeather.temperature}°C&lt;/span>&lt;/p>
+								&lt;p class="weather-data__item">&lt;strong>Min:&lt;/strong> ${dataWeather.temperatureMin}°C | &lt;strong>Max:&lt;/strong> ${dataWeather.temperatureMax}°C&lt;/p>
+								&lt;p class="weather-data__item">&lt;strong>Humedad:&lt;/strong> ${dataWeather.humidity} + % | &lt;strong>Presión:&lt;/strong> ${dataWeather.pressure} psi&lt;/p>
+								&lt;p class="weather-data__item">&lt;strong>Viento:&lt;/strong> ${dataWeather.windDeg}º | ${dataWeather.windSpeed} km/h&lt;/p>
+							&lt;/div>`;
 
 
-					while (counter < 5) {
+					while (counter &lt; 5) {
 						counter++;
 						index = index + 7;
 						let textNode = document.createRange().createContextualFragment(text);
@@ -469,7 +497,7 @@ function setCameraDGT() {
 		.then(data => {
 			// console.info("Cameras: ", data);
 
-			if (data >= 400 && data < 600) {
+			if (data >= 400 &amp;&amp; data &lt; 600) {
 				throw new Error("Bad response from server");
 			} else {
 				const section = createSection("camera");
@@ -515,4 +543,26 @@ function setCameraDGT() {
 		setNowWeather(station.id);
 		setForecastWeather(station.id);
 	});
-})();
+})();</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#aireMadAPI">aireMadAPI</a></li><li><a href="global.html#clock">clock</a></li><li><a href="global.html#createSection">createSection</a></li><li><a href="global.html#createSectionSubtitle">createSectionSubtitle</a></li><li><a href="global.html#createSectionTitle">createSectionTitle</a></li><li><a href="global.html#functionAnonimAutoExecuted">functionAnonimAutoExecuted</a></li><li><a href="global.html#getCameraDGT">getCameraDGT</a></li><li><a href="global.html#getData">getData</a></li><li><a href="global.html#lastMeasurementPollution">lastMeasurementPollution</a></li><li><a href="global.html#randomData">randomData</a></li><li><a href="global.html#setCameraDGT">setCameraDGT</a></li><li><a href="global.html#setForecastWeather">setForecastWeather</a></li><li><a href="global.html#setNowWeather">setNowWeather</a></li><li><a href="global.html#setPollution">setPollution</a></li><li><a href="global.html#setStations">setStations</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri May 22 2020 23:46:23 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

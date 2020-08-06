@@ -76,8 +76,36 @@ img {
 	font-size: 2rem;
 }
 
+/************ LIST STATIONS ************/
+.stations .list {
+	column-count: 3;
+}
+
+.stations .list__item {
+}
+
+.stations .list__item:not(:last-of-type) p {
+	padding-right: 4rem;
+}
+
+@media (max-width: 1200px) {
+	.stations .list {
+		column-count: 2;
+	}
+}
+
+@media (max-width: 800px) {
+	.stations .list {
+		column-count: 1;
+	}
+
+	.stations .list__item:not(:last-of-type) {
+		padding-right: 0;
+	}
+}
+
 /************ WEATHER NOW ************/
-.weather {
+.weather-data {
 	width: calc(33.333% - 3rem);
 	min-height: 200px;
 	padding: 2rem;
@@ -86,37 +114,44 @@ img {
 	border: 1px solid #000;
 }
 
-.weather:not(:last-of-type) {
+.weather-data:not(:last-of-type) {
 	margin-bottom: 3rem;
 	margin-right: 3rem;
 }
-@media (max-width: 1200px) {
-	.weather {
-		width: calc(50% - 3rem);
-	}
-}
-@media (max-width: 800px) {
-	.weather {
-		width: 100%;
-		min-height: auto;
-	}
-	.weather:not(:last-of-type) {
-		margin-right: 0;
-	}
+
+.weather-data__item {
 }
 
-.weather__item {
-}
-.weather__item:not(:last-of-type) {
+.weather-data__item:not(:last-of-type) {
 	margin-bottom: 0.7rem;
 }
-.weather__time {
+
+.weather-data__time {
 	font-style: italic;
 }
-.weather__description {
+
+.weather-data__description {
 	text-transform: capitalize;
 	font-size: 1.8rem;
 }
-.weather__temperature {
+
+.weather-data__temperature {
 	font-size: 1.8rem;
+}
+
+@media (max-width: 1200px) {
+	.weather-data {
+		width: calc(50% - 3rem);
+	}
+}
+
+@media (max-width: 800px) {
+	.weather-data {
+		width: 100%;
+		min-height: auto;
+	}
+
+	.weather-data:not(:last-of-type) {
+		margin-right: 0;
+	}
 }
