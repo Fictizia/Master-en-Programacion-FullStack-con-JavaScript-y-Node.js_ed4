@@ -1,0 +1,49 @@
+section#login {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    transition: all 1s ease;
+  }
+  
+  .sbl-circ-ripple {
+    height: 68px;
+    width: 68px;
+    color: #008aff;
+    position: relative;
+    transform: rotateZ(45deg);
+  }
+  
+  .sbl-circ-ripple::after, .sbl-circ-ripple::before {
+    content: '';
+    height: 0;
+    width: 0;
+    border: inherit;
+    border: 5px solid;
+    border-radius: inherit;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    animation: circle-ripple  1s linear infinite; }
+  
+  .sbl-circ-ripple::before {
+    animation-delay: -0.5s; }
+  
+  @keyframes circle-ripple {
+    0% {
+      height: 0;
+      width: 0;
+      left: 30px;
+      top: 30px; }
+    100% {
+      height: 68px;
+      width: 68px;
+      left: -5px;
+      top: -5px;
+      opacity: 0; } }
+  
+  
+      

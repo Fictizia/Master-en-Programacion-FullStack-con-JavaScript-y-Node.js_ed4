@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PWA Safim">
+    <meta name="description" content="App para el guardado de peliculas y series">
+    <meta name="theme-color" content="#021427" />
+
+
+    <title>Films App</title>
+
+
+
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/style_menu.css">
+    <link rel="stylesheet" href="/src/css/spinner.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+
+    <link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Oxanium:400,500,600,700,800 display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="manifest" href="./manifest.json">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
+
+
+</head>
+
+<body>
+    <section id="login" class="flex">
+
+        <div class="sbl-circ-ripple"></div>
+        <h4>Safim App</h4>
+        <div id="mydiv" style="color: white;"></div>
+        <section id="offline" class="hidden">
+            <h2>Bienvenido</h2>
+        </section>
+    </section>
+
+
+    <header class="flex hidden">
+        <img id="logoApp" src="src/img/logo_app.png" alt="">
+        <h1>Safim App</h1>
+    </header>
+
+
+
+
+    <section id="menuSection" class="flex hidden">
+        <div id="user_select"></div>
+        <div id="menuPrincipal">
+            <div class="hamburger">
+                <div class="_layer -top"></div>
+                <div class="_layer -mid"></div>
+                <div class="_layer -bottom"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <nav id="princMenu" class=" menuppal " style="opacity: 0;">
+
+        <ul>
+            <a href="./inicio">
+                <li>Buscador</li>
+            </a>
+            <a href="./peliculas_guardadas">
+                <li style="
+                border-top: 1px solid #021427;
+                border-bottom: 1px solid #021427;
+            ">Guardadas</li>
+            </a>
+            <a href="./">
+                <li id="closeSession">Cerrar sesión</li>
+            </a>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="initSection" class="flex hidden">
+
+            <button id="loginButton" class="gnralButtonStyle">Iniciar sesión</button>
+            <button id="registerButton" class="gnralButtonStyle blueStyleButton">Regístrate</button>
+
+        </section>
+        <section id="loginSection" class="flex gnralWhiteStyle hidden">
+            <div class="flex iconsBox">
+                <div> <i class="material-icons">alternate_email</i></div>
+                <input id="userEmail" type="email" placeholder="Correo electrónico">
+            </div>
+            <div class="flex iconsBox">
+                <div> <i class="material-icons">lock</i></div>
+                <input id="userPassword" type="password" placeholder="Contraseña">
+            </div>
+            <button id="loginButtonSection" class="gnralButtonStyle blueStyleButton">Iniciar sesión</button>
+            <div id="separador" class="flex">
+                <hr>
+                <h6>o</h6>
+                <hr>
+            </div>
+            <button id="googleLogin" class="gnralButtonStyle flex"> <img src="src/img/ico-google.png" alt="">
+                Iniciar sesion con Google</button>
+            <p class="linkedClass">Registrarme en Safim</p>
+        </section>
+        <section id="registerSection" class="flex gnralWhiteStyle hidden">
+            <div class="flex iconsBox">
+                <div> <i class="material-icons">face</i></div>
+                <input id="userNameRegtr" type="text" placeholder="Nombre de usuario">
+                <span id="errorMessageName" class="hidden errorMsStyle"></span>
+            </div>
+            <div class="flex iconsBox">
+                <div> <i class="material-icons">alternate_email</i></div>
+                <input id="userEmailRegtr" type="email" placeholder="Correo electrónico">
+                <span id="errorMessageEmail" class="hidden errorMsStyle"></span>
+            </div>
+            <div class="flex iconsBox">
+                <div> <i class="material-icons">lock</i></div>
+                <input id="userPasswordRegtr" type="password" placeholder="Contraseña">
+                <span id="errorMessagePassword" class="hidden errorMsStyle"></span>
+            </div>
+            <button id="registerButtonSection" class="gnralButtonStyle blueStyleButton">Registrarme</button>
+            <div id="separador" class="flex">
+                <hr>
+                <h6>o</h6>
+                <hr>
+            </div>
+
+            <button id="googleLogin" class="gnralButtonStyle flex"> <img src="src/img/ico-google.png" alt="">
+                Iniciar sesion con Google</button>
+            <p class="linkedClass">Ya tengo cuenta</p>
+
+        </section>
+
+
+
+        <section id="searchfilms" class="hidden flex ">
+            <div class="flex" id="searchButton"><i class="material-icons">search</i></div>
+            <input type="text" id="filmName" placeholder="Buscar">
+        </section>
+
+        <section id="newFilm" class="flex whiteSpace"></section>
+
+        <section id="savedFilm" class="flex whiteSpace">
+            <div class="ct-chart"></div>
+        </section>
+
+    </main>
+
+    <template id="templateNew" type="x-tmpl-mustache">
+        <div class="newFilms">
+            <img src="{{image}}" alt="">
+            <div>
+                <h2>{{Title}}</h2>
+                <h3>{{Year}}</h3>
+                <div id="seeFilms" class="flex">
+                    <div class="flex" role="button" aria-pressed="false">
+                        <img src="src/img/noseefilm_ico.png" alt="">
+                    </div>
+                    <span>{{Vista}}</span>
+
+                </div>
+
+            </div>
+            <button class="addFilmButton gnralButtonStyle">{{Button}}</button>
+        </div>
+    </template>
+
+    <template id="templateSaved" type="x-tmpl-mustache">
+        <div class="newFilms">
+            <img src="{{image}}" alt="">
+            <div>
+                <h2>{{Title}}</h2>
+                <h3>{{Year}}</h3>
+            </div>
+
+            <div class="flex" role="button" aria-pressed="{{ariaPress}}">
+                <img src="{{seeIcons}}" alt="">
+            </div>
+
+            <button class="deleteFilmButton gnralButtonStyle">{{Button}}</button>
+        </div>
+    </template>
+
+
+
+    <!-- Registro del Service Worker -->
+    <script>
+
+        
+
+        if (!window.navigator.onLine) {
+
+            document.getElementById('initSection').style.display = 'none'
+            var usuario = localStorage.getItem('nombreUser');
+
+            var userOffline = document.createElement('h2');
+            userOffline.innerHTML = usuario + "<br> <p>Ahora mismo te encuentras sin conexión</p>"
+            document.getElementById('offline').appendChild(userOffline);
+            document.getElementById('offline').classList.remove('hidden');
+            var guardado = localStorage.getItem('datos');
+
+            var tipo = typeof guardado;
+
+            console.log(tipo)
+
+
+            if (guardado !== null && tipo !== 'string') {
+                var offlineButton = document.createElement('button');
+                offlineButton.innerText = "Ver películas guardadas";
+                document.getElementById('offline').appendChild(offlineButton)
+
+                offlineButton.addEventListener('click', () => {
+
+                    var datos = JSON.parse(guardado);
+
+
+                    for (var i = 0; i < datos.length; i++) {
+
+                        var titulos = document.createElement('h3');
+                        titulos.innerText = datos[i].Titulo;
+                        document.getElementById('offline').appendChild(titulos)
+
+                    }
+
+
+                })
+
+
+
+            } else if (tipo === 'string') {
+                var contenido = document.createElement('h3');
+                contenido.innerText = guardado;
+                document.getElementById('offline').appendChild(contenido)
+
+
+            }
+        }
+
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then((reg) => {
+                        console.log('Service worker registered.', reg);
+                    });
+            });
+        }
+    </script>
+
+
+    <script src="https://unpkg.com/page/page.js"></script>
+
+
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+    <script src="/src/js/script.js" type="module"></script>
+
+
+
+</body>
+
+
+</html>
