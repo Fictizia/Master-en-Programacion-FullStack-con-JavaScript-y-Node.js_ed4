@@ -1,8 +1,4 @@
-//Ejercicio ubicacion en el mapa con Leaflet.
-//Variables para guardar la latitud y la longitud del ordenador.
-var lat;
-var lon;
-
+//Ejercicio ubicación en el mapa con Leaflet.
 //Crear icono de leaflet
 var redIcon = L.icon({
   iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-red.png',
@@ -15,15 +11,15 @@ var redIcon = L.icon({
 });
 
 //Promesa para comprobar acceso a la geolocalización del ordenador y obtener su latitud y longitud.
-function miPromesa(){
+function getGeolocation(){
   return new Promise(function(resolve,reject){
     if("geolocation" in navigator){
       console.log("Geolocalización disponible.");  
       navigator.geolocation.getCurrentPosition(function(position){        
-        resolve(
-          lat = position.coords.latitude,
-          lon = position.coords.longitude  
-        )
+        resolve({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude  
+        })
       })
     }else{
       reject(console.warn("Error, geolocalización no disponible."))
@@ -33,22 +29,18 @@ function miPromesa(){
 
 //Funcion que ejecuta la promesa, crea el mapa con la ubicación del ordenador y añade un marker.
 (function(){
-  miPromesa()
-  .then(()=>{
+ getGeolocation()
+  .then((obj) => {
     var map = L.map('map').
-    setView([lat,lon],
+    setView([obj.lat,obj.lon],
     20);
     console.log(`Tus coordenadas geográficas son:
-    Latitud: ${lat}
-    Longitud: ${lon}`);
+    Latitud: ${obj.lat}
+    Longitud: ${obj.lon}`);
     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
     maxZoom: 18
     }).addTo(map);
-    L.marker([lat, lon], {icon: redIcon}).addTo(map).bindPopup("Estas aquí!!");
+    L.marker([obj.lat, obj.lon], {icon: redIcon}).addTo(map).bindPopup("Estas aquí!!");
   })
 })();
-
-
-
-

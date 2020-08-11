@@ -3,8 +3,23 @@
 const btn1 = document.getElementById("btn1");
 btn1.addEventListener("click",function(){
   let clave =  document.getElementById("textBox1").value;
+  if(!/^[A-Za-z]{3,10}$/.test(clave)) {
+    console.warn("El nombre introducido no es valido")
+    return
+  }
+
   let tlf = document.getElementById("textBox2").value;
+  if (!/^[0-9]{9}$/.test(tlf)) {
+    console.warn("El telefono introducido no es valido")
+    return
+  }
+
   let mail = document.getElementById("textBox3").value;  
+  if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+    console.warn("El email introducido no es valido")
+    return
+  }
+
   if(clave && tlf && mail){
     let coincidencias = false;
     for(let i in localStorage){    
