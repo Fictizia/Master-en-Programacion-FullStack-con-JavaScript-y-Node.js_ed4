@@ -1,4 +1,3 @@
-
 /**
  * @file exercise to get photos of the curiosity robot from Mars
  * @author Miguel Martin-Maestro Lopez
@@ -38,7 +37,7 @@ function NasaRequest(soles,limit){
         }                 
       });
     }else{
-       console.log("Límite de llamadas superado, intentelo de nuevo.")
+       reject("Límite de llamadas superado, intentelo de nuevo.")
     };  
   });
 }; 
@@ -49,7 +48,3 @@ async function init(){
   document.getElementById("resultado").querySelector("img").src = currentValue.photos[0].img_src;
 }
 init();
-
-
-
-
