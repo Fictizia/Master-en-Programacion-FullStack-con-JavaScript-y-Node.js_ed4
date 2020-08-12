@@ -1,10 +1,9 @@
 //Se necesita añadir la api key de OMDB en la url de mas abajo.
 //Ejercicio peliculas,series y juegos con Firebase Realtime Database.
 
-
 //Configuracion e inicializacion de Firebase Realtime Database.
 const firebaseConfig = {
-  apiKey: "AIzaSyCSF_GPjJctgI8Wjb_IfcESzbShWnPv7mo",
+  apiKey: "",
   authDomain: "mispeliculas-2.firebaseapp.com",
   databaseURL: "https://mispeliculas-2.firebaseio.com",
   projectId: "mispeliculas-2",
@@ -18,14 +17,24 @@ firebase.initializeApp(firebaseConfig)
 //Referencia a la coleccion de la base de datos.
 const ref = firebase.database().ref("/Pelis")
 
-//Fetch de la pelicula introducida en el input, añadido a evento del boton.
+//Arrays para las peliculas buscadas y la lista de peliculas guardadas para acceder a sus id y realizar comprobaciones 
 let fetchList = []
 let list = []
 
+//Evento para crear la lista de peliculas añadidas
+ref.on("value", snapshot => {
+  list = []
+  const films = snapshot.val()
+  for (const key in films) {
+    const name = films[key].Titulo
+    list.push({key, name})
+  }
+})
 
+//Fetch de la pelicula introducida en el input, añadido a evento del boton.
 function search(){  
   let title = document.getElementById("textBox").value
-  let url = `http://www.omdbapi.com/?s=${title}&apikey=4d37a518`  //**AÑADIR API KEY AQUI**
+  let url = `http://www.omdbapi.com/?s=${title}&apikey=APIKEY`  //**AÑADIR API KEY AQUI**
   fetch(url)
   .then(data => data.json())
   .then(res => {
@@ -51,31 +60,32 @@ function addListeners(){
   let arrBotones = Array.from(botones);
   for(let i in arrBotones){
     arrBotones[i].addEventListener("click", function() {
-      console.log(list)
-      if(list.map((item) => { 
-        console.log('ITEM NAME ',item.name)
-        console.log('FETCHLIST TITLE ',fetchList[i].Title)
-        if (item.name === fetchList[i].Title){ console.log('COINCIDENCIA!!!!') }
-      })) {
-        ref.push({
-        Titulo: fetchList[i].Title,
-        Año: fetchList[i].Year,
-        Tipo: fetchList[i].Type,
-        Imagen: fetchList[i].Poster,
-        Info: `"No has agregado información."`
-        })
-      } else {
-        console.log('La pelicula ya esta guardada')
-      }
-
-      console.log(`"${fetchList[i].Title}" ha sido añadida a tu lista.`)
-
+      addFilm(fetchList[i]) 
     })
   }
 }
 
-
-
+//Funcion para comrpobar si exite ya la pelicula y pushearla o no
+function addFilm(filmDetails) {
+  let coincidencias = false
+  list.map( item => {
+    if(item.name === filmDetails.Title){
+      coincidencias = true
+    }
+  })
+  if(coincidencias){
+    console.log('La peli ya esta añadida')
+  } else {
+    ref.push({
+   Titulo: filmDetails.Title,
+   Año: filmDetails.Year,
+   Tipo: filmDetails.Type,
+   Imagen: filmDetails.Poster,
+   Info: `"No has agregado información."`
+   })
+   console.log(`"${filmDetails.Title}" ha sido añadida a tu lista.`)
+ }
+}
 
 //Lectura de datos de la base y pintarlos en el HTML.
 ref.on('value', (snapshot) => {
@@ -89,9 +99,6 @@ ref.on('value', (snapshot) => {
   addGetListeners()
 })
 
-
-
-
 //Funcion para pintar en el HTML.
 function pintarPeli (titulo){
   let div = document.createElement("div")
@@ -100,16 +107,6 @@ function pintarPeli (titulo){
 }
 
 //Funcion de borrar para los botones "BORRAR".
-
-ref.on("value", snapshot => {
-  list = []
-  const films = snapshot.val()
-  for (const key in films) {
-    const name = films[key].Titulo
-    list.push({key, name})
-  }
-})
-
 function deleteFilm(){
   let id = event.target.parentElement.firstChild.textContent
   
@@ -129,41 +126,56 @@ function addDeleteListeners(){
 
 //Actualizar información sobre la película/serie.
 function updateFilmName(){
-  let id = event.target.parentElement.firstChild.textContent;
-  let elemento = firebase.database().ref(`Pelis/${id}`);
-  let update = prompt(`¿Quieres añadir informacion a ${id}?`);
-  elemento.update({Info:update});
-  console.log(`Añadida información a la pelicula/serie ${id} => ${update}`);
-};
+  let id = event.target.parentElement.firstChild.textContent
+  let update = prompt(`¿Quieres añadir informacion a ${id}?`)
+
+  if(update){
+    list.map(e => {
+      if (e.name === id) {
+        ref.child(e.key).update({Info:update})
+      }
+    })
+    console.log(`Añadida información a la pelicula/serie ${id} => ${update}`)
+  }
+}
 
 //Agregar listeners para los botones "EDITAR".
 function addUpdateListeners(){
-  let botones = document.querySelectorAll(".update");
-  let arrBotones = Array.from(botones);
-  arrBotones.forEach((element)=>element.addEventListener("click",updateFilmName));
-};
+  let botones = document.querySelectorAll(".update")
+  let arrBotones = Array.from(botones)
+  arrBotones.forEach((element)=>element.addEventListener("click",updateFilmName))
+}
 
 //Leer los datos y mostrarlo por el HTML.
 function getFilmData(){
-  let id = event.target.parentElement.firstChild.textContent;
-  let elemento = firebase.database().ref(`Pelis/${id}`); 
-  let fixed = document.getElementById("datosPeli");
+  let id = event.target.parentElement.firstChild.textContent
+  let key
+
+  list.map(e => {
+    if (e.name === id) {
+      key = e.key
+    }
+  })
+
+  let elemento = firebase.database().ref(`Pelis/${key}`) 
+  let fixed = document.getElementById("datosPeli")
   elemento.once('value', (snapshot) => {
-    let datos = snapshot.val();
-    fixed.innerHTML ="";
-    fixed.style.visibility = "visible";
-    document.getElementById("borroso").style.visibility = "visible";
-    fixed.innerHTML += `<img src="${datos.Imagen}"><p>Titulo: ${datos.Titulo} </br> Año: ${datos.Año} </br> Tipo: ${datos.Tipo} </br>Info: ${datos.Info}</p><button id="closeFixed"><img src="img/close24.png" alt="x" /></button>`;
-  });
+    let datos = snapshot.val()
+    console.log(datos)
+    fixed.innerHTML =""
+    fixed.style.visibility = "visible"
+    document.getElementById("borroso").style.visibility = "visible"
+    fixed.innerHTML += `<img src="${datos.Imagen}"><p>Titulo: ${datos.Titulo} </br> Año: ${datos.Año} </br> Tipo: ${datos.Tipo} </br>Info: ${datos.Info}</p><button id="closeFixed"><img src="img/close24.png" alt="x" /></button>`
+  })
   document.getElementById("closeFixed").addEventListener("click",function(){
-    fixed.style.visibility = "hidden";
-    document.getElementById("borroso").style.visibility = "hidden";
-  });
-};
+    fixed.style.visibility = "hidden"
+    document.getElementById("borroso").style.visibility = "hidden"
+  })
+}
 
 //Agregar eventos para los botones "ver".
 function addGetListeners(){
-  let botones = document.querySelectorAll(".get");
-  let arrBotones = Array.from(botones);
-  arrBotones.forEach((element)=>element.addEventListener("click",getFilmData));
-};
+  let botones = document.querySelectorAll(".get")
+  let arrBotones = Array.from(botones)
+  arrBotones.forEach((element)=>element.addEventListener("click",getFilmData))
+}

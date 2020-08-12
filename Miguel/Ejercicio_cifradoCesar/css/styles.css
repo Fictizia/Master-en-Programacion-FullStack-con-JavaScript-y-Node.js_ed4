@@ -25,3 +25,18 @@ h1{
   left: 50%;
   transform: translateX(-50%);
 }
+.error_info{
+  width: 70%;
+  background-color: rgb(255, 51, 0);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+  border-radius: 4px;
+  padding: 1% 2%;
+  color: white;
+  visibility: hidden;
+}
+
+
