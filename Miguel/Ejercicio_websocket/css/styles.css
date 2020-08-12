@@ -1,0 +1,40 @@
+/* a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}nav ul{list-style-type:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}img{display:block}video{display:block}a{text-decoration:none}div{box-sizing:border-box} */
+
+body{
+  padding: 1%;
+  background-color: #004A7C;
+  color: white;
+  font-family: calibri,helvetica,sans-serif;
+}
+
+.flexWrapper{
+  width: 70%;
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.wrapper1{
+  padding: 0 30px ;
+  border: 2px solid white;
+  background-color: rgb(47, 128, 182);
+  border-radius: 4px;
+  height: fit-content;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.wrapper2{
+  background-color: rgb(47, 128, 182);
+}
+
+#contador{
+  font-size: 3rem;
+  color: gold;
+}
+
+table, th, td{
+  border:1px solid white;
+  border-collapse: collapse;
+  padding: 10px;
+}

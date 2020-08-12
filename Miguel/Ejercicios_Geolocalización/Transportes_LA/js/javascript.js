@@ -25,7 +25,7 @@ function initMap(){
 }
 
 //Función para hacer fetch de los datos de ubicación de los vehículos y llamar a la funcion markers().
-function llamada(url){
+function fetchVehiclesData(url){
   fetch(url)
   .then(res => res.json())
   .then(data => {
@@ -54,7 +54,7 @@ function markers(arr){
 }
 
 //Llamada a la función del fetch.
-llamada(url);  
+fetchVehiclesData(url);  
 
 //Función para actualizar las posiciones de los vehiculos cada 30 segundos y remover los markers y clusters antiguos.
 setInterval(() => {
@@ -64,13 +64,6 @@ setInterval(() => {
   }
   markersArr = [];
   markerCluster.clearMarkers();
-  llamada(url); 
-  console.log("Posición de los vehículos refrescada.");
+  fetchVehiclesData(url); 
   },30000
 )
-
-
-
-
-
-

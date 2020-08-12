@@ -27,11 +27,17 @@ function cesar(){
     });
     document.getElementById("resultado").innerText = resultado;
   }else{
-    throw new Error("Solo se puede introducir letras mayúsculas o minúsculas(excluidas 'ñ' y 'Ñ')en el texto y únicamente números del 1 al 9 en el desplazamiento");
+    document.querySelector('.error_info').style.visibility = "visible"
+    throw new Error();
   }
 };
 //Listener al boton.
 document.getElementById("btn").addEventListener("click",cesar);
+
+//Listener para oculatar el mensaje de error cuando se haga focus sobre el input de texto
+document.getElementById("textBox").addEventListener('focus', () => {
+  document.querySelector('.error_info').style.visibility = "hidden"
+})
 
 //Funcion para obtener texto y movimiento.
 function getTextAndMove(){
@@ -51,5 +57,7 @@ function validar(txt,move){
   const patronNum = /^[1-9]$/;
   if(patronTxt.test(txt) && patronNum.test(move)){
     return true;
+  } else {
+    return false
   }
 };

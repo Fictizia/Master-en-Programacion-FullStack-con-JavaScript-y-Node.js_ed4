@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: main.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: main.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file Funciones para fetch de los datos, render de las gráficas y tablas y listeners para los eventos en estas.
+ * @author Miguel Martin-Maestro Lopez
+ * @version 1.0.0
+ */
+
+ /**
+  * @const {string} apiKey API KEY NASA para las llamadas.
+  * @see https://api.nasa.gov/
+  */
+const apiKey = '';// &lt;= API KEY
+
+
+
+/**
+ * Primer fetch de la imagen del día. 
+ * @param {string} url url para fetch a la API APOD de la NASA.
+ */
+function getImage(url) {
+  fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    let template = templates[3].template;
+    document.querySelector('.content').innerHTML = template;
+    if(data.media_type == "image"){
+      let autor = data.copyright ? data.copyright : "";
+      document.querySelector('#picture').innerHTML = `&lt;img class="nasaImage" id="nasaImage" src="${data.url}" data-title="${data.title}">&lt;figcaption>${autor} - ${data.title}&lt;/figcaption>`;
+    } else {
+      document.querySelector('#picture').innerHTML = `&lt;p>Image not available or wrong date, try another date.&lt;/p>`;
+    }
+    addImageListeners();
+  })
+  .catch(err => console.error('Error in fetch getImage', err));
+}
+
+/**
+ *Listeners para el botón 'search' para buscar imágenes de dias concretos y para el botón de 'save' para guardar la imagen en Firebase.
+ */
+function addImageListeners() {
+  document.getElementById('btnSearch').addEventListener('click', function(){
+    let date = document.getElementById('dateSelect').value;
+    getImage(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&amp;date=${date}`);
+  });
+  document.getElementById('saveImg').addEventListener('click', saveImg);
+}
+
+/**
+ * Fetch para obtener los datos de objetos cercanos a la tierra, guardarlos en un objeto y renderizar los datos
+ * @type {object}
+ * @param {string} url url del fetch a la API Asteroids - NeoWs 
+ */
+var nearObjectsArr = [];
+
+function getNearObjects(url) {
+  fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    nearObjectsArr = data.near_earth_objects;
+    for(let i in nearObjectsArr) {
+      let option = `&lt;option value="${i}">${i}&lt;/option>`;
+      document.querySelector('#nearObjectSelect').innerHTML += option;
+    }
+    renderChartAndTable();
+    listenersToSelect();
+  })
+  .catch(err => console.error('Error in fetch getNearObjects', err));
+} 
+
+/**
+ *Listener para el 'input type=select' de la vista de objetos cercanos a la tierra
+ * permite seleccionar uno de los proximos 7 dias, por defecto enseña el dia actual
+ * Renderiza la tabla y la gráfica con los datos tras elegir una nueva fecha
+ */
+function listenersToSelect() {
+  document.getElementById('nearObjectSelect').addEventListener('change', () => {
+    document.getElementById("nearObjectChart").innerHTML = `&lt;canvas id="myChart">&lt;/canvas>`;
+    document.getElementById("nearObjectTable").innerHTML = `
+      &lt;tr>
+        &lt;th>ID&lt;/th>&lt;th>Distance&lt;/th>&lt;th>Speed (KM/s)&lt;/th>&lt;th>Diameter(KM)&lt;/th>&lt;th>Potentially hazardous&lt;/th>&lt;th>Link&lt;/th>&lt;th>Firebase&lt;/th>
+      &lt;/tr>
+    `;
+    renderChartAndTable();
+  });
+}
+
+/**
+ *Fetch para datos del programa de tranferencia tecnológica de la NASA y pintar la tabla con los datos.
+ * @param {string} url url del fetch a la API de Technology Transfer 
+ */
+function getTechTransfer(url) {
+  fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    data.results.forEach(element => {
+      document.getElementById('techTransferTable').innerHTML += `
+        &lt;tr>
+          &lt;td>${element[4]}&lt;/td>&lt;td>${element[3]}&lt;/td>&lt;td>${element[5]}&lt;/td>&lt;td>&lt;a href="${element[10]}" target="_blank">IMG&lt;/a>&lt;/td>&lt;td>&lt;a href="https://technology.nasa.gov/patent/${element[4]}" target="_blank">Read more...&lt;/a>&lt;/td>&lt;td>&lt;button class="btnStandar" data-title="${element[4]}" data-link="https://technology.nasa.gov/patent/${element[4]}">Save&lt;/button>&lt;/td>
+        &lt;/tr>
+      `;
+    });
+  })
+  .then(() => listenerTechTransferTable())
+  .catch(err => {
+    console.error('Error in fetch getTechTransfer', err);
+    document.getElementById('techTransferTable').innerHTML = `CORS ERROR`;
+  });
+} 
+
+/**
+ *Función para renderizar gráfica y tablas de datos de la funcion getNearObjects()
+ *@see https://www.chartjs.org/
+ */
+function renderChartAndTable() {
+  //CHART
+  let ctx = document.getElementById('myChart').getContext('2d');
+  let dataChart = {
+    type: 'bar',
+    data: {
+      labels: [], 
+      datasets: [{
+        hoverBackgroundColor: "white",
+        margin: "0 auto",
+        barPercentage: 0.3,
+        borderWidth: 4,
+        label: 'Distance to earth (km): ',
+        data: [],
+        backgroundColor: ['rgba(255, 99, 132, 1)','rgba(54, 162, 235, 1)','rgba(255, 206, 86, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)','rgba(255, 159, 132, 1)','rgba(255, 99, 64, 1)','rgba(54, 162, 86, 1)','rgba(255, 206, 235, 1)','rgba(75, 192, 255, 1)','rgba(153, 102, 192, 1)','rgba(255, 99, 64, 1)','rgba(255, 159, 132, 1)','rgba(54, 206, 235, 1)','rgba(255, 162, 86, 1)','rgba(75, 102, 192, 1)','rgba(255, 192, 255, 1)','rgba(153, 159, 64, 1)','rgba(54, 99, 132, 1)','rgba(255, 162, 235, 1)','rgba(75, 206, 86, 1)','rgba(255, 192, 192, 1)','rgba(255, 102, 255, 1)','rgba(153, 159, 64, 1)'
+        ],
+      }]
+    },
+    options: {legend: {
+      labels: {
+          fontColor: "white",
+          fontSize: 18
+      }
+      },scales: { yAxes: [ {ticks: {beginAtZero: true}}]}}
+  };
+  var myChart = new Chart(ctx, dataChart);
+  //TABLE
+  let currentValues = nearObjectsArr[`${document.getElementById("nearObjectSelect").value}`];
+  currentValues.forEach(element => {
+    document.getElementById("nearObjectTable").innerHTML += `
+      &lt;tr>
+        &lt;td>${element.name}&lt;/td>&lt;td>${element.close_approach_data[0].miss_distance.kilometers}&lt;/td>&lt;td>${element.close_approach_data[0].relative_velocity.kilometers_per_second}&lt;/td>&lt;td>${element.estimated_diameter.kilometers.estimated_diameter_max}&lt;/td>&lt;td>${element.is_potentially_hazardous_asteroid}&lt;/td>&lt;td>&lt;a href="${element.nasa_jpl_url}" target="_blank">Read more...&lt;/a>&lt;/td>&lt;td>&lt;button class="btnStandar" data-title="${element.name}" data-link="${element.nasa_jpl_url}">Save&lt;/button>&lt;/td>
+      &lt;/tr>
+    `;
+    dataChart.data.labels.push(element.name);
+    dataChart.data.datasets[0].data.push(element.close_approach_data[0].miss_distance.kilometers);
+  });  
+  listenerNearObjectsTable();
+  myChart.update(); 
+}
+
+/**
+ *Función para guardar la imagen del fetch getImage() en firebase.
+ */
+function saveImg() {
+  if(firebase.auth().currentUser) {
+    let imgSrc = document.getElementById('nasaImage').src;
+    let imgTitle = document.getElementById('nasaImage').dataset.title;
+    let user = firebase.auth().currentUser.providerData[0].email.split(/@/);
+    let userFirebaseRef = firebase.database().ref(`Users/${user[0]}/Images/${imgTitle}`);
+    userFirebaseRef.set({ title: imgTitle, url: imgSrc});
+  } else {
+    throw new Error('user not connected');
+  }
+}
+/**
+ *Función para añadir listener a los botones de guardar en Firebase de la tabla de datos de objetos cercanos.
+ */
+function listenerNearObjectsTable() {
+  document.getElementById('nearObjectTable').addEventListener('click', function(e) {
+    if(firebase.auth().currentUser){
+      let nearObjectTitle =  e.target.dataset.title;
+      let nearObjectLink = e.target.dataset.link;
+      let user = firebase.auth().currentUser.providerData[0].email.split(/@/);
+      let userFirebaseRef = firebase.database().ref(`Users/${user[0]}/Near_Objects/${nearObjectTitle}`);
+      userFirebaseRef.set({title: nearObjectTitle, url: nearObjectLink});
+    } else {
+      throw new Error('user not connected');
+    }
+  });
+}
+/**
+ *Función para añadir listeners a los botones de guardar en Firebase de la tabla de transferencia tecnólogica.
+ */
+function listenerTechTransferTable() {
+  document.getElementById('techTransferTable').addEventListener('click', function(e) {
+    if(firebase.auth().currentUser){
+      let techTitle =  e.target.dataset.title;
+      let techLink = e.target.dataset.link;
+      let user = firebase.auth().currentUser.providerData[0].email.split(/@/);
+      let userFirebaseRef = firebase.database().ref(`Users/${user[0]}/Tech_Transfer/${techTitle}`);
+      userFirebaseRef.set({title: techTitle, url: techLink});
+    } else {
+      throw new Error('user not connected');
+    }
+  });
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#accountListeners">accountListeners</a></li><li><a href="global.html#addImageListeners">addImageListeners</a></li><li><a href="global.html#apiKey">apiKey</a></li><li><a href="global.html#dataButtonsListeners">dataButtonsListeners</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#firebaseConfig">firebaseConfig</a></li><li><a href="global.html#firebaseUserList">firebaseUserList</a></li><li><a href="global.html#getImage">getImage</a></li><li><a href="global.html#getTechTransfer">getTechTransfer</a></li><li><a href="global.html#listenerNearObjectsTable">listenerNearObjectsTable</a></li><li><a href="global.html#listenersToSelect">listenersToSelect</a></li><li><a href="global.html#listenerTechTransferTable">listenerTechTransferTable</a></li><li><a href="global.html#listenerUserDataButtons">listenerUserDataButtons</a></li><li><a href="global.html#logIn">logIn</a></li><li><a href="global.html#logInWithGithub">logInWithGithub</a></li><li><a href="global.html#logOut">logOut</a></li><li><a href="global.html#nearObjectsArr">nearObjectsArr</a></li><li><a href="global.html#ref">ref</a></li><li><a href="global.html#renderChartAndTable">renderChartAndTable</a></li><li><a href="global.html#renderUserData">renderUserData</a></li><li><a href="global.html#renderView">renderView</a></li><li><a href="global.html#saveImg">saveImg</a></li><li><a href="global.html#signUp">signUp</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Mon May 11 2020 00:11:51 GMT+0200 (hora de verano de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

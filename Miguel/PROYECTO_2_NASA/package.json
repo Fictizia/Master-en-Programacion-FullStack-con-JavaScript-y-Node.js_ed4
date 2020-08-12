@@ -1,0 +1,30 @@
+{
+  "name": "proyecto-nasa-master-fullstack-fictizia",
+  "version": "1.0.0",
+  "description": "Segundo proyecto del Master-Fullstack en el que partire de las APIs de la NASA.",
+  "main": "all.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm install && gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelmml/PROYECTO-NASA-Master-Fullstack-Fictizia.git"
+  },
+  "author": "Miguel MML",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguelmml/PROYECTO-NASA-Master-Fullstack-Fictizia/issues"
+  },
+  "homepage": "https://github.com/miguelmml/PROYECTO-NASA-Master-Fullstack-Fictizia#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-rename": "^2.0.0",
+    "jsdocs": "^1.0.0",
+    "jshint": "^2.11.0"
+  }
+}

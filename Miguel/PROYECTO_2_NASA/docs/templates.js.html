@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: templates.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: templates.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file archivo que contiene el objeto que contiene las diferentes plantillas para las vistas
+ */
+const templates = [
+  {
+    idTemp: "home",
+    template: `
+    &lt;div class="homeInfo__wrapper">
+      &lt;h2>-A NASA project for Master-fullstack Fictizia-&lt;/h2>
+      &lt;p class="homeInfo">In this app you will be able to consult data available from some NASA APIs, such as the astronomical image of the day, information about near-Earth asteroids and information from NASA's technology transfer program, these last two sources of information provide links to articles and more detailed data from different official NASA websites. You can also create an account to save information you are interested in or the images that you like the most.
+      &lt;br>
+      &lt;br>
+      NASA's APIs portal provides many more sources of data for developers, in addition to those contained in this application, if you are interested and want to know more about data provided, you can consult their APIs catalog on their 
+      &lt;a href="https://api.nasa.gov/" target="_blank" class="nasaLink">official website.&lt;/a>
+      &lt;br>
+      &lt;br>
+      👽 Greetings 👽 
+      &lt;/p>
+    &lt;/div>
+    `
+  },
+  {
+    idTemp: "account",
+    template: `
+      &lt;h2>Account view&lt;/h2>
+      &lt;div class="logInWrapper">
+        &lt;h3>- Firebase authentication -&lt;/h3>      
+        &lt;input id="textBox" type="text" placeholder="Email">
+        &lt;input id="passBox" type="password" placeholder="Password">
+        &lt;button class="btnStandar" id="btnSignUp">Sign Up&lt;/button>
+        &lt;button class="btnStandar" id="btnLogIn">Log In&lt;/button>
+        &lt;button class="btnStandar" id="btnGitHub">GitHub Log In&lt;/button>
+        &lt;button class="btnStandar" id="btnLogOut">Log Out&lt;/button>
+        &lt;button class="btnStandar" id="btnRemove">Delete&lt;/button>
+        &lt;div class="actionInfo__wrapper">
+          &lt;p id="actionInfo">ℹ&lt;/p>
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="sessionWrapper">
+        &lt;div class="sessionWrapper__userList">
+          &lt;h3>- User list -&lt;/h3>
+          &lt;div id="userList">&lt;/div>
+        &lt;/div>
+        &lt;div class="sessionWrapper__userData">
+          &lt;button class="btnStandar" id="btnMyData">My data&lt;/button>
+          &lt;ul id="myData">&lt;/ul>
+        &lt;/div>
+      &lt;/div>
+    `
+  },
+  {
+    idTemp: "data",
+    template: `
+      &lt;h2>Data view&lt;/h2>
+      &lt;div class="dataButtons">
+        &lt;a href="./data/nearObjects" class="dataButtons__a" id="nearObjects">Near Objects&lt;/a>
+        &lt;a href="./data/pictureOfTheDay" class="dataButtons__a" id="pictureOfTheDay"> Astronomy Picture of the Day&lt;/a>
+        &lt;a href="./data/techTransfer" class="dataButtons__a" id="techTransfer">Tech Transfer&lt;/a>
+      &lt;/div>
+    `
+  },
+  {
+    idTemp: "pictureOfTheDay",
+    template: `
+      &lt;h2>Picture of the day view&lt;/h2>
+      &lt;div class="pictureOfTheDay__wrapper">
+        &lt;div class="imgDayButtons">
+          &lt;input class="dateSelect" id="dateSelect" type="date">
+          &lt;button class="btnStandar" id="btnSearch">Search&lt;/button>
+          &lt;button class="btnStandar" id="saveImg">Save in Firebase&lt;/button>
+        &lt;/div>
+        &lt;figure id="picture">&lt;/figure>
+      &lt;/div>
+    `
+  },
+  {
+    idTemp: "nearObjects",
+    template: `
+      &lt;h2>Near Objects view&lt;/h2>
+      &lt;select  class="nearObjectsSelect" id="nearObjectSelect">&lt;/select>
+      &lt;div class="wrapperChart" id="nearObjectChart">
+        &lt;canvas id="myChart">&lt;/canvas>
+      &lt;/div>
+      &lt;div class="wrapperTable">
+        &lt;table id="nearObjectTable">
+          &lt;tr>
+            &lt;th>ID&lt;/th>&lt;th>Distance(Km)&lt;/th>&lt;th>Speed(Km/s)&lt;/th>&lt;th>Diameter(Km)&lt;/th>&lt;th>Potentially hazardous&lt;/th>&lt;th>Link&lt;/th>&lt;th>Firebase&lt;/th>
+          &lt;/tr>
+        &lt;/table>
+      &lt;/div>
+    `
+  },
+  {
+    idTemp: "techTransfer",
+    template: `
+      &lt;h2>Tech transfer view&lt;/h2>
+      &lt;div class="wrapperTable">
+        &lt;table id="techTransferTable">
+          &lt;tr>
+            &lt;th>ID&lt;/th>&lt;th>Description&lt;/th>&lt;th>Type&lt;/th>&lt;th>Image&lt;/th>&lt;th>Link&lt;/th>&lt;th>Firebase&lt;/th>
+          &lt;/tr>
+        &lt;/table>
+      &lt;/div>
+    `
+  }
+];</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#accountListeners">accountListeners</a></li><li><a href="global.html#addImageListeners">addImageListeners</a></li><li><a href="global.html#apiKey">apiKey</a></li><li><a href="global.html#dataButtonsListeners">dataButtonsListeners</a></li><li><a href="global.html#deleteUser">deleteUser</a></li><li><a href="global.html#firebaseConfig">firebaseConfig</a></li><li><a href="global.html#firebaseUserList">firebaseUserList</a></li><li><a href="global.html#getImage">getImage</a></li><li><a href="global.html#getTechTransfer">getTechTransfer</a></li><li><a href="global.html#listenerNearObjectsTable">listenerNearObjectsTable</a></li><li><a href="global.html#listenersToSelect">listenersToSelect</a></li><li><a href="global.html#listenerTechTransferTable">listenerTechTransferTable</a></li><li><a href="global.html#listenerUserDataButtons">listenerUserDataButtons</a></li><li><a href="global.html#logIn">logIn</a></li><li><a href="global.html#logInWithGithub">logInWithGithub</a></li><li><a href="global.html#logOut">logOut</a></li><li><a href="global.html#nearObjectsArr">nearObjectsArr</a></li><li><a href="global.html#ref">ref</a></li><li><a href="global.html#renderChartAndTable">renderChartAndTable</a></li><li><a href="global.html#renderUserData">renderUserData</a></li><li><a href="global.html#renderView">renderView</a></li><li><a href="global.html#saveImg">saveImg</a></li><li><a href="global.html#signUp">signUp</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Mon May 11 2020 00:11:51 GMT+0200 (hora de verano de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

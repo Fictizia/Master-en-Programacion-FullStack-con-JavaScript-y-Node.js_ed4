@@ -9,32 +9,28 @@
  * @description fetch to get Madrid pollution data
 */
 (function(){
-    fetch("http://airemad.com/api/v1/pollution")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
+  fetch("http://airemad.com/api/v1/pollution")
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
 
-        var contaminacion = data[1];
+    var contaminacion = data[1];
 
-        for(var clave in contaminacion){
+    for(var clave in contaminacion){
+      if( clave != "id" && clave != "name"){
 
-            if( clave != "id" && clave != "name"){
-
-                var datosContaminacion = contaminacion[clave].parameter + " = " + contaminacion[clave].values[0].valor +" "+ String.fromCharCode(181) + "g/m3 medido mediante " + contaminacion[clave].technique;                
-
-                var p = document.createElement("p");
-                p.append(datosContaminacion);
-                 
-                var salto = document.createElement("br")
-                p.append(salto);
-
-                document.getElementById("resultadoPolucion").append(p);
-            }
-        }    
-    })
-    .catch(function(error){console.error('Error:', error)
-    });
+        var datosContaminacion = contaminacion[clave].parameter + " = " + contaminacion[clave].values[0].valor +" "+ String.fromCharCode(181) + "g/m3 medido mediante " + contaminacion[clave].technique;                
+        var p = document.createElement("p");
+        p.append(datosContaminacion);
+        var salto = document.createElement("br")
+        p.append(salto);
+        document.getElementById("resultadoPolucion").append(p);
+      }
+    }    
+  })
+  .catch(function(error){console.error('Error:', error)
+  });
 })();
 
 /** 
@@ -42,38 +38,37 @@
  * @description fetch to get the meteorology data of madrid
 */
 (function (url){
-    fetch("http://airemad.com/api/v1/weather/P001")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data){
+  fetch("http://airemad.com/api/v1/weather/P001")
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
 
-        var listaMetereologia = data.list;
+    var listaMetereologia = data.list;
 
-        for(i = 0; i < listaMetereologia.length; i++){
-             if(listaMetereologia[i].dt_txt.slice(11) == "21:00:00"){                
+    for(i = 0; i < listaMetereologia.length; i++){
+      if(listaMetereologia[i].dt_txt.slice(11) == "21:00:00"){                
 
-                var p = document.createElement("p");
-                p.innerHTML = "Fecha: " + listaMetereologia[i].dt_txt.slice(0,10) + "<br/>" + listaMetereologia[i].main.temp + "°C "+ "<br/>" + "Min " +  listaMetereologia[i].main.temp_min + " | " + "Max " + listaMetereologia[i].main.temp_max + "<br/>" + "Hum " + listaMetereologia[i].main.humidity + "%" + " | " + "Press " + listaMetereologia[i].main.pressure + "psi" + "<br/>" + "Viento " + listaMetereologia[i].wind.deg + "º" + " | " + listaMetereologia[i].wind.speed + "km/h";
+        var p = document.createElement("p");
+        p.innerHTML = "Fecha: " + listaMetereologia[i].dt_txt.slice(0,10) + "<br/>" + listaMetereologia[i].main.temp + "°C "+ "<br/>" + "Min " +  listaMetereologia[i].main.temp_min + " | " + "Max " + listaMetereologia[i].main.temp_max + "<br/>" + "Hum " + listaMetereologia[i].main.humidity + "%" + " | " + "Press " + listaMetereologia[i].main.pressure + "psi" + "<br/>" + "Viento " + listaMetereologia[i].wind.deg + "º" + " | " + listaMetereologia[i].wind.speed + "km/h";
 
-                var img = document.createElement("img");
-                img.src = "http://openweathermap.org/img/wn/" + listaMetereologia[i].weather[0].icon + "@2x.png";
-              
-                img.style.backgroundColor = "skyblue";
-                img.style.borderRadius = "100%";
+        var img = document.createElement("img");
+        img.src = "http://openweathermap.org/img/wn/" + listaMetereologia[i].weather[0].icon + "@2x.png";
+      
+        img.style.backgroundColor = "skyblue";
+        img.style.borderRadius = "100%";
 
-                var div = document.createElement("div");
-                div.classList.add("wrapperMet");
-                document.getElementById("resultadoTiempo").append(div);
+        var div = document.createElement("div");
+        div.classList.add("wrapperMet");
+        document.getElementById("resultadoTiempo").append(div);
 
-                div.append(img);
-
-                div.append(p);
-            }
-        }        
-    })
-    .catch(function(error){console.error('Error:', error)
-    });
+        div.append(img);
+        div.append(p);
+    }
+    }        
+  })
+  .catch(function(error){console.error('Error:', error)
+  });
 })();
 
 
@@ -84,14 +79,12 @@ var camaras = ["06303","06304","06305","06306","06308","09303","07306","09307","
  * @description fetch to get the traffic camera view of madrid
 */
 (function(){
-
-    var camara = camaras[Math.round(Math.random()*(camaras.length - 0) + 0)];
-    var urlCamara = "http://informo.munimadrid.es/cameras/Camara" + camara +".jpg";
-    
-    var img = document.createElement("img");
-    img.setAttribute("src",urlCamara);
-    img.setAttribute("id","imgCam");
-    document.getElementById("resultadoCam").append(img);
-
+  var camara = camaras[Math.round(Math.random()*(camaras.length - 0) + 0)];
+  var urlCamara = "http://informo.munimadrid.es/cameras/Camara" + camara +".jpg";
+  
+  var img = document.createElement("img");
+  img.setAttribute("src",urlCamara);
+  img.setAttribute("id","imgCam");
+  document.getElementById("resultadoCam").append(img);
 })();
 
