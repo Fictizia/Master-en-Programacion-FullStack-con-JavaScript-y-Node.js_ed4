@@ -20,10 +20,15 @@ let urlAPI = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-ficti
 /**
  * @const keyAPI
  * @description API token 'New York Times Best Sellers'.
+ * Change the string 'XXXXXXXXX' by the API KEY
+ *   1 - Go to your account: https://developer.nytimes.com/accounts/login
+ *   2 - Go to the link: https://developer.nytimes.com/my-apps
+ *   3 - Find your app or create one new
+ *   4 - Copy the API KEY generated or create one new
  * @type {String}
  * @see Used in: {@link functionAnonimAutoExecuted}
  */
-let keyAPI = "RiUeh7HSSb30pr2EOZeY2JIJ1oiM67Yo";
+let keyAPI = "XXXXXXXXX";
 
 
 
@@ -38,38 +43,38 @@ let keyAPI = "RiUeh7HSSb30pr2EOZeY2JIJ1oiM67Yo";
  * @param {String} url - root of the API
  * @param {String} action - name of the action to excute
  * @return {Object}
- * @see Used inside: {@link addLoader}, {@link removeLoader}, {@link setAction}, {@link error404}
+ * @see Used inside: {@link activeLoader.add}, {@link activeLoader.remove}, {@link setAction}, {@link error404}
  * @see Used in: {@link functionAnonimAutoExecuted}
  */
 function ajaxHandler(url, action) {
-    // console.info(url);
+	// console.info(url);
 
-    addLoader();
+	activeLoader.add();
 
-    fetch(url)
-        .then(function (response) {
-            if (response.status === 200) {
-                response.json().then(function (data) {
-                    let timer = setInterval(function () {
-                        removeLoader();
-                        console.info(data);
-                        setAction(action, data);
-                        clearInterval(timer);
-                        return data;
-                    }, 3000);
-                });
-            } else if (response.status === 404) {
-                console.warn(response.status);
-                let timer = setInterval(function () {
-                    removeLoader();
-                    error404();
-                    clearInterval(timer);
-                    return response.status;
-                }, 1000);
-            }
-        }).catch(function (error) {
-            console.warn(error);
-        });
+	fetch(url)
+		.then(function (response) {
+			if (response.status === 200) {
+				response.json().then(function (data) {
+					let timer = setInterval(function () {
+						activeLoader.remove();
+						console.info(data);
+						setAction(action, data);
+						clearInterval(timer);
+						return data;
+					}, 3000);
+				});
+			} else if (response.status === 404) {
+				console.warn(response.status);
+				let timer = setInterval(function () {
+					activeLoader.remove();
+					error404();
+					clearInterval(timer);
+					return response.status;
+				}, 1000);
+			}
+		}).catch(function (error) {
+			console.warn(error);
+		});
 }
 
 
@@ -82,13 +87,9 @@ function ajaxHandler(url, action) {
  * @see Used in: {@link ajaxHandler}
  */
 function setAction(action, responseData) {
-    switch (action) {
-        case "setDataBooks":
-            setDataBooks(responseData);
-            break;
-        default:
-            break;
-    }
+	if (action === "setDataBooks") {
+		setDataBooks(responseData);
+	}
 }
 
 
@@ -97,32 +98,46 @@ function setAction(action, responseData) {
 //////////////////////////////////
 
 /**
- * @function addLoader
- * @description Add loading animation.
+ * @namespace activeLoader
+ * @description Add/remove loader animation.
+ * @returns {Object} Functions and properties publics
  * @see Used in: {@link ajaxHandler}
  */
-function addLoader() {
-    let loader = document.getElementById("loader");
-    if (!loader) {
-        let loader = document.createElement("div");
-        loader.setAttribute("id", "loader");
-        loader.setAttribute("class", "loader");
-        document.body.appendChild(loader);
-    }
-}
+const activeLoader = (function () {
+	/**
+	 * @method activeLoader~add
+	 * @description Add loading animation.
+	 */
+	function add() {
+		let loader = document.getElementById("loader");
+		if (!loader) {
+			let loader = document.createElement("div");
+			loader.setAttribute("id", "loader");
+			loader.setAttribute("class", "loader");
+			document.body.appendChild(loader);
+		}
+	}
 
+	/**
+	 * @method activeLoader~remove
+	 * @description Remove loading animation.
+	 */
+	function remove() {
+		let loader = document.getElementById("loader");
+		if (loader) {
+			document.body.removeChild(loader);
+		}
+	}
 
-/**
- * @function removeLoader
- * @description Remove loading animation.
- * @see Used in: {@link ajaxHandler}
- */
-function removeLoader() {
-    let loader = document.getElementById("loader");
-    if (loader) {
-        document.body.removeChild(loader);
-    }
-}
+	/**
+	 * @public
+	 * @see {@link method:activeLoader~add}, {@link method:activeLoader~remove}
+	 */
+	return {
+		add: add,
+		remove: remove
+	}
+})();
 
 
 
@@ -135,7 +150,7 @@ function removeLoader() {
  * @see Used in: {@link ajaxHandler}
  */
 function error404() {
-    document.getElementsByClassName("page")[0].classList.add("is-error404");
+	document.getElementsByClassName("page")[0].classList.add("is-error404");
 }
 
 
@@ -150,21 +165,21 @@ function error404() {
  * @see Used in: {@link setAction}
  */
 function setDataBooks(response) {
-    let listBooks = response.results.books;
-    // console.log(listBooks);
+	let listBooks = response.results.books;
+	// console.log(listBooks);
 
-    let listBooksDom = document.createElement("div");
-    listBooksDom.setAttribute("id", "listBooks");
-    listBooksDom.setAttribute("class", "list-books");
+	let listBooksDom = document.createElement("div");
+	listBooksDom.setAttribute("id", "listBooks");
+	listBooksDom.setAttribute("class", "list-books");
 
-    for (let index = 0; index < listBooks.length; index++) {
-        const book = listBooks[index];
+	for (let index = 0; index < listBooks.length; index++) {
+		const book = listBooks[index];
 
-        let bookDom = document.createElement("article");
-        bookDom.setAttribute("class", "book");
-        bookDom.setAttribute("data-index", index.toString());
+		let bookDom = document.createElement("article");
+		bookDom.setAttribute("class", "book");
+		bookDom.setAttribute("data-index", index.toString());
 
-        let template = `<div class='book__inner'>
+		let template = `<div class='book__inner'>
 							<h3 class='book__title book__item'>
 								#${index + 1} ${book.title}
 							</h3>
@@ -185,13 +200,13 @@ function setDataBooks(response) {
 							</button>
 						</div>`;
 
-        bookDom.innerHTML = template;
+		bookDom.innerHTML = template;
 
-        listBooksDom.appendChild(bookDom);
-    }
+		listBooksDom.appendChild(bookDom);
+	}
 
-    // console.log(listBooksDom);
-    document.getElementsByClassName("page__content")[0].appendChild(listBooksDom);
+	// console.log(listBooksDom);
+	document.getElementsByClassName("page__content")[0].appendChild(listBooksDom);
 }
 
 
@@ -204,5 +219,5 @@ function setDataBooks(response) {
  * @see Used inside: {@link ajaxHandler}, {@link urlAPI}, {@link keyAPI}
  */
 (function () {
-    ajaxHandler(urlAPI + "?api-key=" + keyAPI, "setDataBooks");
+	ajaxHandler(urlAPI + "?api-key=" + keyAPI, "setDataBooks");
 })()

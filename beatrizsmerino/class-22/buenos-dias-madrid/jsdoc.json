@@ -1,0 +1,22 @@
+{
+  "source": {
+    "include": ["js"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "exclude": ["node_modules"]
+  },
+  "plugins": ["plugins/markdown"],
+  "tags": {
+    "allowUnknownTags": false,
+    "dictionaries": ["jsdoc", "closure"]
+  },
+  "sourceType": "module",
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "opts": {
+    "destination": "./docs/",
+    "recurse": true,
+    "readme": "./README.md"
+  }
+}

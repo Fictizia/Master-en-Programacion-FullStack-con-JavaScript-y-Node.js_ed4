@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: scripts-ecma5.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: scripts-ecma5.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file scripts-ecma5
+ * @description Exercise POO with Ecma 5
+ * @author Beatriz Sopeña Merino &lt;beatrizsmerino@gmail.com>
+ * @copyright (2020)
+ */
+
+
+
+
+/**
+ * @var
+ * @description Styles for console.log...
+ * @type {Object}
+ */
+var consoleStyles = {
+	"info": "padding: 0.2rem 0.5rem; background-color: #454545;",
+	"person": "padding: 0.2rem 0.5rem; background-color: #5E7489;",
+	"student": "padding: 0.2rem 0.5rem; background-color: #597A5F;",
+	"professor": "padding: 0.2rem 0.5rem; background-color: #7A7959;"
+};
+
+/**
+ * @var
+ * @description Counter to know the number of people created
+ * @type {Number}
+ */
+var contador = 0;
+
+
+/**
+ * @class Person
+ * @classdesc 
+ * @param {String} name - Person name
+ * @param {Number} age - Person age
+ * @param {String} gender - Person gender
+ * @see Used in: {@link anonimFunctionAutoExecuted.testPerson}
+ */
+// Define the object specific properties inside the constructor
+function Person(name, age, gender) {
+	this._id = contador++;
+	this._name = name;
+	this._age = age;
+	this._gender = gender;
+
+	function total() {
+		var textPerson = "";
+
+		if (contador === 1) {
+			textPerson = "persona";
+		} else {
+			textPerson = "personas";
+		}
+		return console.log("%cSe ha creado " + contador + " " + textPerson, consoleStyles.info);
+	}
+
+	total();
+};
+
+
+
+/**
+ * @class Student
+ * @classdesc Create the Student class, which inherits from Persona, and includes the course and group properties and the register () method, which shows the result on the screen.
+ * @param {String} course - Student course
+ * @param {Number} group - Student group
+ * @see Used in: {@link anonimFunctionAutoExecuted.testStudent}
+ */
+function Student(course, group) {
+	this._course = course;
+	this._group = group;
+	this._register = function () {
+		return console.log("Curso: " + this._course + "\nGrupo: " + this._group);
+	};
+	this._register();
+};
+
+
+
+/**
+ * @class Professor
+ * @classdesc Create the Teacher class, which inherits from Persona, and includes the subject and level properties and the assign () method, which shows the result on the screen.
+ * @param {String} subject - Professor subject
+ * @param {Number} level - Professor level
+ * @see Used in: {@link anonimFunctionAutoExecuted.testProfessor}
+ */
+function Professor(subject, level) {
+	this._subject = subject;
+	this._level = level || 0;
+	this._assing = function () {
+		return console.log("Asignatura: " + this._subject + "\nNivel: " + this._level);
+	};
+
+	this._assing();
+};
+
+
+
+/**
+ * @function anonimFunctionAutoExecuted
+ * @description Create the objects and test cases necessary to verify the correct operation of the class hierarchy.
+ */
+(function () {
+
+	/**
+	 * @function testPerson
+	 */
+	(function () {
+		Person.prototype.details = function () {
+			return console.log("Id: " + this._id + "\nNombre: " + this._name + "\nEdad: " + this._age + "\nGénero: " + this._gender);
+		}
+
+		console.group("%cPerson", consoleStyles.person);
+
+			console.log(Person.prototype); // retorna el objeto en si
+			console.log(typeof Person.prototype); // retorna el tipo de dato (Objeto)
+
+
+			/**
+			 * Person 1
+			 */
+			var person1 = new Person("Alex", 32, "masculino");
+			person1.details();
+			
+			
+			/**
+			 * Person 2
+			 */
+			var person2 = new Person("Miguel", 45, "masculino");
+			person2.details();
+
+
+			/**
+			 * Comprueba si un objeto se encuentra en la cadena de prototipado de otro.
+			 */
+			console.log("Person.prototype === person1.__proto__", Person.prototype === person1.__proto__); // true
+			console.log("Person.prototype.isPrototypeOf(person1)", Person.prototype.isPrototypeOf(person1)); // true
+			console.log("Person.prototype === person2.__proto__", Person.prototype === person2.__proto__); // true
+			console.log("person1.__proto__ === person2.__proto__", person1.__proto__ === person2.__proto__); // true
+
+
+			/*
+			 * Retorna una referencia a la función del Object que creó el objeto de la instancia
+			 */
+			console.log("Person.prototype.constructor", Person.prototype.constructor); // retorna la funcion constructor (el objeto en si)
+			console.log("person1.constructor", person1.constructor); // retorna la funcion constructor del objeto person1 que es compartido por el objeto Person
+			
+
+			/* 
+			 * Crea un objeto nuevo, utilizando un objeto existente como el prototipo del nuevo objeto creado.
+			 */
+			var cloneObjetoPerson = Object.create(Person);
+			cloneObjetoPerson.name = "Noelia";
+			cloneObjetoPerson.age = 22;
+			cloneObjetoPerson.gender = "femenino";
+			console.log("cloneObjetoPerson", cloneObjetoPerson);
+			
+
+			/* 
+			 * Devuelve una cadena que representa al objeto.
+			 */
+			console.log("person2.toString()", person2.toString()); // Si llama al método toString en el objeto personalizado, devuelve el valor predeterminado heredado de Object
+			
+			
+			/* 
+			 * Se puede sobreescribir el methodo toString();
+			 */
+			Person.prototype.toString = function () {
+				return this._name + " es un ser humano";
+			}
+			console.log("person2.toString()", person2.toString());
+
+		console.groupEnd();
+
+	})();
+
+
+	/**
+	 * @function testStudent
+	 */
+	(function () {
+
+		console.group("%cStudent", consoleStyles.student);
+
+			/**
+			 * Person 3
+			 * Student 1
+			 */
+			var student1 = new Person("Beatriz", 26, "femenino");
+			student1.details();
+			student1.prototype = new Student("Master Fullstack de Javascript y node.js", 1);
+
+
+			/**
+			 * Person 4
+			 * Student 2
+			 */
+			var student2 = new Person("Sara", 20, "femenino");
+			student2.details();
+			student2.prototype = new Student("Máster en UX, diseño de producto digital e interfaces", 3);
+
+
+			// It is not working
+			// student2.prototype._course = "Máster en UX, diseño de producto digital e interfaces";
+			// student2._group = 3; -> no se puede acceder a una propiedad que ha sido creada dentro con this
+			// student2.__proto__._group = 3; -> no se puede acceder a una propiedad que ha sido creada dentro con this
+
+
+			student2.job = false;
+			console.log("student2", student2);
+
+		console.groupEnd();
+
+	})();
+
+
+	/**
+	 * @function testProfessor
+	 */
+	(function () {
+
+		console.group("%cProfessor", consoleStyles.professor);
+
+			/**
+			 * Person 5
+			 * Professor 1
+			 */
+			var professor1 = new Person("Ulises Gascón", 34, "masculino");
+			professor1.details();
+			professor1.prototype = new professor("Javascript", 1);
+
+
+			/**
+			 * Person 6
+			 * Professor 2
+			 */
+			var professor2 = new Person("Mike Nøah", 30, "masculino");
+			professor2.details();
+			professor2.prototype = new professor("Diseño de productos digitales", 4);
+		
+		console.groupEnd();
+
+	})();
+
+})();</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Person.html">Person</a></li><li><a href="Professor.html">Professor</a></li><li><a href="Student.html">Student</a></li></ul><h3>Global</h3><ul><li><a href="global.html#anonimFunctionAutoExecuted">anonimFunctionAutoExecuted</a></li><li><a href="global.html#consoleStyles">consoleStyles</a></li><li><a href="global.html#contador">contador</a></li><li><a href="global.html#testPerson">testPerson</a></li><li><a href="global.html#testProfessor">testProfessor</a></li><li><a href="global.html#testStudent">testStudent</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun May 24 2020 15:50:01 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

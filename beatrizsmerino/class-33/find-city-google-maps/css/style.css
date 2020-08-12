@@ -127,7 +127,7 @@ button {
 }
 
 .form__field {
-	padding: 1rem 1rem;
+	padding: 1.5rem 1rem;
 	font-size: 1.6rem;
 	font-weight: 500;
 	color: var(--color-light);
@@ -151,9 +151,9 @@ button {
 
 /*************** BUTTON ***************/
 .button {
-	padding: 1rem 2rem;
+	padding: 1.5rem 2rem;
 	font-size: 1.6rem;
-	font-weight: 500;
+	font-weight: 600;
 	background-color: #fff;
 	cursor: pointer;
 	transition: all 0.2s ease-in-out 0s;
@@ -238,6 +238,9 @@ button {
 .field-search__button {
 	height: 100%;
 	padding: 0 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: absolute;
 	top: 50%;
 	right: 0;
@@ -257,7 +260,7 @@ button {
 }
 
 .field-search__icon {
-	width: 2.5rem;
+	width: 2rem;
 	height: 2.5rem;
 }
 

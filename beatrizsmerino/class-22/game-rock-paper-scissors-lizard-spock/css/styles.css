@@ -1,0 +1,245 @@
+/* KEYFRAMES  - start */
+@keyframes messageShow {
+	0% {
+		transform: translate3d(0, 100%, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: scale(0);
+	}
+
+	50% {
+		transform: scale(1);
+	}
+}
+/* KEYFRAMES  - end */
+
+/* RESET  - start */
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* RESET  - start */
+
+/* GENERAL - start */
+body {
+	font-family: sans-serif;
+}
+
+a {
+	color: #7d965a;
+	font-weight: 900;
+}
+/* GENERAL - END */
+
+/* EXERCISE INFO - start */
+.exercise-info {
+	margin-bottom: 5rem;
+	padding: 1rem;
+	background-color: rgb(243, 243, 243, 0.7);
+	transition: all 0.5s linear 0s;
+}
+
+.exercise-info__title {
+	margin-top: 0;
+}
+
+.exercise-info a {
+	color: #333;
+}
+
+.exercise-info.is-hide {
+	position: absolute;
+	top: 0;
+	transform: translate3d(0, -100%, 0);
+}
+/* EXERCISE INFO - start */
+
+/* PAGE - start */
+.page__body {
+	margin: 3rem 2rem 5rem;
+	background-color: #333;
+}
+
+.page__header {
+	margin-bottom: 1rem;
+}
+
+.page__title {
+	width: fit-content;
+	margin-bottom: 0;
+	font-size: 3rem;
+	color: #a1c174;
+}
+
+.page__subtitle {
+	width: fit-content;
+	margin-top: 0;
+	font-size: 2rem;
+	color: #333;
+	background-color: #a1c174;
+}
+/* PAGE - end */
+
+/* BLOCKQUOTES - start */
+.blockquotes {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+blockquote {
+	height: fit-content;
+	margin: 2rem 0 2rem 1rem;
+	padding-left: 1rem;
+	line-height: 150%;
+	color: rgba(161, 193, 116, 0.5);
+	border-left: 5px solid rgba(161, 193, 116, 0.5);
+}
+
+blockquote:not(:last-of-type) {
+	margin-bottom: 0;
+}
+
+.blockquotes blockquote {
+	width: 40%;
+}
+
+@media (max-width: 600px) {
+	.blockquotes blockquote {
+		width: 100%;
+	}
+}
+/* BLOCKQUOTES - end */
+
+/* BUTTON - start */
+.button {
+	margin-top: 0rem;
+	padding: 0.5rem 2rem;
+	font-size: 1.5rem;
+	color: #a1c174;
+	border: 2px solid #a1c174;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+}
+
+.button:hover {
+	color: #333;
+	background-color: #a1c174;
+}
+/* BUTTON - END */
+
+/* LOADER - start */
+.loader .spinner {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	margin: 100px auto;
+}
+
+.loader .double-bounce1,
+.loader .double-bounce2 {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #333;
+	opacity: 0.6;
+	position: absolute;
+	top: 0;
+	left: 0;
+	animation: bounce 2s infinite ease-in-out;
+}
+
+.loader .double-bounce2 {
+	animation-delay: -1s;
+}
+/* LOADER - end */
+
+/* RESULT - start */
+.result {
+	margin-top: 3rem;
+	display: flex;
+}
+/* RESULT - end */
+
+/* RESPONSE - start */
+.response {
+	width: 12rem;
+	height: 12rem;
+	margin: 1rem;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5rem;
+	border: 2px solid white;
+	border-radius: 50%;
+	background-color: rgba(161, 193, 116, 0.2);
+	overflow: hidden;
+}
+.response:after {
+	width: 100%;
+	padding: 0.8rem;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	text-align: center;
+	font-size: 1rem;
+	color: #333;
+	transform: translate3d(-50%, 0, 0);
+	display: inline-block;
+	background-color: #fff;
+}
+
+#responseUser:after {
+	content: "You";
+}
+#responseComputer:after {
+	content: "Computer";
+}
+/* RESPONSE - end */
+
+/* MESSAGE - start */
+.message {
+	width: 100%;
+	height: 3rem;
+	padding: 1rem 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	font-weight: 500;
+	transform: translate3d(0, 100%, 0);
+}
+
+.message.is-show {
+	animation: messageShow 0.5s ease-in-out 0s forwards,
+		messageShow 0.5s ease-in-out reverse 8s forwards;
+}
+.message.is-game-over {
+	color: #fff;
+	background-color: tomato;
+}
+.message.is-game-win {
+	color: #fff;
+	background-color: teal;
+}
+.message.is-game-tie {
+	color: #000;
+	background-color: gold;
+}
+/* MESSAGE - end */
