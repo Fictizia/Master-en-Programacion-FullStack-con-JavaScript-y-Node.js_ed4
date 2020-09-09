@@ -1,0 +1,2814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: moviesAPI</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: moviesAPI</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Get and search data movies, and print the interface</p></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:beatrizsmerino@gmail.com">Beatriz Sopeña Merino</a></li>
+        </ul>
+    </dd>
+    
+
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>(2020)</li></ul></dd>
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~apiKey"><span class="type-signature">(inner, constant) </span>apiKey<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>KEY of OMDb API.</p>
+<ul>
+<li>Connexion OMDb API (The Open Movie Database)
+<ul>
+<li>Create the API KEY <a href="http://www.omdbapi.com/apikey.aspx">http://www.omdbapi.com/apikey.aspx</a></li>
+<li>Find the API KEY in the email used</li>
+<li>Change this string 'XXXXXXXXXXXX' for yor data</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~apiUrl"><span class="type-signature">(inner, constant) </span>apiUrl<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>URL of OMDb API.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".checkLoadSearchResultsMovies"><span class="type-signature">(static) </span>checkLoadSearchResultsMovies<span class="signature">(callbackFunction)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Check if search results it is empty</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callbackFunction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line167">line 167</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used in: <a href="module-moviesCRUD.html#.tasksFavorite">module:moviesCRUD.tasksFavorite</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".searchByIdMovie"><span class="type-signature">(static) </span>searchByIdMovie<span class="signature">(id)</span><span class="type-signature"> &rarr; {Object|String}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Check if exist movie by id</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Id name</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line121">line 121</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used in: <a href="module-moviesCRUD.html#~getIdMovie">module:moviesCRUD~getIdMovie</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".searchByTextMovie"><span class="type-signature">(static) </span>searchByTextMovie<span class="signature">(pagination)</span><span class="type-signature"> &rarr; {Object|String}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Get the movies according to the text of the input and the pagination to search</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pagination</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Search page number</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside: <a href="module-moviesAPI.html#~saveSearchTextMovie">module:moviesAPI~saveSearchTextMovie</a></li>
+        
+            <li>Used in: <a href="module-moviesAPI.html#~getSetSearchPaginationMovies">module:moviesAPI~getSetSearchPaginationMovies</a>, <a href="module-moviesAPI.html#.setEventsSearchMovies">module:moviesAPI.setEventsSearchMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".setEventsSearchMovies"><span class="type-signature">(static) </span>setEventsSearchMovies<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Events for execute the search movies (input, button and pagination of the search)</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line506">line 506</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside:
+<a href="module-loader.html#.add">module:loader.add</a>, <a href="module-loader.html#.remove">module:loader.remove</a>,
+<a href="module-moviesAPI.html#.searchByTextMovie">module:moviesAPI.searchByTextMovie</a>, <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a>,
+<a href="module-moviesCRUD.html#.updateButtonsFavorite">module:moviesCRUD.updateButtonsFavorite</a>, <a href="module-moviesCRUD.html#.tasksFavorite">module:moviesCRUD.tasksFavorite</a>, <a href="module-moviesCRUD.html#.hideListFavorites">module:moviesCRUD.hideListFavorites</a></li>
+        
+            <li>Used in: <a href="global.html#anominFunctionAutoEjecuted">anominFunctionAutoEjecuted</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".setSearchResultsMovies"><span class="type-signature">(static) </span>setSearchResultsMovies<span class="signature">(data, pagination)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Clean and print results in the interface</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Search results data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pagination</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Page to go</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line478">line 478</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside: <a href="module-moviesAPI.html#~saveSearchTextMovie">module:moviesAPI~saveSearchTextMovie</a>, <a href="module-moviesAPI.html#~emptySearchInputMovie">module:moviesAPI~emptySearchInputMovie</a>, <a href="module-moviesAPI.html#~emptySearchResultsMovies">module:moviesAPI~emptySearchResultsMovies</a>, <a href="module-moviesAPI.html#~setListMovies">module:moviesAPI~setListMovies</a>, <a href="module-moviesAPI.html#~setSwiperMovies">module:moviesAPI~setSwiperMovies</a>, <a href="module-moviesAPI.html#~getSetSearchPaginationMovies">module:moviesAPI~getSetSearchPaginationMovies</a>, <a href="module-moviesAPI.html#~showHideInfoMovie">module:moviesAPI~showHideInfoMovie</a>, <a href="module-moviesAPI.html#~getSetPageErrorMovies">module:moviesAPI~getSetPageErrorMovies</a></li>
+        
+            <li>Used in: <a href="module-moviesAPI.html#.setEventsSearchMovies">module:moviesAPI.setEventsSearchMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~emptySearchInputMovie"><span class="type-signature">(inner) </span>emptySearchInputMovie<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Clean search input</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line143">line 143</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used in: <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~emptySearchResultsMovies"><span class="type-signature">(inner) </span>emptySearchResultsMovies<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Clean search results</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line155">line 155</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used in: <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getListMovies"><span class="type-signature">(inner) </span>getListMovies<span class="signature">(data)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Create and return the list of movies</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Search results data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line208">line 208</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside:
+<a href="module-tool.html#.stringToNode">module:tool.stringToNode</a>,
+<a href="module-createTemplate.html#.movie">module:createTemplate.movie</a></li>
+        
+            <li>Use in: <a href="module-moviesAPI.html#~setListMovies">module:moviesAPI~setListMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getSetPageErrorMovies"><span class="type-signature">(inner) </span>getSetPageErrorMovies<span class="signature">(content, textError)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Create and print message error</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Content to insert the info error</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>textError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Text error of API</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line445">line 445</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside: <a href="module-createTemplate.html#.pageErrorMovies">module:createTemplate.pageErrorMovies</a></li>
+        
+            <li>Used in: <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getSetSearchInfoMovies"><span class="type-signature">(inner) </span>getSetSearchInfoMovies<span class="signature">(data)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Create and return the information about the data found</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Search results info</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line186">line 186</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside: <a href="module-tool.html#.stringToNode">module:tool.stringToNode</a>, <a href="module-createTemplate.html#.infoMovies">module:createTemplate.infoMovies</a></li>
+        
+            <li>Used in: <a href="module-moviesAPI.html#~setListMovies">module:moviesAPI~setListMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getSetSearchPaginationMovies"><span class="type-signature">(inner) </span>getSetSearchPaginationMovies<span class="signature">(content, data, pagination)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Create and print pagination of results from 10 to 10</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Content to insert the pagination</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Data for get the data pagination</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pagination</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Page to go</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line338">line 338</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside:
+<a href="module-tool.html#.stringToNode">module:tool.stringToNode</a>,
+<a href="module-createTemplate.html#.paginationMovies">module:createTemplate.paginationMovies</a>, <a href="module-moviesAPI.html#.searchByTextMovie">module:moviesAPI.searchByTextMovie</a>, <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a></li>
+        
+            <li>Used in: <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~saveSearchTextMovie"><span class="type-signature">(inner) </span>saveSearchTextMovie<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Save search text into input hidden and find by the text #searchInput or #searchInputHidden.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line50">line 50</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used in: <a href="module-moviesAPI.html#.searchByTextMovie">module:moviesAPI.searchByTextMovie</a>, <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~setListMovies"><span class="type-signature">(inner) </span>setListMovies<span class="signature">(content, data)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Print Search info and results</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Content to insert the data</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Search results data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line239">line 239</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside: <a href="module-moviesAPI.html#~getSetSearchInfoMovies">module:moviesAPI~getSetSearchInfoMovies</a>, <a href="module-moviesAPI.html#~getListMovies">module:moviesAPI~getListMovies</a></li>
+        
+            <li>Used in: <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~setSwiperMovies"><span class="type-signature">(inner) </span>setSwiperMovies<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Add structure swiper to the results search</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line259">line 259</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used inside: <a href="module-tool.html#.wrap">module:tool.wrap</a>, <a href="module-tool.html#.stringToNode">module:tool.stringToNode</a></li>
+        
+            <li>Used in: <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~showHideInfoMovie"><span class="type-signature">(inner) </span>showHideInfoMovie<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Show/Hide info Movie</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line419">line 419</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>Used in: <a href="module-moviesAPI.html#.setSearchResultsMovies">module:moviesAPI.setSearchResultsMovies</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+        <h3 class="subsection-title">Events</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~event:%7Bclick%7D">{click}</h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>When you click on the button pagination search:</p>
+<ul>
+<li>Search by text the movie and go to the prev/next page</li>
+<li>Set search results of the movies</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line397">line 397</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~event:%7Bclick%7D">{click}</h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>When you click on the button movie info:</p>
+<ul>
+<li>Show/Hide the info movie</li>
+<li>Hide the info movie after 10 seconds</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line427">line 427</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~event:%7Bclick%7D">{click}</h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>When you click on the search button:</p>
+<ul>
+<li>Search the movie by the entered text</li>
+<li>Show an animation while the animation is loading
+(loading time is not real, it is forced to 7 seconds to show animation longer)</li>
+<li>Show search results</li>
+<li>Update button state based on saved movies I liked or didn't like</li>
+<li>Adds save and delete tasks for searched movie buttons</li>
+<li>Force hide the favorites list if it is open</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line521">line 521</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~event:%7Bkeyup%7D">{keyup}</h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>When you press enter key:</p>
+<ul>
+<li>Trigger the event click executed on search button</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_movies-api.js.html">modules/movies-api.js</a>, <a href="modules_movies-api.js.html#line551">line 551</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-createTemplate.html">createTemplate</a></li><li><a href="module-firebaseTasks.html">firebaseTasks</a></li><li><a href="module-gradient.html">gradient</a></li><li><a href="module-iconsPaths.html">iconsPaths</a></li><li><a href="module-loader.html">loader</a></li><li><a href="module-modal.html">modal</a></li><li><a href="module-moviesAPI.html">moviesAPI</a></li><li><a href="module-moviesCRUD.html">moviesCRUD</a></li><li><a href="module-tool.html">tool</a></li></ul><h3>Events</h3><ul><li><a href="module-moviesCRUD.html#~event:%257Bclick%257D">{click}</a></li><li><a href="module-moviesAPI.html#~event:%257Bkeyup%257D">{keyup}</a></li></ul><h3>Global</h3><ul><li><a href="global.html#anominFunctionAutoEjecuted">anominFunctionAutoEjecuted</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Wed Sep 09 2020 07:35:36 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
