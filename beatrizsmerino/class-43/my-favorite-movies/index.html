@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Peliculas</title>
+		<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet">
+		<link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+
+	<body class="page__body">
+		<div class="page__content">
+			<header class="page__header">
+				<h1 class="page__title">
+					<img src="./images/title.svg" alt="Mis películas favoritas" />
+				</h1>
+
+				<h2 class="page__subtitle">
+					encuentra tu pelicula y guardala en tu lista de favoritos
+				</h2>
+
+				<div class="form-group container">
+					<div class="search">
+						<input id="searchInputHidden" type="hidden" value="">
+						<input id="searchInput" class="search__input" type="text" placeholder="Buscar"
+							aria-label="Buscar" autofocus>
+
+						<button id="searchButton" class="search__button">
+							<i class="search__icon fas fa-search"></i>
+						</button>
+					</div>
+				</div>
+
+				<button id="buttonListFavorites" class="button-list-favorites button-favorite button is-hide"
+					aria-label="Lista de peliculas favoritas">
+					<i class="button-favorite__icon button__icon fas fa-heart"></i>
+				</button>
+			</header>
+
+			<main class="page__main">
+				<div id="searchResults" class="search-results"></div>
+				<div id="favoriteList" class="favorite-list"></div>
+			</main>
+		</div>
+
+		<footer class="page__footer">
+			<div class="container">
+				© Copyright 2020.
+			</div>
+		</footer>
+
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+		<!-- 
+			TODO: Add SDKs for Firebase products that you want to use
+			https://firebase.google.com/docs/web/setup#available-libraries
+		-->
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+
+		<!-- SDK de Firebase JS disponibles (de la CDN) - Realtime Database -->
+		<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
+
+		<script type="module" src="js/script.js"></script>
+	</body>
+
+</html>

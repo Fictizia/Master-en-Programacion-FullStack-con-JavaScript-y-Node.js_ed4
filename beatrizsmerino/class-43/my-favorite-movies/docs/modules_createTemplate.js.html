@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modules/createTemplate.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modules/createTemplate.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file createTemplate.js
+ * @module createTemplate
+ * @description Templates html
+ * @author Beatriz Sopeña Merino &lt;beatrizsmerino@gmail.com>
+ * @copyright (2020)
+ */
+
+
+
+
+
+/**
+ * @requires tool
+ */
+import * as tool from './tools.js';
+
+
+
+
+
+/**
+ * @function module:createTemplate.iconFlag
+ * @description Create a template to icon flag
+ * @param {Object} data Data flag
+ * @param {String} classCSS Class name
+ * @returns {String}
+ * @see Used in: {@link module:tool.findCreateIconsFlags}
+ */
+export function iconFlag(data, classCSS) {
+	let template = `&lt;img class="${classCSS}" src="images/flags/svg/${data["flag"]}" alt="${data["lang"]}">&lt;/img>`;
+
+	return template;
+}
+
+
+
+/**
+ * @function module:createTemplate.modal
+ * @description Create template to modal window
+ * @param {String} idModal Id name
+ * @param {Object} data Data modal
+ * @returns {String}
+ * @see Used in: {@link module:modal~insertModal}
+ */
+export function modal(idModal, data) {
+	const template = `
+		&lt;div id="${idModal}" class="modal__wrapper">
+			&lt;div class="modal">
+				&lt;div class="modal__container">
+					&lt;div class="modal__inner">
+						&lt;button class="modal__button-close button-close button button--icon"
+								aria-label="Cerrar ventana">
+							&lt;i class="button-close__icon fas fa-times">&lt;/i>
+						&lt;/button>
+
+						&lt;div class="modal__content">
+							${data}
+						&lt;/div>
+					&lt;/div>
+				&lt;/div>
+			&lt;/div>
+		&lt;/div>
+	`;
+	return template;
+}
+
+
+
+/**
+ * @function module:createTemplate.infoMovies
+ * @description Create template to the info movies
+ * @param {String} textSearch Text found
+ * @param {String} totalSearch Total number results found
+ * @returns {String}
+ * @see Used in: {@link module:moviesAPI~getSetSearchInfoMovies}
+ */
+export function infoMovies(textSearch, totalSearch) {
+	const template = `
+		&lt;div class="search-info">
+			&lt;h3>
+				Resultados encontados:
+			&lt;/h3>
+			&lt;p class="search-info__text">
+				Con el texto: &lt;em>${textSearch}&lt;/em>
+			&lt;/p>
+			&lt;p class="search-info__total">
+				Total: &lt;em>${totalSearch}&lt;/em>
+			&lt;/p>
+		&lt;/div>
+	`;
+
+	return template;
+}
+
+
+
+/**
+ * @function module:createTemplate.movie
+ * @description Create template to the item list movies
+ * @param {Object} data Data movie
+ * @returns {String}
+ * @see Used in: {@link module:moviesAPI~getListMovies}
+ */
+export function movie(data) {
+	console.info("%cMovie:", tool.consoleCSS.info);
+	console.info("Data:", data);
+
+	const template = `
+		&lt;li id="${data.imdbID}" class="movie">
+			&lt;div class="movie__content">
+				&lt;div class="movie__list-buttons list-buttons">
+					&lt;div class="movie__list-buttons--favorite">
+						&lt;button class="movie__button button-favorite button button--icon"
+								data-id="${data.imdbID}"
+								data-type="favorite"
+								data-task="like"
+								aria-label="Guardar película favorita">
+							&lt;i class="movie__icon button-favorite__icon button__icon far fa-heart animate__animated animate__bounceIn">&lt;/i>
+						&lt;/button>
+
+						&lt;button class="movie__button button-favorite button button--icon is-hide"
+								data-id="${data.imdbID}"
+								data-type="favorite"
+								data-task="dislike"
+								aria-label="Eliminar película favorita">
+							&lt;i class="movie__icon button-favorite__icon button__icon fas fa-heart animate__animated animate__bounceIn">&lt;/i>
+						&lt;/button>
+					&lt;/div>
+
+					&lt;button class="movie__button button-info button button--icon"
+							data-id="${data.imdbID}"
+							data-type="info"
+							aria-label="Ver información de la película">
+						&lt;i class="movie__icon button-info__icon button__icon far fa-info">&lt;/i>
+					&lt;/button>
+				&lt;/div>
+
+				&lt;div class="movie__image">
+					&lt;img src="${(data.Poster === "N/A") ? "images/movie-image-not-found.png" : data.Poster}" alt="${data.Title}">
+				&lt;/div>
+				
+				&lt;div class="movie__body">
+					&lt;h3 class="movie__title">
+						${data.Title}
+						&lt;span class="movie__year">
+							(${data.Year})
+						&lt;/span>
+					&lt;/h3>
+				&lt;/div>
+			&lt;/div>
+		&lt;/li>
+		`;
+	return template;
+}
+
+
+
+/**
+ * @function module:createTemplate.paginationMovies
+ * @description Create template to the pagination search
+ * @param {Object} data Data pagination
+ * @returns {String}
+ * @see Used in: {@link module:moviesAPI~getSetSearchPaginationMovies}
+ */
+export function paginationMovies(data) {
+	const template = `
+		&lt;nav id="moviesPagination" class="pagination__wrapper noselect" aria-label="Pagination">
+			&lt;ul class="pagination">
+				&lt;li class="pagination-item">
+					&lt;button id="paginationButtonPrev" class="pagination-button pagination-button--prev" data-pagination="${data.prev}">
+						&lt;i class="pagination-button__icon fa fa-chevron-left">&lt;/i>
+					&lt;/button>
+				&lt;/li>
+				&lt;li class="pagination-item">
+					&lt;button id="paginationButtonNow" class="pagination-button pagination-button--now" data-pagination="${data.now}">${data.pages}&lt;/button>
+				&lt;/li>
+				&lt;li class="pagination-item">
+					&lt;button id="paginationButtonNext" class="pagination-button pagination-button--next" data-pagination="${data.next}">
+						&lt;i class="pagination-button__icon fa fa-chevron-right">&lt;/i>
+					&lt;/button>
+				&lt;/li>
+			&lt;/ul>
+		&lt;/nav>
+	`;
+
+	return template;
+}
+
+
+
+/**
+ * @function module:createTemplate.pageErrorMovies
+ * @description Create template to the message errors
+ * @param {String} textError Text Error
+ * @returns {String}
+ * @see Used in: {@link module:moviesAPI~getSetPageErrorMovies}
+ */
+export function pageErrorMovies(textError) {
+	const template = `
+		&lt;div class="search-error">
+			&lt;h3 class="search-error__title">
+				Error de búsqueda
+			&lt;/h3>
+			&lt;h4 class="search-error__subtitle">
+				${textError}
+			&lt;/h4>
+			&lt;img class="search-error__image" src="images/search-error.svg">
+		&lt;/div>
+	`;
+
+	return template;
+}
+
+
+
+/**
+ * @function module:createTemplate.tableFavorites
+ * @description Create a table to the list of favorite movies
+ * @returns {String}
+ * @see Used in: {@link module:moviesCRUD~insertTableFavorites}
+ */
+export function tableFavorites() {
+	const templateTable = `
+		&lt;div class="table__wrapper">
+			&lt;table id="favoriteListTable" class="table">
+				&lt;thead id="favoriteListTableHead" class="table__head">
+					&lt;tr class="table__tr">
+						&lt;th class="table__th" colspan="5">
+							Mi lista de peliculas favoritas
+						&lt;/th>
+					&lt;/tr>
+				&lt;/thead>
+				&lt;tbody id="favoriteListTableBody" class="table__body">
+					&lt;tr class="table__tr">
+						&lt;th class="table__th favorite-list__index">
+							#
+						&lt;/th>
+						&lt;th class="table__th favorite-list__date">
+							Save date
+						&lt;/th>
+						&lt;th class="table__th favorite-list__title">
+							Título
+						&lt;/th>
+						&lt;th class="table__th favorite-list__task-info favorite-list__task">
+							Ver info
+						&lt;/th>
+						&lt;th class="favorite-list__task-delete favorite-list__task table__th">
+							&lt;button id="buttonDeleteListFavorites" class="button-delete button"
+								data-type="favorite"
+								data-task="dislike"
+								aria-label="Eliminar todas las películas favoritas">
+								Eliminar todo
+							&lt;/button>
+						&lt;/th>
+					&lt;/tr>
+				&lt;/tbody>
+				&lt;tfoot id="favoriteListTableFooter" class="table__foot">
+					&lt;tr class="table__tr">
+						&lt;td class="table__td" colspan="5">
+							&lt;time class="timer">&lt;/time>
+						&lt;/td>
+					&lt;/tr>
+				&lt;/tfoot>
+			&lt;/table>
+		&lt;/div>`;
+
+	return templateTable;
+}
+
+
+
+/**
+ * @function module:createTemplate.tableRowFavorite
+ * @description Create a template to the favorite movie
+ * @param {Object} favorite Data of favorite
+ * @returns {String}
+ * @see Used in: {@link module:moviesCRUD~addTableRowFavorite}
+ */
+export function tableRowFavorite(favorite) {
+	const template = `
+		&lt;tr class="table__tr" data-id="${favorite.id}">
+			&lt;td class="favorite-list__favorite-index table__td">
+				${favorite.index}
+			&lt;/td>
+			&lt;td class="favorite-list__favorite-date table__td">
+				${favorite.date}
+			&lt;/td>
+			&lt;td class="favorite-list__favorite-title table__td">
+				${favorite.title}
+			&lt;/td>
+			&lt;td class="favorite-list__favorite-task-info favorite-list__favorite-task table__td">
+				&lt;button class="modal__button-open favorite__button button-info button"
+						data-id="${favorite.id}"
+						data-type="info"
+						aria-label="Ver información de la película">
+					&lt;i class="movie__icon button-info__icon button__icon far fa-info">&lt;/i>
+				&lt;/button>
+			&lt;/td>
+			&lt;td class="favorite-list__favorite-task-delete favorite-list__favorite-task table__td">
+				&lt;button class="favorite__button button-favorite button"
+						data-id="${favorite.id}"
+						data-type="favorite"
+						data-task="dislike"
+						aria-label="Eliminar película favorita">
+					&lt;i class="favorite__icon button-favorite__icon button__icon fas fa-heart">&lt;/i>
+				&lt;/button>
+			&lt;/td>
+		&lt;/tr>`;
+	return template;
+}
+
+
+
+/**
+ * @function module:createTemplate.detailFavorite
+ * @description Create template to detail favorite
+ * @param {Object} data Data favorite
+ * @return {String}
+ * @see Used inside: {@link module:tool.findCreateIconsFlags}
+ * @see Used in: {@link module:moviesCRUD~setDetailFavorite}
+ */
+export function detailFavorite(data) {
+	let favoritePoster = (data.Poster === "N/A") ? 'images/movie-image-not-found.png' : data.Poster;
+
+	let favoriteType = "";
+	if (data.Type !== "N/A") {
+		favoriteType = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Tipo:
+				&lt;/strong>
+				${data.Type}
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteGenre = "";
+	if (data.Genre !== "N/A") {
+		favoriteGenre = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Género:
+				&lt;/strong>
+				${data.Genre}
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteCountry = "";
+	if (data.Country !== "N/A") {
+		favoriteCountry = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					País:
+				&lt;/strong>
+				${data.Country}
+				${tool.findCreateIconsFlags(data.Country, 'favorite-detail__icon favorite-detail__icon--flag')}
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteLanguage = "";
+	if (data.Language !== "N/A") {
+		favoriteLanguage = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Idioma:
+				&lt;/strong>
+				${data.Language}
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteProduction = "";
+	if (data.Production !== "N/A") {
+		favoriteProduction = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Producción:
+				&lt;/strong>
+				${data.Production}
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteRuntime = "";
+	if (data.Runtime !== "N/A") {
+		favoriteRuntime = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Duración:
+				&lt;/strong>
+				&lt;time datetime="${data.Runtime}">
+					${data.Runtime}
+				&lt;/time>
+				&lt;i class="favorite-detail__icon fas fa-clock">&lt;/i>
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteYear = "";
+	if (data.Year !== "N/A") {
+		favoriteYear = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Año:
+				&lt;/strong>
+				&lt;time datetime="${data.Year}">
+					${data.Year}
+				&lt;/time>
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteReleased = "";
+	if (data.Released !== "N/A") {
+		favoriteReleased = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Publicación:
+				&lt;/strong>
+				&lt;time datetime="${data.Released}">
+					${data.Released}
+				&lt;/time>
+				&lt;i class="favorite-detail__icon fas fa-calendar-alt">&lt;/i>
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteDVD = "";
+	if (data.DVD !== "N/A") {
+		favoriteDVD = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Venta DVD:
+				&lt;/strong>
+				&lt;time datetime="${favoriteDVD}">
+					${favoriteDVD}
+				&lt;/time>
+				&lt;i class="favorite-detail__icon fas fa-compact-disc">&lt;/i>
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteWriter = "";
+	if (data.Writer !== "N/A") {
+		favoriteWriter = `
+			&lt;p>
+				&lt;strong class="favorite-detail__subtitle">
+					Escritor:
+				&lt;/strong>
+				${data.Writer}
+				&lt;i class="favorite-detail__icon fas fa-feather-alt">&lt;/i>
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteDirector = "";
+	if (data.Director !== "N/A") {
+		favoriteDirector = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Director:
+				&lt;/strong>
+				${data.Director}
+				&lt;i class="favorite-detail__icon fas fa-video">&lt;/i>
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteActors = "";
+	if (data.Actors !== "N/A") {
+		favoriteActors = `
+			&lt;p>
+				&lt;strong class="favorite-detail__subtitle">
+					Actores:
+				&lt;/strong>
+				${data.Actors}
+				&lt;i class="favorite-detail__icon fas fa-users">&lt;/i>
+			&lt;/p>
+		`;
+	};
+
+
+	let favoritePlot = "";
+	if (data.Plot !== "N/A") {
+		favoritePlot = `
+			&lt;p>
+				&lt;strong class="favorite-detail__subtitle">
+					Descripción:
+				&lt;/strong>
+				${data.Plot}
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteAwards = "";
+	if (data.Awards !== "N/A") {
+		favoriteAwards = `
+			&lt;p>
+				&lt;strong class="favorite-detail__subtitle">
+					Premios:
+				&lt;/strong>
+				${data.Awards}
+				&lt;i class="favorite-detail__icon fas fa-trophy">&lt;/i>
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteImdbVotes = "";
+	if (data.imdbVotes !== "N/A") {
+		favoriteImdbVotes = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Imdb votes:
+				&lt;/strong>
+				${data.imdbVotes}
+				&lt;i class="favorite-detail__icon fas fa-star">&lt;/i>
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteImdbRating = "";
+	if (data.imdbRating !== "N/A") {
+		favoriteImdbRating = `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">
+					Imdb clasificación:
+				&lt;/strong>
+				${data.imdbRating}
+			&lt;/p>
+		`;
+	};
+
+
+	let favoriteRatings = "";
+	if (data.Ratings !== "N/A") {
+		[...data.Ratings].map((rating) => {
+			favoriteRatings += `
+			&lt;p class="favorite-detail__item">
+				&lt;strong class="favorite-detail__subtitle">${rating.Source}:&lt;/strong>
+				${rating.Value}
+			&lt;/p>
+		`;
+			return favoriteRatings;
+		});
+	}
+
+
+
+	const template = `
+		&lt;div class="favorite-detail" data-id="${data.imdbID}">
+			&lt;h2 class="favorite-detail__title">
+				${data.Title}
+			&lt;/h2>
+
+			&lt;div class="favorite-detail__columns favorite-detail__row">
+				&lt;div class="favorite-detail__row">
+					&lt;img class="favorite-detail__poster" src="${favoritePoster}" alt="${data.Title}">
+				&lt;/div>
+
+				&lt;div class="favorite-detail__row">
+					${favoriteType}
+					${favoriteGenre}
+					${favoriteCountry}
+					${favoriteLanguage}
+					${favoriteProduction}
+					${favoriteRuntime}
+					${favoriteYear}
+					${favoriteReleased}
+					${favoriteDVD}
+				&lt;/div>
+			&lt;/div>
+
+			&lt;div class="favorite-detail__row">
+				${favoriteWriter}
+				${favoriteDirector}
+				${favoriteActors}
+				${favoritePlot}
+				${favoriteAwards}
+			&lt;/div>
+
+			&lt;div class="favorite-detail__row">
+				&lt;h3>
+					Clasificaciones y votos:
+				&lt;/h3>
+				&lt;p class="favorite-detail__item">
+					&lt;strong class="favorite-detail__subtitle">Imdb id:&lt;/strong>
+					${data.imdbID}					
+				&lt;/p>
+				${favoriteImdbVotes}
+				${favoriteImdbRating}
+				${favoriteRatings}
+			&lt;/div>
+		&lt;/div>
+	`;
+	return template;
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-createTemplate.html">createTemplate</a></li><li><a href="module-firebaseTasks.html">firebaseTasks</a></li><li><a href="module-gradient.html">gradient</a></li><li><a href="module-iconsPaths.html">iconsPaths</a></li><li><a href="module-loader.html">loader</a></li><li><a href="module-modal.html">modal</a></li><li><a href="module-moviesAPI.html">moviesAPI</a></li><li><a href="module-moviesCRUD.html">moviesCRUD</a></li><li><a href="module-tool.html">tool</a></li></ul><h3>Events</h3><ul><li><a href="module-moviesCRUD.html#~event:%257Bclick%257D">{click}</a></li><li><a href="module-moviesAPI.html#~event:%257Bkeyup%257D">{keyup}</a></li></ul><h3>Global</h3><ul><li><a href="global.html#anominFunctionAutoEjecuted">anominFunctionAutoEjecuted</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Wed Sep 09 2020 07:35:36 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

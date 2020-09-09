@@ -1,0 +1,15 @@
+{
+	"name": "my-favorite-movies",
+	"version": "1.0.0",
+	"description": "My Favorite Movies. Application made with Firebase.",
+	"main": "index.js",
+	"scripts": {
+		"docs": "jsdoc -c jsdoc.json"
+	},
+	"keywords": [],
+	"author": "beatrizsmerino@gmail.com",
+	"license": "ISC",
+	"devDependencies": {
+		"jsdoc": "^3.6.3"
+	}
+}
