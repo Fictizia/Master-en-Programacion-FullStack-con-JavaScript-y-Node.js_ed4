@@ -1,0 +1,10 @@
+
+h1{
+    text-align: center;
+}
+body{
+    background-image: url("trainspotting.png");
+    background-repeat: no-repeat;
+    background-position: 50% 17%;
+    font-family: Arial, Helvetica, sans-serif;
+}

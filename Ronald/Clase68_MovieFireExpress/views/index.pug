@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    title Jade
+  body
+    h1 Firebase (peliculas) con Node y Pug 
+    h3 Escriba el nombre de una película para poder ver su información:
+    input#nombre(type="text", placeholder="nombre de la pelicula")
+    button#getFilm(type="button") Click here
+
+    h5 Si desa eliminar una pelicula realize un post con esta estructura: /film/pelicula/delete (el nombre de la pelicula en minusculas)
+    br
+    br
+
+    h2 Peliculas visitadas previamente (click para ver su información):
+    h3 
+    #container.col
+      ul#lista
+        if data
+          each film, i in data
+            a(href=`/film/${film.Title}`).lista= film.Title 
+            br
+
+           
+    
+    
+link(href='./style.css', rel='stylesheet')
+script(src="./script.js")
